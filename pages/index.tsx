@@ -14,17 +14,26 @@ const Home: NextPage = () => {
         <header>
           <nav className="flex items-center justify-between	">
             <div className="flex">
-              <a href="https://github.com/sudharsangs/" target="_blank">
-                <img src="/github.svg" className="h-10" />
+              <a
+                href="https://github.com/sudharsangs/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/github.svg" className="h-10" alt="github" />
               </a>
-              <a href="https://twitter.com/gssudharsan" target="_blank">
-                <img src="/twitter.svg" className="h-10" />
+              <a
+                href="https://twitter.com/gssudharsan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/twitter.svg" className="h-10" alt="twitter" />
               </a>
               <a
                 href="https://www.linkedin.com/in/sudharsangs/"
                 target="_blank"
+                rel="noreferrer"
               >
-                <img src="/linkedin.svg" className="h-10" />
+                <img src="/linkedin.svg" className="h-10" alt="linkedin" />
               </a>
             </div>
             <div className="w-96" />
@@ -32,10 +41,14 @@ const Home: NextPage = () => {
         </header>
         <section>
           <div className="flex justify-center p-5 w-full">
-            <img src="/photo.jpg" className="h-44 w-44 rounded-full" />
+            <img
+              src="/photo.jpg"
+              className="h-44 w-44 rounded-full"
+              alt="sudharsan"
+            />
           </div>
           <div className="p-2 mt-4">
-            <p className="text-3xl">Hi, I'm Sudharsan</p>
+            <p className="text-3xl">Hi, I&apos;m Sudharsan</p>
             <p className="mt-3 text-xl text-slate-600">
               Based out of Bengaluru,India
             </p>
@@ -57,15 +70,15 @@ const Home: NextPage = () => {
           <div className="mt-5">
             <h2 className="text-2xl">Skills</h2>
             <div className="flex mt-4 flex-wrap">
-              <img src="/html.svg" className="h-16 mt-1 mr-1" />
-              <img src="/css.svg" alt="" className="h-16 mt-1 mr-1" />
-              <img src="/js.svg" alt="" className="h-16 mt-1 mr-1" />
-              <img src="/react.svg" alt="" className="h-16 mt-1 mr-1" />
-              <img src="/next-js.svg" alt="" className="h-16 mt-1 mr-1" />
-              <img src="/nodejs.svg" className="h-16 mt-1 mr-1" />
-              <img src="/jest.svg" className="h-16 mt-1 mr-1" />
-              <img src="/docker.svg" className="h-16 mt-1 mr-1" />
-              <img src="/go.svg" className="h-16 mt-1 mr-1" />
+              <img src="/html.svg" className="h-16 mt-1 mr-1" alt="html" />
+              <img src="/css.svg" className="h-16 mt-1 mr-1" alt="css" />
+              <img src="/js.svg" className="h-16 mt-1 mr-1" alt="js" />
+              <img src="/react.svg" className="h-16 mt-1 mr-1" alt="react" />
+              <img src="/next-js.svg" className="h-16 mt-1 mr-1" alt="next" />
+              <img src="/nodejs.svg" className="h-16 mt-1 mr-1" alt="node" />
+              <img src="/jest.svg" className="h-16 mt-1 mr-1" alt="jest" />
+              <img src="/docker.svg" className="h-16 mt-1 mr-1" alt="docker" />
+              <img src="/go.svg" className="h-16 mt-1 mr-1" alt="go" />
             </div>
           </div>
           <div className="flex justify-end w-full">
@@ -78,7 +91,11 @@ const Home: NextPage = () => {
                 )
               }
             >
-              <img src="/download.svg" className="w-8 h-8 mr-2" />
+              <img
+                src="/download.svg"
+                className="w-8 h-8 mr-2"
+                alt="download"
+              />
               Download My Resume
             </button>
           </div>
@@ -86,7 +103,10 @@ const Home: NextPage = () => {
             <h2 className="text-2xl">Experience</h2>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
-                <img src="https://uploads-ssl.webflow.com/626105cd0597e61ef48a8c6d/6300af644b8b3acedcaa7922_Favicon%2032.png" />
+                <img
+                  src="https://uploads-ssl.webflow.com/626105cd0597e61ef48a8c6d/6300af644b8b3acedcaa7922_Favicon%2032.png"
+                  alt="winuall"
+                />
               </div>
 
               <div className="w-full pl-4">
@@ -100,10 +120,11 @@ const Home: NextPage = () => {
                         className="flex items-center text-xs text-sky-400"
                         href="https://winuall.com"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
+                          className="h-4 w-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -120,7 +141,7 @@ const Home: NextPage = () => {
                       <p className="flex items-center text-xs text-slate-400 ml-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
+                          className="h-4 w-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -144,13 +165,13 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                    <span className="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">
                       Full Time
                     </span>
                     <p className="flex items-center text-xs text-slate-400 mt-3">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
+                        className="h-4 w-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -174,6 +195,7 @@ const Home: NextPage = () => {
                       <a
                         href="https://hello.winuall.com/online-store"
                         target="_blank"
+                        rel="noreferrer"
                         className="text-sky-400"
                       >
                         Online Store
@@ -191,6 +213,7 @@ const Home: NextPage = () => {
                       <a
                         href="https://register.winuall.com"
                         target="_blank"
+                        rel="noreferrer"
                         className="text-sky-400"
                       >
                         winuall.com/register
@@ -220,10 +243,14 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div class="border-b border-gray-200 mt-5"></div>
+            <div className="border-b border-gray-200 mt-5"></div>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
-                <img src="https://tealindia.in/favicon.ico" className="w-9" />
+                <img
+                  src="https://tealindia.in/favicon.ico"
+                  className="w-9"
+                  alt="teal"
+                />
               </div>
 
               <div className="w-full pl-4">
@@ -235,10 +262,11 @@ const Home: NextPage = () => {
                         className="flex items-center text-xs text-sky-400"
                         href="https://www.tealindia.in"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
+                          className="h-4 w-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -257,7 +285,7 @@ const Home: NextPage = () => {
                       <p className="flex items-center text-xs text-slate-400 ml-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
+                          className="h-4 w-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -281,13 +309,13 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                    <span className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
                       Internship
                     </span>
                     <p className="flex items-center text-xs text-slate-400 mt-3">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
+                        className="h-4 w-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -324,12 +352,13 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div class="border-b border-gray-200 mt-5"></div>
+            <div className="border-b border-gray-200 mt-5"></div>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
                 <img
                   src="https://printrove.com/wp-content/uploads/2017/12/favicon-1.png"
                   className="w-9"
+                  alt="printrove"
                 />
               </div>
 
@@ -342,10 +371,11 @@ const Home: NextPage = () => {
                         className="flex items-center text-xs text-sky-400"
                         href="https://printrove.com/"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
+                          className="h-4 w-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -362,7 +392,7 @@ const Home: NextPage = () => {
                       <p className="flex items-center text-xs text-slate-400 ml-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-4 w-4"
+                          className="h-4 w-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -386,13 +416,13 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                    <span className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
                       Internship
                     </span>
                     <p className="flex items-center text-xs text-slate-400 mt-3">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
+                        className="h-4 w-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -417,6 +447,7 @@ const Home: NextPage = () => {
                         href="https://merchants.printrove.com/"
                         target="_blank"
                         className="text-sky-400"
+                        rel="noreferrer"
                       >
                         {" "}
                         Merchant Panel
