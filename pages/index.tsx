@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <title>Sudharsan GS</title>
         <meta name="description" content="Frontend Engineer" />
       </Head>
-      <main className="max-w-5xl p-10">
+      <main className="max-w-5xl sm:p-10">
         <header>
           <nav className="flex items-center justify-between	">
             <div className="flex">
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
               alt="sudharsan"
             />
           </div>
-          <div className="p-2 mt-4">
+          <div className="p-4 mt-4">
             <p className="text-3xl">Hi, I&apos;m Sudharsan</p>
             <p className="mt-3 text-xl text-slate-600">
               Based out of Bengaluru,India
@@ -67,23 +67,23 @@ const Home: NextPage = () => {
               presence.
             </p>
           </div>
-          <div className="mt-5">
+          <div className="mt-5 p-4">
             <h2 className="text-2xl">Skills</h2>
-            <div className="flex mt-4 flex-wrap">
-              <img src="/html.svg" className="h-16 mt-1 mr-1" alt="html" />
-              <img src="/css.svg" className="h-16 mt-1 mr-1" alt="css" />
-              <img src="/js.svg" className="h-16 mt-1 mr-1" alt="js" />
-              <img src="/react.svg" className="h-16 mt-1 mr-1" alt="react" />
-              <img src="/next-js.svg" className="h-16 mt-1 mr-1" alt="next" />
-              <img src="/nodejs.svg" className="h-16 mt-1 mr-1" alt="node" />
-              <img src="/jest.svg" className="h-16 mt-1 mr-1" alt="jest" />
-              <img src="/docker.svg" className="h-16 mt-1 mr-1" alt="docker" />
-              <img src="/go.svg" className="h-16 mt-1 mr-1" alt="go" />
+            <div className="flex mt-4 flex-wrap justify-center">
+              <img src="/html.svg" className="h-16 mt-2 mr-1" alt="html" />
+              <img src="/css.svg" className="h-16 mt-2 mr-1" alt="css" />
+              <img src="/js.svg" className="h-16 mt-2 mr-1" alt="js" />
+              <img src="/react.svg" className="h-16 mt-2 mr-1" alt="react" />
+              <img src="/next-js.svg" className="h-16 mt-2 mr-1" alt="next" />
+              <img src="/nodejs.svg" className="h-16 mt-2 mr-1" alt="node" />
+              <img src="/jest.svg" className="h-16 mt-2 mr-1" alt="jest" />
+              <img src="/docker.svg" className="h-16 mt-2 mr-1" alt="docker" />
+              <img src="/go.svg" className="h-16 mt-2 mr-1" alt="go" />
             </div>
           </div>
-          <div className="flex justify-end w-full">
+          <div className="flex justify-center w-full my-7">
             <button
-              className="bg-cyan-600 text-sky-50 flex p-4 mt-4 rounded-lg font-bold"
+              className="bg-gradient-to-r from-cyan-100 via-sky-200 to-blue-200 flex p-4 mt-4 rounded-lg font-bold"
               onClick={() =>
                 window.open(
                   "https://drive.google.com/uc?export=download&id=1qIjJA2fQbAxpj1Sc7mGH-GmRz2UH1W8Y",
