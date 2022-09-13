@@ -8,7 +8,27 @@ const Home: NextPage = () => {
     <div className="w-full flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 h-full">
       <Head>
         <title>Sudharsan GS</title>
-        <meta name="description" content="Frontend Engineer" />
+        <meta
+          name="description"
+          content="I am a Web Developer experienced in React and Svelte. Getting your business moving forward through code is what I can do for you."
+        />
+        <meta
+          name="keywords"
+          content="web development, full stack developer, javascript, typescript,  react, svelte, website, react developer, svelte developer, freelancer, bengaluru, india, krishnagiri, "
+        />
+        <meta name="author" content="Sudharsan GS" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Sudharsan GS" />
+        <meta property="og:url" content="https://sudharsangs.in" />
+        <meta
+          property="og:image"
+          content="https://og-image.xyz/og/Sudharsan GS/Frontend Engineer/sudharsangs.in/https/atkinson/flawlessaffinity/{{h}}ffffff/data.png"
+        />
+        <meta
+          property="og:description"
+          content="I am a Web Developer experienced in React and Svelte. Getting your business moving forward through code is what I can do for you."
+        />
       </Head>
       <main className="max-w-5xl sm:p-10">
         <header>
