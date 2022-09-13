@@ -39,21 +39,21 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image src="/github.svg" className="h-10" alt="github" />
+                <img src="/github.svg" className="h-10" alt="github" />
               </a>
               <a
                 href="https://twitter.com/gssudharsan"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image src="/twitter.svg" className="h-10" alt="twitter" />
+                <img src="/twitter.svg" className="h-10" alt="twitter" />
               </a>
               <a
                 href="https://www.linkedin.com/in/sudharsangs/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image src="/linkedin.svg" className="h-10" alt="linkedin" />
+                <img src="/linkedin.svg" className="h-10" alt="linkedin" />
               </a>
             </div>
             <div className="w-96" />
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
         </header>
         <section>
           <div className="flex justify-center p-5 w-full">
-            <Image
+            <img
               src="/photo.jpg"
               className="h-44 w-44 rounded-full"
               alt="sudharsan"
@@ -90,15 +90,15 @@ const Home: NextPage = () => {
           <div className="mt-5 p-4">
             <h2 className="text-2xl">Skills</h2>
             <div className="flex mt-4 flex-wrap justify-center">
-              <Image src="/html.svg" className="h-16 mt-2 mr-1" alt="html" />
-              <Image src="/css.svg" className="h-16 mt-2 mr-1" alt="css" />
-              <Image src="/js.svg" className="h-16 mt-2 mr-1" alt="js" />
-              <Image src="/react.svg" className="h-16 mt-2 mr-1" alt="react" />
-              <Image src="/next-js.svg" className="h-16 mt-2 mr-1" alt="next" />
-              <Image src="/nodejs.svg" className="h-16 mt-2 mr-1" alt="node" />
-              <Image src="/jest.svg" className="h-16 mt-2 mr-1" alt="jest" />
-              <Image src="/docker.svg" className="h-16 mt-2 mr-1" alt="docker" />
-              <Image src="/go.svg" className="h-16 mt-2 mr-1" alt="go" />
+              <img src="/html.svg" className="h-16 mt-2 mr-1" alt="html" />
+              <img src="/css.svg" className="h-16 mt-2 mr-1" alt="css" />
+              <img src="/js.svg" className="h-16 mt-2 mr-1" alt="js" />
+              <img src="/react.svg" className="h-16 mt-2 mr-1" alt="react" />
+              <img src="/next-js.svg" className="h-16 mt-2 mr-1" alt="next" />
+              <img src="/nodejs.svg" className="h-16 mt-2 mr-1" alt="node" />
+              <img src="/jest.svg" className="h-16 mt-2 mr-1" alt="jest" />
+              <img src="/docker.svg" className="h-16 mt-2 mr-1" alt="docker" />
+              <img src="/go.svg" className="h-16 mt-2 mr-1" alt="go" />
             </div>
           </div>
           <div className="flex justify-center w-full my-7">
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
                 )
               }
             >
-              <Image
+              <img
                 src="/download.svg"
                 className="w-8 h-8 mr-2"
                 alt="download"
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
             <h2 className="text-2xl">Experience</h2>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
-                <Image
+                <img
                   src="https://uploads-ssl.webflow.com/626105cd0597e61ef48a8c6d/6300af644b8b3acedcaa7922_Favicon%2032.png"
                   alt="winuall"
                 />
@@ -266,7 +266,7 @@ const Home: NextPage = () => {
             <div className="border-b border-gray-200 mt-5"></div>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
-                <Image
+                <img
                   src="https://tealindia.in/favicon.ico"
                   className="w-9"
                   alt="teal"
@@ -375,7 +375,7 @@ const Home: NextPage = () => {
             <div className="border-b border-gray-200 mt-5"></div>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
-                <Image
+                <img
                   src="https://printrove.com/wp-content/uploads/2017/12/favicon-1.png"
                   className="w-9"
                   alt="printrove"
