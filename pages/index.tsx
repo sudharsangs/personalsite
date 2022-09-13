@@ -40,21 +40,21 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/github.svg" className="h-10" alt="github" />
+                <img src="/github.svg" className="h-10" alt="github" loading="lazy"/>
               </a>
               <a
                 href="https://twitter.com/gssudharsan"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/twitter.svg" className="h-10" alt="twitter" />
+                <img src="/twitter.svg" className="h-10" alt="twitter" loading="lazy"/>
               </a>
               <a
                 href="https://www.linkedin.com/in/sudharsangs/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/linkedin.svg" className="h-10" alt="linkedin" />
+                <img src="/linkedin.svg" className="h-10" alt="linkedin" loading="lazy"/>
               </a>
             </div>
             <div className="w-96" />
@@ -63,9 +63,10 @@ const Home: NextPage = () => {
         <section>
           <div className="flex justify-center p-5 w-full">
             <img
-              src="/photo.jpg"
+              src="/photo.webp"
               className="h-44 w-44 rounded-full"
               alt="sudharsan"
+              loading="lazy"
             />
           </div>
           <div className="p-4 mt-4">
@@ -91,15 +92,15 @@ const Home: NextPage = () => {
           <div className="mt-5 p-4">
             <h2 className="text-2xl">Skills</h2>
             <div className="flex mt-4 flex-wrap justify-center">
-              <img src="/html.svg" className="h-16 mt-2 mr-1" alt="html" />
-              <img src="/css.svg" className="h-16 mt-2 mr-1" alt="css" />
-              <img src="/js.svg" className="h-16 mt-2 mr-1" alt="js" />
-              <img src="/react.svg" className="h-16 mt-2 mr-1" alt="react" />
-              <img src="/next-js.svg" className="h-16 mt-2 mr-1" alt="next" />
-              <img src="/nodejs.svg" className="h-16 mt-2 mr-1" alt="node" />
-              <img src="/jest.svg" className="h-16 mt-2 mr-1" alt="jest" />
-              <img src="/docker.svg" className="h-16 mt-2 mr-1" alt="docker" />
-              <img src="/go.svg" className="h-16 mt-2 mr-1" alt="go" />
+              <img src="/html.svg" className="h-16 mt-2 mr-1" alt="html" loading="lazy"/>
+              <img src="/css.svg" className="h-16 mt-2 mr-1" alt="css" loading="lazy"/>
+              <img src="/js.svg" className="h-16 mt-2 mr-1" alt="js" loading="lazy"/>
+              <img src="/react.svg" className="h-16 mt-2 mr-1" alt="react" loading="lazy"/>
+              <img src="/next-js.svg" className="h-16 mt-2 mr-1" alt="next" loading="lazy"/>
+              <img src="/nodejs.svg" className="h-16 mt-2 mr-1" alt="node" loading="lazy"/>
+              <img src="/jest.svg" className="h-16 mt-2 mr-1" alt="jest" loading="lazy"/>
+              <img src="/docker.svg" className="h-16 mt-2 mr-1" alt="docker" loading="lazy"/>
+              <img src="/go.svg" className="h-16 mt-2 mr-1" alt="go" loading="lazy"/>
             </div>
           </div>
           <div className="flex justify-center w-full my-7">
@@ -116,6 +117,7 @@ const Home: NextPage = () => {
                 src="/download.svg"
                 className="w-8 h-8 mr-2"
                 alt="download"
+                loading="lazy"
               />
               Download My Resume
             </button>
@@ -127,6 +129,7 @@ const Home: NextPage = () => {
                 <img
                   src="https://uploads-ssl.webflow.com/626105cd0597e61ef48a8c6d/6300af644b8b3acedcaa7922_Favicon%2032.png"
                   alt="winuall"
+                  loading="lazy"
                 />
               </div>
 
@@ -151,9 +154,9 @@ const Home: NextPage = () => {
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                           ></path>
                         </svg>
@@ -168,15 +171,15 @@ const Home: NextPage = () => {
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                           ></path>
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           ></path>
                         </svg>
@@ -198,9 +201,9 @@ const Home: NextPage = () => {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                         ></path>
                       </svg>
@@ -271,6 +274,7 @@ const Home: NextPage = () => {
                   src="https://tealindia.in/favicon.ico"
                   className="w-9"
                   alt="teal"
+                  loading="lazy"
                 />
               </div>
 
@@ -293,9 +297,9 @@ const Home: NextPage = () => {
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                           ></path>
                         </svg>
@@ -312,15 +316,15 @@ const Home: NextPage = () => {
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                           ></path>
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           ></path>
                         </svg>
@@ -342,9 +346,9 @@ const Home: NextPage = () => {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                         ></path>
                       </svg>
@@ -380,6 +384,7 @@ const Home: NextPage = () => {
                   src="https://printrove.com/wp-content/uploads/2017/12/favicon-1.png"
                   className="w-9"
                   alt="printrove"
+                  loading="lazy"
                 />
               </div>
 
@@ -402,9 +407,9 @@ const Home: NextPage = () => {
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                           ></path>
                         </svg>
@@ -419,15 +424,15 @@ const Home: NextPage = () => {
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                           ></path>
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           ></path>
                         </svg>
@@ -449,9 +454,9 @@ const Home: NextPage = () => {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                         ></path>
                       </svg>
