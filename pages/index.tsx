@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           property="og:description"
           content="I am a Web Developer experienced in React and Svelte. Getting your business moving forward through code is what I can do for you."
         />
-        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <main className="max-w-5xl sm:p-10">
         <header>
@@ -40,21 +40,36 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/github.svg" className="h-10" alt="github" loading="lazy"/>
+                <img
+                  src="/github.svg"
+                  className="h-10"
+                  alt="github"
+                  loading="lazy"
+                />
               </a>
               <a
                 href="https://twitter.com/gssudharsan"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/twitter.svg" className="h-10" alt="twitter" loading="lazy"/>
+                <img
+                  src="/twitter.svg"
+                  className="h-10"
+                  alt="twitter"
+                  loading="lazy"
+                />
               </a>
               <a
                 href="https://www.linkedin.com/in/sudharsangs/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src="/linkedin.svg" className="h-10" alt="linkedin" loading="lazy"/>
+                <img
+                  src="/linkedin.svg"
+                  className="h-10"
+                  alt="linkedin"
+                  loading="lazy"
+                />
               </a>
             </div>
             <div className="w-96" />
@@ -75,9 +90,11 @@ const Home: NextPage = () => {
               Based out of Bengaluru,India
             </p>
             <p className="mt-3 text-xl">
-              I have been working as a Front End Engineer for 2 years and have
-              built many user-centric features using React, Redux, Javascript,
-              and Typescript. On the side, I explore Svelte, Golang, and similar
+              A passionate Frontend engineer with over two years of experience,
+              I have developed user-driven features using React, Redux,
+              Javascript, and Typescript. As a product builder and developer, I
+              am passionate about experimenting with Javascript and Web
+              Development. On the side, I explore Svelte, Golang, and similar
               languages.
             </p>
             <p className="mt-3 text-xl">
@@ -92,15 +109,60 @@ const Home: NextPage = () => {
           <div className="mt-5 p-4">
             <h2 className="text-2xl">Skills</h2>
             <div className="flex mt-4 flex-wrap justify-center">
-              <img src="/html.svg" className="h-16 mt-2 mr-1" alt="html" loading="lazy"/>
-              <img src="/css.svg" className="h-16 mt-2 mr-1" alt="css" loading="lazy"/>
-              <img src="/js.svg" className="h-16 mt-2 mr-1" alt="js" loading="lazy"/>
-              <img src="/react.svg" className="h-16 mt-2 mr-1" alt="react" loading="lazy"/>
-              <img src="/next-js.svg" className="h-16 mt-2 mr-1" alt="next" loading="lazy"/>
-              <img src="/nodejs.svg" className="h-16 mt-2 mr-1" alt="node" loading="lazy"/>
-              <img src="/jest.svg" className="h-16 mt-2 mr-1" alt="jest" loading="lazy"/>
-              <img src="/docker.svg" className="h-16 mt-2 mr-1" alt="docker" loading="lazy"/>
-              <img src="/go.svg" className="h-16 mt-2 mr-1" alt="go" loading="lazy"/>
+              <img
+                src="/html.svg"
+                className="h-16 mt-2 mr-1"
+                alt="html"
+                loading="lazy"
+              />
+              <img
+                src="/css.svg"
+                className="h-16 mt-2 mr-1"
+                alt="css"
+                loading="lazy"
+              />
+              <img
+                src="/js.svg"
+                className="h-16 mt-2 mr-1"
+                alt="js"
+                loading="lazy"
+              />
+              <img
+                src="/react.svg"
+                className="h-16 mt-2 mr-1"
+                alt="react"
+                loading="lazy"
+              />
+              <img
+                src="/next-js.svg"
+                className="h-16 mt-2 mr-1"
+                alt="next"
+                loading="lazy"
+              />
+              <img
+                src="/nodejs.svg"
+                className="h-16 mt-2 mr-1"
+                alt="node"
+                loading="lazy"
+              />
+              <img
+                src="/jest.svg"
+                className="h-16 mt-2 mr-1"
+                alt="jest"
+                loading="lazy"
+              />
+              <img
+                src="/docker.svg"
+                className="h-16 mt-2 mr-1"
+                alt="docker"
+                loading="lazy"
+              />
+              <img
+                src="/go.svg"
+                className="h-16 mt-2 mr-1"
+                alt="go"
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="flex justify-center w-full my-7">
