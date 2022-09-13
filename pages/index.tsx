@@ -29,6 +29,7 @@ const Home: NextPage = () => {
           property="og:description"
           content="I am a Web Developer experienced in React and Svelte. Getting your business moving forward through code is what I can do for you."
         />
+        <link rel="shortcut icon" href="/favicon.ico"/>
       </Head>
       <main className="max-w-5xl sm:p-10">
         <header>
