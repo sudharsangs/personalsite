@@ -16,7 +16,7 @@ export const HashnodeBlogs = () => {
     getHashnodeArticles();
   }, []);
   return (
-    <>
+    <div className="p-4">
       <h2 className="text-2xl mt-10">Articles</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
         {blogs?.map((res) => (
@@ -34,7 +34,7 @@ export const HashnodeBlogs = () => {
           </a>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
