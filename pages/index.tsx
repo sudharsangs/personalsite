@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { HashnodeBlogs } from "../app/components/HashnodeBlogs";
+
 
 const Home: NextPage = () => {
   return (
     <div className="w-full flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 h-full">
       <Head>
-        <title>Sudharsan GS</title>
+        <title>Sudharsan GS | Frontend Engineer</title>
         <meta
           name="description"
           content="I am a Web Developer experienced in React and Svelte. Getting your business moving forward through code is what I can do for you."
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
               A passionate Frontend engineer with over two years of experience,
               I have developed user-driven features using React, Redux,
               Javascript, and Typescript. As a product builder and developer, I
-              am passionate about experimenting with Javascript and Web
+              am excited about experimenting with Javascript and Web
               Development. On the side, I explore Svelte, Golang, and similar
               languages.
             </p>
@@ -553,6 +553,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
+          <HashnodeBlogs/>
         </section>
         <footer></footer>
       </main>
