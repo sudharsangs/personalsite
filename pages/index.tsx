@@ -87,7 +87,7 @@ const Home: NextPage = () => {
           <div className="p-4 mt-4">
             <h1 className="text-3xl">Hi, I&apos;m Sudharsan</h1>
             <p className="mt-3 text-xl text-slate-600">
-              Based out of Bengaluru,India
+              Living in Bengaluru,India
             </p>
             <p className="mt-3 text-xl">
               A passionate Frontend engineer with over two years of experience,
@@ -98,12 +98,11 @@ const Home: NextPage = () => {
               languages.
             </p>
             <p className="mt-3 text-xl">
-              Currently I am working as a Frontend Engineer at{" "}
-              <a href="https://winuall.com" className="text-sky-500">
-                Winuall
+              Currently I am working as a Web Engineer at{" "}
+              <a href="https://fubo.tv/" className="text-sky-500">
+                Fubo TV
               </a>
-              , helping tutors and coaching institutes create an online
-              presence.
+              , a live TV streaming platform based out of NYC.
             </p>
           </div>
           <div className="mt-5 p-4">
@@ -186,6 +185,97 @@ const Home: NextPage = () => {
           </div>
           <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg mt-6">
             <h2 className="text-2xl">Experience</h2>
+             <div className="flex items-start mt-6">
+              <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
+                <img
+                  src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/ylh8b9kxr1eoptlsi9bv"
+                  alt="fuboTV"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="w-full pl-4">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="font-semibold">
+                      Software Engineer - Web
+                    </p>
+                    <div className="flex items-center mt-3">
+                      <a
+                        className="flex items-center text-xs text-sky-400"
+                        href="https://fubo.tv"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          ></path>
+                        </svg>
+                        <span className="ml-1">Fubo TV</span>
+                      </a>
+                      <p className="flex items-center text-xs text-slate-400 ml-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          ></path>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          ></path>
+                        </svg>
+
+                        <span className="ml-1">Bengaluru</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                      Full Time
+                    </span>
+                    <p className="flex items-center text-xs text-slate-400 mt-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+
+                      <span className="ml-1">Oct 2022 - Present</span>
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
             <div className="flex items-start mt-6">
               <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
                 <img
@@ -199,7 +289,7 @@ const Home: NextPage = () => {
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="font-semibold">
-                      Software Development Engineer 1
+                      Software Development Engineer 1 - Frontend
                     </p>
                     <div className="flex items-center mt-3">
                       <a
@@ -270,7 +360,7 @@ const Home: NextPage = () => {
                         ></path>
                       </svg>
 
-                      <span className="ml-1">Dec 2020 - Present</span>
+                      <span className="ml-1">Dec 2020 - Oct 2022</span>
                     </p>
                   </div>
                 </div>
