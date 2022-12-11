@@ -169,7 +169,7 @@ const Home: NextPage = () => {
               className="bg-gradient-to-r from-cyan-100 via-sky-200 to-blue-200 flex p-4 mt-4 rounded-lg font-bold"
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/uc?export=download&id=1qIjJA2fQbAxpj1Sc7mGH-GmRz2UH1W8Y",
+                  "https://drive.google.com/file/d/1qIjJA2fQbAxpj1Sc7mGH-GmRz2UH1W8Y/view?usp=share_link",
                   "_blank"
                 )
               }
@@ -180,7 +180,7 @@ const Home: NextPage = () => {
                 alt="download"
                 loading="lazy"
               />
-              Download My Resume
+              View My Resume
             </button>
           </div>
           <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg mt-6">
