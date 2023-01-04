@@ -14,7 +14,7 @@ export const WinuallLearnersModule = () => {
           <h2 className="text-3xl my-5">Winuall Learners Module</h2>
           <section>
             <p className="text-xl mt-4">
-              Created a learner's module where users can watch videos, download files, attend live classes, give a quiz, read E-books and track the progress of their learning. 
+              Created a learner&apos;s module where users can watch videos, download files, attend live classes, give a quiz, read E-books and track the progress of their learning. 
             </p>
             <p className="text-xl mt-4">
               <strong>Featured Skills:</strong> React, Styled Components, Redux

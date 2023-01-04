@@ -15,7 +15,7 @@ export const WinuallParentsModule = () => {
           <section>
             <p className="text-xl mt-4">
               Built a feature in the Winuall LMS platform for parents to monitor
-              their kids' performance
+              their kids&apos; performance
             </p>
             <p className="text-xl mt-4">
               The features for parents module were
