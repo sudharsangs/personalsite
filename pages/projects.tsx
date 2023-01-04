@@ -5,7 +5,7 @@ import { Project } from "../app/components/Project";
 
 export const ProjectsPage = () => {
   return (
-    <div className="w-full  flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 h-screen">
+    <div className="w-full  flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 sm:h-screen h-full">
       <Head>
         <title>Sudharsan | Projects</title>
       </Head>
