@@ -30,9 +30,9 @@ export const WinuallLearnersModule = () => {
                 Winuall
               </a>
             </p>
-            <img src="/projects-assets/online-store/1.png" className="mt-4" />
-            <img src="/projects-assets/online-store/2.png" className="mt-4" />
-            <img src="/projects-assets/online-store/3.png" className="mt-4" />
+            <img src="/projects-assets/learners-module/1.png" className="mt-4" />
+            <img src="/projects-assets/learners-module/2.png" className="mt-4" />
+            <img src="/projects-assets/learners-module/3.png" className="mt-4" />
           </section>
         </div>
       </main>

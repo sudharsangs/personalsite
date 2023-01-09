@@ -6,7 +6,7 @@ export const Experiences = () => {
     <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg mt-6">
       <h2 className="text-2xl flex items-center">
         Experience{" "}
-        <span className="ml-4 bg-sky-400 text-cyan-900 text-xs font-semibold px-2.5 py-0.5 rounded">
+        <span className="ml-4 bg-sky-400 text-white text-xs font-semibold px-2.5 py-0.5 rounded">
           2+ Years
         </span>{" "}
       </h2>
