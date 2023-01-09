@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         <meta property="og:url" content="https://sudharsangs.in" />
         <meta
           property="og:image"
-          content="https://og-image.xyz/og/Sudharsan GS/Frontend Engineer/sudharsangs.in/https/atkinson/flawlessaffinity/{{h}}ffffff/data.png"
+          content="https://sudharsangs.in/og-image.jpeg"
         />
         <meta
           property="og:description"
