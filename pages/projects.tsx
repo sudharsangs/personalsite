@@ -270,6 +270,7 @@ export const ProjectsPage = () => {
                 </p>
               </>
             }
+            hideAnchor
             projectType={
               <p className="bg-teal-400 h-6 flex items-center text-cyan-900	 text-xs font-semibold px-2.5 py-0.5 rounded">
                 Freelance
