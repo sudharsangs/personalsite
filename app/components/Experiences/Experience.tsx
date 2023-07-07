@@ -39,7 +39,7 @@ export const Experience = ({
   return (
     <div className="flex items-start mt-6">
       <div className="w-16 h-14 bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md flex justify-center items-center">
-        <img src={companyLogo} alt={companyName} loading="lazy" />
+        <img src={companyLogo} alt={companyName} loading="lazy" className="px-2"/>
       </div>
 
       <div className="w-full pl-4">

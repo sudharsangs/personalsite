@@ -35,17 +35,19 @@ const Home: NextPage = () => {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <main className="max-w-5xl sm:p-10">
-        <Header navContents={["projects","resume","links"]}/>
+        <Header navContents={["projects", "resume", "links"]} />
         <section>
-          <div className="flex justify-center p-5 w-full">
-            <img
-              src="/photo.jpeg"
-              className="h-44 w-44 rounded-full"
-              alt="sudharsan"
-              loading="lazy"
-            />
+          <div className="flex items-center sm:flex-row flex-col">
+            <div className="flex justify-center p-5 w-full">
+              <img
+                src="/photo.jpeg"
+                className="h-44 w-44 rounded-full"
+                alt="sudharsan"
+                loading="lazy"
+              />
+            </div>
+            <Intro />
           </div>
-          <Intro />
           <div className="flex justify-center w-full my-7"></div>
           <Experiences />
         </section>
