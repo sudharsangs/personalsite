@@ -5,20 +5,20 @@ export const Header = ({ navContents }: HeaderProps) => {
   return (
     <header>
       <nav className="flex items-center justify-between sm:m-0 mt-3 mx-2">
-        <div className="flex gap-0.5">
+        <div className="flex gap-0.5 px-2">
           {navContents.includes("projects") ? (
             <Link
               href="/projects"
-              className="mx-1 sm:text-xl text-md text-sky-500"
+              className="mx-1 sm:text-xl text-md text-sky-500 hover:text-sky-300"
             >
               Projects
             </Link>
           ) : null}
           {navContents.includes("resume") ? (
             <a
-              className="mx-1 sm:text-xl text-md text-sky-500"
+              className="mx-1 sm:text-xl text-md text-sky-500 hover:text-sky-300"
               href="https://drive.google.com/file/d/1qIjJA2fQbAxpj1Sc7mGH-GmRz2UH1W8Y/view?usp=share_link"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Resume
             </a>
@@ -33,7 +33,7 @@ export const Header = ({ navContents }: HeaderProps) => {
         </div>
 
         {navContents.includes("links") ? (
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 bg-slate-50 shadow-xl ring-1 ring-gray-900/5  px-4 py-1 rounded-full">
             <a
               href="https://github.com/sudharsangs/"
               target="_blank"

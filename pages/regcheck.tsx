@@ -4,14 +4,14 @@ import { Header } from "../app/components/Header";
 
 export const Regcheck = () => {
   return (
-    <div className="w-full  flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 h-screen">
+    <div className="w-full  flex items-center flex-col h-screen">
       <Head>
-        <title>Winuall Parents Module</title>
+        <title>Regcheck</title>
       </Head>
-      <main className="max-w-5xl sm:p-10">
+      <main className="max-w-5xl sm:p-10 text-gray-300">
         <Header navContents={["projects"]} />
         <div className="px-2">
-          <h2 className="text-3xl my-5">Winuall Parents Module</h2>
+          <h2 className="text-3xl my-5 text-white">Regcheck</h2>
           <section>
             <p className="text-xl mt-4">
               Built a gatsby site to view real-estate regulations of all the
@@ -24,10 +24,10 @@ export const Regcheck = () => {
               using NodeJS Handlebars
             </p>
             <p className="text-xl mt-4">
-              <strong>Featured Skills:</strong> React, GatsbyJS, GraphQL
+              <strong className="text-white">Featured Skills:</strong> React, GatsbyJS, GraphQL
             </p>
             <p className="text-xl">
-              <strong>Company:</strong>
+              <strong className="text-white">Company:</strong>
               <a
                 className="ml-2 text-sky-400"
                 href="https://tealindia.in"

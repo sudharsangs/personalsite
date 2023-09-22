@@ -3,23 +3,19 @@ import React from "react";
 export const Intro = () => {
   return (
     <div className="p-4 mt-4">
-      <h1 className="sm:text-2xl text-xl">Hi, I&apos;m Sudharsan</h1>
-      <p className="mt-3 sm:text-lg text-md text-slate-600">Living in Bengaluru,India</p>
-      <p className="mt-3 sm:text-lg text-md">
-        A passionate Frontend engineer with over two years of experience, I have
-        developed user-driven features for data-intensive applications using
-        React, Redux, Javascript, and Typescript. As a product builder and
-        developer, I am excited about experimenting with Javascript and Web
-        Development. On the side, I explore Svelte, Golang, and similar
-        languages.
+      <h1 className="md:text-5xl text-4xl font-semibold leading-tight leading-normal">Hey there, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Sudharsan</span></h1>
+      <p className="mt-3 sm:text-lg text-md text-gray-300">Living in Bengaluru,India</p>
+      <p className="mt-3 sm:text-lg text-md text-gray-300">
+        Experienced Software engineer with 2+ years, specializing in user-centric features and passionate about web development.
       </p>
-      <p className="mt-3 sm:text-lg text-md">
-        Currently I am working as a Web Engineer at{" "}
-        <a href="https://fubo.tv/" className="text-sky-500">
-          Fubo TV
+      <div className="mt-8">
+        <a
+          href="#get-in-touch"
+          className="text-white bg-teal-500 hover:bg-teal-600 py-2 px-4 rounded-lg text-lg font-semibold transition duration-300 ease-in-ou"
+        >
+          Get In Touch
         </a>
-        , a live TV streaming platform based out of NYC.
-      </p>
+      </div>
     </div>
   );
 };

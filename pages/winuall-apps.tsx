@@ -4,7 +4,7 @@ import { Header } from "../app/components/Header";
 
 export const WinuallApps = () => {
   return (
-    <div className="w-full  flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 h-screen">
+    <div className="w-full flex items-center flex-col  h-full">
       <Head>
         <title>Winuall Apps</title>
       </Head>

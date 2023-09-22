@@ -5,14 +5,14 @@ import { Project } from "../app/components/Project";
 
 export const ProjectsPage = () => {
   return (
-    <div className="w-full  flex items-center flex-col bg-gradient-to-r from-slate-100 via-slate-200 to-gray-200 h-full">
+    <div className="w-full  flex items-center flex-col h-full">
       <Head>
         <title>Sudharsan | Projects</title>
       </Head>
       <main className="max-w-5xl sm:p-10 p-4">
         <Header navContents={["home", "links"]} />
-        <h2 className="sm:text-3xl text-xl my-5">Projects</h2>
-        <section className="flex flex-wrap gap-2">
+        <h2 className="sm:text-3xl text-xl my-5 mx-3">Projects</h2>
+        <section className="flex flex-wrap gap-2 p-2">
           <Project
             projectTitle={"Winuall Apps"}
             projectDescription={
@@ -21,12 +21,12 @@ export const ProjectsPage = () => {
             detailsPagePath={"/winuall-apps"}
             featuredSkills={
               <>
-                <p className="text-md">
-                  <strong>Featured Skills:</strong> React, Styled Components,
+                <p className="sm:text-md text-s text-gray-300">
+                  <strong className="text-white">Featured Skills:</strong> React, Styled Components,
                   Micro Frontend Architecture
                 </p>
-                <p className="text-md">
-                  <strong>Company:</strong>
+                <p className="sm:text-md text-s text-gray-300">
+                  <strong className="text-white">Company:</strong>
                   <a
                     className="ml-2 text-sky-400"
                     href="https://winuall.com"

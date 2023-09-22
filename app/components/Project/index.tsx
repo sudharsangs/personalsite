@@ -14,16 +14,16 @@ export const Project = ({
     <div
       className={`${
         hideAnchor ? "" : "cursor-pointer "
-      }relative bg-white px-6 pt-4 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg sm:w-[49%] w-full`}
+      }relative bg-gray-700 px-6 pt-4 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg sm:w-[49%] w-full`}
       onClick={() => (detailsPagePath ? router.push(detailsPagePath) : "")}
     >
       <div className="ml-2 flex flex-col h-full">
         <div className="flex justify-between">
-          <h3 className="sm:text-2xl text-xl text-black">{projectTitle}</h3>
+          <h3 className="sm:text-2xl text-xl text-gray-100">{projectTitle}</h3>
           {projectType}
         </div>
 
-        <p>{projectDescription}</p>
+        <p className="sm:text-md text-s text-gray-300">{projectDescription}</p>
         {featuredSkills}
       </div>
     </div>
