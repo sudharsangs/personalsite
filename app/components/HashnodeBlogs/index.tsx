@@ -22,7 +22,7 @@ export const HashnodeBlogs = () => {
         {blogs?.map((res) => (
           <a
             href={`https://sudharsan.hashnode.dev/${res.slug}`}
-            target="_blank"
+            target="_blank" rel="noreferrer" key={res.slug}
           >
             <div className="bg-white max-w-sm text-clip h-full  px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg mt-6 rounded overflow-hidden">
               <img className="w-full" src={res.coverImage} alt={res.title} />
