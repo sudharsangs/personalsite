@@ -14,7 +14,7 @@ const WinuallOnlineStore = () => {
           <h2 className="text-3xl my-5 mx-1">Winuall Online Store</h2>
           <section className="px-2">
             <p className="text-xl mt-4">
-              "Winuall Online Store" is a dynamic e-commerce solution tailored for educational institutes to seamlessly market and sell their courses, books, and various products directly on their websites. This project encompasses a complete e-commerce flow with advanced features.
+              &apos;Winuall Online Store&apos; is a dynamic e-commerce solution tailored for educational institutes to seamlessly market and sell their courses, books, and various products directly on their websites. This project encompasses a complete e-commerce flow with advanced features.
             </p>
             <p className="text-xl mt-4">
               Key highlights of this project include:

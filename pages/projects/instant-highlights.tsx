@@ -18,7 +18,7 @@ export const InstantHighlights = () => {
                         </h3>
 
                         <p className="text-gray-100 mb-4 text-xl">
-                            As a software engineer, I've harnessed the power of ReactJS, Emotion, and RxJS to create a groundbreaking feature for NBA fans of Fubo. This feature delivers real-time, AI-generated highlights during live games, enriching the viewing experience in unprecedented ways.
+                            As a software engineer, I&quot;ve harnessed the power of ReactJS, Emotion, and RxJS to create a groundbreaking feature for NBA fans of Fubo. This feature delivers real-time, AI-generated highlights during live games, enriching the viewing experience in unprecedented ways.
                         </p>
 
                         <h2 className="text-2xl font-semibold mb-2">The Challenge:</h2>
@@ -51,7 +51,7 @@ export const InstantHighlights = () => {
                         </ul>
 
                         <p className="text-gray-100 text-xl">
-                            The project combines ReactJS, Emotion, and RxJS to create a cutting-edge NBA viewing experience. It's a testament to my technical skills, innovation, and dedication to solving real-world challenges, making sports more engaging and interactive for Fubo users.
+                            The project combines ReactJS, Emotion, and RxJS to create a cutting-edge NBA viewing experience. It&quot;s a testament to my technical skills, innovation, and dedication to solving real-world challenges, making sports more engaging and interactive for Fubo users.
                         </p>
                         <p className="text-xl">
                             <strong className="text-white">Company:</strong>

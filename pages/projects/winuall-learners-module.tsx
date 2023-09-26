@@ -14,13 +14,13 @@ const WinuallLearnersModule = () => {
           <h2 className="text-3xl my-5 mx-1">Winuall Learners Module</h2>
           <section className="px-2">
             <p className="text-xl mt-4">
-              The "Winuall Learners Module" is a comprehensive platform empowering users to enhance their learning experience through a variety of resources and interactive features. Users can access videos, download files, attend live classes, take quizzes, read e-books, and monitor their learning progress—all in one place.
+              The &quot;Winuall Learners Module&quot; is a comprehensive platform empowering users to enhance their learning experience through a variety of resources and interactive features. Users can access videos, download files, attend live classes, take quizzes, read e-books, and monitor their learning progress—all in one place.
             </p>
             <p className="text-xl mt-4">
               Key highlights of this project include:
             </p>
             <ul className="list-disc list-inside text-lg mt-2 ml-4">
-              <li>Creation of a user-friendly learner's module with a wide range of learning resources.</li>
+              <li>Creation of a user-friendly learner&apos;s module with a wide range of learning resources.</li>
               <li>Implementation of interactive features such as live classes and quizzes for an engaging learning experience.</li>
               <li>Incorporation of user tracking capabilities to help learners monitor their progress and achievements.</li>
             </ul>

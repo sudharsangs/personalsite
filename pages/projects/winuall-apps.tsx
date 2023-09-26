@@ -14,7 +14,7 @@ const WinuallApps = () => {
           <h2 className="text-3xl my-5 mx-1">Winuall Apps</h2>
           <section>
             <p className="text-xl mt-4">
-              "Winuall Apps" represents a transformative project that introduced the concept of Micro Frontend Architecture to the platform, making it highly pluggable and extensible. This architectural innovation allowed the integration of various Single Page Applications (SPAs) into the main project seamlessly.
+              &quot;Winuall Apps&quot; represents a transformative project that introduced the concept of Micro Frontend Architecture to the platform, making it highly pluggable and extensible. This architectural innovation allowed the integration of various Single Page Applications (SPAs) into the main project seamlessly.
             </p>
             <p className="text-xl mt-4">
               Key accomplishments and contributions include:

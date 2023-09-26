@@ -14,7 +14,7 @@ const AForAtom = () => {
           <h2 className="text-3xl my-5 mx-1">A For Atom</h2>
           <section className="p-2 text-gray-300">
             <p className="text-xl mt-4">
-              "A For Atom" is a project dedicated to promoting environmental awareness through the concept of seed balls and their ecological advantages.
+              &quot;A For Atom&quot; is a project dedicated to promoting environmental awareness through the concept of seed balls and their ecological advantages.
             </p>
             <p className="text-xl mt-4">
               <strong className="text-white">Featured Skills:</strong> HTML, CSS
@@ -32,7 +32,7 @@ const AForAtom = () => {
               <li>Resources and links for further exploration.</li>
             </ul>
             <p className="text-xl mt-4">
-              The design of the website is visually appealing, with a focus on eco-friendly colors and elements that align with the project's environmental theme. It ensures a user-friendly experience, making information easily accessible.
+              The design of the website is visually appealing, with a focus on eco-friendly colors and elements that align with the project&apos;s environmental theme. It ensures a user-friendly experience, making information easily accessible.
             </p>
             <img src="/projects-assets/aforatom.png" alt="A For Atom Screenshot" className="mt-4" />
           </section>

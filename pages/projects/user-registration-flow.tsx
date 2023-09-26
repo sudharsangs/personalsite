@@ -14,15 +14,15 @@ const UserRegFlow = () => {
           <h2 className="text-3xl my-5 mx-1">Winuall New Users Registration Flow</h2>
           <section className="px-2">
             <p className="text-xl mt-4">
-              The "Winuall New Users Registration Flow" project is a transformative initiative aimed at simplifying and accelerating the onboarding process for new users on the platform. This streamlined approach led to the successful onboarding of over 3000 paying users.
+              The &quot;Winuall New Users Registration Flow&quot; project is a transformative initiative aimed at simplifying and accelerating the onboarding process for new users on the platform. This streamlined approach led to the successful onboarding of over 3000 paying users.
             </p>
             <p className="text-xl mt-4">
               Key highlights of this project include:
             </p>
             <ul className="list-disc list-inside text-lg mt-2 ml-4">
               <li>Creation of a user-friendly landing page using Next.js.</li>
-              <li>Empowering users to create their institute's website within minutes.</li>
-              <li>Enabling users to upload their institute's logo for a personalized touch.</li>
+              <li>Empowering users to create their institute&apos;s website within minutes.</li>
+              <li>Enabling users to upload their institute&apos;s logo for a personalized touch.</li>
               <li>Seamless onboarding process, making it easy for users to get started.</li>
             </ul>
             <p className="text-xl mt-4">

@@ -43,7 +43,7 @@ export const ChakraRealty = () => {
                                     </ul>
                                 </div>
                                 <div className="w-full  pr-4 mb-8">
-                                    <p className="text-2xl">Deployed at <a className="underline" href="https://chakrarealty.in" target="_blank">chakrarealty.in</a></p>
+                                    <p className="text-2xl">Deployed at <a className="underline" href="https://chakrarealty.in" target="_blank" rel="noreferrer">chakrarealty.in</a></p>
                                 </div>
                             </div>
                         </div>

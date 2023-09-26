@@ -14,7 +14,7 @@ const Regcheck = () => {
           <h2 className="text-3xl my-5 text-white mx-1">Regcheck</h2>
           <section className="px-2">
             <p className="text-xl mt-4">
-              "Regcheck" is a revolutionary project that offers a comprehensive view of real estate regulations in metropolitan cities across India.
+              &quot;Regcheck&quot; is a revolutionary project that offers a comprehensive view of real estate regulations in metropolitan cities across India.
             </p>
             <p className="text-xl mt-4">
               The key features and achievements of this project include:

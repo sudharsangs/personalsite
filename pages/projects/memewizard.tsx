@@ -14,10 +14,10 @@ const MemeWizard = () => {
           <h2 className="text-3xl my-5 mx-1">Meme Wizard</h2>
           <section className="px-2">
             <p className="text-xl mt-4">
-              "Meme Wizard" is a fun and creative web application that allows users to create and share hilarious memes with ease. With a simple and intuitive interface, it's perfect for anyone looking to add some humor to their day.
+              &quot;Meme Wizard&quot; is a fun and creative web application that allows users to create and share hilarious memes with ease. With a simple and intuitive interface, it&apos;s perfect for anyone looking to add some humor to their day.
             </p>
             <p className="text-xl mt-4">
-              Key features of "Meme Wizard" include:
+              Key features of &quot;Meme Wizard&quot; include:
             </p>
             <ul className="list-disc list-inside text-lg mt-2 ml-4">
               <li>Easy meme creation: Select from a library of popular meme templates or upload your own images to create custom memes.</li>

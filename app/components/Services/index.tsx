@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Services = () => {
@@ -94,12 +95,12 @@ const Services = () => {
           >
             Schedule a Meeting
           </a>
-          <a
+          <Link
             href="/projects"
             className="text-white text-center bg-sky-500 hover:bg-sky-600 py-2 px-4 rounded-lg text-lg font-semibold transition duration-300 ease-in-out"
           >
             Explore My Work
-          </a>
+          </Link>
         </div>
       </div>
     </section>
