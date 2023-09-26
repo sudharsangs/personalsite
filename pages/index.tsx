@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-5xl sm:p-10">
+      <main className="max-w-6xl sm:p-10">
         <Header navContents={["projects", "resume", "links"]} />
         <section>
           <div className="flex items-center sm:flex-row flex-col">

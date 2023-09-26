@@ -6,6 +6,13 @@ export const Header = ({ navContents }: HeaderProps) => {
     <header>
       <nav className="flex items-center justify-between sm:m-0 mt-3 mx-2">
         <div className="flex gap-0.5 px-2">
+          {navContents.includes("home") ? (
+            <div className="flex gap-0.5">
+              <Link href="/" className="mx-1 sm:text-xl text-md text-sky-500">
+                Home
+              </Link>
+            </div>
+          ) : null}
           {navContents.includes("projects") ? (
             <Link
               href="/projects"
@@ -15,21 +22,14 @@ export const Header = ({ navContents }: HeaderProps) => {
             </Link>
           ) : null}
           {navContents.includes("resume") ? (
-            <a
+            <Link
               className="mx-1 sm:text-xl text-md text-sky-500 hover:text-sky-300"
-              href="https://drive.google.com/file/d/1qIjJA2fQbAxpj1Sc7mGH-GmRz2UH1W8Y/view?usp=share_link"
-              target="_blank" rel="noreferrer"
+              href="/resume"
             >
               Resume
-            </a>
+            </Link>
           ) : null}
-          {navContents.includes("home") ? (
-            <div className="flex gap-0.5">
-              <Link href="/" className="mx-1 sm:text-xl text-md text-sky-500">
-                Home
-              </Link>
-            </div>
-          ) : null}
+
         </div>
 
         {navContents.includes("links") ? (
@@ -40,7 +40,7 @@ export const Header = ({ navContents }: HeaderProps) => {
               rel="noreferrer"
             >
               <img
-                src="/github.svg"
+                src="/social/github.svg"
                 className="sm:h-10 h-8"
                 alt="github"
                 loading="lazy"
@@ -52,7 +52,7 @@ export const Header = ({ navContents }: HeaderProps) => {
               rel="noreferrer"
             >
               <img
-                src="/twitter.svg"
+                src="/social/twitter.svg"
                 className="sm:h-10 h-8"
                 alt="twitter"
                 loading="lazy"
@@ -64,7 +64,7 @@ export const Header = ({ navContents }: HeaderProps) => {
               rel="noreferrer"
             >
               <img
-                src="/linkedin.svg"
+                src="/social/linkedin.svg"
                 className="sm:h-10 h-8"
                 alt="linkedin"
                 loading="lazy"
@@ -76,7 +76,7 @@ export const Header = ({ navContents }: HeaderProps) => {
               rel="noreferrer"
             >
               <img
-                src="/calendly.svg"
+                src="/social/calendly.svg"
                 className="sm:h-9 h-7"
                 alt="calendly"
                 loading="lazy"

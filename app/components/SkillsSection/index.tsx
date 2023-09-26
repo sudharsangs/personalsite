@@ -28,7 +28,7 @@ const SkillsSection: React.FC = () => {
               <div
                 className="bg-slate-50 shadow-xl ring-1 ring-gray-900/5 rounded-md p-2 flex justify-center items-center w-16"
               >
-                <Image src={`/${skill?.toLowerCase()}.svg`} alt={skill} width={50} height={50} />
+                <Image src={`/skills/${skill?.toLowerCase()}.svg`} alt={skill} width={50} height={50} />
               </div>
               <p className='capitalize mt-1'>{skill}</p>
             </div>
