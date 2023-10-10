@@ -56,7 +56,6 @@ const Home: NextPage = () => {
           </div>
           <div className="flex justify-center w-full my-7"></div>
           <SkillsSection />
-          <Services />
           <Experiences />
           <GetInTouch />
         </section>
