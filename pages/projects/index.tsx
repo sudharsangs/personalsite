@@ -24,6 +24,20 @@ export const ProjectsPage = () => {
 
     const projectsArray = [
         {
+            projectTitle: "Form To Sheets",
+            projectDescription: "Seamlessly integrate Google Forms into websites with code snippets for multiple frameworks",
+            detailsPagePath: "/projects/formtosheets",
+            featuredSkills: (
+                <>
+                    <p className="sm:text-md text-s text-gray-300">
+                        <strong className="text-white">Featured Skills:</strong> NextJS, TailwindCSS, Typescript       </p>
+
+                </>
+            ),
+            imagePath: "/projects-assets/formtosheets.png",
+            projectType: personal,
+        },
+        {
             projectTitle: "Fubo Internal Tool",
             projectDescription: "Built an internal tool for visualization of AI-generated sports videos and clips, optimizing analysis and evaluation procedures",
             detailsPagePath: "/projects/fubo-internal-tool",
