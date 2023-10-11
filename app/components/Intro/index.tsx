@@ -4,7 +4,7 @@ import React from "react";
 export const Intro = () => {
   return (
     <div className="p-4 mt-4">
-      <h1 className="md:text-5xl text-4xl font-semibold leading-normal">Hey there, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Sudharsan</span></h1>
+      <h1 className="md:leading-tight md:text-5xl text-4xl font-semibold">Hey there, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Sudharsan</span></h1>
       <p className="mt-3 sm:text-lg text-md text-gray-300">Living in Bengaluru,India</p>
       <p className="mt-3 sm:text-lg text-md text-gray-300">
         Experienced Software engineer with 2+ years, specializing in user-centric features and passionate about web development.

@@ -7,7 +7,6 @@ import GetInTouch from "../app/components/GetInTouch";
 import { HashnodeBlogs } from "../app/components/HashnodeBlogs";
 import { Header } from "../app/components/Header";
 import { Intro } from "../app/components/Intro";
-import Services from "../app/components/Services";
 import SkillsSection from "../app/components/SkillsSection";
 
 const Home: NextPage = () => {
@@ -30,7 +29,7 @@ const Home: NextPage = () => {
         <meta property="og:url" content="https://sudharsangs.in" />
         <meta
           property="og:image"
-          content="https://sudharsangs.in/og-image.jpeg"
+          content="https://sudharsangs.in/og-image.png"
         />
         <meta
           property="og:description"
@@ -41,12 +40,12 @@ const Home: NextPage = () => {
       <main className="max-w-6xl sm:p-10">
         <Header navContents={["projects", "resume", "links"]} />
         <section>
-          <div className="flex items-center sm:flex-row flex-col">
+          <div className="flex items-center sm:flex-row gap-5 flex-col">
             <Intro />
-            <div className="flex justify-center p-5 w-full">
+            <div className="flex justify-center sm:justify-end w-full">
               <Image
                 src="/photo.jpeg"
-                className="h-44 w-44 rounded-full"
+                className="sm:h-48 md:h-56 sm:w-48 md:w-56 w-44 h-44 rounded-full"
                 alt="sudharsan"
                 loading="lazy"
                 width={500}
