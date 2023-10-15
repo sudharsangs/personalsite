@@ -29,7 +29,7 @@ export const Project = ({
           {projectType}
         </div>
 
-        <div className="sm:text-md text-s text-gray-300">{projectDescription}</div>
+        <div className="sm:text-md text-s text-gray-200">{projectDescription}</div>
         {featuredSkills}
       </div>
     </div>

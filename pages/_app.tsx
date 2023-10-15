@@ -4,11 +4,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-})
+const inter = Inter({ subsets: ['latin'], weight: ["300","400","500","600","700","800"] })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <>
@@ -21,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         gtag('config', 'G-SLSPM9Q29G');
       `}
     </Script>
-    <div className={`${inter.variable} bg-gray-800 text-gray-100`}>
+    <div className={`${inter.className} bg-gray-800 text-gray-100 font-inter`}>
       <Component {...pageProps} />
       <Analytics />
     </div>

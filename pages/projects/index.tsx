@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { Header } from "../../app/components/Header";
 import { Project } from "../../app/components/Project";
+import TechnologyList from "../../app/components/Project/TechnologyList";
 
 export const ProjectsPage = () => {
     const fullTime = <p className="bg-indigo-100 h-6 flex items-center justify-center text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">
@@ -21,19 +22,20 @@ export const ProjectsPage = () => {
             Personal
         </p>
 
+    const CompanyHyperLink = ({ name, url }: { name: string, url: string }) =>
+        <div className="text-md flex justify-end mt-4">
+            <a className="text-white text-center bg-blue-500 hover:bg-blue-600 rounded-sm px-3 text-md transition duration-300 ease-in-out" href={url} onClick={(e) => e.stopPropagation()} target="_blank" rel="noreferrer">
+                {name}
+            </a>
+        </div>
+
 
     const projectsArray = [
         {
             projectTitle: "Form To Sheets",
             projectDescription: "Seamlessly integrate Google Forms into websites with code snippets for multiple frameworks",
             detailsPagePath: "/projects/formtosheets",
-            featuredSkills: (
-                <>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Featured Skills:</strong> NextJS, TailwindCSS, Typescript       </p>
-
-                </>
-            ),
+            featuredSkills: <TechnologyList technologies={["NextJS", "TailwindCSS", "Typescript"]} />,
             imagePath: "/projects-assets/formtosheets.png",
             projectType: personal,
         },
@@ -43,15 +45,8 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/fubo-internal-tool",
             featuredSkills: (
                 <>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Featured Skills:</strong> React, Emotion, VideoJS, Vite       </p>
-                    <p className="text-md">
-                        <strong className="text-white">Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://fubo.tv/" target="_blank" rel="noreferrer">
-                            Fubo
-                        </a>
-                    </p>
-
+                    <TechnologyList technologies={["React", "Emotion", "VideoJS", "Vite"]} />
+                    <CompanyHyperLink name="Fubo" url="https://fubo.tv" />
                 </>
             ),
             imagePath: "/projects-assets/internal-tool/1.jpeg",
@@ -63,15 +58,8 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/instant-highlights",
             featuredSkills: (
                 <>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Featured Skills:</strong> React, Emotion, Bitmovin Player, Vitest, RxJS  </p>
-                    <p className="text-md">
-                        <strong className="text-white">Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://fubo.tv/" target="_blank" rel="noreferrer">
-                            Fubo
-                        </a>
-                    </p>
-
+                    <TechnologyList technologies={["React", "Emotion", "Bitmovin Player", "Vitest", "RxJS"]} />
+                    <CompanyHyperLink name="Fubo" url="https://fubo.tv" />
                 </>
             ),
             projectType: fullTime,
@@ -81,13 +69,7 @@ export const ProjectsPage = () => {
             projectDescription: "A simple browser extension to search products from amazon.in from any webpage. Top amazon.in results for selected text in the webpage are shown in the popup.",
             detailsPagePath: "/projects/tapx",
             imagePath: "/projects-assets/tapx.png",
-            featuredSkills: (
-                <>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Featured Skills:</strong> Svelte, Go
-                    </p>
-                </>
-            ),
+            featuredSkills: <TechnologyList technologies={["Svelte", "Go"]} />,
             projectType: personal,
         },
         {
@@ -95,13 +77,7 @@ export const ProjectsPage = () => {
             projectDescription: "Built a real estate site to show properties, blogs and users to do due diligence on the properties they want to buy",
             detailsPagePath: "/projects/chakra-realty",
             imagePath: "/projects-assets/chakrarealty.jpeg",
-            featuredSkills: (
-                <>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Featured Skills:</strong> React, Next JS, Tailwind CSS, Python, Scrapy
-                    </p>
-                </>
-            ),
+            featuredSkills: <TechnologyList technologies={["React", "Next JS", "Tailwind CSS", "Python", "Scrapy"]} />,
             projectType: freelance,
         },
         {
@@ -111,15 +87,8 @@ export const ProjectsPage = () => {
             imagePath: "/projects-assets/winuall-apps/1.png",
             featuredSkills: (
                 <>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Featured Skills:</strong> React, Styled Components, Micro Frontend Architecture
-                    </p>
-                    <p className="sm:text-md text-s text-gray-300">
-                        <strong className="text-white">Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://winuall.com" target="_blank" rel="noreferrer">
-                            Winuall
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "Styled Components", "Micro Frontend Architecture"]} />
+                    <CompanyHyperLink name="Winuall" url="https://winuall.com" />
                 </>
             ),
             projectType: fullTime,
@@ -130,15 +99,8 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/winuall-online-store",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, Styled Components, Payment Gateways
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://winuall.com" target="_blank" rel="noreferrer">
-                            Winuall
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "Styled Components", "Payment Gateways"]}/>
+                    <CompanyHyperLink name="Winuall" url="https://winuall.com" />
                 </>
             ),
             projectType: fullTime,
@@ -150,15 +112,9 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/winuall-learners-module",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, Styled Components, Redux
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://winuall.com" target="_blank" rel="noreferrer">
-                            Winuall
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "Styled Components", "Redux"]}/>
+                    <CompanyHyperLink name="Winuall" url="https://winuall.com" />
+
                 </>
             ),
             projectType: fullTime,
@@ -170,15 +126,9 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/user-registration-flow",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, NextJS, Styled Components, Context API
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://winuall.com" target="_blank" rel="noreferrer">
-                            Winuall
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "NextJS", "Styled Components", "Context API"]}/>
+                    <CompanyHyperLink name="Winuall" url="https://winuall.com" />
+
                 </>
             ),
             projectType: fullTime,
@@ -190,15 +140,9 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/winuall-parents-module",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, NextJS, Styled Components, Context API
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://winuall.com" target="_blank" rel="noreferrer">
-                            Winuall
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "Styled Components", "Redux"]}/>
+                    <CompanyHyperLink name="Winuall" url="https://winuall.com" />
+
                 </>
             ),
             projectType: fullTime,
@@ -209,15 +153,8 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/regcheck",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, GatsbyJS, GraphQL
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://tealindia.in" target="_blank" rel="noreferrer">
-                            Terra Economics and Analytics Labs
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "GatsbyJS", "GraphQL"]} />
+                    <CompanyHyperLink name="Terra Economics and Analytics Labs" url="https://tealindia.in" />
                 </>
             ),
             projectType: (
@@ -231,15 +168,8 @@ export const ProjectsPage = () => {
             hideAnchor: true,
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, Redux, Material UI
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://printrove.com/" target="_blank" rel="noreferrer">
-                            Printrove
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "Redux", "Material UI"]} />
+                    <CompanyHyperLink name="Printrove" url="https://printrove.com/" />
                 </>
             ),
             projectType: (
@@ -252,15 +182,8 @@ export const ProjectsPage = () => {
             hideAnchor: true,
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React, Redux, Material UI
-                    </p>
-                    <p className="text-md">
-                        <strong>Company:</strong>
-                        <a className="ml-2 text-sky-400" href="https://printrove.com/" target="_blank" rel="noreferrer">
-                            Printrove
-                        </a>
-                    </p>
+                    <TechnologyList technologies={["React", "Redux", "Material UI"]} />
+                    <CompanyHyperLink name="Printrove" url="https://printrove.com/" />
                 </>
             ),
             projectType: (
@@ -272,9 +195,7 @@ export const ProjectsPage = () => {
             projectDescription: "Built a landing page and contributed to the main user dashboard for generating quiz from a set of questions in a spreadsheet",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> HTML, CSS, React, Redux
-                    </p>
+                    <TechnologyList technologies={["HTML", "CSS", "React", "Redux"]} />
                 </>
             ),
             hideAnchor: true,
@@ -286,9 +207,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/a-for-atom",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> HTML, CSS
-                    </p>
+                    <TechnologyList technologies={["HTML", "CSS"]} />
                 </>
             ),
             projectType: freelance,
@@ -300,9 +219,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/memewizard",
             featuredSkills: (
                 <>
-                    <p className="text-md">
-                        <strong>Featured Skills:</strong> React
-                    </p>
+                    <TechnologyList technologies={["React"]} />
                 </>
             ),
             projectType: personal,
@@ -316,7 +233,10 @@ export const ProjectsPage = () => {
             </Head>
             <main className="max-w-6xl sm:p-10 p-4">
                 <Header navContents={["home", "links", "resume"]} />
-                <h2 className="sm:text-3xl text-xl my-5 mx-3">Projects</h2>
+                <div className="flex flex-col items-center justify-center p-7">
+                    <h1 className="md:leading-tight md:text-5xl text-4xl font-semibold">My <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Projects</span></h1>
+                    <p className="mt-3 sm:text-lg text-md text-gray-300">All the projects I have built</p>
+                </div>
                 <section className="flex flex-wrap gap-2 p-2">
                     {projectsArray.map((project, index) => (
                         <Project

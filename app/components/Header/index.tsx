@@ -5,10 +5,10 @@ export const Header = ({ navContents }: HeaderProps) => {
   return (
     <header>
       <nav className="flex items-center justify-between sm:m-0 mt-3 mx-2">
-        <div className="flex gap-0.5 px-2">
+        <div className="flex gap-0.5 bg-gray-700 shadow-xl ring-1 ring-gray-900/5  px-4 py-1 rounded-full">
           {navContents.includes("home") ? (
             <div className="flex gap-0.5">
-              <Link href="/" className="mx-1 sm:text-xl text-md text-sky-500">
+              <Link href="/" className="mx-1 sm:text-xl text-md text-gray-100 hover:text-sky-200">
                 Home
               </Link>
             </div>
@@ -16,14 +16,14 @@ export const Header = ({ navContents }: HeaderProps) => {
           {navContents.includes("projects") ? (
             <Link
               href="/projects"
-              className="mx-1 sm:text-xl text-md text-sky-500 hover:text-sky-300"
+              className="mx-1 sm:text-xl text-md text-gray-100 hover:text-sky-200"
             >
               Projects
             </Link>
           ) : null}
           {navContents.includes("resume") ? (
             <Link
-              className="mx-1 sm:text-xl text-md text-sky-500 hover:text-sky-300"
+              className="mx-1 sm:text-xl text-md text-gray-100 hover:text-sky-200"
               href="/resume"
             >
               Resume

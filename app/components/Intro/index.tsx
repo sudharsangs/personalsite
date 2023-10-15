@@ -7,7 +7,7 @@ export const Intro = () => {
       <h1 className="md:leading-tight md:text-5xl text-4xl font-semibold">Hey there, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">Sudharsan</span></h1>
       <p className="mt-3 sm:text-lg text-md text-gray-300">Living in Bengaluru,India</p>
       <p className="mt-3 sm:text-lg text-md text-gray-300">
-        Experienced Software engineer with 2+ years, specializing in user-centric features and passionate about web development.
+        Experienced Software engineer with 3+ years, specializing in user-centric features and passionate about web development.
       </p>
       <div className="mt-8 flex items-center justify-start w-full gap-4">
         <a

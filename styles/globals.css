@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes skillsMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+        
+    }
+}
+
+
+.skills-animation {
+    animation: skillsMarquee 30s linear infinite;
+}
+
+.mask-image {
+    mask-image: linear-gradient(0deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+.background-dots { 
+    background-image: radial-gradient(rgba(63, 63, 70, .8) 10%, transparent 0);
+    background-size: 8px 8px;
+}
