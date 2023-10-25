@@ -9,20 +9,29 @@ export const Project = ({
   featuredSkills,
   projectType,
   hideAnchor,
-  imagePath 
+  imagePath
 }: ProjectProps) => {
   const router = useRouter();
   return (
     <div
-      className={`${
-        hideAnchor ? "" : "cursor-pointer "
-      }relative bg-gray-700  shadow-xl ring-1 ring-gray-900/5 rounded-lg sm:w-[32%] w-full overflow-hidden`}
+      className={`${hideAnchor ? "" : "cursor-pointer "
+        }relative bg-gray-700  shadow-xl ring-1 ring-gray-900/5 rounded-lg sm:w-[32%] w-full overflow-hidden`}
       onClick={() => (detailsPagePath ? router.push(detailsPagePath) : "")}
     >
-      <div className={`flex justify-center items-center w-full bg-center	 bg-cover mb-4 h-60 ${!imagePath ? "bg-gray-300" : ""  }`} style={{
-        backgroundImage: `url(${imagePath})`
-      }}>
-      </div>
+      {imagePath ?
+        <div
+          className="flex justify-center items-center w-full bg-center	bg-cover mb-4 h-60 bg-gray-300 overflow-hidden relative">
+          <Image alt=""
+            className="absolute"
+            src={imagePath}
+            width={400}
+            height={400}
+          />
+        </div>
+        :
+        <div
+          className="flex justify-center items-center w-full bg-center	bg-cover mb-4 h-60 bg-gray-300" />
+      }
       <div className="ml-2 flex flex-col px-6 py-2 mb-2">
         <div className="flex justify-between">
           <h3 className="sm:text-2xl text-xl text-gray-100 w-3/5 overflow-hidden text-ellipsis">{projectTitle}</h3>
