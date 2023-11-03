@@ -40,9 +40,9 @@ export const ProjectsPage = () => {
             projectType: personal,
         },
         {
-            projectTitle: "Fubo Internal Tool",
+            projectTitle: "Fubo Visualization Platform",
             projectDescription: "Built an internal tool for visualization of AI-generated sports videos and clips, optimizing analysis and evaluation procedures",
-            detailsPagePath: "/projects/fubo-internal-tool",
+            detailsPagePath: "/projects/fubo-visualization-platform",
             featuredSkills: (
                 <>
                     <TechnologyList technologies={["React", "Emotion", "VideoJS", "Vite"]} />

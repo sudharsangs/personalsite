@@ -6,19 +6,19 @@ export const FuboInternalTool = () => {
     return (
         <div className="w-full  flex items-center flex-col h-full min-h-screen">
             <Head>
-                <title>Fubo Internal Tool</title>
+                <title>Fubo Visualization Platform</title>
             </Head>
             <main className="max-w-6xl sm:p-10">
                 <Header navContents={["projects"]} />
                 <div className="px-2">
-                    <h2 className="text-3xl font-semibold my-5 mx-1">Fubo Internal Tool</h2>
+                    <h2 className="text-3xl font-semibold my-5 mx-1">Fubo Visualization Platform</h2>
                     <section className="px-2">
                         <h3 className="text-2xl font-semibold mb-4">
-                            Internal Tool for AI-Generated Sports Videos Visualization
+                            Visualization Platform for AI-Generated Sports Videos
                         </h3>
 
                         <p className="text-gray-100 mb-4">
-                            I built an internal tool that revolutionizes the way we analyze and evaluate AI-generated sports videos and clips. This tool leverages the power of ReactJS, VideoJS, Emotion, and Firebase to streamline our processes and enhance our insights.
+                            I built visualization platform that revolutionizes the way we analyze and evaluate AI-generated sports videos and clips. This tool leverages the power of ReactJS, VideoJS, Emotion, and Firebase to streamline our processes and enhance our insights.
                         </p>
 
                         <h2 className="text-xl font-semibold mb-2">Key Features:</h2>
