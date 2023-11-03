@@ -41,7 +41,7 @@ export const ProjectsPage = () => {
         },
         {
             projectTitle: "Fubo Visualization Platform",
-            projectDescription: "Built an internal tool for visualization of AI-generated sports videos and clips, optimizing analysis and evaluation procedures",
+            projectDescription: "Built a visualization platform of AI-generated sports videos and clips, optimizing analysis and evaluation procedures",
             detailsPagePath: "/projects/fubo-visualization-platform",
             featuredSkills: (
                 <>
