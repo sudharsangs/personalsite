@@ -1,33 +1,11 @@
 import Head from "next/head";
 import React from "react";
 import { Header } from "../../app/components/Header";
-import { Project } from "../../app/components/Project";
+import { CompanyHyperLink, Freelance, FullTime, Personal, Project, internship } from "../../app/components/Project";
 import TechnologyList from "../../app/components/Project/TechnologyList";
 
 export const ProjectsPage = () => {
-    const fullTime = <p className="bg-indigo-100 h-6 flex items-center justify-center text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-        Full Time
-    </p>
-
-    const freelance = <p className="bg-teal-400 h-6 flex items-center text-cyan-900 text-xs font-semibold px-2.5 py-0.5 rounded">
-        Freelance
-    </p>
-
-    const internship = <p className="bg-gray-100 h-6 flex items-center text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-        Internship
-    </p>
-
-    const personal =
-        <p className="bg-blue-200 h-6 flex items-center justify-center text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-            Personal
-        </p>
-
-    const CompanyHyperLink = ({ name, url }: { name: string, url: string }) =>
-        <div className="text-md flex justify-end mt-4">
-            <a className="text-white text-center bg-blue-500 hover:bg-blue-600 rounded-sm px-3 text-md transition duration-300 ease-in-out" href={url} onClick={(e) => e.stopPropagation()} target="_blank" rel="noreferrer">
-                {name}
-            </a>
-        </div>
+    
 
 
     const projectsArray = [
@@ -37,7 +15,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/formtosheets",
             featuredSkills: <TechnologyList technologies={["NextJS", "TailwindCSS", "Typescript"]} />,
             imagePath: "/projects-assets/formtosheets.png",
-            projectType: personal,
+            projectType: Personal,
         },
         {
             projectTitle: "Fubo Visualization Platform",
@@ -50,7 +28,7 @@ export const ProjectsPage = () => {
                 </>
             ),
             imagePath: "/projects-assets/internal-tool/1.jpeg",
-            projectType: fullTime,
+            projectType: FullTime,
         },
         {
             projectTitle: "Instant Highlights",
@@ -62,7 +40,7 @@ export const ProjectsPage = () => {
                     <CompanyHyperLink name="Fubo" url="https://fubo.tv" />
                 </>
             ),
-            projectType: fullTime,
+            projectType: FullTime,
         },
         {
             projectTitle: "Tapx",
@@ -70,7 +48,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/tapx",
             imagePath: "/projects-assets/tapx.png",
             featuredSkills: <TechnologyList technologies={["Svelte", "Go"]} />,
-            projectType: personal,
+            projectType: Personal,
         },
         {
             projectTitle: "Chakra Realty",
@@ -78,7 +56,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/chakra-realty",
             imagePath: "/projects-assets/chakrarealty.jpeg",
             featuredSkills: <TechnologyList technologies={["React", "Next JS", "Tailwind CSS", "Python", "Scrapy"]} />,
-            projectType: freelance,
+            projectType: Freelance,
         },
         {
             projectTitle: "Winuall Apps",
@@ -91,7 +69,7 @@ export const ProjectsPage = () => {
                     <CompanyHyperLink name="Winuall" url="https://winuall.com" />
                 </>
             ),
-            projectType: fullTime,
+            projectType: FullTime,
         },
         {
             projectTitle: "Online Store",
@@ -103,7 +81,7 @@ export const ProjectsPage = () => {
                     <CompanyHyperLink name="Winuall" url="https://winuall.com" />
                 </>
             ),
-            projectType: fullTime,
+            projectType: FullTime,
             imagePath: "/projects-assets/online-store/1.png",
         },
         {
@@ -117,7 +95,7 @@ export const ProjectsPage = () => {
 
                 </>
             ),
-            projectType: fullTime,
+            projectType: FullTime,
             imagePath: "/projects-assets/learners-module/2.png",
         },
         {
@@ -131,7 +109,7 @@ export const ProjectsPage = () => {
 
                 </>
             ),
-            projectType: fullTime,
+            projectType: FullTime,
             imagePath: "/projects-assets/user-reg-flow/1.png",
         },
         {
@@ -145,7 +123,7 @@ export const ProjectsPage = () => {
 
                 </>
             ),
-            projectType: fullTime,
+            projectType: FullTime,
         },
         {
             projectTitle: "Regcheck - Gatsby Site",
@@ -199,7 +177,7 @@ export const ProjectsPage = () => {
                 </>
             ),
             hideAnchor: true,
-            projectType: freelance,
+            projectType: Freelance,
         },
         {
             projectTitle: "A For Atom",
@@ -210,7 +188,7 @@ export const ProjectsPage = () => {
                     <TechnologyList technologies={["HTML", "CSS"]} />
                 </>
             ),
-            projectType: freelance,
+            projectType: Freelance,
             imagePath: "/projects-assets/aforatom.png",
         },
         {
@@ -222,7 +200,7 @@ export const ProjectsPage = () => {
                     <TechnologyList technologies={["React"]} />
                 </>
             ),
-            projectType: personal,
+            projectType: Personal,
         },
     ];
 

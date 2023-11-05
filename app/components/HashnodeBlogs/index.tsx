@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { fetchHashnodeArticles } from "../../api";
+import Link from "next/link";
 
-export const HashnodeBlogs = () => {
+type Props = {
+  count?: number
+}
+
+export const HashnodeBlogs = ({ count }: Props) => {
   const [blogs, setBlogs] = useState<BlogType[]>([]);
   const getHashnodeArticles = async () => {
     const response = await fetchHashnodeArticles();
     if (response.success) {
-      setBlogs(response?.response?.data?.user?.publication?.posts);
+      console.log(response)
+      setBlogs(response?.response.data.user.publications.edges[0].node.posts.edges);
     } else {
       setBlogs([]);
     }
@@ -16,22 +22,22 @@ export const HashnodeBlogs = () => {
     getHashnodeArticles();
   }, []);
   return (
-    <div className="p-4">
-      <h2 className="text-2xl mt-10">Articles</h2>
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
-        {blogs?.map((res) => (
-          <a
-            href={`https://sudharsan.hashnode.dev/${res.slug}`}
-            target="_blank" rel="noreferrer" key={res.slug}
+    <div>
+      <div className="flex flex-col gap-4">
+        {blogs.slice(0, count)?.map((res) => (
+          <Link
+            href={`https://sudharsan.hashnode.dev/${res.node.slug}`}
+            rel="noreferrer" key={res.node.slug}
+            target="_blank"
           >
-            <div className="bg-white max-w-sm text-clip h-full  px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-lg mt-6 rounded overflow-hidden">
-              <img className="w-full" src={res.coverImage} alt={res.title} />
-              <div className="mt-6">
-                <div className="font-bold text-xl mb-2">{res.title}</div>
-                <p className="text-gray-700 text-base">{res.brief}</p>
+            <div className="bg-gray-700 gap-3 sm:flex-row flex-col flex shadow-md ring-1 ring-white/5 sm:rounded-lg overflow-hidden">
+              <img className="sm:w-96 w-full" src={res?.node.coverImage?.url} alt={res.node.title} />
+              <div className="mt-6 p-3">
+                <div className="font-bold text-xl mb-2">{res.node.title}</div>
+                <p className="text-base">{res.node.brief}</p>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
@@ -39,8 +45,12 @@ export const HashnodeBlogs = () => {
 };
 
 interface BlogType {
-  slug: string;
-  title: string;
-  brief: string;
-  coverImage: string;
+  node: {
+    slug: string;
+    title: string;
+    brief: string;
+    coverImage: {
+      url: string
+    }
+  }
 }

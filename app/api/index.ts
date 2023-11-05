@@ -35,22 +35,32 @@ export const api = (
 };
 
 export const fetchHashnodeArticles = async () => {
-const query = `
-    {
-      user(username: "sudharsan") {
-        publication {
-          posts{
-            slug
-            title
-            brief
-            coverImage
+  const query = `
+  {
+    user(username: "sudharsan") {
+      publications(first: 10) {
+        edges {
+          node {
+            posts(first: 20) {
+              edges {
+                node {
+                  slug
+                  title
+                  brief
+                  coverImage {
+                    url
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
+  }
   `;
 
-  return api("", { query }, "https://api.hashnode.com", "POST")
+  return api("", { query }, "https://gql.hashnode.com", "POST")
     .then((res) => {
       return {
         success: true,
@@ -65,3 +75,33 @@ const query = `
       };
     });
 };
+
+export const fetchPostFromSlug = async (slug: string) => {
+  const query = `{
+    publication(host:"sudharsan.hashnode.dev") {
+      post(slug:"${slug}"){
+        title,
+        content{
+          markdown
+          html
+        },
+        brief
+      }
+    }
+  }`;
+
+return api("", { query }, "https://gql.hashnode.com", "POST")
+  .then((res) => {
+    return {
+      success: true,
+      response: res,
+    };
+  })
+  .catch((err) => {
+    console.log(err);
+    return {
+      success: false,
+      response: JSON.parse(err.message),
+    };
+  });
+}
