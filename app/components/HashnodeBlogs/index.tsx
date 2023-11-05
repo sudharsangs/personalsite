@@ -26,7 +26,7 @@ export const HashnodeBlogs = ({ count }: Props) => {
       <div className="flex flex-col gap-4">
         {blogs.slice(0, count)?.map((res) => (
           <Link
-            href={`https://sudharsan.hashnode.dev/${res.node.slug}`}
+            href={`https://blog.sudharsangs.in/${res.node.slug}`}
             rel="noreferrer" key={res.node.slug}
             target="_blank"
           >

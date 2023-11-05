@@ -78,7 +78,7 @@ export const fetchHashnodeArticles = async () => {
 
 export const fetchPostFromSlug = async (slug: string) => {
   const query = `{
-    publication(host:"sudharsan.hashnode.dev") {
+    publication(host:"blog.sudharsangs.in") {
       post(slug:"${slug}"){
         title,
         content{
