@@ -26,8 +26,9 @@ export const HashnodeBlogs = ({ count }: Props) => {
       <div className="flex flex-col gap-4">
         {blogs.slice(0, count)?.map((res) => (
           <Link
-            href={`/blogs/${res.node.slug}`}
+            href={`https://sudharsan.hashnode.dev/${res.node.slug}`}
             rel="noreferrer" key={res.node.slug}
+            target="_blank"
           >
             <div className="bg-gray-700 gap-3 sm:flex-row flex-col flex shadow-md ring-1 ring-white/5 sm:rounded-lg overflow-hidden">
               <img className="sm:w-96 w-full" src={res?.node.coverImage?.url} alt={res.node.title} />
