@@ -123,6 +123,7 @@ const Home: NextPage = () => {
                   projectType={project.projectType}
                   imagePath={project.imagePath}
                   detailsPagePath={project.detailsPagePath}
+                  isLanding
                 />
               ))}
             </div>

@@ -33,13 +33,14 @@ export const Project = ({
   featuredSkills,
   projectType,
   hideAnchor,
-  imagePath
+  imagePath,
+  isLanding
 }: ProjectProps) => {
   const router = useRouter();
   return (
     <div
       className={`${hideAnchor ? "" : "cursor-pointer "
-        }relative bg-gray-700  shadow-xl ring-1 ring-gray-900/5 rounded-lg sm:w-[32%] w-full overflow-hidden`}
+        }relative bg-gray-700  shadow-xl ring-1 ring-gray-900/5 rounded-lg sm:w-[32%] w-full overflow-hidden ${isLanding ? "sm:rounded-lg rounded-none" : ""}`}
       onClick={() => (detailsPagePath ? router.push(detailsPagePath) : "")}
     >
       {imagePath ?
@@ -77,4 +78,5 @@ interface ProjectProps {
   projectType: ReactNode;
   hideAnchor?: boolean;
   imagePath?: string
+  isLanding?: boolean
 }
