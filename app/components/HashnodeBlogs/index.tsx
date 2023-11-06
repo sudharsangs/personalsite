@@ -30,7 +30,7 @@ export const HashnodeBlogs = ({ count }: Props) => {
             rel="noreferrer" key={res.node.slug}
             target="_blank"
           >
-            <div className="bg-gray-700 gap-3 sm:flex-row flex-col flex shadow-md ring-1 ring-white/5 sm:rounded-lg overflow-hidden">
+            <div className="bg-slate-800 gap-3 sm:flex-row flex-col flex shadow-md ring-1 ring-white/5 sm:rounded-lg overflow-hidden">
               <img className="sm:w-96 w-full" src={res?.node.coverImage?.url} alt={res.node.title} />
               <div className="mt-6 p-3">
                 <div className="font-bold text-xl mb-2">{res.node.title}</div>

@@ -5,7 +5,7 @@ export const Header = ({ navContents }: HeaderProps) => {
   return (
     <header>
       <nav className="flex items-center justify-between sm:m-0 mt-3 mx-2">
-        <div className="flex gap-0.5 bg-gray-700 shadow-xl ring-1 ring-gray-900/5  px-4 py-1 rounded-full">
+        <div className="flex gap-0.5 bg-slate-800 shadow-xl ring-1 ring-gray-900/5  px-4 py-1 rounded-full">
           {navContents.includes("home") ? (
             <div className="flex gap-0.5">
               <Link href="/" className="mx-1 sm:text-xl text-md text-gray-100 hover:text-sky-200">

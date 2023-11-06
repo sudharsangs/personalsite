@@ -3,7 +3,7 @@ import { Experience } from "./Experience";
 
 export const Experiences = () => {
   return (
-    <div className="relative bg-gray-700 px-6 pt-10 pb-8 shadow-md ring-1 ring-white/5 sm:rounded-lg mt-6">
+    <div className="relative bg-slate-800 px-6 pt-10 pb-8 shadow-md ring-1 ring-white/5 sm:rounded-lg mt-6">
         <h2 className="text-2xl flex items-center">
           Experience{" "}
           <span className="ml-4 bg-sky-400 text-white text-xs font-semibold px-2.5 py-0.5 rounded">

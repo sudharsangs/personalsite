@@ -40,12 +40,12 @@ export const Project = ({
   return (
     <div
       className={`${hideAnchor ? "" : "cursor-pointer "
-        }relative bg-gray-700  shadow-xl ring-1 ring-gray-900/5 rounded-lg sm:w-[32%] w-full overflow-hidden ${isLanding ? "sm:rounded-lg rounded-none" : ""}`}
+        }relative bg-slate-800  shadow-xl ring-1 ring-gray-900/5 rounded-lg sm:w-[32%] w-full overflow-hidden ${isLanding ? "sm:rounded-lg rounded-none" : ""}`}
       onClick={() => (detailsPagePath ? router.push(detailsPagePath) : "")}
     >
       {imagePath ?
         <div
-          className="flex justify-center items-center w-full bg-center	bg-cover mb-4 h-60 bg-gray-700 overflow-hidden relative">
+          className="flex justify-center items-center w-full bg-center	bg-cover mb-4 h-60 bg-slate-800 overflow-hidden relative">
           <Image alt=""
             className="absolute"
             src={imagePath}

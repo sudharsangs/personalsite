@@ -3,7 +3,7 @@ import React from 'react';
 
 const GetInTouch = () => {
     return (
-        <section className="bg-gray-700 shadow-xl ring-1 px-6 pt-10 pb-8  ring-white/5 sm:rounded-lg mt-6" id="get-in-touch">
+        <section className="bg-slate-800 shadow-xl ring-1 px-6 pt-10 pb-8  ring-white/5 sm:rounded-lg mt-6" id="get-in-touch">
             <div className='flex flex-col sm:flex-row items-start justify-center w-full'>
                 <div className='flex flex-col'>
                     <h2 className="md:text-4xl text-3xl font-semibold leading-normal">Let&apos;s get <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">in touch</span></h2>

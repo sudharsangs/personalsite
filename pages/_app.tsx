@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         gtag('config', 'G-SLSPM9Q29G');
       `}
     </Script>
-    <div className={`${inter.className} bg-gray-800 text-gray-100 font-inter`}>
+    <div className={`${inter.className} bg-slate-900 text-gray-100 font-inter`}>
       <Component {...pageProps} />
       <Analytics />
     </div>
