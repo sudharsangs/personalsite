@@ -5,7 +5,7 @@ import { CompanyHyperLink, Freelance, FullTime, Personal, Project, internship } 
 import TechnologyList from "../../app/components/Project/TechnologyList";
 
 export const ProjectsPage = () => {
-    
+
 
 
     const projectsArray = [
@@ -16,6 +16,18 @@ export const ProjectsPage = () => {
             featuredSkills: <TechnologyList technologies={["NextJS", "TailwindCSS", "Typescript"]} />,
             imagePath: "/projects-assets/formtosheets.png",
             projectType: Personal,
+        },
+        {
+            projectTitle: "Amundsen Customisation",
+            projectDescription: "Helped Talabat's Data Engineering Team to modify Amundsen and improve user experience and customise dashboard.",
+            projectType: Freelance,
+            imagePath: "/projects-assets/amundsen.png",
+            featuredSkills: (
+                <>
+                    <TechnologyList technologies={["React", "Typescript", "Python", "Flask", "Docker"]} />
+                    <CompanyHyperLink name="Talabat" url="https://www.talabat.com/" />
+                </>
+            ),
         },
         {
             projectTitle: "Fubo Visualization Platform",
@@ -77,7 +89,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/winuall-online-store",
             featuredSkills: (
                 <>
-                    <TechnologyList technologies={["React", "Styled Components", "Payment Gateways"]}/>
+                    <TechnologyList technologies={["React", "Styled Components", "Payment Gateways"]} />
                     <CompanyHyperLink name="Winuall" url="https://winuall.com" />
                 </>
             ),
@@ -90,7 +102,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/winuall-learners-module",
             featuredSkills: (
                 <>
-                    <TechnologyList technologies={["React", "Styled Components", "Redux"]}/>
+                    <TechnologyList technologies={["React", "Styled Components", "Redux"]} />
                     <CompanyHyperLink name="Winuall" url="https://winuall.com" />
 
                 </>
@@ -104,7 +116,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/user-registration-flow",
             featuredSkills: (
                 <>
-                    <TechnologyList technologies={["React", "NextJS", "Styled Components", "Context API"]}/>
+                    <TechnologyList technologies={["React", "NextJS", "Styled Components", "Context API"]} />
                     <CompanyHyperLink name="Winuall" url="https://winuall.com" />
 
                 </>
@@ -118,7 +130,7 @@ export const ProjectsPage = () => {
             detailsPagePath: "/projects/winuall-parents-module",
             featuredSkills: (
                 <>
-                    <TechnologyList technologies={["React", "Styled Components", "Redux"]}/>
+                    <TechnologyList technologies={["React", "Styled Components", "Redux"]} />
                     <CompanyHyperLink name="Winuall" url="https://winuall.com" />
 
                 </>
