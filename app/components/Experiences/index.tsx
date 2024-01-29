@@ -44,7 +44,7 @@ export const Experiences = () => {
           }
           companyWebsite={"https://winuall.com"}
           employmentPeriod={"Dec 2020 - Oct 2022 (1 Year 10 Months)"}
-          title={"SDE 1 - Frontend"}
+          title={"SDE 1"}
           location={"Bengaluru"}
           employmentType={"Full Time"}
         >
