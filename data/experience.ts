@@ -46,7 +46,7 @@ export const experiences: Experience[] = [
     id: "teal",
     title: "Frontend Developer - Intern",
     company: "Terra Economics and Analytics Lab",
-    companyLogo: "/teal.svg",
+    companyLogo: "/teal.ico",
     companyUrl: "https://www.tealindia.in/",
     location: "Bengaluru",
     type: "Internship",

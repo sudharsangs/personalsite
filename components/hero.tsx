@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
                         className="text-3xl md:text-5xl font-bold tracking-tight flex items-center gap-3"
                         variants={itemVariants}
                     >
-                        Hey, I'm <span className='text-indigo-500'>Sudharsan</span>
+                        Hey, I'm <span className='text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-red-800'>Sudharsan</span>
                         <motion.span
                             animate={{
                                 rotate: [0, 20, -20, 0],

@@ -40,7 +40,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                             <div className="flex justify-between items-start gap-4">
                                 <div>
                                     <h3 className="text-xl font-bold text-primary">{experience.title}</h3>
-                                    <p className="text-muted-foreground font-medium">{experience.company}</p>
+                                    <a target='_blank' href={experience.companyUrl} className="font-medium text-green-300">{experience.company}</a>
                                 </div>
                                 <Badge variant={experience.type === "Full Time" ? "default" : "secondary"}>
                                     {experience.type}
