@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
+import { fonts } from '@/lib/constants';
 
 const Hero: React.FC = () => {
     const socialLinks = [
@@ -47,7 +48,7 @@ const Hero: React.FC = () => {
     };
 
     return (
-        <section className="flex items-center justify-center text-white pt-16">
+        <section className="flex items-center justify-center pt-16">
             <div className="w-full px-6 grid md:grid-cols-2 gap-12 items-center">
                 <motion.div
                     className="space-y-6"
@@ -56,33 +57,22 @@ const Hero: React.FC = () => {
                     animate="visible"
                 >
                     <motion.h1
-                        className="text-3xl md:text-5xl font-bold tracking-tight flex items-center gap-3"
+                        className="text-3xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-800 flex items-center gap-3"
                         variants={itemVariants}
+                        style={{ fontFamily: fonts.SpaceGrotesk }}
                     >
-                        Hey, I'm <span className='text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-red-800'>Sudharsan</span>
-                        <motion.span
-                            animate={{
-                                rotate: [0, 20, -20, 0],
-                                transition: {
-                                    repeat: 5,
-                                    duration: 1.5,
-                                }
-                            }}
-                            className="inline-block origin-bottom-right"
-                        >
-                            👋
-                        </motion.span>
+                        Sudharsan GS
                     </motion.h1>
 
                     <motion.h2
-                        className="text-2xl text-blue-300 mb-4 flex"
+                        className="text-2xl text-amber-400 mb-4 flex"
                         variants={itemVariants}
                     >
                         Software Engineer at <span className='ml-2 flex'><Image src="/fubo.svg" alt="fubo" width={24} height={24} /></span>
                     </motion.h2>
 
                     <motion.h3
-                        className="text-xl text-green-300 mb-4"
+                        className="text-xl text-cyan-300 mb-4"
                         variants={itemVariants}
                     >
                         Based in Bengaluru, India
@@ -119,7 +109,7 @@ const Hero: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                    className="flex justify-end items-center"
+                    className="flex md:justify-end justify-center  items-center"
                     variants={itemVariants}
                 >
                     <div className="w-64 h-64 bg-gray-600/30 rounded-full overflow-hidden border-4 border-gray-500/50 relative">

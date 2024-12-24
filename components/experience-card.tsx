@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { Experience } from '@/types/experience'
 import { CalendarDays, MapPin } from 'lucide-react'
+import { fonts } from '@/lib/constants'
 
 interface ExperienceCardProps {
     experience: Experience
@@ -39,27 +40,31 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                         <div className="flex-1">
                             <div className="flex justify-between items-start gap-4">
                                 <div>
-                                    <h3 className="text-xl font-bold text-primary">{experience.title}</h3>
-                                    <a target='_blank' href={experience.companyUrl} className="font-medium text-green-300">{experience.company}</a>
+                                    <h3 className="text-xl font-bold text-primary" style={{
+                                        fontFamily: fonts.SpaceGrotesk
+                                    }}>{experience.title}</h3>
+                                    <div className='flex items-center gap-2'>
+                                    <a target='_blank' href={experience.companyUrl} className="font-medium text-amber-300">{experience.company}</a>
+                                    <Badge variant={experience.type === "Full Time" ? "default" : "secondary"}>
+                                        {experience.type}
+                                    </Badge>
+                                    </div>
                                 </div>
-                                <Badge variant={experience.type === "Full Time" ? "default" : "secondary"}>
-                                    {experience.type}
-                                </Badge>
                             </div>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
-                                <div className="flex items-center gap-1">
-                                    <MapPin size={14} />
-                                    <span>{experience.location}</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <CalendarDays size={14} />
-                                    <span>
-                                        {experience.period.start} - {experience.period.end}
-                                    </span>
-                                </div>
-                            </div>
+                        <div className="flex items-center gap-1 text-cyan-300">
+                            <MapPin size={14} />
+                            <span>{experience.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-cyan-300">
+                            <CalendarDays size={14} />
+                            <span>
+                                {experience.period.start} - {experience.period.end}
+                            </span>
+                        </div>
+                    </div>
 
                     <motion.ul className="mt-4 space-y-2">
                         {experience.achievements.map((achievement, i) => (
@@ -95,4 +100,3 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
         </motion.div>
     )
 }
-

@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { ExperienceCard } from './experience-card'
 import { ExperienceSectionProps } from '../types/experience'
 import { Badge } from '@/components/ui/badge'
+import { fonts } from '@/lib/constants'
 
 function Experience({ experiences }: ExperienceSectionProps) {
     const ref = useRef(null)
@@ -20,7 +21,9 @@ function Experience({ experiences }: ExperienceSectionProps) {
                     transition={{ duration: 0.5 }}
                     className="flex items-center gap-4 mb-12"
                 >
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Experience</h2>
+                    <h2 className="text-3xl text-emerald-600  font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{
+                        fontFamily: fonts.SpaceGrotesk
+                    }}>Experience</h2>
                     <Badge variant="default" className="h-auto py-1">
                         {totalYears}
                     </Badge>
