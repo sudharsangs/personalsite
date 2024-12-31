@@ -39,21 +39,24 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                         </div>
                         <div className="flex-1">
                             <div className="flex justify-between items-start gap-4">
-                                <div>
+                                <div className='w-full sm:w-auto'>
                                     <h3 className="text-xl font-bold text-primary" style={{
                                         fontFamily: fonts.SpaceGrotesk
                                     }}>{experience.title}</h3>
-                                    <div className='flex items-center gap-2'>
-                                    <a target='_blank' href={experience.companyUrl} className="font-medium text-amber-300">{experience.company}</a>
-                                    <Badge variant={experience.type === "Full Time" ? "default" : "secondary"}>
-                                        {experience.type}
-                                    </Badge>
+                                    <div className='flex items-center w-full justify-between'>
+                                        <a target='_blank' href={experience.companyUrl} className="font-medium text-amber-300">{experience.company}</a>
+                                        <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='flex sm:hidden'>
+                                            {experience.type}
+                                        </Badge>
                                     </div>
                                 </div>
+                                <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='sm:flex hidden'>
+                                    {experience.type}
+                                </Badge>
                             </div>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
+                    <div className="flex items-center justify-between sm:justify-normal gap-4 mt-2 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1 text-cyan-300">
                             <MapPin size={14} />
                             <span>{experience.location}</span>

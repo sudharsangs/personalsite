@@ -1,25 +1,20 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { CalendarRange, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { fonts } from '@/lib/constants';
 
 const Hero: React.FC = () => {
     const socialLinks = [
         {
-            icon: <Github className="w-6 h-6" />,
-            href: "https://github.com/sudharsangs",
-            label: "GitHub Profile"
-        },
-        {
             icon: <Linkedin className="w-6 h-6" />,
             href: "https://linkedin.com/in/sudharsangs",
             label: "LinkedIn Profile"
         },
         {
-            icon: <Mail className="w-6 h-6" />,
-            href: "mailto:sudharsangs.99@gmail.com",
-            label: "Email Contact"
+            icon: <Github className="w-6 h-6" />,
+            href: "https://github.com/sudharsangs",
+            label: "GitHub Profile"
         }
     ];
 
@@ -65,21 +60,21 @@ const Hero: React.FC = () => {
                     </motion.h1>
 
                     <motion.h2
-                        className="text-2xl text-amber-400 mb-4 flex"
+                        className="md:text-2xl text-xl text-amber-400 mb-4 flex"
                         variants={itemVariants}
                     >
                         Software Engineer at <span className='ml-2 flex'><Image src="/fubo.svg" alt="fubo" width={24} height={24} /></span>
                     </motion.h2>
 
                     <motion.h3
-                        className="text-xl text-cyan-300 mb-4"
+                        className="md:text-xl text-lg text-cyan-300 mb-4"
                         variants={itemVariants}
                     >
                         Based in Bengaluru, India
                     </motion.h3>
 
                     <motion.p
-                        className="text-lg text-gray-300 max-w-xl"
+                        className="md:text-lg text-gray-300 max-w-xl"
                         variants={itemVariants}
                     >
                         Passionate about building scalable web applications and creating intuitive user experiences.

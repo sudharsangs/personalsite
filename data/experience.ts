@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
     company: "Fubo",
     companyLogo: "/fubo.svg",
     companyUrl: "https://www.fubo.tv/",
-    location: "Bengaluru",
+    location: "Bengaluru, India",
     type: "Full Time",
     period: {
       start: "Oct 2022",
@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     company: "Winuall",
     companyLogo: "/winuall.jpg",
     companyUrl: "https://winuall.com/",
-    location: "Bengaluru",
+    location: "Bengaluru, India",
     type: "Full Time",
     period: {
       start: "Dec 2020",
@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     company: "TEAL",
     companyLogo: "/teal.ico",
     companyUrl: "https://www.tealindia.in/",
-    location: "Bengaluru",
+    location: "Bengaluru, India",
     type: "Internship",
     period: {
       start: "Aug 2020",

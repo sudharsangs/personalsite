@@ -10,11 +10,13 @@ import { fonts } from '@/lib/constants'
 function Experience({ experiences }: ExperienceSectionProps) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
-    const totalYears = "4+ Years"
+    const startDate = new Date('December 2020')
+    const currentDate = new Date()
+    const totalYears = `${Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365))}+ Years`
 
     return (
         <section className="flex items-center justify-center text-white pt-16" ref={ref}>
-            <div className="w-full px-6 items-center">
+            <div className="w-full sm:px-6 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
