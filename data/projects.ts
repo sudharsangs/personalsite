@@ -53,48 +53,4 @@ export const projects: Projects = [
         slug: "form-to-sheets",
         type: "personal"
     },
-    {
-        title: "Form to Sheets",
-        description: "A project that gets google form and embeds it into a website.",
-        image: '/projects/personal/form-to-sheets.png',
-        technologies: [
-            {
-                name: 'React',
-                icon: '/skills/react.svg'
-            },
-            {
-                name: 'TypeScript',
-                icon: '/skills/typescript.svg'
-            },
-            {
-                name: 'NextJS',
-                icon: '/skills/nextjs.svg'
-            }
-        ],
-        path: "/form-to-sheets",
-        slug: "form-to-sheets",
-        type: "personal"
-    },
-    {
-        title: "Form to Sheets",
-        description: "A project that gets google form and embeds it into a website.",
-        image: '/projects/personal/form-to-sheets.png',
-        technologies: [
-            {
-                name: 'React',
-                icon: '/skills/react.svg'
-            },
-            {
-                name: 'TypeScript',
-                icon: '/skills/typescript.svg'
-            },
-            {
-                name: 'NextJS',
-                icon: '/skills/nextjs.svg'
-            }
-        ],
-        path: "/form-to-sheets",
-        slug: "form-to-sheets",
-        type: "personal"
-    },
 ]

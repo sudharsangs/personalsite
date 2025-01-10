@@ -112,6 +112,7 @@ const Hero: React.FC = () => {
                             src="/sudharsan.webp"
                             alt="Sudharsan"
                             fill
+                            priority={false}
                         />
                     </div>
                 </motion.div>

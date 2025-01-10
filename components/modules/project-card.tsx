@@ -44,7 +44,7 @@ export default function ProjectCard({
             alt={`${title} project screenshot`}
             width={400}
             height={200}
-            className="w-full h-48 object-cover"
+            className="w-full h-48"
           />
         </div>
         <Badge className="absolute top-2 right-2 flex items-center gap-1" variant={type === "personal" ? "default" : type === "independent" ? "destructive" : "secondary"}>

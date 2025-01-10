@@ -3,16 +3,14 @@
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { ExperienceCard } from './experience-card'
-import { ExperienceSectionProps } from '../types/experience'
+import { ExperienceSectionProps } from '../../types/experience'
 import { Badge } from '@/components/ui/badge'
 import { fonts } from '@/lib/constants'
 
 function Experience({ experiences }: ExperienceSectionProps) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
-    const startDate = new Date('December 2020')
-    const currentDate = new Date()
-    const totalYears = `${Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365))}+ Years`
+
 
     return (
         <section className="flex items-center justify-center text-white pt-16" ref={ref}>
@@ -27,7 +25,7 @@ function Experience({ experiences }: ExperienceSectionProps) {
                         fontFamily: fonts.SpaceGrotesk
                     }}>Experience</h2>
                     <Badge variant="default" className="h-auto py-1">
-                        {totalYears}
+                        5+ years
                     </Badge>
                 </motion.div>
                 <div className="flex flex-col gap-8">

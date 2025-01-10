@@ -20,7 +20,8 @@ export const experiences: Experience[] = [
       "Implemented frame-accurate seeking in VideoJS for HLS and DASH videos, ensuring precise video playback and an improved user experience.",
       "Developed multiple POCs for VideoAI features using methodologies such as Server Driven UI and Micro Frontend Architecture."
     ],
-    technologies: ["React", "TypeScript", "VideoJS", "GCP", "Docker", "Circle CI"]
+    technologies: ["React", "TypeScript", "VideoJS", "GCP", "Docker", "Circle CI"],
+    projects: []
   },
   {
     id: "winuall",
@@ -41,7 +42,8 @@ export const experiences: Experience[] = [
       "Migrated legacy React application to SSR, improving SEO score by 60%.",
       "Established CI/CD pipeline using Github Actions and Docker for automated deployments."
     ],
-    technologies: ["React", "NextJS", "TypeScript", "Docker", "AWS", "Azure"]
+    technologies: ["React", "NextJS", "TypeScript", "Docker", "AWS", "Azure"],
+    projects: ["winuall-apps", "winuall-learners-module", "winuall-online-store", "winuall-marketing-site", "winuall-parents-module"]
   },
   {
     id: "teal",
@@ -60,7 +62,8 @@ export const experiences: Experience[] = [
       "Created and deployed Regcheck using Ghost CMS and Gatsby.",
       "Wrote E2E test cases using Cypress, achieving 90% test coverage."
     ],
-    technologies: ["React", "Gatsby", "Ghost CMS", "Cypress"]
+    technologies: ["React", "Gatsby", "Ghost CMS", "Cypress"],
+    projects: ["regcheck"]
   },
   {
     id: "printrove",
@@ -78,7 +81,8 @@ export const experiences: Experience[] = [
       "Developed a dashboard for Printrove's internal use, enabling 100% automation of the order processing system.",
       "Built a custom CMS for Printrove's website using React and Redux."
     ],
-    technologies: ["React", "Redux"]
+    technologies: ["React", "Redux"],
+    projects: ["printrove-admin-panel","printrove-merchant-panel"]
   }
 ]
 

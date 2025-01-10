@@ -1,8 +1,8 @@
 "use client";
 
-import Experience from "@/components/experience";
-import Hero from "@/components/hero";
-import ProjectsSection from "@/components/projects-section";
+import Experience from "@/components/modules/experience";
+import Hero from "@/components/modules/hero";
+import ProjectsSection from "@/components/modules/projects-section";
 import { experiences } from "@/data/experience";
 import { projects } from "@/data/projects";
 

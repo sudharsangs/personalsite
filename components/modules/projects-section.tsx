@@ -20,11 +20,16 @@ const ProjectsSection: React.FC<Props> = ({ projects }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center gap-4 mb-12"
+                    className="flex items-center gap-4 mb-12 justify-between"
                 >
                     <h2 className="text-3xl text-emerald-600 font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{
                         fontFamily: fonts.SpaceGrotesk
                     }}>Projects</h2>
+                    <Button
+                        className='bg-gradient-to-r from-yellow-600 to-amber-500 rounded text-white'
+                    >
+                        View All Projects
+                    </Button>
                 </motion.div>
                 <div className="flex flex-wrap w-full gap-8">
                     {projects.map((project, index) => (
@@ -43,15 +48,6 @@ const ProjectsSection: React.FC<Props> = ({ projects }) => {
                             />
                         </motion.div>
                     ))}
-                </div>
-                <div className="flex justify-center mt-8">
-                    <Button
-                        variant="ghost"
-
-                        className="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition"
-                    >
-                        View All Projects
-                    </Button>
                 </div>
             </div>
         </section>

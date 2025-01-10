@@ -12,6 +12,7 @@ export interface Experience {
     }
     achievements: string[]
     technologies: string[]
+    projects: string[]
   }
   
   export interface ExperienceSectionProps {
