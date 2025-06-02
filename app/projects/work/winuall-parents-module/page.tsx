@@ -118,7 +118,7 @@ export default function WinuallParentsModulePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
             <h3 className="text-lg font-semibold mb-2 text-blue-400">Accessibility</h3>
-            <p className="text-gray-300">Designed with accessibility in mind, ensuring parents of all technical abilities could easily navigate and understand their child's performance data.</p>
+            <p className="text-gray-300">Designed with accessibility in mind, ensuring parents of all technical abilities could easily navigate and understand their child&apos;s performance data.</p>
           </div>
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
             <h3 className="text-lg font-semibold mb-2 text-blue-400">Simplicity</h3>

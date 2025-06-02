@@ -87,7 +87,7 @@ const ProjectsSection: React.FC<Props> = ({ projects }) => {
                         whileHover={{ y: -2 }}
                     >
                         <Link href="/projects">
-                            <Button className='bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-medium rounded flex items-center gap-1'>
+                            <Button className='bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-medium rounded flex items-center gap-1 w-full'>
                                 View All Projects
                                 <ExternalLink className="w-4 h-4" />
                             </Button>

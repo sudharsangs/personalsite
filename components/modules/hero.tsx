@@ -147,7 +147,7 @@ const Hero: React.FC = () => {
                         variants={containerVariants}
                     >
                         <Link href="/projects">
-                            <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground rounded-md px-6 py-6 flex items-center gap-2 h-10">
+                            <Button className="bg-gradient-to-r w-full from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground rounded-md px-6 py-6 flex items-center gap-2 h-10">
                                 View Projects
                                 <ExternalLink className="w-4 h-4" />
                             </Button>
@@ -245,7 +245,7 @@ const Hero: React.FC = () => {
 
             {/* Scroll indicator */}
             <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+                className="absolute hidden bottom-8 left-1/2 transform -translate-x-1/2 sm:flex flex-col items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
