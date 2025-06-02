@@ -2,6 +2,261 @@ import { Projects } from "@/types/projects";
 
 export const projects: Projects = [
     {
+        title: "Invoice Generator",
+        description: "A GST-compliant invoice generator for Indian businesses, freelancers, and entrepreneurs.",
+        technologies: [
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            }
+        ],
+        path: "/projects/personal/invoice-generator",
+        slug: "invoice-generator",
+        image: '/projects/personal/invoice-generator.png',
+        type: "personal",
+        date: "2025",
+        liveUrl: "https://factostack.com/invoice-generator",
+        features: [
+            "GST-compliant invoice templates for Indian businesses",
+            "Multiple professional design templates to choose from",
+            "Customer database for quick invoice creation",
+            "Product information storage for reuse across invoices",
+            "Automatic tax and total calculations",
+            "Download as PDF or print directly"
+        ],
+        problemStatement: "Small businesses and freelancers in India struggle with creating professional, GST-compliant invoices that meet regulatory requirements while maintaining a professional appearance.",
+        solution: "A free, user-friendly invoice generator designed specifically for Indian businesses with GST compliance built-in, offering professional templates and the ability to save customer and product information.",
+        additionalImages: [
+            {
+                url: '/projects/personal/invoice-generator.png',
+                alt: 'Invoice Generator Interface',
+                caption: 'User-friendly interface for creating professional invoices'
+            }
+        ]
+    },
+    {
+        title: "Quality Checklist Generator",
+        description: "Create professional quality control checklists for manufacturing processes to streamline quality assurance workflows.",
+        technologies: [
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            }
+        ],
+        path: "/projects/personal/quality-checklist",
+        slug: "quality-checklist",
+        type: "personal",
+        date: "2025",
+        image: '/projects/personal/quality-checklist.png',
+        liveUrl: "https://factostack.com/quality-checklist",
+        features: [
+            "Professional PDF output with company branding",
+            "Customizable sections and inspection points",
+            "Built-in signature fields for quality assurance",
+            "Real-time preview functionality",
+            "Instant PDF download and printing options",
+            "Reusable templates for consistent quality control"
+        ],
+        problemStatement: "Manufacturing companies need standardized quality control processes, but creating professional, consistent quality checklists is often time-consuming and inconsistent.",
+        solution: "A specialized tool that allows quality assurance teams to quickly create standardized, professional quality checklists with company branding, customizable inspection points, and proper signature fields.",
+        additionalImages: [
+            {
+                url: '/projects/personal/quality-checklist.png',
+                alt: 'Quality Checklist Generator Interface',
+                caption: 'Interface for creating standardized quality control checklists'
+            }
+        ]
+    },
+    {
+        title: "Plumbing E-Commerce Platform",
+        description: "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
+        image: '/projects/plumbing/cover.png',
+        technologies: [
+            {
+                name: 'NextJS',
+                icon: '/skills/nextjs.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'PostgreSQL',
+                icon: '/skills/postgres.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            },
+            {
+                name: 'NodeJS',
+                icon: '/skills/nodejs.svg'
+            }
+        ],
+        path: "/projects/independent/plumbing-e-commerce",
+        slug: "plumbing-e-commerce",
+        type: "independent",
+        date: "2023",
+        liveUrl: "https://plumbingstore.example.com",
+        client: "Urban Plumbing Supplies",
+        features: [
+            "Comprehensive product catalog with advanced filtering options",
+            "Service booking system with availability calendar",
+            "Product compatibility checker for plumbing components",
+            "Integrated inventory management system",
+            "Customer account portal for order tracking and service history",
+            "Professional plumber dashboard for service management",
+            "Technical specification documentation for all products",
+            "Quote generator for large projects"
+        ],
+        problemStatement: "Traditional plumbing supply businesses struggle with offering both products and services online. Their customers need technical compatibility information and often require professional installation, which typical e-commerce platforms don't support well.",
+        solution: "This custom e-commerce platform combines product sales with service bookings, featuring compatibility checks and detailed technical specifications to ensure customers purchase the right products for their needs.",
+        results: [
+            "120% increase in online sales within the first six months",
+            "35% of product orders now include installation service bookings",
+            "Reduced product returns by 40% due to compatibility checker",
+            "Expanded customer base beyond local service area through nationwide shipping"
+        ],
+        additionalImages: [
+            {
+                url: '/projects/plumbing/cover.png',
+                alt: 'Plumbing E-Commerce Homepage',
+                caption: 'Main storefront showcasing products and services'
+            },
+            {
+                url: '/projects/plumbing/DYGUS-0.png',
+                alt: 'Product Listing Page',
+                caption: 'Catalog view with filtering options'
+            },
+            {
+                url: '/projects/plumbing/DYGUS-1.png',
+                alt: 'Product Detail Page',
+                caption: 'Detailed product information with specifications'
+            },
+            {
+                url: '/projects/plumbing/DYGUS-2.png',
+                alt: 'Service Booking Interface',
+                caption: 'Service scheduling and booking system'
+            },
+            {
+                url: '/projects/plumbing/DYGUS-3.png',
+                alt: 'Shopping Cart',
+                caption: 'Cart with both products and services'
+            },
+            {
+                url: '/projects/plumbing/DYGUS-4.png',
+                alt: 'Checkout Process',
+                caption: 'Streamlined checkout flow'
+            },
+            {
+                url: '/projects/plumbing/DYGUS-5.png',
+                alt: 'Customer Dashboard',
+                caption: 'User account management interface'
+            }
+        ]
+    },
+        {
+        title: "Form to Sheets",
+        description: "A project that gets google form and embeds it into a website.",
+        image: '/projects/personal/form-to-sheets.png',
+        technologies: [
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'NextJS',
+                icon: '/skills/nextjs.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            }
+        ],
+        path: "/projects/personal/form-to-sheets",
+        slug: "form-to-sheets",
+        type: "personal",
+        date: "2023",
+        liveUrl: "https://formtosheets.sudharsangs.dev",
+        githubUrl: "https://github.com/sudharsangs/formtosheets",
+        features: [
+            "Seamless integration of Google Forms into any website",
+            "Support for multiple frameworks, including React, Vue, HTML, and Svelte",
+            "Effortless code generation for easy embedding",
+            "Developer-friendly and user-centric design",
+            "Real-time data integration for efficient data management",
+            "Secure and robust infrastructure for data protection"
+        ],
+        additionalImages: [
+            {
+                url: '/projects/personal/form-to-sheets.png',
+                alt: 'Form to Sheets interface',
+                caption: 'User-friendly interface for embedding Google Forms'
+            }
+        ]
+    },
+    {
+        title: "Production Cost Calculator",
+        description: "A comprehensive tool for manufacturing businesses to calculate production costs with precision.",
+        technologies: [
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            }
+        ],
+        path: "/projects/personal/production-cost-calculator",
+        slug: "production-cost-calculator",
+        type: "personal",
+        date: "2025",
+        liveUrl: "https://factostack.com/production-cost-calculator",
+        features: [
+            "Detailed breakdown of raw material costs",
+            "Labor cost calculation with various parameters",
+            "Overhead cost allocation tools",
+            "Comprehensive cost summary with analytics",
+            "PDF export functionality for reports",
+            "Data persistence for future reference"
+        ],
+        problemStatement: "Manufacturing businesses often struggle to accurately calculate production costs, leading to pricing errors and reduced profitability.",
+        solution: "A specialized calculator that breaks down production costs into raw materials, labor, and overhead categories, providing accurate costing information for better business decisions.",
+        additionalImages: [
+            {
+                url: '/projects/personal/production-calculator.png',
+                alt: 'Production Cost Calculator Interface',
+                caption: 'Detailed interface for calculating manufacturing costs'
+            }
+        ]
+    },
+
+    {
         title: 'Employee Management Mobile App',
         description: 'A mobile app for managing employees and their details.',
         image: '/projects/buildtek/cover.png',
@@ -103,50 +358,6 @@ export const projects: Projects = [
                 url: '/projects/buildtek/lead4.png',
                 alt: 'Document Repository',
                 caption: 'Secure document storage and management system'
-            }
-        ]
-    },
-    {
-        title: "Form to Sheets",
-        description: "A project that gets google form and embeds it into a website.",
-        image: '/projects/personal/form-to-sheets.png',
-        technologies: [
-            {
-                name: 'React',
-                icon: '/skills/react.svg'
-            },
-            {
-                name: 'TypeScript',
-                icon: '/skills/typescript.svg'
-            },
-            {
-                name: 'NextJS',
-                icon: '/skills/nextjs.svg'
-            },
-            {
-                name: 'TailwindCSS',
-                icon: '/skills/tailwind.svg'
-            }
-        ],
-        path: "/projects/personal/form-to-sheets",
-        slug: "form-to-sheets",
-        type: "personal",
-        date: "2023",
-        liveUrl: "https://formtosheets.sudharsangs.dev",
-        githubUrl: "https://github.com/sudharsangs/formtosheets",
-        features: [
-            "Seamless integration of Google Forms into any website",
-            "Support for multiple frameworks, including React, Vue, HTML, and Svelte",
-            "Effortless code generation for easy embedding",
-            "Developer-friendly and user-centric design",
-            "Real-time data integration for efficient data management",
-            "Secure and robust infrastructure for data protection"
-        ],
-        additionalImages: [
-            {
-                url: '/projects/personal/form-to-sheets.png',
-                alt: 'Form to Sheets interface',
-                caption: 'User-friendly interface for embedding Google Forms'
             }
         ]
     },
@@ -449,94 +660,6 @@ export const projects: Projects = [
                 url: '/projects/personal/tapx.png',
                 alt: 'TapX App Interface',
                 caption: 'Digital business card creation and sharing interface'
-            }
-        ]
-    },
-    {
-        title: "Plumbing E-Commerce Platform",
-        description: "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
-        image: '/projects/plumbing/cover.png',
-        technologies: [
-            {
-                name: 'NextJS',
-                icon: '/skills/nextjs.svg'
-            },
-            {
-                name: 'TypeScript',
-                icon: '/skills/typescript.svg'
-            },
-            {
-                name: 'PostgreSQL',
-                icon: '/skills/postgres.svg'
-            },
-            {
-                name: 'TailwindCSS',
-                icon: '/skills/tailwind.svg'
-            },
-            {
-                name: 'NodeJS',
-                icon: '/skills/nodejs.svg'
-            }
-        ],
-        path: "/projects/independent/plumbing-e-commerce",
-        slug: "plumbing-e-commerce",
-        type: "independent",
-        date: "2023",
-        liveUrl: "https://plumbingstore.example.com",
-        client: "Urban Plumbing Supplies",
-        features: [
-            "Comprehensive product catalog with advanced filtering options",
-            "Service booking system with availability calendar",
-            "Product compatibility checker for plumbing components",
-            "Integrated inventory management system",
-            "Customer account portal for order tracking and service history",
-            "Professional plumber dashboard for service management",
-            "Technical specification documentation for all products",
-            "Quote generator for large projects"
-        ],
-        problemStatement: "Traditional plumbing supply businesses struggle with offering both products and services online. Their customers need technical compatibility information and often require professional installation, which typical e-commerce platforms don't support well.",
-        solution: "This custom e-commerce platform combines product sales with service bookings, featuring compatibility checks and detailed technical specifications to ensure customers purchase the right products for their needs.",
-        results: [
-            "120% increase in online sales within the first six months",
-            "35% of product orders now include installation service bookings",
-            "Reduced product returns by 40% due to compatibility checker",
-            "Expanded customer base beyond local service area through nationwide shipping"
-        ],
-        additionalImages: [
-            {
-                url: '/projects/plumbing/cover.png',
-                alt: 'Plumbing E-Commerce Homepage',
-                caption: 'Main storefront showcasing products and services'
-            },
-            {
-                url: '/projects/plumbing/DYGUS-0.png',
-                alt: 'Product Listing Page',
-                caption: 'Catalog view with filtering options'
-            },
-            {
-                url: '/projects/plumbing/DYGUS-1.png',
-                alt: 'Product Detail Page',
-                caption: 'Detailed product information with specifications'
-            },
-            {
-                url: '/projects/plumbing/DYGUS-2.png',
-                alt: 'Service Booking Interface',
-                caption: 'Service scheduling and booking system'
-            },
-            {
-                url: '/projects/plumbing/DYGUS-3.png',
-                alt: 'Shopping Cart',
-                caption: 'Cart with both products and services'
-            },
-            {
-                url: '/projects/plumbing/DYGUS-4.png',
-                alt: 'Checkout Process',
-                caption: 'Streamlined checkout flow'
-            },
-            {
-                url: '/projects/plumbing/DYGUS-5.png',
-                alt: 'Customer Dashboard',
-                caption: 'User account management interface'
             }
         ]
     },

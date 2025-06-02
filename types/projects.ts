@@ -18,7 +18,7 @@ export interface Company {
 export interface Project {
     title: string
     description: string
-    image: string
+    image?: string
     technologies: Technologies[]
     path: string
     slug: string

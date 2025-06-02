@@ -1,7 +1,14 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, HeartPulse, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, HeartPulse, Code, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { fonts } from '@/lib/constants';
+
+interface MainLink {
+    href: string;
+    label: string;
+    external?: boolean;
+    highlight?: boolean;
+}
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -24,9 +31,15 @@ const Footer = () => {
         }
     ];
 
-    const mainLinks = [
+    const mainLinks: MainLink[] = [
         { href: "/projects", label: "Projects" },
-        { href: "#experience", label: "Experience" }
+        { href: "#experience", label: "Experience" },
+        { 
+            href: "https://factostack.com", 
+            label: "FactoStack", 
+            external: true,
+            highlight: true
+        }
     ];
 
     return (
@@ -89,9 +102,18 @@ const Footer = () => {
                                 >
                                     <Link 
                                         href={link.href} 
-                                        className={`text-muted-foreground hover:text-${index === 0 ? 'violet-400' : 'amber-400'} transition-colors flex items-center gap-2 group`}
+                                        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                        className={`text-muted-foreground ${
+                                            link.highlight 
+                                                ? "hover:text-cyan-400 font-medium text-cyan-500/90" 
+                                                : `hover:text-${index === 0 ? 'violet-400' : 'amber-400'}`
+                                        } transition-colors flex items-center gap-2 group`}
                                     >
-                                        <ExternalLink className={`w-3 h-3 group-hover:translate-x-1 transition-transform group-hover:text-${index === 0 ? 'violet-400' : 'amber-400'}`} />
+                                        {link.highlight ? (
+                                            <Globe className="w-3 h-3 text-cyan-500 group-hover:translate-x-1 transition-transform" />
+                                        ) : (
+                                            <ExternalLink className={`w-3 h-3 group-hover:translate-x-1 transition-transform group-hover:text-${index === 0 ? 'violet-400' : 'amber-400'}`} />
+                                        )}
                                         <span>{link.label}</span>
                                     </Link>
                                 </li>
@@ -124,7 +146,7 @@ const Footer = () => {
                 <div 
                     className="mt-12 pt-6 border-t border-border text-center flex flex-col sm:flex-row items-center justify-center sm:justify-between text-muted-foreground text-sm gap-3"
                 >
-                    <p>© {currentYear} Sudharsan GS. All rights reserved.</p>
+                    <p>© {currentYear} Sudharsan GS. All rights reserved. Founder of <a href="https://factostack.com" target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:text-cyan-400 font-medium transition-colors">FactoStack</a></p>
                     <div className="flex items-center gap-1">
                         <span>Built with</span>
                         <HeartPulse className="w-4 h-4 text-red-500" />
