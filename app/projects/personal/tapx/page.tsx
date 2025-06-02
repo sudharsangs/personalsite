@@ -8,40 +8,37 @@ import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } f
 
 export const metadata: Metadata = {
   title: 'TapX | Sudharsan GS',
-  description: 'A mobile app for contactless digital business card sharing',
+  description: 'A browser extension for searching Amazon.in products from any webpage',
 };
 
 export default function TapXPage() {
   const projectData = {
     title: "TapX",
-    description: "A mobile application that allows professionals to share their digital business cards via NFC technology, eliminating the need for physical cards.",
+    description: "A simple yet powerful browser extension designed to enhance your online shopping experience on Amazon.in, allowing you to search for products directly from any webpage.",
     type: "personal",
     date: "2023",
-    liveUrl: "https://tapx.sudharsangs.dev",
+    liveUrl: null,
     githubUrl: "https://github.com/sudharsangs/tapx",
     technologies: [
-      { name: 'React Native', icon: '/skills/react.svg' },
-      { name: 'TypeScript', icon: '/skills/typescript.svg' },
-      { name: 'NodeJS', icon: '/skills/nodejs.svg' },
-      { name: 'MongoDB', icon: '/skills/mongodb.svg' }
+      { name: 'Svelte', icon: '/skills/svelte.png' },
+      { name: 'Go Fiber', icon: '/skills/go-fiber.svg' },
+      { name: 'Colly', icon: '/skills/go.svg' }
     ],
     features: [
-      "NFC-enabled digital business card sharing",
-      "Customizable digital business card templates",
-      "Integration with phone contacts for easy saving",
-      "Analytics dashboard to track card sharing statistics",
-      "QR code generation for devices without NFC capabilities",
-      "Offline functionality for viewing saved cards"
+      "Effortless searching: Select text on any webpage, right-click, and choose the \"Search on Amazon\" option",
+      "Top results: Instantly access the top Amazon.in search results",
+      "Powered by Svelte for a smooth and responsive user interface",
+      "Backend with Go Fiber and Colly for efficient processing and accurate search results"
     ],
     images: [
       {
         url: '/projects/personal/tapx.png',
-        alt: 'TapX app showing a digital business card',
-        caption: 'Digital business card interface in TapX'
+        alt: 'TapX browser extension',
+        caption: 'TapX browser extension interface'
       }
     ],
-    problemStatement: "Traditional business cards are wasteful, easily lost, and don't provide insights on networking effectiveness. Additionally, manually entering contact details from paper cards is time-consuming and error-prone.",
-    solution: "TapX digitizes the entire business card experience, allowing users to create and share digital cards via a simple tap of their phone. The app tracks sharing analytics and seamlessly integrates with phone contacts."
+    problemStatement: "Online shopping often requires navigating to Amazon.in separately when you find a product mentioned on other websites, breaking your browsing flow and making comparison shopping more time-consuming.",
+    solution: "TapX streamlines the process by allowing users to search for products on Amazon.in directly from any webpage with a simple text selection and right-click, saving time and enhancing the shopping experience."
   };
 
   return (
@@ -104,16 +101,16 @@ export default function TapXPage() {
       >
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Create</h3>
-            <p className="text-gray-300">Design your personalized digital business card with your contact information, social links, and branding.</p>
+            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Select</h3>
+            <p className="text-gray-300">Highlight the text of the product you are interested in on any webpage.</p>
           </div>
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Tap</h3>
-            <p className="text-gray-300">Simply tap your phone to another NFC-enabled device to instantly share your digital card.</p>
+            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Right-Click</h3>
+            <p className="text-gray-300">Use the right-click context menu to select the &quot;Search on Amazon&quot; option.</p>
           </div>
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Connect</h3>
-            <p className="text-gray-300">The recipient saves your details directly to their contacts and can view your full profile in the app.</p>
+            <h3 className="text-lg font-semibold mb-2 text-emerald-400">Shop</h3>
+            <p className="text-gray-300">View the top search results on Amazon.in and find the best deals.</p>
           </div>
         </div>
       </ProjectSection>

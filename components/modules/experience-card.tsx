@@ -26,7 +26,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{ y: -5 }}
         >
-            <Card className="overflow-hidden border-gray-800/50 bg-gray-900/20 backdrop-blur-sm hover:bg-gray-900/30 transition-all duration-300 hover:border-emerald-900/30 hover:shadow-lg hover:shadow-emerald-900/10">
+            <Card className="overflow-hidden border-gray-800/50 bg-gray-900/20 backdrop-blur-sm hover:bg-gray-900/30 transition-all duration-300 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/10">
                 <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                         <motion.div
@@ -47,7 +47,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                             <div className="flex justify-between items-start gap-4">
                                 <div className='w-full sm:w-auto'>
                                     <motion.h3
-                                        className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500"
+                                        className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
                                         style={{ fontFamily: fonts.SpaceGrotesk }}
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
@@ -74,7 +74,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                                             transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                                             className="flex sm:hidden"
                                         >
-                                            <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-600 hover:to-teal-600 text-white border-none'>
+                                            <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white border-none'>
                                                 {experience.type}
                                             </Badge>
                                         </motion.div>
@@ -86,7 +86,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                                     transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                                     className="sm:flex hidden"
                                 >
-                                    <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-600 hover:to-teal-600 text-white border-none'>
+                                    <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white border-none'>
                                         {experience.type}
                                     </Badge>
                                 </motion.div>
@@ -126,7 +126,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                                 transition={{ duration: 0.5, delay: index * 0.2 + i * 0.1 + 0.5 }}
                                 className="text-sm text-gray-300 flex gap-2 items-start"
                             >
-                                <span className="text-emerald-400 mt-1">•</span>
+                                <span className="text-primary mt-1">•</span>
                                 <span>{achievement}</span>
                             </motion.li>
                         ))}

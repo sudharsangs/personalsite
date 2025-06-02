@@ -1,9 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { ExternalLink, Github, Layers, Link as LinkIcon, FileText, Lightbulb, LineChart } from 'lucide-react';
-import Link from 'next/link';
+import { Layers, Link as LinkIcon, FileText, Lightbulb, LineChart } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
@@ -17,8 +15,6 @@ export default function NoPaperExamsPage() {
     description: "A comprehensive examination platform that enables educational institutions to conduct secure, paperless assessments with advanced analytics and anti-cheating measures.",
     type: "independent",
     date: "2023",
-    liveUrl: "https://nopaperexams.sudharsangs.dev",
-    githubUrl: "https://github.com/sudharsangs/no-paper-exams",
     client: "Regional Education Board",
     technologies: [
       { name: 'NextJS', icon: '/skills/nextjs.svg' },
@@ -85,26 +81,6 @@ export default function NoPaperExamsPage() {
         </div>
       </ProjectSection>
 
-      {/* Project Links */}
-      <div className="flex flex-wrap gap-4 mb-12">
-        {projectData.liveUrl && (
-          <Link href={projectData.liveUrl} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 flex items-center gap-2">
-              <ExternalLink className="h-4 w-4" />
-              View Live Demo
-            </Button>
-          </Link>
-        )}
-        
-        {projectData.githubUrl && (
-          <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-gray-700 hover:bg-gray-800 flex items-center gap-2">
-              <Github className="h-4 w-4" />
-              View Source Code
-            </Button>
-          </Link>
-        )}
-      </div>
 
       {/* Project Images */}
       <ProjectImageGallery images={projectData.images} columns={2} />

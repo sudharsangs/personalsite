@@ -17,7 +17,7 @@ export default function FormToSheetsPage() {
     description: "A tool to seamlessly integrate Google Forms into websites with code snippets for multiple frameworks.",
     type: "personal",
     date: "2023",
-    liveUrl: "https://formtosheets.sudharsangs.dev",
+    liveUrl: "https://formtosheets.vercel.app/",
     githubUrl: "https://github.com/sudharsangs/formtosheets",
     technologies: [
       { name: 'React', icon: '/skills/react.svg' },
@@ -35,7 +35,7 @@ export default function FormToSheetsPage() {
     ],
     images: [
       {
-        url: '/projects/personal/form-to-sheets.png',
+        url: '/projects/personal/form-to-sheets-screenshot.png',
         alt: 'Form to Sheets homepage showing the interface',
         caption: 'The main homepage of Form to Sheets'
       }

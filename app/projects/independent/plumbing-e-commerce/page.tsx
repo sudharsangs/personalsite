@@ -1,9 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { ExternalLink,  Layers, Link as LinkIcon, ShoppingCart, Lightbulb, LineChart } from 'lucide-react';
-import Link from 'next/link';
+import {  Layers, Link as LinkIcon, ShoppingCart, Lightbulb, LineChart } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
@@ -17,7 +15,6 @@ export default function PlumbingECommercePage() {
     description: "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
     type: "independent",
     date: "2023",
-    liveUrl: "https://plumbingstore.example.com",
     client: "Urban Plumbing Supplies",
     technologies: [
       { name: 'NextJS', icon: '/skills/nextjs.svg' },
@@ -38,12 +35,12 @@ export default function PlumbingECommercePage() {
     ],
     images: [
       {
-        url: '/projects/independent/plumbing-1.png',
+        url: '/projects/plumbing/DYGUS-0.png',
         alt: 'Plumbing E-commerce homepage',
         caption: 'Main storefront showcasing products and services'
       },
       {
-        url: '/projects/independent/plumbing-2.png',
+        url: '/projects/plumbing/DYGUS-17.png',
         alt: 'Service booking interface',
         caption: 'Interactive service booking calendar and form'
       }
@@ -84,17 +81,6 @@ export default function PlumbingECommercePage() {
         </div>
       </ProjectSection>
 
-      {/* Project Links */}
-      <div className="flex flex-wrap gap-4 mb-12">
-        {projectData.liveUrl && (
-          <Link href={projectData.liveUrl} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 flex items-center gap-2">
-              <ExternalLink className="h-4 w-4" />
-              Visit Store
-            </Button>
-          </Link>
-        )}
-      </div>
 
       {/* Project Images */}
       <ProjectImageGallery images={projectData.images} columns={2} />

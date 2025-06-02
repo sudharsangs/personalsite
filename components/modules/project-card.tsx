@@ -41,10 +41,10 @@ export default function ProjectCard({
       transition={{ duration: 0.5, delay: index * 0.2 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="h-full transition-all duration-300 overflow-hidden bg-gray-900/20 backdrop-blur-sm border-gray-800/50 hover:border-emerald-900/30 hover:shadow-lg hover:shadow-emerald-900/10">
+      <Card className="h-full transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20">
         <div className='relative overflow-hidden group h-48'>
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70 z-10"
+            className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-70 z-10"
             whileHover={{ opacity: 0.4 }}
             transition={{ duration: 0.3 }}
           />
@@ -54,12 +54,18 @@ export default function ProjectCard({
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
           >
-            <Image
-              src={image}
-              alt={`${title} project screenshot`}
-              fill
-              className="object-cover"
-            />
+            {image ? (
+              <Image
+                src={image}
+                alt={`${title} project screenshot`}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
+                <h3 className="text-2xl font-bold">{title}</h3>
+              </div>
+            )}
           </motion.div>
           
           <motion.div 
@@ -102,7 +108,7 @@ export default function ProjectCard({
 
         <CardContent className="px-6 py-5">
           <motion.p
-            className="text-sm text-gray-300 mb-4 line-clamp-3"
+            className="text-sm text-muted-foreground mb-4 line-clamp-3"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
@@ -116,18 +122,26 @@ export default function ProjectCard({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
           >
-            {technologies.slice(0, 3).map((tech, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -2 }}
-                className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-3 py-1 text-xs border border-gray-700/30"
-              >
-                <Image src={tech.icon} alt={tech.name} width={12} height={12} className="mr-1" />
-                <span className="text-gray-300">{tech.name}</span>
-              </motion.div>
-            ))}
+            {technologies.slice(0, 3).map((tech, i) => {
+              // Assign different colors based on index for variety
+              const techColors = [
+                "bg-amber-500/20 border-amber-500/30 text-amber-400",
+                "bg-emerald-500/20 border-emerald-500/30 text-emerald-400",
+                "bg-orange-500/20 border-orange-500/30 text-orange-400"
+              ];
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -2 }}
+                  className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-3 py-1 text-xs border`}
+                >
+                  <Image src={tech.icon} alt={tech.name} width={12} height={12} className="mr-1" />
+                  <span>{tech.name}</span>
+                </motion.div>
+              );
+            })}
             {technologies.length > 3 && (
-              <Badge variant="outline" className="text-xs bg-gray-800/20 backdrop-blur-sm">
+              <Badge variant="outline" className="text-xs bg-indigo-500/20 text-indigo-400 border-indigo-500/30 backdrop-blur-sm">
                 +{technologies.length - 3} more
               </Badge>
             )}
@@ -140,14 +154,14 @@ export default function ProjectCard({
             transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
           >
             <Link href={path} className="flex-1">
-              <Button variant="default" className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 flex items-center justify-center gap-1">
+              <Button variant="default" className="w-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center gap-1">
                 <span>View Details</span>
                 <ExternalLink className="w-3 h-3" />
               </Button>
             </Link>
             {github && (
               <Link href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-gray-700 hover:bg-gray-800 hover:text-white">
+                <Button variant="outline" className="border-indigo-700/50 bg-indigo-900/20 hover:bg-indigo-800/30 text-indigo-300 hover:text-white">
                   <Github className="w-4 h-4" />
                 </Button>
               </Link>

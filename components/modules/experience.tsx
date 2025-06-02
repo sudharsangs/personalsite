@@ -17,7 +17,7 @@ function Experience({ experiences }: ExperienceSectionProps) {
         <section id="experience" className="flex items-center justify-center text-white py-16 relative" ref={ref}>
             {/* Background decoration */}
             <motion.div
-                className="absolute -left-20 bottom-1/4 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl"
+                className="absolute -left-20 bottom-1/4 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"
                 animate={{
                     x: [0, 20, 0],
                     opacity: [0.2, 0.3, 0.2],
@@ -41,11 +41,11 @@ function Experience({ experiences }: ExperienceSectionProps) {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="bg-emerald-900/20 p-2 rounded-lg border border-emerald-800/20 backdrop-blur-sm"
+                            className="bg-gray-200/20 p-2 rounded-full border border-gray-200/40 backdrop-blur-sm"
                         >
-                            <Briefcase className="w-6 h-6 text-emerald-500" />
+                            <Briefcase className="w-6 h-6 text-gray-200" />
                         </motion.div>
-                        <h2 className="text-3xl text-emerald-600 font-bold tracking-tighter sm:text-4xl md:text-5xl"
+                        <h2 className="text-3xl text-primary font-bold tracking-tighter sm:text-4xl md:text-5xl"
                             style={{ fontFamily: fonts.SpaceGrotesk }}
                         >
                             Experience
@@ -56,7 +56,7 @@ function Experience({ experiences }: ExperienceSectionProps) {
                         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                        <Badge variant="default" className="h-auto py-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                        <Badge variant="default" className="h-auto py-1 bg-gradient-to-r from-gray-300 to-zinc-300 hover:from-primary/90 hover:to-secondary/90">
                             5+ years
                         </Badge>
                     </motion.div>

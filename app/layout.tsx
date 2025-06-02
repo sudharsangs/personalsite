@@ -51,7 +51,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen w-full bg-gradient-to-b from-neutral-950 to-neutral-900">
           <div 
-            className="fixed top-0 left-0 right-0 h-[40vh] w-full bg-gradient-to-br from-emerald-900/20 via-transparent to-transparent opacity-30 blur-3xl -z-10"
+            className="fixed top-0 left-0 right-0 h-[40vh] w-full bg-gradient-to-br from-purple-900/20 via-transparent to-transparent opacity-30 blur-3xl -z-10"
             style={{ transform: 'translateZ(0)' }}
           />
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -61,7 +61,7 @@ export default function RootLayout({
             </div>
           </div>
           <div 
-            className="fixed bottom-0 right-0 h-[40vh] w-[40vw] bg-gradient-to-tl from-emerald-700/10 via-transparent to-transparent opacity-30 blur-3xl -z-10"
+            className="fixed bottom-0 right-0 h-[40vh] w-[40vw] bg-gradient-to-tl from-blue-700/10 via-transparent to-transparent opacity-30 blur-3xl -z-10"
             style={{ transform: 'translateZ(0)' }}
           />
         </div>

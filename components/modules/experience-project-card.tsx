@@ -10,14 +10,14 @@ interface ExperienceProjectCardProps {
 
 const ExperienceProjectCard: React.FC<ExperienceProjectCardProps> = ({ title, description, link, techStack }) => {
   return (
-    <div className={cn("border rounded-lg p-4 shadow-sm bg-white hover:shadow-md transition-shadow")}>
-      <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-      <p className="text-sm text-gray-600 mt-1">{description}</p>
+    <div className={cn("border border-border/50 rounded-lg p-4 shadow-sm bg-card/50 backdrop-blur-sm hover:shadow-md hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300")}>
+      <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+      <p className="text-sm text-muted-foreground mt-1">{description}</p>
       <div className="flex flex-wrap gap-2 mt-3">
         {techStack.map((tech, index) => (
           <span
             key={index}
-            className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full shadow-sm"
+            className="text-xs bg-muted/40 text-muted-foreground px-2 py-1 rounded-full border border-border"
           >
             {tech}
           </span>
@@ -28,7 +28,7 @@ const ExperienceProjectCard: React.FC<ExperienceProjectCardProps> = ({ title, de
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-blue-500 hover:underline mt-3 inline-block"
+          className="text-sm text-primary hover:underline mt-3 inline-block"
         >
           View Project &rarr;
         </a>
