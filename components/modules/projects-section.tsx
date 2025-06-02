@@ -1,6 +1,8 @@
-import { fonts } from '@/lib/constants';
-import { motion, useInView } from 'motion/react';
 import React, { useRef } from 'react';
+import { motion, useInView } from 'motion/react';
+import Link from 'next/link';
+import { Layers, ExternalLink } from 'lucide-react';
+import { fonts } from '@/lib/constants';
 import ProjectCard from './project-card';
 import { Projects } from '@/types/projects';
 import { Button } from '@/components/ui/button';
@@ -12,41 +14,77 @@ type Props = {
 const ProjectsSection: React.FC<Props> = ({ projects }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    
+    // Get only the first 3 projects
+    const featuredProjects = projects.slice(0, 3);
 
     return (
-        <section className="flex items-center justify-center text-white pt-16" ref={ref}>
-            <div className="w-full sm:px-6 items-center">
+        <section id="projects" className="flex items-center justify-center text-white py-16 relative" ref={ref}>
+            {/* Background decoration */}
+            <motion.div 
+                className="absolute -right-20 top-1/4 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl"
+                animate={{ 
+                    x: [0, -20, 0],
+                    opacity: [0.2, 0.3, 0.2],
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+            />
+            
+            <div className="w-full sm:px-6 items-center relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex items-center gap-4 mb-12 justify-between"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ duration: 0.7 }}
+                    className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-12"
                 >
-                    <h2 className="text-3xl text-emerald-600 font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{
-                        fontFamily: fonts.SpaceGrotesk
-                    }}>Projects</h2>
-                    <Button
-                        className='bg-gradient-to-r from-yellow-600 to-amber-500 rounded text-white'
-                    >
-                        View All Projects
-                    </Button>
-                </motion.div>
-                <div className="flex flex-wrap w-full gap-8">
-                    {projects.map((project, index) => (
-                        <motion.div className="w-full sm:w-1/2 md:w-[31%]" key={index}>
-                            <ProjectCard
-                                key={index}
-                                title={project.title}
-                                description={project.description}
-                                image={project.image}
-                                technologies={project.technologies}
-                                github={project.github}
-                                path={project.path}
-                                slug={project.slug}
-                                type={project.type}
-                                index={index}
-                            />
+                    <div className="flex items-center gap-3">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="bg-emerald-900/20 p-2 rounded-lg border border-emerald-800/20 backdrop-blur-sm"
+                        >
+                            <Layers className="w-6 h-6 text-emerald-500" />
                         </motion.div>
+                        <h2 className="text-3xl text-emerald-600 font-bold tracking-tighter sm:text-4xl md:text-5xl" 
+                            style={{ fontFamily: fonts.SpaceGrotesk }}
+                        >
+                            Projects
+                        </h2>
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        whileHover={{ y: -2 }}
+                    >
+                        <Link href="/projects">
+                            <Button className='bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-medium rounded flex items-center gap-1'>
+                                View All Projects
+                                <ExternalLink className="w-4 h-4" />
+                            </Button>
+                        </Link>
+                    </motion.div>
+                </motion.div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {featuredProjects.map((project, index) => (
+                        <ProjectCard
+                            key={index}
+                            title={project.title}
+                            description={project.description}
+                            image={project.image}
+                            technologies={project.technologies}
+                            github={project.github}
+                            path={project.path}
+                            slug={project.slug}
+                            type={project.type}
+                            index={index}
+                        />
                     ))}
                 </div>
             </div>
