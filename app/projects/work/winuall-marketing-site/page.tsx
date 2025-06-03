@@ -49,14 +49,44 @@ export default function WinuallMarketingSitePage() {
     ],
     images: [
       {
-        url: '/projects/winuall/marketing-site-1.png',
-        alt: 'Winuall Marketing Site Homepage',
-        caption: 'Homepage featuring key platform benefits and call-to-action sections'
+        url: '/projects/winuall/winuall-reg-1.png',
+        alt: 'Winuall Registration Step 1',
+        caption: 'Initial registration step for new users'
       },
       {
-        url: '/projects/winuall/marketing-site-2.png',
-        alt: 'Features Page',
-        caption: 'Interactive feature showcase with visual demonstrations'
+        url: '/projects/winuall/winuall-reg-2.png',
+        alt: 'Winuall Registration Step 2',
+        caption: 'User information collection step'
+      },
+      {
+        url: '/projects/winuall/winuall-reg-3.png',
+        alt: 'Winuall Registration Step 3',
+        caption: 'Institution details entry form'
+      },
+      {
+        url: '/projects/winuall/winuall-reg-4.png',
+        alt: 'Winuall Registration Step 4',
+        caption: 'Course and program selection'
+      },
+      {
+        url: '/projects/winuall/winuall-reg-5.png',
+        alt: 'Winuall Registration Step 5',
+        caption: 'Customization preferences'
+      },
+      {
+        url: '/projects/winuall/winuall-reg-6.png',
+        alt: 'Winuall Registration Step 6',
+        caption: 'Payment and plan selection'
+      },
+      {
+        url: '/projects/winuall/winuall-reg-7.png',
+        alt: 'Winuall Registration Step 7',
+        caption: 'Final verification step'
+      },
+      {
+        url: '/projects/winuall/winuall-reg-8.png',
+        alt: 'Winuall Registration Complete',
+        caption: 'Registration completion confirmation'
       }
     ]
   };
@@ -87,10 +117,26 @@ export default function WinuallMarketingSitePage() {
         </div>
       </ProjectSection>
 
-      {/* Project Images */}
-      <ProjectImageGallery images={projectData.images} columns={2} />
+      {/* First Image Showcase */}
+      <div className="mb-10">
+        <h3 className="text-xl font-semibold text-gray-200 mb-4">Registration Process Overview</h3>
+        <div className="rounded-xl overflow-hidden border border-gray-700/30">
+          <Image 
+            src={projectData.images[0].url}
+            alt={projectData.images[0].alt}
+            width={1200}
+            height={800}
+            className="w-full h-auto"
+          />
+          <div className="bg-gray-800/60 p-3">
+            <p className="text-sm text-gray-300">{projectData.images[0].caption}</p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Registration Steps Gallery */}
+      <ProjectImageGallery images={projectData.images.slice(1, 8)} columns={3} />
 
-      {/* Key Highlights */}
       <ProjectSection 
         title="Key Highlights"
         icon={<Sparkles className="w-5 h-5" />}

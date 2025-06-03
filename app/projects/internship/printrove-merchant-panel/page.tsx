@@ -40,18 +40,6 @@ export default function PrintroveMerchantPanelPage() {
       "Storefront customization tools",
       "Inventory management system",
       "Payment processing and financial reporting"
-    ],
-    images: [
-      {
-        url: '/projects/printrove/merchant-dashboard.png',
-        alt: 'Printrove Merchant Dashboard',
-        caption: 'Main merchant dashboard showing sales and performance metrics'
-      },
-      {
-        url: '/projects/printrove/product-management.png',
-        alt: 'Product Management Interface',
-        caption: 'Interface for creating and managing print-on-demand products'
-      }
     ]
   };
 
@@ -98,9 +86,6 @@ export default function PrintroveMerchantPanelPage() {
           to make data-driven business decisions.
         </p>
       </ProjectSection>
-
-      {/* Project Images */}
-      <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Key Highlights */}
       <ProjectSection 

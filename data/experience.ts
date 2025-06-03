@@ -93,7 +93,8 @@ export const experiences: Experience[] = [
     },
     achievements: [
       "Developed a dashboard for Printrove's internal use, enabling 100% automation of the order processing system.",
-      "Built a custom CMS for Printrove's website using React and Redux."
+      "Developed a full-fledged accessory design simulation suite that 15000+ designers and Shopify merchants use.",
+      "Created a merchant dashboard for Printrove's print-on-demand platform, allowing sellers to manage their products and orders efficiently."
     ],
     technologies: ["React", "Redux"],
     projects: ["printrove-admin-panel","printrove-merchant-panel"],

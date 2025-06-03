@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
                         className="md:text-2xl text-xl text-foreground mb-4 flex items-center"
                         variants={itemVariants}
                     >
-                        Software Engineer at <span className="ml-2 flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-1 border border-muted/20">
+                        Software Engineer at <span className="ml-2 flex items-center">
                             <Image src="/fubo.svg" alt="fubo" width={24} height={24} className="ml-1" />
                         </span>
                     </motion.h2>

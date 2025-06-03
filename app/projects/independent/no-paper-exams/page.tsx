@@ -33,18 +33,6 @@ export default function NoPaperExamsPage() {
       "Accessibility features for students with special needs",
       "Offline examination mode with automatic sync when connection returns"
     ],
-    images: [
-      {
-        url: '/projects/independent/nopaperexams-1.png',
-        alt: 'No Paper Exams dashboard showing exam analytics',
-        caption: 'Administrator dashboard with exam analytics'
-      },
-      {
-        url: '/projects/independent/nopaperexams-2.png',
-        alt: 'Student examination interface',
-        caption: 'Secure examination interface for students'
-      }
-    ],
     problemStatement: "Traditional paper-based examinations are resource-intensive, environmentally unfriendly, and difficult to manage at scale. They also pose logistical challenges in remote learning scenarios and lack sophisticated analysis capabilities.",
     solution: "No Paper Exams provides a secure, scalable digital platform that eliminates paper waste, simplifies exam administration, and offers rich analytics while maintaining assessment integrity through advanced anti-cheating measures.",
     results: [
@@ -80,10 +68,6 @@ export default function NoPaperExamsPage() {
           ))}
         </div>
       </ProjectSection>
-
-
-      {/* Project Images */}
-      <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Problem & Solution */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

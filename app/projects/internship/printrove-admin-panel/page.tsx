@@ -42,18 +42,6 @@ export default function PrintroveAdminPanelPage() {
       "Platform analytics and performance metrics",
       "User administration with granular permission controls"
     ],
-    images: [
-      {
-        url: '/projects/printrove/admin-dashboard.png',
-        alt: 'Printrove Admin Dashboard',
-        caption: 'Main admin dashboard showing key performance metrics'
-      },
-      {
-        url: '/projects/printrove/merchant-management.png',
-        alt: 'Merchant Management Interface',
-        caption: 'Interface for approving and managing platform merchants'
-      }
-    ]
   };
 
   return (
@@ -81,9 +69,6 @@ export default function PrintroveAdminPanelPage() {
           ))}
         </div>
       </ProjectSection>
-
-      {/* Project Images */}
-      <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Key Highlights */}
       <ProjectSection 

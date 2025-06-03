@@ -555,8 +555,8 @@ export const projects: Projects = [
                 icon: '/skills/tailwind.svg'
             }
         ],
-        path: "/projects/work/winuall-registration",
-        slug: "winuall-registration",
+        path: "/projects/work/winuall-marketing-site",
+        slug: "winuall-markeing-site",
         type: "work",
         date: "2022",
         company: {
@@ -619,47 +619,41 @@ export const projects: Projects = [
     },
     {
         title: "TapX",
-        description: "A mobile application that allows professionals to share their digital business cards via NFC technology, eliminating the need for physical cards.",
+        description: "A simple yet powerful browser extension designed to enhance your online shopping experience on Amazon.in, allowing you to search for products directly from any webpage.",
         image: '/projects/personal/tapx.png',
         technologies: [
             {
-                name: 'React Native',
-                icon: '/skills/react.svg'
+                name: 'Svelte',
+                icon: '/skills/svelte.png'
             },
             {
-                name: 'TypeScript',
-                icon: '/skills/typescript.svg'
+                name: 'Go Fiber',
+                icon: '/skills/go-fiber.svg'
             },
             {
-                name: 'NodeJS',
-                icon: '/skills/nodejs.svg'
-            },
-            {
-                name: 'MongoDB',
-                icon: '/skills/mongodb.svg'
+                name: 'Colly',
+                icon: '/skills/go.svg'
             }
         ],
         path: "/projects/personal/tapx",
         slug: "tapx",
         type: "personal",
         date: "2023",
-        liveUrl: "https://tapx.sudharsangs.dev",
+        liveUrl: undefined,
         githubUrl: "https://github.com/sudharsangs/tapx",
         features: [
-            "NFC-enabled digital business card sharing",
-            "Customizable digital business card templates",
-            "Integration with phone contacts for easy saving",
-            "Analytics dashboard to track card sharing statistics",
-            "QR code generation for devices without NFC capabilities",
-            "Offline functionality for viewing saved cards"
+            "Effortless searching: Select text on any webpage, right-click, and choose the \"Search on Amazon\" option",
+            "Top results: Instantly access the top Amazon.in search results",
+            "Powered by Svelte for a smooth and responsive user interface",
+            "Backend with Go Fiber and Colly for efficient processing and accurate search results"
         ],
-        problemStatement: "Traditional business cards are wasteful, easily lost, and don't provide insights on networking effectiveness. Additionally, manually entering contact details from paper cards is time-consuming and error-prone.",
-        solution: "TapX digitizes the entire business card experience, allowing users to create and share digital cards via a simple tap of their phone. The app tracks sharing analytics and seamlessly integrates with phone contacts.",
+        problemStatement: "Online shopping often requires navigating to Amazon.in separately when you find a product mentioned on other websites, breaking your browsing flow and making comparison shopping more time-consuming.",
+        solution: "TapX streamlines the process by allowing users to search for products on Amazon.in directly from any webpage with a simple text selection and right-click, saving time and enhancing the shopping experience.",
         additionalImages: [
             {
                 url: '/projects/personal/tapx.png',
-                alt: 'TapX App Interface',
-                caption: 'Digital business card creation and sharing interface'
+                alt: 'TapX browser extension',
+                caption: 'TapX browser extension interface'
             }
         ]
     },
