@@ -52,46 +52,6 @@ const Hero: React.FC = () => {
 
     return (
         <section className="flex flex-col items-center justify-center pt-24 pb-16 min-h-[90vh] relative">
-            {/* Animated background elements */}
-            <motion.div
-                className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-primary/5 to-amber-500/10 rounded-full blur-3xl"
-                animate={{
-                    x: [0, 10, 0],
-                    y: [0, 15, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-            />
-
-            <motion.div
-                className="absolute top-1/3 -right-20 w-80 h-80 bg-gradient-to-bl from-secondary/5 to-emerald-500/10 rounded-full blur-3xl"
-                animate={{
-                    x: [0, -15, 0],
-                    y: [0, 10, 0],
-                }}
-                transition={{
-                    duration: 9,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-            />
-
-            <motion.div
-                className="absolute bottom-20 left-1/3 w-60 h-60 bg-gradient-to-tr from-violet-500/5 to-orange-400/10 rounded-full blur-3xl"
-                animate={{
-                    x: [0, 8, 0],
-                    y: [0, -12, 0],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-            />
-
             <div className="w-full px-6 grid md:grid-cols-2 gap-12 items-center">
                 <motion.div
                     className="space-y-8"
@@ -209,17 +169,6 @@ const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <motion.div
-                        className="absolute w-72 h-72 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"
-                        animate={{
-                            scale: [1, 1.05, 1],
-                        }}
-                        transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            repeatType: "reverse"
-                        }}
-                    />
 
                     <motion.div
                         className="w-64 h-64 bg-card/50 backdrop-blur-sm rounded-full overflow-hidden border-4 border-primary/30 relative z-10 shadow-lg shadow-primary/20"
@@ -233,11 +182,6 @@ const Hero: React.FC = () => {
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
-                        />
-                        <motion.div
-                            className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent"
-                            initial={{ opacity: 0.4 }}
-                            whileHover={{ opacity: 0.2 }}
                         />
                     </motion.div>
                 </motion.div>

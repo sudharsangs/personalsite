@@ -87,7 +87,7 @@ const ProjectsSection: React.FC<Props> = ({ projects }) => {
                         whileHover={{ y: -2 }}
                     >
                         <Link href="/projects">
-                            <Button className='bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-medium rounded flex items-center gap-1 w-full'>
+                            <Button className='bg-gradient-to-r from-primary to-secondary hidden hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-medium rounded sm:flex items-center gap-1 w-full'>
                                 View All Projects
                                 <ExternalLink className="w-4 h-4" />
                             </Button>
@@ -111,6 +111,20 @@ const ProjectsSection: React.FC<Props> = ({ projects }) => {
                         />
                     ))}
                 </div>
+                <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        whileHover={{ y: -2 }}
+                        className='mt-8 sm:mt-12'
+                    >
+                        <Link href="/projects">
+                            <Button className='bg-gradient-to-r from-primary to-secondary flex hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-medium rounded sm:hidden items-center gap-1 w-full'>
+                                View All Projects
+                                <ExternalLink className="w-4 h-4" />
+                            </Button>
+                        </Link>
+                    </motion.div>
             </div>
         </section>
     );

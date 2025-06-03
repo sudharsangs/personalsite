@@ -15,19 +15,6 @@ function Experience({ experiences }: ExperienceSectionProps) {
 
     return (
         <section id="experience" className="flex items-center justify-center text-white py-16 relative" ref={ref}>
-            {/* Background decoration */}
-            <motion.div
-                className="absolute -left-20 bottom-1/4 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"
-                animate={{
-                    x: [0, 20, 0],
-                    opacity: [0.2, 0.3, 0.2],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-            />
 
             <div className="w-full sm:px-6 items-center relative z-10">
                 <motion.div
