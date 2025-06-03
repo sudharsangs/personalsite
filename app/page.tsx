@@ -8,7 +8,7 @@ import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Hero />
       <Experience experiences={experiences} />
       <ProjectsSection projects={projects} />
