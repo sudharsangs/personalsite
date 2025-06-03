@@ -1,7 +1,6 @@
 Contains 
   - Experience
   - Projects
-  - Blogs
   - Social Links
 
 Built this site using NextJS, Typescript and Tailwind CSS
