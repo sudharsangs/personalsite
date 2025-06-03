@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Layers, LineChart, ShoppingBag, ShieldCheck, Zap } from 'lucide-react';
 import Image from 'next/image';
-import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
+import ProjectPageLayout, { FeatureList, ProjectSection } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
   title: 'Printrove Merchant Panel | Sudharsan GS',

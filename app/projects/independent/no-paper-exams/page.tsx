@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Layers, Link as LinkIcon, FileText, Lightbulb, LineChart } from 'lucide-react';
 import Image from 'next/image';
-import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
+import ProjectPageLayout, { FeatureList, ProjectSection } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
   title: 'No Paper Exams | Sudharsan GS',
