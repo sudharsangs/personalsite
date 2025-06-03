@@ -206,7 +206,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                             transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
                         >
                             <h4 className="text-md font-semibold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Projects</h4>
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                                 {experience.projects.map((project, i) => {
                                     const projectTech = experience.technologies.slice(0, 3); 
                                     

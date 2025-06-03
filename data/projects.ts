@@ -884,4 +884,71 @@ export const projects: Projects = [
             "Enhanced business decision-making through detailed analytics"
         ]
     },
+    {
+        title: "Inventory Management System",
+        description: "A comprehensive inventory management solution built specifically for manufacturing businesses with real-time tracking, multi-location support, and intelligent forecasting.",
+        technologies: [
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'NodeJS',
+                icon: '/skills/nodejs.svg'
+            },
+            {
+                name: 'NextJS',
+                icon: '/skills/nextjs.svg'
+            },
+            {
+                name: 'PostgreSQL',
+                icon: '/skills/postgres.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            }
+        ],
+        path: "/projects/independent/inventory-management",
+        slug: "inventory-management",
+        type: "independent",
+        date: "2025",
+        liveUrl: "https://www.factostack.com/inventory-management",
+        features: [
+            "Real-time inventory tracking with stock movement history",
+            "Multi-location warehouse management from a single interface",
+            "Advanced tracking with batch numbers, serial numbers, and barcode support",
+            "Data-driven demand forecasting and inventory analytics",
+            "Purchase order management with automated workflows",
+            "Comprehensive vendor management system",
+            "Professional invoicing linked to inventory transactions",
+            "Production order management with materials planning",
+            "Quality control system for manufacturing processes",
+            "Detailed reporting with sales and tax compliance features"
+        ],
+        problemStatement: "Manufacturing businesses struggle with inventory management across multiple locations, leading to stockouts, overstocking, and production delays. Traditional inventory systems lack manufacturing-specific features and real-time visibility.",
+        solution: "A specialized inventory management system designed specifically for manufacturing businesses, offering real-time tracking, multi-location support, production order management, and intelligent forecasting to optimize stock levels.",
+        image: 'https://www.factostack.com/images/inventory-solution/inventory-dashboard.jpeg',
+        additionalImages: [
+            {
+                url: 'https://www.factostack.com/images/inventory-saas/inventory-dashboard.jpeg',
+                alt: 'Inventory Management Dashboard',
+                caption: 'Comprehensive dashboard with real-time inventory status'
+            },
+            {
+                url: 'https://www.factostack.com/images/inventory-saas/inventory-products.jpeg',
+                alt: 'Product Management',
+                caption: 'Product catalog with detailed specifications and variants'
+            },
+            {
+                url: 'https://www.factostack.com/images/inventory-saas/inventory-locations.jpeg',
+                alt: 'Multi-location Management',
+                caption: 'Manage inventory across multiple warehouses and locations'
+            }
+        ]
+    },
 ]
