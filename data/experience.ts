@@ -9,6 +9,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.fubo.tv/",
     location: "Bengaluru, India",
     type: "Full Time",
+    description: "Currently working on the Molotov TV team, the leading French OTT platform, focusing on enhancing the user experience for live sports streaming and improving the marketing site for better SEO. My role involves developing innovative features, improving video playback performance, and optimizing web presence. Previously, I was part of the VideoAI team, where I contributed to building AI-driven features for sports video analysis.",
     period: {
       start: "Oct 2022",
       end: "Present"
@@ -31,6 +32,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://winuall.com/",
     location: "Bengaluru, India",
     type: "Full Time",
+    description: "Led frontend development for multiple EdTech projects, focusing on building scalable and high-performance web applications for tutors and learners. Worked directly with C-level executives to define product roadmaps.",
     period: {
       start: "Dec 2020",
       end: "Oct 2022"
@@ -43,7 +45,14 @@ export const experiences: Experience[] = [
       "Established CI/CD pipeline using Github Actions and Docker for automated deployments."
     ],
     technologies: ["React", "NextJS", "TypeScript", "Docker", "AWS", "Azure"],
-    projects: ["winuall-apps", "winuall-learners-module", "winuall-online-store", "winuall-marketing-site", "winuall-parents-module"]
+    projects: ["winuall-apps", "winuall-learners-module", "winuall-online-store", "winuall-marketing-site", "winuall-parents-module"],
+    projectDescriptions: {
+      "winuall-apps": "Developed a central hub for Winuall's web applications, allowing users to access different modules and features from a unified interface.",
+      "winuall-learners-module": "Built a comprehensive learning platform for students with features like video courses, quizzes, and progress tracking.",
+      "winuall-online-store": "Created an e-commerce platform enabling tutors to sell digital and physical products to their students.",
+      "winuall-marketing-site": "Developed the company's main marketing website with SSR for improved SEO and performance.",
+      "winuall-parents-module": "Built a dashboard for parents to track their children's learning progress and communicate with tutors."
+    }
   },
   {
     id: "teal",
@@ -53,6 +62,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.tealindia.in/",
     location: "Bengaluru, India",
     type: "Internship",
+    description: "Worked on developing consumer-facing web applications from scratch, focusing on performance and testing. Implemented headless CMS solutions with modern frontend frameworks.",
     period: {
       start: "Aug 2020",
       end: "Dec 2020"
@@ -63,7 +73,10 @@ export const experiences: Experience[] = [
       "Wrote E2E test cases using Cypress, achieving 90% test coverage."
     ],
     technologies: ["React", "Gatsby", "Ghost CMS", "Cypress"],
-    projects: ["regcheck"]
+    projects: ["regcheck"],
+    projectDescriptions: {
+      "regcheck": "A vehicle registration information platform that provides users with details about their registered vehicles, built with Gatsby and Ghost CMS for content management."
+    }
   },
   {
     id: "printrove",
@@ -73,6 +86,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.printrove.com/",
     location: "Chennai, India",
     type: "Internship",
+    description: "Built internal admin tools and dashboards for a print-on-demand startup, focusing on automating workflows and improving operational efficiency.",
     period: {
       start: "Jun 2020",
       end: "July 2020"
@@ -82,7 +96,11 @@ export const experiences: Experience[] = [
       "Built a custom CMS for Printrove's website using React and Redux."
     ],
     technologies: ["React", "Redux"],
-    projects: ["printrove-admin-panel","printrove-merchant-panel"]
+    projects: ["printrove-admin-panel","printrove-merchant-panel"],
+    projectDescriptions: {
+      "printrove-admin-panel": "An internal administrative dashboard for Printrove's team to manage orders, products, and customer data with automated order processing.",
+      "printrove-merchant-panel": "A dashboard for Printrove's merchants to manage their products, track sales, and handle customer inquiries."
+    }
   }
 ]
 

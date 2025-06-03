@@ -57,14 +57,19 @@ export default function WinuallOnlineStorePage() {
     ],
     images: [
       {
-        url: '/projects/winuall/online-store-1.png',
+        url: '/projects/winuall/winuall-store-1.png',
         alt: 'Winuall Online Store Product Listing',
         caption: 'Course catalog showing different educational products'
       },
       {
-        url: '/projects/winuall/online-store-2.png',
-        alt: 'Store Management Dashboard',
-        caption: 'Admin interface for managing products and sales'
+        url: '/projects/winuall/winuall-store-2.png',
+        alt: 'Course Viewer Interface',
+        caption: 'Detailed course viewer with interactive content and purchase options'
+      },
+       {
+        url: '/projects/winuall/winuall-store-3.png',
+        alt: 'Detailed Course Information',
+        caption: 'Detailed view of a course with pricing and enrollment options'
       }
     ]
   };
@@ -129,7 +134,7 @@ export default function WinuallOnlineStorePage() {
           </div>
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
             <h3 className="text-lg font-semibold mb-2 text-blue-400">Backend</h3>
-            <p className="text-gray-300">Node.js API server with MongoDB database, handling product management, user accounts, orders, and payment processing through secure microservices.</p>
+            <p className="text-gray-300">Golang API server with MongoDB database, handling product management, user accounts, orders, and payment processing through secure microservices.</p>
           </div>
           <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
             <h3 className="text-lg font-semibold mb-2 text-blue-400">Integration</h3>

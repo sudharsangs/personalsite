@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Experience } from '@/types/experience';
 import { CalendarDays, MapPin, ExternalLink } from 'lucide-react';
 import { fonts } from '@/lib/constants';
+import ExperienceProjectCard from './experience-project-card';
 
 interface ExperienceCardProps {
     experience: Experience;
@@ -117,6 +118,49 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                         </motion.div>
                     </div>
 
+                    {/* Description section - added at the top */}
+                    {experience.description && (
+                        experience.id === "fubo" ? (
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                                transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+                                className="mt-3 flex flex-col sm:flex-row items-start gap-4"
+                            >
+                                <motion.a 
+                                    className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/10 backdrop-blur-sm"
+                                    whileHover={{ scale: 1.05 }}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                    transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
+                                    href="https://molotov.tv/"
+                                    target="_blank"
+                                >
+                                    <Image
+                                        src="/molotov.png"
+                                        alt="Molotov TV Logo"
+                                        fill
+                                        className="object-contain p-2"
+                                    />
+                                </motion.a>
+                                <motion.p
+                                    className="text-sm text-gray-300 italic border-l-2 border-primary/30 pl-3"
+                                >
+                                    {experience.description}
+                                </motion.p>
+                            </motion.div>
+                        ) : (
+                            <motion.p
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                                transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+                                className="mt-3 text-sm text-gray-300 italic border-l-2 border-primary/30 pl-3"
+                            >
+                                {experience.description}
+                            </motion.p>
+                        )
+                    )}
+
                     <motion.ul className="mt-5 space-y-3">
                         {experience.achievements.map((achievement, i) => (
                             <motion.li
@@ -152,6 +196,39 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                             </motion.div>
                         ))}
                     </motion.div>
+                    
+                    {/* Projects Section */}
+                    {experience.projects && experience.projects.length > 0 && (
+                        <motion.div
+                            className="mt-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                            transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
+                        >
+                            <h4 className="text-md font-semibold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Projects</h4>
+                            <div className="grid grid-cols-3 gap-4">
+                                {experience.projects.map((project, i) => {
+                                    const projectTech = experience.technologies.slice(0, 3); 
+                                    
+                                    return (
+                                        <motion.div
+                                            key={i}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                                            transition={{ duration: 0.3, delay: index * 0.1 + i * 0.1 + 0.8 }}
+                                        >
+                                            <ExperienceProjectCard
+                                                title={project.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                                                description={experience.projectDescriptions?.[project] || "Project developed during my time at " + experience.company}
+                                                techStack={Array.isArray(projectTech) ? projectTech : experience.technologies.slice(0, 3)}
+                                                link={`/projects/${experience.type === "Full Time" ? "work" : "internship"}/${project.toLowerCase()}`}
+                                            />
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </motion.div>
+                    )}
                 </CardContent>
             </Card>
         </motion.div>

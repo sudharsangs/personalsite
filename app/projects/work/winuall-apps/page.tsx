@@ -53,11 +53,6 @@ export default function WinuallAppsPage() {
     images: [
       {
         url: '/projects/winuall/winuall-apps.png',
-        alt: 'Winuall Apps Architecture',
-        caption: 'Architecture diagram showing micro frontend integration'
-      },
-      {
-        url: '/projects/winuall/winuall-apps.png',
         alt: 'Plugin Management Interface',
         caption: 'Interface showcasing the plugin management system'
       }

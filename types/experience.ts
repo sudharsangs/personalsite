@@ -6,6 +6,7 @@ export interface Experience {
     companyUrl: string
     location: string
     type: 'Full Time' | 'Internship'
+    description: string | React.ReactNode
     period: {
       start: string
       end: string
@@ -13,6 +14,7 @@ export interface Experience {
     achievements: string[]
     technologies: string[]
     projects: string[]
+    projectDescriptions?: Record<string, string>
   }
   
   export interface ExperienceSectionProps {

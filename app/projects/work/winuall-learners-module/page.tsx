@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Layers, BarChart } from 'lucide-react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
+import ProjectPageLayout, { FeatureList, ProjectSection } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
   title: 'Learner\'s Module | Sudharsan GS',
@@ -43,14 +43,19 @@ export default function LearnersModulePage() {
     ],
     images: [
       {
-        url: '/projects/winuall/learners-module-1.png',
+        url: '/projects/winuall/winuall-learners-module-1.png',
         alt: 'Learners Module Dashboard',
         caption: 'The main dashboard view of the learners module'
       },
       {
-        url: '/projects/winuall/learners-module-2.png',
+        url: '/projects/winuall/winuall-learners-module-2.png',
         alt: 'Course Viewer Interface',
-        caption: 'Interactive course viewing experience'
+        caption: 'Interactive quiz and course viewer interface'
+      },
+      {
+        url: '/projects/winuall/winuall-learners-module-3.png',
+        alt: 'View notes',
+        caption: 'Learners can view their notes and read books related to the course'
       }
     ],
     outcomes: [
@@ -89,6 +94,51 @@ export default function LearnersModulePage() {
         </div>
       </ProjectSection>
 
+      {/* Custom Project Images Layout */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold mb-6">
+          Project Screenshots
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Left Column - Single Large Image */}
+          <div className="relative">
+            <div className="rounded-lg overflow-hidden border border-border/50 shadow-xl h-full">
+              <Image
+                src={projectData.images[0].url}
+                alt={projectData.images[0].alt}
+                width={1200}
+                height={675}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {projectData.images[0].caption && (
+              <p className="text-muted-foreground text-sm mt-2 text-center">{projectData.images[0].caption}</p>
+            )}
+          </div>
+          
+          {/* Right Column - Two Stacked Images */}
+          <div className="flex flex-col gap-6">
+            {projectData.images.slice(1, 3).map((image, index) => (
+              <div key={index} className="relative">
+                <div className="rounded-lg overflow-hidden border border-border/50 shadow-xl">
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto"
+                  />
+                </div>
+                {image.caption && (
+                  <p className="text-muted-foreground text-sm mt-2 text-center">{image.caption}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Key Highlights */}
       <ProjectSection 
         title="Key Highlights"
@@ -103,9 +153,6 @@ export default function LearnersModulePage() {
           iconColor="text-blue-500"
         />
       </ProjectSection>
-
-      {/* Project Images */}
-      <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Challenges & Solutions */}
       <div className="mb-16">
