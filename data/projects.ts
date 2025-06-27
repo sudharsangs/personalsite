@@ -109,12 +109,11 @@ export const projects: Projects = [
                 icon: '/skills/nodejs.svg'
             }
         ],
-        path: "/projects/independent/plumbing-e-commerce",
+        path: "https://factostack.com/case-studies/plumbing-company-ecommerce",
         slug: "plumbing-e-commerce",
         type: "independent",
         date: "2023",
-        liveUrl: "https://plumbingstore.example.com",
-        client: "Urban Plumbing Supplies",
+        client: "Local Plumbing Supply Company",
         features: [
             "Comprehensive product catalog with advanced filtering options",
             "Service booking system with availability calendar",
@@ -282,12 +281,12 @@ export const projects: Projects = [
                 icon: '/skills/mongodb.svg'
             }
         ],
-        path: "/projects/independent/employee-management-app",
+        path: "https://factostack.com/case-studies/employee-mgmt-mobile-app",
         slug: "employee-management-app",
         type: "independent",
         date: "2023",
-        client: "BuildTek Construction",
-        problemStatement: "BuildTek Construction needed a streamlined way to manage their growing workforce across multiple construction sites. Their paper-based systems were inefficient, leading to communication delays and difficulty tracking employee attendance and task completion.",
+        client: "BuildTek Polymers Pvt Ltd",
+        problemStatement: "BuildTek needed a mobile solution to manage their workforce efficiently, including tracking attendance, assigning tasks, and maintaining employee records. The existing manual processes were time-consuming and prone to errors.",
         solution: "I developed a comprehensive mobile application allowing supervisors to track attendance, assign tasks, and manage employee documentation. The app includes geolocation for site check-ins, push notifications for urgent updates, and a central database for all employee information.",
         features: [
             "Employee profile management with comprehensive details",
@@ -913,7 +912,7 @@ export const projects: Projects = [
                 icon: '/skills/tailwind.svg'
             }
         ],
-        path: "/projects/independent/inventory-management",
+        path: "https://factostack.com/inventory-management",
         slug: "inventory-management",
         type: "independent",
         date: "2025",
