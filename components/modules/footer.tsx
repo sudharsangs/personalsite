@@ -59,7 +59,6 @@ const Footer = () => {
                             className="text-muted-foreground text-sm max-w-md"
                         >
                             Software Engineer specializing in building exceptional digital experiences. 
-                            Currently focused on creating scalable web applications and user interfaces.
                         </p>
                         <div 
                             className="flex space-x-4 pt-2"
@@ -146,7 +145,7 @@ const Footer = () => {
                 <div 
                     className="mt-12 pt-6 border-t border-border text-center flex flex-col sm:flex-row items-center justify-center sm:justify-between text-muted-foreground text-sm gap-3"
                 >
-                    <p>© {currentYear} Sudharsan GS. All rights reserved. I provide <a href="https://factostack.com" target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:text-cyan-400 font-medium transition-colors">software solutions for businesses</a> at FactoStack</p>
+                    <p>© {currentYear} Sudharsan GS. All rights reserved. I provide <a href="https://factostack.com" target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:text-cyan-400 font-medium transition-colors">MVP building solutions for startups and businesses</a> at FactoStack</p>
                     <div className="flex items-center gap-1">
                         <span>Built with</span>
                         <HeartPulse className="w-4 h-4 text-red-500" />
