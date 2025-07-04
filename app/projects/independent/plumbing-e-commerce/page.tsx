@@ -27,7 +27,6 @@ export default function PlumbingECommercePage() {
       "Comprehensive product catalog with advanced filtering options",
       "Service booking system with availability calendar",
       "Product compatibility checker for plumbing components",
-      "Integrated inventory management system",
       "Customer account portal for order tracking and service history",
       "Professional plumber dashboard for service management",
       "Technical specification documentation for all products",
