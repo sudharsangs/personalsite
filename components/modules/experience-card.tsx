@@ -27,14 +27,14 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{ y: -5 }}
         >
-            <Card className="overflow-hidden border-gray-800/50 bg-gray-900/20 backdrop-blur-sm hover:bg-gray-900/30 transition-all duration-300 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/10">
-                <CardContent className="p-6">
+            <Card className="overflow-hidden border border-border/50 bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 rounded-2xl group">
+                <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
-                            className="relative w-16 h-16 rounded-lg overflow-hidden border border-gray-800/50 bg-gray-800/30 hover:border-gray-700/50 transition-all duration-300 shadow-lg"
+                            className="relative w-20 h-20 rounded-xl overflow-hidden border-2 border-border/30 bg-white shadow-lg hover:border-primary/50 transition-all duration-300 hover:shadow-xl group-hover:scale-105"
                             whileHover={{ scale: 1.05 }}
                         >
                             <Image
@@ -48,26 +48,26 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                             <div className="flex justify-between items-start gap-4">
                                 <div className='w-full sm:w-auto'>
                                     <motion.h3
-                                        className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
-                                        style={{ fontFamily: fonts.SpaceGrotesk }}
+                                        className="text-2xl font-bold text-foreground mb-1"
+                                        style={{ fontFamily: fonts.PlayfairDisplay }}
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
                                         transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
                                     >
                                         {experience.title}
                                     </motion.h3>
-                                    <div className='flex items-center w-full justify-between'>
+                                    <div className='flex  w-full justify-between sm:flex-row flex-col sm:items-center items-start'>
                                         <motion.a
                                             target='_blank'
                                             href={experience.companyUrl}
-                                            className="font-medium text-amber-300 flex items-center gap-1 hover:text-amber-200 transition-colors"
+                                            className="font-semibold text-primary flex items-center gap-2 hover:text-primary/80 transition-colors text-lg"
                                             initial={{ opacity: 0 }}
                                             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                             transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                                             whileHover={{ x: 2 }}
                                         >
                                             {experience.company}
-                                            <ExternalLink className="w-3 h-3" />
+                                            <ExternalLink className="w-4 h-4" />
                                         </motion.a>
                                         <motion.div
                                             initial={{ opacity: 0, scale: 0.8 }}
@@ -75,7 +75,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                                             transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                                             className="flex sm:hidden"
                                         >
-                                            <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white border-none'>
+                                            <Badge variant={experience.type === "Full Time" ? "default" : "secondary"} className='bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-none shadow-md px-3 py-1 text-sm font-medium'>
                                                 {experience.type}
                                             </Badge>
                                         </motion.div>
@@ -95,23 +95,23 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                         </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between sm:justify-start gap-2 sm:gap-4 mt-3 text-sm text-gray-400">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between sm:justify-start gap-3 sm:gap-6 mt-4 text-sm">
                         <motion.div
-                            className="flex items-center gap-1 text-cyan-300"
+                            className="flex items-center gap-1 text-muted-foreground"
                             initial={{ opacity: 0, x: -10 }}
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                             transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
                         >
-                            <MapPin size={14} className="text-cyan-500" />
+                            <MapPin size={16} className="text-primary" />
                             <span>{experience.location}</span>
                         </motion.div>
                         <motion.div
-                            className="flex items-center gap-1 text-cyan-300"
+                            className="flex items-center gap-1 text-muted-foreground"
                             initial={{ opacity: 0, x: -10 }}
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                             transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
                         >
-                            <CalendarDays size={14} className="text-cyan-500" />
+                            <CalendarDays size={16} className="text-primary" />
                             <span>
                                 {experience.period.start} - {experience.period.end}
                             </span>
@@ -121,63 +121,77 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                     {/* Description section - added at the top */}
                     {experience.description && (
                         experience.id === "fubo" ? (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                                transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-                                className="mt-3 flex flex-col sm:flex-row items-start gap-4"
-                            >
-                                <motion.a 
-                                    className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/10 backdrop-blur-sm"
-                                    whileHover={{ scale: 1.05 }}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                                    transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
-                                    href="https://molotov.tv/"
-                                    target="_blank"
+                            <>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+                                    className="mt-3 flex flex-col sm:flex-row items-start gap-4"
                                 >
-                                    <Image
-                                        src="/molotov.png"
-                                        alt="Molotov TV Logo"
-                                        fill
-                                        className="object-contain p-2"
-                                    />
-                                </motion.a>
+                                    <motion.a
+                                        className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/10 backdrop-blur-sm"
+                                        whileHover={{ scale: 1.05 }}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                        transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
+                                        href="https://molotov.tv/"
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            src="/molotov.png"
+                                            alt="Molotov TV Logo"
+                                            fill
+                                            className="object-contain p-2"
+                                        />
+                                    </motion.a>
+                                    {experience.id === "fubo" ?
+                                        <motion.p className="text-sm text-muted-foreground italic border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg">
+                                            Currently working on the <a href='https://www.molotov.tv/' target='_blank' className='text-primary hover:text-primary/80 underline font-medium'>Molotov</a> team, focusing on enhancing the user experience for live sports streaming and improving the marketing site for better SEO.
+                                        </motion.p> : <motion.p
+                                            className="text-sm text-muted-foreground italic border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg"
+                                        >
+                                            {experience.description}
+                                        </motion.p>}
+
+                                </motion.div>
                                 <motion.p
-                                    className="text-sm text-gray-300 italic border-l-2 border-primary/30 pl-3"
+                                    className="text-sm text-muted-foreground italic border-l-4 border-orange-500/30 pl-4 bg-orange-500/5 py-3 rounded-r-lg mt-3"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
                                 >
-                                    {experience.description}
+                                    Previously, I was part of the VideoAI team, where I contributed to building AI-driven features for sports video analysis
                                 </motion.p>
-                            </motion.div>
+                            </>
                         ) : (
                             <motion.p
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-                                className="mt-3 text-sm text-gray-300 italic border-l-2 border-primary/30 pl-3"
+                                className="mt-4 text-sm text-muted-foreground italic border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg"
                             >
                                 {experience.description}
                             </motion.p>
                         )
                     )}
 
-                    <motion.ul className="mt-5 space-y-3">
+                    <motion.ul className="mt-6 space-y-4">
                         {experience.achievements.map((achievement, i) => (
                             <motion.li
                                 key={i}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 + i * 0.1 + 0.5 }}
-                                className="text-sm text-gray-300 flex gap-2 items-start"
+                                className="text-sm text-muted-foreground flex gap-3 items-center p-2 rounded-lg transition-colors duration-200"
                             >
-                                <span className="text-primary mt-1">•</span>
+                                <span className="text-primary text-base font-bold">•</span>
                                 <span>{achievement}</span>
                             </motion.li>
                         ))}
                     </motion.ul>
 
                     <motion.div
-                        className="flex flex-wrap gap-2 mt-5"
+                        className="flex flex-wrap gap-3 mt-6"
                         initial={{ opacity: 0, y: 10 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                         transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
@@ -190,26 +204,28 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                                 transition={{ delay: index * 0.1 + i * 0.05 + 0.7 }}
                                 whileHover={{ scale: 1.05 }}
                             >
-                                <Badge variant="outline" className="text-xs bg-gray-800/40 hover:bg-gray-800/60 text-gray-300 backdrop-blur-sm border-gray-700/30">
+                                <Badge variant="outline" className="text-xs bg-white/80 hover:bg-primary/5 text-muted-foreground hover:text-primary backdrop-blur-sm border-border/50 hover:border-primary/30 shadow-sm px-3 py-1 transition-all duration-200">
                                     {tech}
                                 </Badge>
                             </motion.div>
                         ))}
                     </motion.div>
-                    
+
                     {/* Projects Section */}
                     {experience.projects && experience.projects.length > 0 && (
                         <motion.div
-                            className="mt-6"
+                            className="mt-8"
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
                         >
-                            <h4 className="text-md font-semibold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Projects</h4>
-                            <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+                            <div className="flex items-center gap-3 mb-6">
+                                <h4 className="text-lg font-semibold text-foreground">Related Projects</h4>
+                            </div>
+                            <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
                                 {experience.projects.map((project, i) => {
-                                    const projectTech = experience.technologies.slice(0, 3); 
-                                    
+                                    const projectTech = experience.technologies.slice(0, 3);
+
                                     return (
                                         <motion.div
                                             key={i}

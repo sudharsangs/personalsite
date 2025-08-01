@@ -1,5 +1,5 @@
 
 export const fonts = {
-    Outfit: "Outfit",
-    SpaceGrotesk: "Space Grotesk",
+    Montserrat: "var(--font-montserrat)",
+    PlayfairDisplay: "var(--font-playfair-display)",
 }

@@ -55,7 +55,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
     }
   };
 
-  const { icon: TypeIcon, badgeBg, badgeText, badgeBorder, headingGradient } = typeConfig[type];
+  const { icon: TypeIcon, badgeBg, badgeText, badgeBorder } = typeConfig[type];
 
   return (
     <div className="min-h-screen py-16">
@@ -112,8 +112,8 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
           </div>
           
           <h1 
-            className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r ${headingGradient}`} 
-            style={{ fontFamily: fonts.SpaceGrotesk }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground" 
+            style={{ fontFamily: fonts.PlayfairDisplay }}
           >
             {title}
           </h1>
@@ -129,7 +129,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
         {/* Navigate Back */}
         <div className="text-center pb-8 mt-16">
           <Link href="/projects">
-            <Button variant="outline" className="border-border hover:bg-card">
+            <Button variant="outline" className="border-border hover:bg-gray-100 hover:text-gray-800">
               <ArrowLeft className="mr-2 h-4 w-4" />
               View All Projects
             </Button>
@@ -166,7 +166,7 @@ export const ProjectSection: React.FC<{
           {icon}
         </div>
       </div>
-      <h2 className="text-2xl font-bold" style={{ fontFamily: fonts.SpaceGrotesk }}>
+      <h2 className="text-2xl font-bold" style={{ fontFamily: fonts.PlayfairDisplay }}>
         {title}
       </h2>
     </div>

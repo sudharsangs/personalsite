@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.fubo.tv/",
     location: "Bengaluru, India",
     type: "Full Time",
-    description: "Currently working on the Molotov TV team, the leading French OTT platform, focusing on enhancing the user experience for live sports streaming and improving the marketing site for better SEO. My role involves developing innovative features, improving video playback performance, and optimizing web presence. Previously, I was part of the VideoAI team, where I contributed to building AI-driven features for sports video analysis.",
+    description: "Currently working on the Molotov TV team, the leading French OTT platform, focusing on enhancing the user experience for live sports streaming and improving the marketing site for better SEO. My role involves developing innovative features, improving video playback performance, and optimizing web presence. Previously, I was part of the VideoAI team, where I contributed to building AI-driven features for sports video analysis",
     period: {
       start: "Oct 2022",
       end: "Present"
@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
       "Implemented frame-accurate seeking in VideoJS for HLS and DASH videos, ensuring precise video playback and an improved user experience.",
       "Developed multiple POCs for VideoAI features using methodologies such as Server Driven UI and Micro Frontend Architecture."
     ],
-    technologies: ["React", "TypeScript", "VideoJS", "GCP", "Docker", "Circle CI"],
+    technologies: ["React", "TypeScript", "VideoJS", "Shaka Player", "GCP", "Docker", "Circle CI"],
     projects: []
   },
   {
@@ -44,7 +44,7 @@ export const experiences: Experience[] = [
       "Migrated legacy React application to SSR, improving SEO score by 60%.",
       "Established CI/CD pipeline using Github Actions and Docker for automated deployments."
     ],
-    technologies: ["React", "NextJS", "TypeScript", "Docker", "AWS", "Azure"],
+    technologies: ["React", "NextJS", "TypeScript", "ExpressJS", "NodeJS", "Golang", "Docker", "AWS", "Azure"],
     projects: ["winuall-apps", "winuall-learners-module", "winuall-online-store", "winuall-marketing-site", "winuall-parents-module"],
     projectDescriptions: {
       "winuall-apps": "Developed a central hub for Winuall's web applications, allowing users to access different modules and features from a unified interface.",

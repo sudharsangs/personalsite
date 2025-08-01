@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils"; // Utility for conditional classnames (if you're using Shadcn's boilerplate)
+import Link from "next/link";
 
 interface ExperienceProjectCardProps {
   title: string;
@@ -24,14 +25,13 @@ const ExperienceProjectCard: React.FC<ExperienceProjectCardProps> = ({ title, de
         ))}
       </div>
       {link && (
-        <a
+        <Link
           href={link}
-          target="_blank"
           rel="noopener noreferrer"
           className="text-sm text-primary hover:underline mt-3 inline-block"
         >
           View Project &rarr;
-        </a>
+        </Link>
       )}
     </div>
   );

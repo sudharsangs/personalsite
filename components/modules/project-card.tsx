@@ -41,11 +41,11 @@ export default function ProjectCard({
       transition={{ duration: 0.5, delay: index * 0.2 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="h-full transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20">
-        <div className='relative overflow-hidden group h-48'>
+      <Card className="h-full transition-all duration-500 overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-2xl group">
+        <div className='relative overflow-hidden group h-56'>
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-70 z-10"
-            whileHover={{ opacity: 0.4 }}
+            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"
+            whileHover={{ opacity: 0.6 }}
             transition={{ duration: 0.3 }}
           />
           
@@ -74,7 +74,7 @@ export default function ProjectCard({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
           >
-            <h3 className="font-bold text-xl text-white drop-shadow-md" style={{ fontFamily: fonts.SpaceGrotesk }}>
+            <h3 className="font-bold text-xl lg:text-2xl text-white drop-shadow-2xl" style={{ fontFamily: fonts.PlayfairDisplay }}>
               {title}
             </h3>
           </motion.div>
@@ -88,15 +88,15 @@ export default function ProjectCard({
             <Badge className="flex items-center gap-1" 
               variant={type === "personal" ? "default" : type === "independent" ? "destructive" : "secondary"}
               style={{ 
-                backgroundColor: type === "personal" ? "rgba(16, 185, 129, 0.2)" : 
-                               type === "independent" ? "rgba(245, 158, 11, 0.2)" : 
-                               "rgba(14, 165, 233, 0.2)",
-                color: type === "personal" ? "#10b981" : 
-                      type === "independent" ? "#f59e0b" : 
-                      "#0ea5e9",
-                borderColor: type === "personal" ? "rgba(16, 185, 129, 0.3)" : 
-                            type === "independent" ? "rgba(245, 158, 11, 0.3)" : 
-                            "rgba(14, 165, 233, 0.3)",
+                backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" : 
+                               type === "independent" ? "hsl(var(--accent) / 0.15)" : 
+                               "hsl(180 40% 60% / 0.15)",
+                color: type === "personal" ? "hsl(var(--primary))" : 
+                      type === "independent" ? "hsl(var(--accent))" : 
+                      "hsl(180 40% 40%)",
+                borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" : 
+                            type === "independent" ? "hsl(var(--accent) / 0.3)" : 
+                            "hsl(180 40% 60% / 0.3)",
                 backdropFilter: "blur(4px)"
               }}
             >
@@ -106,9 +106,9 @@ export default function ProjectCard({
           </motion.div>
         </div>
 
-        <CardContent className="px-6 py-5">
+        <CardContent className="px-6 py-6">
           <motion.p
-            className="text-sm text-muted-foreground mb-4 line-clamp-3"
+            className="text-sm lg:text-base text-muted-foreground mb-5 line-clamp-3 leading-relaxed"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
@@ -117,51 +117,51 @@ export default function ProjectCard({
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-2 mb-5"
+            className="flex flex-wrap gap-2.5 mb-6"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
           >
             {technologies.slice(0, 3).map((tech, i) => {
-              // Assign different colors based on index for variety
+              // Elegant tech colors matching the new color scheme
               const techColors = [
-                "bg-amber-500/20 border-amber-500/30 text-amber-400",
-                "bg-emerald-500/20 border-emerald-500/30 text-emerald-400",
-                "bg-orange-500/20 border-orange-500/30 text-orange-400"
+                "bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40",
+                "bg-accent/10 border-accent/30 text-accent hover:bg-accent/15 hover:border-accent/40",
+                "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
               ];
               return (
                 <motion.div
                   key={i}
-                  whileHover={{ y: -2 }}
-                  className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-3 py-1 text-xs border`}
+                  whileHover={{ y: -2, scale: 1.05 }}
+                  className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-3 py-1.5 text-xs lg:text-sm border shadow-sm transition-all duration-300`}
                 >
-                  <Image src={tech.icon} alt={tech.name} width={12} height={12} className="mr-1" />
-                  <span>{tech.name}</span>
+                  <Image src={tech.icon} alt={tech.name} width={14} height={14} className="mr-1.5" />
+                  <span className="font-medium">{tech.name}</span>
                 </motion.div>
               );
             })}
             {technologies.length > 3 && (
-              <Badge variant="outline" className="text-xs bg-indigo-500/20 text-indigo-400 border-indigo-500/30 backdrop-blur-sm">
+              <Badge variant="outline" className="text-xs lg:text-sm bg-muted/60 text-muted-foreground border-border hover:bg-muted shadow-sm px-3 py-1.5">
                 +{technologies.length - 3} more
               </Badge>
             )}
           </motion.div>
 
           <motion.div
-            className="flex gap-2"
+            className="flex gap-3"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
           >
             <Link href={path} className="flex-1">
-              <Button variant="default" className="w-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center gap-1">
+              <Button variant="outline" className="w-full bg-white/80 border-2 border-primary/40 text-primary hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center gap-2 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl py-3 text-sm lg:text-base">
                 <span>View Details</span>
-                <ExternalLink className="w-3 h-3" />
+                <ExternalLink className="w-4 h-4" />
               </Button>
             </Link>
             {github && (
               <Link href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-indigo-700/50 bg-indigo-900/20 hover:bg-indigo-800/30 text-indigo-300 hover:text-white">
+                <Button variant="outline" className="border-border bg-white/70 hover:bg-white text-muted-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl px-4">
                   <Github className="w-4 h-4" />
                 </Button>
               </Link>

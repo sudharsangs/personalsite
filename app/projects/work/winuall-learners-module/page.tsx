@@ -77,18 +77,18 @@ export default function LearnersModulePage() {
       <ProjectSection 
         title="Tech Stack"
         icon={<Layers className="w-5 h-5" />}
-        iconBg="bg-blue-900/20"
-        iconColor="text-blue-500"
-        iconBorder="border-blue-800/20"
+        iconBg="bg-blue-100"
+        iconColor="text-blue-700"
+        iconBorder="border-blue-200"
       >
         <div className="flex flex-wrap gap-3">
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -143,14 +143,14 @@ export default function LearnersModulePage() {
       <ProjectSection 
         title="Key Highlights"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-blue-900/20"
-        iconColor="text-blue-500"
-        iconBorder="border-blue-800/20"
+        iconBg="bg-blue-100"
+        iconColor="text-blue-700"
+        iconBorder="border-blue-200"
       >
         <FeatureList 
           items={projectData.keyHighlights}
-          iconBg="bg-blue-900/20"
-          iconColor="text-blue-500"
+          iconBg="bg-blue-100"
+          iconColor="text-blue-700"
         />
       </ProjectSection>
 
@@ -161,32 +161,32 @@ export default function LearnersModulePage() {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="bg-gray-900/20 backdrop-blur-sm border-gray-800/50">
+          <Card className="bg-red-50 backdrop-blur-sm border-red-200">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4 text-blue-400">Challenges</h3>
+              <h3 className="text-xl font-semibold mb-4 text-red-700">Challenges</h3>
               <ul className="space-y-3">
                 {projectData.challenges.map((challenge, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-red-900/20 text-red-500 mr-3 mt-0.5">
+                    <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-red-100 text-red-700 mr-3 mt-0.5">
                       {index + 1}
                     </span>
-                    <span className="text-gray-300">{challenge}</span>
+                    <span className="text-muted-foreground">{challenge}</span>
                   </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
           
-          <Card className="bg-gray-900/20 backdrop-blur-sm border-gray-800/50">
+          <Card className="bg-emerald-50 backdrop-blur-sm border-emerald-200">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4 text-emerald-400">Solutions</h3>
+              <h3 className="text-xl font-semibold mb-4 text-emerald-700">Solutions</h3>
               <ul className="space-y-3">
                 {projectData.solutions.map((solution, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-emerald-900/20 text-emerald-500 mr-3 mt-0.5">
+                    <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-emerald-100 text-emerald-700 mr-3 mt-0.5">
                       {index + 1}
                     </span>
-                    <span className="text-gray-300">{solution}</span>
+                    <span className="text-muted-foreground">{solution}</span>
                   </li>
                 ))}
               </ul>
@@ -199,18 +199,18 @@ export default function LearnersModulePage() {
       <ProjectSection 
         title="Outcomes & Results"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-emerald-900/20"
-        iconColor="text-emerald-500"
-        iconBorder="border-emerald-800/20"
+        iconBg="bg-emerald-100"
+        iconColor="text-emerald-700"
+        iconBorder="border-emerald-200"
       >
-        <div className="bg-gradient-to-br from-blue-900/10 to-emerald-900/10 border border-gray-800/30 rounded-xl p-6">
+        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
           <ul className="space-y-4">
             {projectData.outcomes.map((outcome, index) => (
               <li key={index} className="flex items-center">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-emerald-900/20 flex items-center justify-center mr-4">
-                  <span className="text-emerald-500 font-bold">{index + 1}</span>
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center mr-4">
+                  <span className="text-emerald-700 font-bold">{index + 1}</span>
                 </div>
-                <p className="text-gray-300">{outcome}</p>
+                <p className="text-muted-foreground">{outcome}</p>
               </li>
             ))}
           </ul>

@@ -17,7 +17,7 @@ export default function PlumbingECommercePage() {
     date: "2023",
     client: "Urban Plumbing Supplies",
     technologies: [
-      { name: 'NextJS', icon: '/skills/nextjs.svg' },
+      { name: 'Svelte', icon: '/skills/svelte.png' },
       { name: 'TypeScript', icon: '/skills/typescript.svg' },
       { name: 'PostgreSQL', icon: '/skills/postgres.svg' },
       { name: 'TailwindCSS', icon: '/skills/tailwind.svg' },
@@ -71,10 +71,10 @@ export default function PlumbingECommercePage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -89,23 +89,23 @@ export default function PlumbingECommercePage() {
         <ProjectSection 
           title="The Problem"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-500"
-          iconBorder="border-amber-800/30"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
+          iconBorder="border-amber-200"
           className="mb-6 md:mb-0"
         >
-          <p className="text-gray-300">{projectData.problemStatement}</p>
+          <p className="text-muted-foreground">{projectData.problemStatement}</p>
         </ProjectSection>
 
         <ProjectSection 
           title="The Solution"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-emerald-900/20"
-          iconColor="text-emerald-500" 
-          iconBorder="border-emerald-800/20"
+          iconBg="bg-emerald-100"
+          iconColor="text-emerald-700" 
+          iconBorder="border-emerald-200"
           className="mb-0"
         >
-          <p className="text-gray-300">{projectData.solution}</p>
+          <p className="text-muted-foreground">{projectData.solution}</p>
         </ProjectSection>
       </div>
 
@@ -113,23 +113,23 @@ export default function PlumbingECommercePage() {
       <ProjectSection 
         title="Platform Components"
         icon={<ShoppingCart className="w-5 h-5" />}
-        iconBg="bg-purple-900/20"
-        iconColor="text-purple-400" 
-        iconBorder="border-purple-800/30"
+        iconBg="bg-purple-100"
+        iconColor="text-purple-700" 
+        iconBorder="border-purple-200"
         className="mb-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Product Store</h3>
-            <p className="text-gray-300">Comprehensive catalog with detailed specifications, compatibility information, and installation guides for all plumbing products.</p>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Product Store</h3>
+            <p className="text-muted-foreground">Comprehensive catalog with detailed specifications, compatibility information, and installation guides for all plumbing products.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Service Booking</h3>
-            <p className="text-gray-300">Interactive scheduling system allowing customers to book installations, repairs, and maintenance with licensed plumbers.</p>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Service Booking</h3>
+            <p className="text-muted-foreground">Interactive scheduling system allowing customers to book installations, repairs, and maintenance with licensed plumbers.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Professional Portal</h3>
-            <p className="text-gray-300">Dedicated dashboard for plumbers to manage appointments, update availability, and access customer project details.</p>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Professional Portal</h3>
+            <p className="text-muted-foreground">Dedicated dashboard for plumbers to manage appointments, update availability, and access customer project details.</p>
           </div>
         </div>
       </ProjectSection>
@@ -141,8 +141,8 @@ export default function PlumbingECommercePage() {
       >
         <FeatureList 
           items={projectData.features}
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-500"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
         />
       </ProjectSection>
 
@@ -150,14 +150,14 @@ export default function PlumbingECommercePage() {
       <ProjectSection 
         title="Business Impact"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-900/20"
-        iconColor="text-emerald-500" 
-        iconBorder="border-emerald-800/20"
+        iconBg="bg-emerald-100"
+        iconColor="text-emerald-700" 
+        iconBorder="border-emerald-200"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {projectData.results.map((result, index) => (
-            <div key={index} className="bg-gray-800/30 border border-gray-700/30 rounded-lg p-4">
-              <p className="text-gray-300">{result}</p>
+            <div key={index} className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+              <p className="text-muted-foreground">{result}</p>
             </div>
           ))}
         </div>

@@ -58,10 +58,10 @@ export default function FormToSheetsPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -71,7 +71,7 @@ export default function FormToSheetsPage() {
       <div className="flex flex-wrap gap-4 mb-12">
         {projectData.liveUrl && (
           <Link href={projectData.liveUrl} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 flex items-center gap-2">
+            <Button className="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 flex items-center gap-2">
               <ExternalLink className="h-4 w-4" />
               View Live Site
             </Button>
@@ -80,7 +80,7 @@ export default function FormToSheetsPage() {
         
         {projectData.githubUrl && (
           <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-gray-700 hover:bg-gray-800 flex items-center gap-2">
+            <Button variant="outline" className="border-border hover:bg-muted/10 flex items-center gap-2">
               <Github className="h-4 w-4" />
               View Source Code
             </Button>

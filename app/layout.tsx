@@ -1,37 +1,38 @@
 import type { Metadata } from "next";
-import { Outfit, Space_Grotesk } from "next/font/google";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import Script from 'next/script';
 import Footer from "@/components/modules/footer";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Sudharsan GS | Software Engineer",
-  description: "Software Engineer specializing in web development with React, TypeScript, and NextJS",
-  keywords: "software engineer, web developer, react, typescript, nextjs, bengaluru",
+  title: "Sudharsan GS | Fullstack Developer",
+  description: "Fullstack Developer crafting digital experiences that merge beautiful design with robust functionality. Specialized in React, TypeScript, and Next.js.",
+  keywords: "fullstack developer, web designer, react developer, typescript, nextjs, ui/ux design, frontend developer, bengaluru, portfolio",
   authors: [{ name: "Sudharsan GS" }],
   creator: "Sudharsan GS",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://sudharsangs.dev",
-    title: "Sudharsan GS | Software Engineer",
-    description: "Software Engineer specializing in web development",
-    siteName: "Sudharsan GS Portfolio",
+    title: "Sudharsan GS | Fullstack Developer",
+    description: "Crafting digital experiences that merge beautiful design with robust functionality",
+    siteName: "Sudharsan GS - Developer Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sudharsan GS | Software Engineer",
-    description: "Software Engineer specializing in web development",
+    title: "Sudharsan GS | Fullstack Developer",
+    description: "Crafting digital experiences that merge beautiful design with robust functionality",
     creator: "@sudharsangs",
   },
 };
@@ -47,11 +48,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${outfit.variable} ${spaceGrotesk.variable} antialiased h-full`}
+        className={`${montserrat.variable} ${playfairDisplay.variable} antialiased h-full`}
       >
-        <div className="min-h-screen w-full bg-gradient-to-b from-neutral-950 to-neutral-900">
+        <div className="min-h-screen w-full bg-gradient-to-br from-background via-slate-50 to-blue-50/30">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="backdrop-blur-sm z-20">
+            <div className="relative z-20">
               {children}
               <Footer />
             </div>

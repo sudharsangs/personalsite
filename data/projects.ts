@@ -7,8 +7,8 @@ export const projects: Projects = [
         image: '/projects/plumbing/cover.png',
         technologies: [
             {
-                name: 'NextJS',
-                icon: '/skills/nextjs.svg'
+                name: 'Svelte',
+                icon: '/skills/svelte.png'
             },
             {
                 name: 'TypeScript',

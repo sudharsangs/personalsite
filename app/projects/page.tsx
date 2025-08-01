@@ -22,7 +22,7 @@ const ProjectsPage: React.FC = () => {
         <div className="mb-6">
           <Link 
             href="/" 
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card/50 border border-border/50 hover:bg-card/80 hover:border-primary/30 transition-all duration-300 group"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/60 border border-border hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group shadow-sm hover:shadow-md"
             aria-label="Back to Home"
           >
             <Home className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -33,10 +33,10 @@ const ProjectsPage: React.FC = () => {
         <div className="py-12 text-center relative">
           {/* Animated background elements similar to hero component */}
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 drop-shadow-sm" style={{ fontFamily: fonts.SpaceGrotesk }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground" style={{ fontFamily: fonts.PlayfairDisplay }}>
             My Projects
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto relative z-10">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto relative z-10">
             A collection of projects I&apos;ve worked on during my professional career,
             freelance work, and personal experiments.
           </p>
@@ -50,16 +50,16 @@ const ProjectsPage: React.FC = () => {
         {workProjects.length > 0 && (
           <section id="work-projects" className="mb-16 scroll-mt-20">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-white relative group" style={{ fontFamily: fonts.SpaceGrotesk }}>
+              <h2 className="text-3xl font-bold text-foreground relative group" style={{ fontFamily: fonts.PlayfairDisplay }}>
                 <span className="relative z-10">Work Projects</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-blue-500 to-indigo-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
               </h2>
-              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
-              <Badge className="bg-gradient-to-br from-blue-900/20 to-indigo-900/10 text-white border border-blue-800/30 backdrop-blur-sm shadow-sm">
+              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+              <Badge className="bg-primary/10 text-primary border border-primary/30 shadow-sm">
                 {workProjects.length} Projects
               </Badge>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
               {workProjects.map((project, index) => (
                 <ProjectCard key={index} {...project} index={index} />
               ))}
@@ -71,16 +71,16 @@ const ProjectsPage: React.FC = () => {
         {independentProjects.length > 0 && (
           <section id="independent-projects" className="mb-16 scroll-mt-20">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-white relative group" style={{ fontFamily: fonts.SpaceGrotesk }}>
+              <h2 className="text-3xl font-bold text-foreground relative group" style={{ fontFamily: fonts.PlayfairDisplay }}>
                 <span className="relative z-10">Independent Projects</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-amber-400 to-orange-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-accent to-primary group-hover:w-full transition-all duration-300"></span>
               </h2>
-              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
-              <Badge className="bg-gradient-to-br from-amber-900/20 to-orange-900/10 text-white border border-amber-800/30 backdrop-blur-sm shadow-sm">
+              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+              <Badge className="bg-accent/10 text-accent border border-accent/30 shadow-sm">
                 {independentProjects.length} Projects
               </Badge>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
               {independentProjects.map((project, index) => (
                 <ProjectCard key={index} {...project} index={index} />
               ))}
@@ -92,16 +92,16 @@ const ProjectsPage: React.FC = () => {
         {personalProjects.length > 0 && (
           <section id="personal-projects" className="mb-16 scroll-mt-20">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-white relative group" style={{ fontFamily: fonts.SpaceGrotesk }}>
+              <h2 className="text-3xl font-bold text-foreground relative group" style={{ fontFamily: fonts.PlayfairDisplay }}>
                 <span className="relative z-10">Personal Projects</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
               </h2>
-              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
-              <Badge className="bg-gradient-to-br from-emerald-900/20 to-cyan-900/10 text-white border border-emerald-800/30 backdrop-blur-sm shadow-sm">
+              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+              <Badge className="bg-primary/10 text-primary border border-primary/30 shadow-sm">
                 {personalProjects.length} Projects
               </Badge>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
               {personalProjects.map((project, index) => (
                 <ProjectCard key={index} {...project} index={index} />
               ))}

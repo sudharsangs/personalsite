@@ -76,10 +76,10 @@ export default function WinuallAppsPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -92,14 +92,14 @@ export default function WinuallAppsPage() {
       <ProjectSection 
         title="Key Highlights"
         icon={<Target className="w-5 h-5" />}
-        iconBg="bg-blue-900/20"
-        iconColor="text-blue-400" 
-        iconBorder="border-blue-800/30"
+        iconBg="bg-blue-100"
+        iconColor="text-blue-700" 
+        iconBorder="border-blue-200"
       >
         <FeatureList 
           items={projectData.keyHighlights} 
-          iconBg="bg-blue-900/20"
-          iconColor="text-blue-400"
+          iconBg="bg-blue-100"
+          iconColor="text-blue-700"
         />
       </ProjectSection>
 
@@ -107,27 +107,27 @@ export default function WinuallAppsPage() {
       <ProjectSection 
         title="Architecture Components"
         icon={<Code className="w-5 h-5" />}
-        iconBg="bg-purple-900/20"
-        iconColor="text-purple-400" 
-        iconBorder="border-purple-800/30"
+        iconBg="bg-purple-100"
+        iconColor="text-purple-700" 
+        iconBorder="border-purple-200"
         className="mb-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-400">Container App</h3>
-            <p className="text-gray-300">Developed the main shell application that loads and manages micro frontends with shared routing and state.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-blue-700">Container App</h3>
+            <p className="text-muted-foreground">Developed the main shell application that loads and manages micro frontends with shared routing and state.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-400">Module Federation</h3>
-            <p className="text-gray-300">Implemented Webpack Module Federation to share components and logic between applications while maintaining independence.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-blue-700">Module Federation</h3>
+            <p className="text-muted-foreground">Implemented Webpack Module Federation to share components and logic between applications while maintaining independence.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-400">Plugin System</h3>
-            <p className="text-gray-300">Created a flexible plugin architecture allowing dynamic integration of third-party features into the platform.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-blue-700">Plugin System</h3>
+            <p className="text-muted-foreground">Created a flexible plugin architecture allowing dynamic integration of third-party features into the platform.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-400">Design System</h3>
-            <p className="text-gray-300">Built a shared component library with Styled Components ensuring visual consistency across all micro frontends.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-blue-700">Design System</h3>
+            <p className="text-muted-foreground">Built a shared component library with Styled Components ensuring visual consistency across all micro frontends.</p>
           </div>
         </div>
       </ProjectSection>
@@ -137,30 +137,30 @@ export default function WinuallAppsPage() {
         <ProjectSection 
           title="Challenges"
           icon={<Code className="w-5 h-5" />}
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-500"
-          iconBorder="border-amber-800/30"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
+          iconBorder="border-amber-200"
           className="mb-6 md:mb-0"
         >
           <FeatureList 
             items={projectData.challenges} 
-            iconBg="bg-amber-900/20"
-            iconColor="text-amber-500"
+            iconBg="bg-amber-100"
+            iconColor="text-amber-700"
           />
         </ProjectSection>
 
         <ProjectSection 
           title="Solutions"
           icon={<Grid className="w-5 h-5" />}
-          iconBg="bg-emerald-900/20"
-          iconColor="text-emerald-500" 
-          iconBorder="border-emerald-800/20"
+          iconBg="bg-emerald-100"
+          iconColor="text-emerald-700" 
+          iconBorder="border-emerald-200"
           className="mb-0"
         >
           <FeatureList 
             items={projectData.solutions}
-            iconBg="bg-emerald-900/20"
-            iconColor="text-emerald-500"
+            iconBg="bg-emerald-100"
+            iconColor="text-emerald-700"
           />
         </ProjectSection>
       </div>
@@ -169,14 +169,14 @@ export default function WinuallAppsPage() {
       <ProjectSection 
         title="Outcomes & Results"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-blue-900/20"
-        iconColor="text-blue-400" 
-        iconBorder="border-blue-800/30"
+        iconBg="bg-blue-100"
+        iconColor="text-blue-700" 
+        iconBorder="border-blue-200"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {projectData.outcomes.map((outcome, index) => (
-            <div key={index} className="bg-gray-800/30 border border-gray-700/30 rounded-lg p-4">
-              <p className="text-gray-300">{outcome}</p>
+            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p className="text-muted-foreground">{outcome}</p>
             </div>
           ))}
         </div>

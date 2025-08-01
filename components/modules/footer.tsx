@@ -50,25 +50,25 @@ const Footer = () => {
                         className="md:col-span-6 space-y-4"
                     >
                         <h3 
-                            className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-400 to-cyan-400"
-                            style={{ fontFamily: fonts.SpaceGrotesk }}
+                            className="text-2xl font-semibold text-foreground"
+                            style={{ fontFamily: fonts.PlayfairDisplay }}
                         >
                             Sudharsan GS
                         </h3>
                         <p 
-                            className="text-muted-foreground text-sm max-w-md"
+                            className="text-muted-foreground text-sm max-w-md leading-relaxed"
                         >
-                            Software Engineer specializing in building exceptional digital experiences. 
+                            Fullstack Developer crafting digital experiences that merge beautiful design with robust functionality. Ready to bring your ideas to life.
                         </p>
                         <div 
                             className="flex space-x-4 pt-2"
                         >
                             {socialLinks.map((link, index) => {
-                                // Different color schemes for each social icon
+                                // Light theme social icon colors
                                 const iconColors = [
-                                    "hover:text-blue-400 hover:border-blue-500/50 hover:bg-blue-500/10",
-                                    "hover:text-emerald-400 hover:border-emerald-500/50 hover:bg-emerald-500/10",
-                                    "hover:text-amber-400 hover:border-amber-500/50 hover:bg-amber-500/10"
+                                    "hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50",
+                                    "hover:text-gray-800 hover:border-gray-400 hover:bg-gray-100",
+                                    "hover:text-red-600 hover:border-red-300 hover:bg-red-50"
                                 ];
                                 return (
                                     <a
@@ -77,7 +77,7 @@ const Footer = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={link.label}
-                                        className={`text-muted-foreground ${iconColors[index]} transition-all p-2 bg-muted/40 backdrop-blur-sm rounded-full border border-border hover:shadow-md`}
+                                        className={`text-muted-foreground ${iconColors[index]} transition-all duration-300 p-2 bg-white/60 backdrop-blur-sm rounded-full border border-border hover:shadow-md`}
                                     >
                                         {link.icon}
                                     </a>
@@ -104,14 +104,14 @@ const Footer = () => {
                                         {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                                         className={`text-muted-foreground ${
                                             link.highlight 
-                                                ? "hover:text-cyan-400 font-medium text-cyan-500/90" 
-                                                : `hover:text-${index === 0 ? 'violet-400' : 'amber-400'}`
-                                        } transition-colors flex items-center gap-2 group`}
+                                                ? "hover:text-primary font-semibold text-primary/90" 
+                                                : "hover:text-primary"
+                                        } transition-colors duration-300 flex items-center gap-2 group`}
                                     >
                                         {link.highlight ? (
-                                            <Globe className="w-3 h-3 text-cyan-500 group-hover:translate-x-1 transition-transform" />
+                                            <Globe className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" />
                                         ) : (
-                                            <ExternalLink className={`w-3 h-3 group-hover:translate-x-1 transition-transform group-hover:text-${index === 0 ? 'violet-400' : 'amber-400'}`} />
+                                            <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                                         )}
                                         <span>{link.label}</span>
                                     </Link>
@@ -135,9 +135,10 @@ const Footer = () => {
                             sudharsangs.99@gmail.com
                         </a>
                         <p
-                            className="text-muted-foreground text-sm"
+                            className="text-muted-foreground text-sm leading-relaxed"
                         >
-                            Open to opportunities and collaborations
+                            Open to opportunities and collaborations.<br/>
+                            <span className="text-primary font-medium">Let&apos;s build something amazing together!</span>
                         </p>
                     </div>
                 </div>
@@ -145,7 +146,7 @@ const Footer = () => {
                 <div 
                     className="mt-12 pt-6 border-t border-border text-center flex flex-col sm:flex-row items-center justify-center sm:justify-between text-muted-foreground text-sm gap-3"
                 >
-                    <p>© {currentYear} Sudharsan GS. All rights reserved. I provide <a href="https://factostack.com" target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:text-cyan-400 font-medium transition-colors">MVP building solutions for startups and businesses</a> at FactoStack</p>
+                    <p>© {currentYear} Sudharsan GS. All rights reserved. I provide <a href="https://factostack.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 font-semibold transition-colors">MVP building solutions for startups and businesses</a> at FactoStack</p>
                     <div className="flex items-center gap-1">
                         <span>Built with</span>
                         <HeartPulse className="w-4 h-4 text-red-500" />

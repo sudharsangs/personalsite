@@ -60,10 +60,10 @@ export default function NoPaperExamsPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -74,23 +74,23 @@ export default function NoPaperExamsPage() {
         <ProjectSection 
           title="The Problem"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-500"
-          iconBorder="border-amber-800/30"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
+          iconBorder="border-amber-200"
           className="mb-6 md:mb-0"
         >
-          <p className="text-gray-300">{projectData.problemStatement}</p>
+          <p className="text-muted-foreground">{projectData.problemStatement}</p>
         </ProjectSection>
 
         <ProjectSection 
           title="The Solution"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-emerald-900/20"
-          iconColor="text-emerald-500" 
-          iconBorder="border-emerald-800/20"
+          iconBg="bg-emerald-100"
+          iconColor="text-emerald-700" 
+          iconBorder="border-emerald-200"
           className="mb-0"
         >
-          <p className="text-gray-300">{projectData.solution}</p>
+          <p className="text-muted-foreground">{projectData.solution}</p>
         </ProjectSection>
       </div>
 
@@ -98,27 +98,27 @@ export default function NoPaperExamsPage() {
       <ProjectSection 
         title="System Modules"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-purple-900/20"
-        iconColor="text-purple-400" 
-        iconBorder="border-purple-800/30"
+        iconBg="bg-purple-100"
+        iconColor="text-purple-700" 
+        iconBorder="border-purple-200"
         className="mb-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Exam Creator</h3>
-            <p className="text-gray-300">Powerful tool for educators to design examinations with various question types, timing controls, and section organization.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Exam Creator</h3>
+            <p className="text-muted-foreground">Powerful tool for educators to design examinations with various question types, timing controls, and section organization.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Secure Test Environment</h3>
-            <p className="text-gray-300">Browser lockdown system with AI-powered proctoring to ensure examination integrity and prevent unauthorized assistance.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Secure Test Environment</h3>
+            <p className="text-muted-foreground">Browser lockdown system with AI-powered proctoring to ensure examination integrity and prevent unauthorized assistance.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Grading System</h3>
-            <p className="text-gray-300">Automated assessment for objective questions and intuitive interfaces for manual grading of subjective responses.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Grading System</h3>
+            <p className="text-muted-foreground">Automated assessment for objective questions and intuitive interfaces for manual grading of subjective responses.</p>
           </div>
-          <div className="bg-gray-800/30 border border-gray-700/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-400">Analytics Dashboard</h3>
-            <p className="text-gray-300">Comprehensive reporting tools that provide insights into individual and group performance across different metrics.</p>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-amber-700">Analytics Dashboard</h3>
+            <p className="text-muted-foreground">Comprehensive reporting tools that provide insights into individual and group performance across different metrics.</p>
           </div>
         </div>
       </ProjectSection>
@@ -130,8 +130,8 @@ export default function NoPaperExamsPage() {
       >
         <FeatureList 
           items={projectData.features}
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-500"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
         />
       </ProjectSection>
 
@@ -139,14 +139,14 @@ export default function NoPaperExamsPage() {
       <ProjectSection 
         title="Results & Impact"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-900/20"
-        iconColor="text-emerald-500" 
-        iconBorder="border-emerald-800/20"
+        iconBg="bg-emerald-100"
+        iconColor="text-emerald-700" 
+        iconBorder="border-emerald-200"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {projectData.results.map((result, index) => (
-            <div key={index} className="bg-gray-800/30 border border-gray-700/30 rounded-lg p-4">
-              <p className="text-gray-300">{result}</p>
+            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p className="text-muted-foreground">{result}</p>
             </div>
           ))}
         </div>

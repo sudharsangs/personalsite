@@ -51,8 +51,36 @@ const Hero: React.FC = () => {
     };
 
     return (
-        <section className="flex flex-col items-center justify-center pt-24 pb-16 min-h-[90vh] relative">
-            <div className="w-full px-6 grid md:grid-cols-2 gap-12 items-center">
+        <section className="flex flex-col items-center justify-center pt-24 pb-20 min-h-[95vh] relative overflow-hidden">
+            {/* Background decorative elements */}
+            <motion.div 
+                className="absolute top-1/4 right-10 w-96 h-96 bg-gradient-to-br from-primary/8 to-accent/5 rounded-full blur-3xl"
+                animate={{ 
+                    x: [0, -30, 0],
+                    y: [0, 20, 0],
+                    opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+            />
+            <motion.div 
+                className="absolute bottom-1/4 left-10 w-80 h-80 bg-gradient-to-tr from-accent/8 to-primary/5 rounded-full blur-3xl"
+                animate={{ 
+                    x: [0, 25, 0],
+                    y: [0, -15, 0],
+                    opacity: [0.4, 0.7, 0.4],
+                }}
+                transition={{
+                    duration: 18,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+            />
+            
+            <div className="container mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 lg:gap-20 items-center relative z-10">
                 <motion.div
                     className="space-y-8"
                     variants={containerVariants}
@@ -60,24 +88,26 @@ const Hero: React.FC = () => {
                     animate="visible"
                 >
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="inline-block bg-gradient-to-r from-accent/20 to-secondary/20 rounded-full px-3 py-1 text-accent mb-2 backdrop-blur-sm border border-accent/30"
+                        className="inline-block bg-gradient-to-r from-primary/10 via-accent/8 to-primary/5 rounded-full px-5 py-2.5 text-primary mb-6 border border-primary/20 shadow-sm backdrop-blur-sm"
                     >
-                        <span className="tracking-widest">FULLSTACK ENGINEER</span>
+                        <span className="text-sm font-semibold tracking-wider">FULLSTACK DEVELOPER</span>
                     </motion.div>
 
                     <motion.h1
-                        className="text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-400 flex items-center gap-3"
+                        className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6"
                         variants={itemVariants}
-                        style={{ fontFamily: fonts.SpaceGrotesk }}
+                        style={{ fontFamily: fonts.PlayfairDisplay }}
                     >
-                        Sudharsan GS
+                        <span className="bg-gradient-to-r from-foreground via-primary/80 to-foreground bg-clip-text text-transparent">
+                            Sudharsan GS
+                        </span>
                     </motion.h1>
 
                     <motion.h2
-                        className="md:text-2xl text-xl text-foreground mb-4 flex items-center"
+                        className="md:text-2xl text-xl text-muted-foreground mb-2 flex items-center font-medium"
                         variants={itemVariants}
                     >
                         Software Engineer at <span className="ml-2 flex items-center">
@@ -86,52 +116,61 @@ const Hero: React.FC = () => {
                     </motion.h2>
 
                     <motion.h3
-                        className="md:text-xl text-lg text-muted-foreground mb-4 flex items-center gap-2"
+                        className="md:text-lg text-base text-muted-foreground mb-6 flex items-center gap-2"
                         variants={itemVariants}
                     >
                         <span className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4 text-accent animate-pulse" />
-                            Based in  <span className='text-amber-400'>Bengaluru, India</span>
+                            <MapPin className="w-4 h-4 text-primary" />
+                            Based in <span className='text-primary font-medium'>Bengaluru, India</span>
                         </span>
                     </motion.h3>
 
                     <motion.p
-                        className="md:text-lg text-muted-foreground max-w-xl leading-relaxed"
+                        className="md:text-xl text-lg text-muted-foreground max-w-2xl leading-relaxed mb-2"
                         variants={itemVariants}
                     >
-                        Passionate about building scalable web applications and creating intuitive user experiences.
-                        Specialized in <span className="text-primary font-semibold">React</span>, <span className="text-secondary font-semibold">TypeScript</span>, and <span className="text-foreground font-semibold">NextJS</span>.
+                        Crafting digital experiences that merge beautiful design with robust functionality.
+                    </motion.p>
+                    
+                    <motion.p
+                        className="md:text-lg text-base text-muted-foreground max-w-xl leading-relaxed"
+                        variants={itemVariants}
+                    >
+                        Specialized in <span className="text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-md">React</span>, <span className="text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-md">TypeScript</span>, and <span className="text-foreground font-semibold bg-muted px-2 py-0.5 rounded-md">Next.js</span> with a passion for user-centered design.
                     </motion.p>
 
-                    <motion.div className="flex flex-col sm:flex-row gap-4 pt-6"
+                    <motion.div className="flex flex-col sm:flex-row gap-4 pt-10"
                         variants={containerVariants}
                     >
-                        <Link href="/projects">
-                            <Button className="bg-gradient-to-r w-full from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground rounded-md px-6 py-6 flex items-center gap-2 h-10">
-                                View Projects
-                                <ExternalLink className="w-4 h-4" />
-                            </Button>
-                        </Link>
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                            <Link href="/projects">
+                                <Button className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-primary-foreground shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl px-10 py-4 flex items-center gap-3 h-14 font-semibold text-base border border-primary/20">
+                                    View My Work
+                                    <ExternalLink className="w-5 h-5" />
+                                </Button>
+                            </Link>
+                        </motion.div>
 
-                        <Button
-                            variant="outline"
-                            className="bg-transparent border border-primary/50 text-primary hover:bg-primary/10 rounded-md px-6 py-6 h-10"
-                            onClick={() => window.location.href = "mailto:sudharsangs.99@gmail.com"}
-                        >
-                            Contact Me
-                        </Button>
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                            <Button
+                                variant="outline"
+                                className="bg-white/90 backdrop-blur-sm border-2 border-primary/40 text-primary hover:bg-gray-500 hover:text-white hover:border-gray-500 transition-all duration-300 rounded-xl px-10 py-4 h-14 font-semibold shadow-lg hover:shadow-xl text-base"
+                                onClick={() => window.open("https://cal.com/sudharsangs/30min", "_blank")}
+                            >
+                                Schedule a Call
+                            </Button>
+                        </motion.div>
                     </motion.div>
 
                     <motion.div
-                        className="flex space-x-6 pt-8"
+                        className="flex space-x-5 pt-8"
                         variants={containerVariants}
                     >
                         {socialLinks.map((link, index) => {
-                            // Create different hover colors for each social icon
                             const hoverColors = [
-                                { border: "border-blue-500/60", bg: "bg-blue-500/20", text: "text-blue-400" },
-                                { border: "border-emerald-500/60", bg: "bg-emerald-500/20", text: "text-emerald-400" },
-                                { border: "border-rose-500/60", bg: "bg-rose-500/20", text: "text-rose-400" }
+                                "hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-200/50",
+                                "hover:bg-gray-100 hover:border-gray-500 hover:text-gray-800 hover:shadow-lg hover:shadow-gray-200/50",
+                                "hover:bg-primary/10 hover:border-primary hover:text-primary hover:shadow-lg hover:shadow-primary/20"
                             ];
                             return (
                                 <motion.a
@@ -140,21 +179,13 @@ const Hero: React.FC = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={link.label}
-                                    className="text-muted-foreground p-2 border border-border rounded-full transition-all backdrop-blur-sm"
+                                    className={`text-muted-foreground p-4 bg-white/80 backdrop-blur-sm border border-border/50 rounded-full transition-all duration-300 shadow-md ${hoverColors[index]}`}
                                     variants={itemVariants}
                                     whileHover={{
-                                        scale: 1.1
+                                        scale: 1.1,
+                                        y: -3
                                     }}
-                                    whileTap={{ scale: 0.9 }}
-                                    style={{
-                                        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)"
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.classList.add(hoverColors[index].border, hoverColors[index].bg, hoverColors[index].text);
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.classList.remove(hoverColors[index].border, hoverColors[index].bg, hoverColors[index].text);
-                                    }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     {link.icon}
                                 </motion.a>
@@ -169,10 +200,9 @@ const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-
                     <motion.div
-                        className="w-64 h-64 bg-card/50 backdrop-blur-sm rounded-full overflow-hidden border-4 border-primary/30 relative z-10 shadow-lg shadow-primary/20"
-                        whileHover={{ scale: 1.02 }}
+                        className="w-80 h-80 lg:w-96 lg:h-96 bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl"
+                        whileHover={{ scale: 1.02, rotate: 1 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
                         <Image
@@ -183,7 +213,26 @@ const Hero: React.FC = () => {
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                         />
+                        {/* Overlay gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
                     </motion.div>
+                    
+                    {/* Enhanced decorative elements */}
+                    <motion.div
+                        className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-primary/30 to-accent/20 rounded-full"
+                        animate={{ scale: [1, 1.3, 1], rotate: [0, 180, 360] }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    <motion.div
+                        className="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-tr from-accent/30 to-primary/20 rounded-full"
+                        animate={{ scale: [1, 1.2, 1], rotate: [0, -180, -360] }}
+                        transition={{ duration: 6, repeat: Infinity }}
+                    />
+                    <motion.div
+                        className="absolute top-1/4 -left-4 w-6 h-6 bg-primary/40 rounded-full"
+                        animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                    />
                 </motion.div>
             </div>
 
@@ -194,13 +243,13 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
             >
-                <motion.p className="text-muted-foreground text-sm mb-2">Scroll to explore</motion.p>
+                <motion.p className="text-muted-foreground text-sm mb-2 font-medium">Scroll to explore</motion.p>
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="text-primary"
+                    className="text-primary bg-white/60 backdrop-blur-sm rounded-full p-2 shadow-md"
                 >
-                    <ArrowDown className="w-5 h-5" />
+                    <ArrowDown className="w-4 h-4" />
                 </motion.div>
             </motion.div>
         </section>

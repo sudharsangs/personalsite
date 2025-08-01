@@ -60,10 +60,10 @@ export default function PrintroveMerchantPanelPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -91,14 +91,14 @@ export default function PrintroveMerchantPanelPage() {
       <ProjectSection 
         title="Key Highlights"
         icon={<Zap className="w-5 h-5" />}
-        iconBg="bg-amber-900/20"
-        iconColor="text-amber-400"
-        iconBorder="border-amber-800/30"
+        iconBg="bg-amber-100"
+        iconColor="text-amber-700"
+        iconBorder="border-amber-200"
       >
         <FeatureList 
           items={projectData.keyHighlights} 
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-400"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
         />
       </ProjectSection>
 
@@ -106,14 +106,14 @@ export default function PrintroveMerchantPanelPage() {
       <ProjectSection 
         title="Key Features"
         icon={<ShieldCheck className="w-5 h-5" />}
-        iconBg="bg-blue-900/20"
-        iconColor="text-blue-400" 
-        iconBorder="border-blue-800/30"
+        iconBg="bg-blue-100"
+        iconColor="text-blue-700" 
+        iconBorder="border-blue-200"
       >
         <FeatureList 
           items={projectData.features}
-          iconBg="bg-blue-900/20"
-          iconColor="text-blue-400"
+          iconBg="bg-blue-100"
+          iconColor="text-blue-700"
         />
       </ProjectSection>
 
@@ -157,9 +157,9 @@ export default function PrintroveMerchantPanelPage() {
       <ProjectSection 
         title="Outcomes"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-900/20"
-        iconColor="text-emerald-400"
-        iconBorder="border-emerald-800/30"
+        iconBg="bg-emerald-100"
+        iconColor="text-emerald-700"
+        iconBorder="border-emerald-200"
       >
         <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
           <li>Successfully onboarded 100+ merchants to the platform within the first month of launch</li>

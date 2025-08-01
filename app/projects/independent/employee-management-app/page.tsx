@@ -76,11 +76,11 @@ export default function EmployeeManagementAppPage() {
       client={projectData.client}
     >
       {/* Problem Statement */}
-      <div className="mb-12 bg-gradient-to-br from-amber-900/10 to-gray-900 border border-amber-800/20 rounded-lg p-6">
-        <h2 className="text-2xl font-bold mb-4 text-amber-400">
+      <div className="mb-12 bg-amber-50 border border-amber-200 rounded-lg p-6">
+        <h2 className="text-2xl font-bold mb-4 text-amber-700">
           Problem Statement
         </h2>
-        <p className="text-gray-300">
+        <p className="text-muted-foreground">
           {projectData.problemStatement}
         </p>
       </div>
@@ -90,7 +90,7 @@ export default function EmployeeManagementAppPage() {
         <h2 className="text-2xl font-bold mb-4">
           Solution
         </h2>
-        <p className="text-gray-300 mb-6">
+        <p className="text-muted-foreground mb-6">
           {projectData.solution}
         </p>
       </div>
@@ -99,18 +99,18 @@ export default function EmployeeManagementAppPage() {
       <ProjectSection 
         title="Tech Stack"
         icon={<Layers className="w-5 h-5" />}
-        iconBg="bg-amber-900/20"
-        iconColor="text-amber-400"
-        iconBorder="border-amber-800/20"
+        iconBg="bg-amber-100"
+        iconColor="text-amber-700"
+        iconBorder="border-amber-200"
       >
         <div className="flex flex-wrap gap-3">
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-gray-800/40 backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-gray-700/30"
+              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-              <span className="text-gray-300">{tech.name}</span>
+              <span className="text-muted-foreground">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -130,7 +130,7 @@ export default function EmployeeManagementAppPage() {
           
           {projectData.githubUrl && (
             <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="border-gray-700 hover:bg-gray-800 flex items-center gap-2">
+              <Button variant="outline" className="border-border hover:bg-muted/10 flex items-center gap-2">
                 <Github className="h-4 w-4" />
                 View Source Code
               </Button>
@@ -143,14 +143,14 @@ export default function EmployeeManagementAppPage() {
       <ProjectSection 
         title="Key Features"
         icon={<PenTool className="w-5 h-5" />}
-        iconBg="bg-amber-900/20"
-        iconColor="text-amber-400"
-        iconBorder="border-amber-800/20"
+        iconBg="bg-amber-100"
+        iconColor="text-amber-700"
+        iconBorder="border-amber-200"
       >
         <FeatureList 
           items={projectData.features}
-          iconBg="bg-amber-900/20"
-          iconColor="text-amber-500"
+          iconBg="bg-amber-100"
+          iconColor="text-amber-700"
         />
       </ProjectSection>
 
@@ -166,18 +166,18 @@ export default function EmployeeManagementAppPage() {
       <ProjectSection 
         title="Results & Impact"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-amber-900/20"
-        iconColor="text-amber-400"
-        iconBorder="border-amber-800/20"
+        iconBg="bg-amber-100"
+        iconColor="text-amber-700"
+        iconBorder="border-amber-200"
       >
-        <div className="bg-gradient-to-br from-amber-900/10 to-gray-900/50 border border-gray-800/30 rounded-xl p-6">
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
           <ul className="space-y-4">
             {projectData.results.map((result, index) => (
               <li key={index} className="flex items-center">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-amber-900/20 flex items-center justify-center mr-4">
-                  <span className="text-amber-400 font-bold">{index + 1}</span>
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                  <span className="text-amber-700 font-bold">{index + 1}</span>
                 </div>
-                <p className="text-gray-300">{result}</p>
+                <p className="text-muted-foreground">{result}</p>
               </li>
             ))}
           </ul>
