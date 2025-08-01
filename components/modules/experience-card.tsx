@@ -28,7 +28,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
             whileHover={{ y: -5 }}
         >
             <Card className="overflow-hidden border border-border/50 bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 rounded-2xl group">
-                <CardContent className="p-8">
+                <CardContent className="p-4 lg:p-8">
                     <div className="flex items-start gap-4">
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0 }}

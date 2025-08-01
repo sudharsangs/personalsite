@@ -59,7 +59,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
 
   return (
     <div className="min-h-screen py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-4 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
           <Link href="/projects" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors">

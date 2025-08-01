@@ -37,7 +37,7 @@ const CTASection: React.FC = () => {
                 }}
             />
             
-            <div className="container mx-auto px-6 lg:px-8 relative z-10 text-center">
+            <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -71,9 +71,9 @@ const CTASection: React.FC = () => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                             <Button 
-                                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 group w-full" 
                                 onClick={() => window.open("https://cal.com/sudharsangs/30min", "_blank")}
                             >
                                 <Calendar className="w-5 h-5 mr-2" />
@@ -82,10 +82,10 @@ const CTASection: React.FC = () => {
                             </Button>
                         </motion.div>
 
-                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                             <Button 
                                 variant="outline"
-                                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-gray-500 hover:text-white hover:border-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base"
+                                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-gray-500 hover:text-white hover:border-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full"
                                 onClick={() => window.location.href = "mailto:sudharsangs.99@gmail.com"}
                             >
                                 <Mail className="w-5 h-5 mr-2" />
@@ -93,11 +93,11 @@ const CTASection: React.FC = () => {
                             </Button>
                         </motion.div>
 
-                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                             <Link href="/projects">
                                 <Button 
                                     variant="ghost"
-                                    className="text-muted-foreground hover:bg-transparent border-2 border-transparent hover:border-2 hover:border-gray-500 hover:text-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-base"
+                                    className="text-muted-foreground hover:bg-transparent border-2 border-transparent hover:border-2 hover:border-gray-500 hover:text-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-base w-full"
                                 >
                                     View My Work
                                     <ArrowRight className="w-4 h-4 ml-2" />

@@ -32,7 +32,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         initial={{ opacity: 0, scale: 0 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-2xl border border-primary/20 shadow-sm mb-6"
+                        className="inline-flex items-center gap-3 bg-primary/10 px-4 py-3 rounded-2xl border border-primary/20 shadow-sm mb-6"
                     >
                         <Briefcase className="w-5 h-5 text-primary" />
                         <span className="text-primary font-semibold tracking-wide">FEATURED WORK</span>

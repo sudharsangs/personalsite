@@ -48,7 +48,7 @@ export default function ProjectCardHorizontal({
           <div className={`grid lg:grid-cols-2 gap-0 items-stretch min-h-[400px] h-full ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
             
             {/* Content Section */}
-            <div className={`p-8 lg:p-12 flex flex-col justify-center space-y-6 ${reverse ? 'lg:col-start-2' : ''}`}>
+            <div className={`p-4 lg:p-8 flex flex-col justify-center space-y-6 ${reverse ? 'lg:col-start-2' : ''}`}>
               
               {/* Type Badge */}
               <motion.div
@@ -160,7 +160,7 @@ export default function ProjectCardHorizontal({
             </div>
 
             {/* Image Section */}
-            <div className={`relative flex items-center justify-center p-8 lg:p-12 min-h-[400px] ${reverse ? 'lg:col-start-1' : ''}`}>
+            <div className={`relative flex items-center justify-center p-4 lg:p-12  ${reverse ? 'lg:col-start-1' : ''}`}>
               <motion.div
                 className="relative w-full max-w-md mx-auto"
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}

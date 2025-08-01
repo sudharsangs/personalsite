@@ -17,7 +17,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-16 pb-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-4 lg:px-8">
         {/* Home Navigation */}
         <div className="mb-6">
           <Link 

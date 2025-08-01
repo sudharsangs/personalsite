@@ -51,7 +51,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${playfairDisplay.variable} antialiased h-full`}
       >
         <div className="min-h-screen w-full bg-gradient-to-br from-background via-slate-50 to-blue-50/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto px-4 sm:px-4">
             <div className="relative z-20">
               {children}
               <Footer />

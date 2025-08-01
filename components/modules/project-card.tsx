@@ -106,7 +106,7 @@ export default function ProjectCard({
           </motion.div>
         </div>
 
-        <CardContent className="px-6 py-6">
+        <CardContent className="px-4 py-6">
           <motion.p
             className="text-sm lg:text-base text-muted-foreground mb-5 line-clamp-3 leading-relaxed"
             initial={{ opacity: 0, y: 10 }}
