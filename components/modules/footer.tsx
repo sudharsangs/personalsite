@@ -33,7 +33,7 @@ const Footer = () => {
 
     const mainLinks: MainLink[] = [
         { href: "/projects", label: "Projects" },
-        { href: "#experience", label: "Experience" },
+        { href: "/#experience", label: "Experience" },
         { 
             href: "https://factostack.com", 
             label: "FactoStack", 
