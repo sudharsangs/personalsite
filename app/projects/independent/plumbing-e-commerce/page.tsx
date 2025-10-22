@@ -15,7 +15,7 @@ export default function PlumbingECommercePage() {
     description: "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
     type: "independent",
     date: "2023",
-    client: "Urban Plumbing Supplies",
+    client: "Dygus Plumbing Supplies",
     technologies: [
       { name: 'Svelte', icon: '/skills/svelte.png' },
       { name: 'TypeScript', icon: '/skills/typescript.svg' },

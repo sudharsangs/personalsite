@@ -31,7 +31,7 @@ export const projects: Projects = [
         slug: "plumbing-e-commerce",
         type: "independent",
         date: "2023",
-        client: "Local Plumbing Supply Company",
+        client: "Dygus Plumbing Supplies",
         features: [
             "Comprehensive product catalog with advanced filtering options",
             "Service booking system with availability calendar",
@@ -114,7 +114,7 @@ export const projects: Projects = [
         slug: "form-to-sheets",
         type: "personal",
         date: "2023",
-        liveUrl: "https://formtosheets.sudharsangs.dev",
+        liveUrl: "https://formtosheets.vercel.app",
         githubUrl: "https://github.com/sudharsangs/formtosheets",
         features: [
             "Seamless integration of Google Forms into any website",
@@ -636,7 +636,7 @@ export const projects: Projects = [
         slug: "no-paper-exams",
         type: "independent",
         date: "2023",
-        client: "Educational Institutions",
+        client: "Early stage EduTech Startup",
         problemStatement: "Educational institutions face challenges with traditional paper-based exams, including high printing costs, logistical issues, and difficulties in grading and storing exam papers.",
         solution: "No Paper Exams provides a comprehensive digital solution for exam creation, delivery, and evaluation, significantly reducing costs and improving efficiency in the assessment process.",
         features: [

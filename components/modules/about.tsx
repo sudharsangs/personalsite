@@ -4,9 +4,8 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import {
   Code,
-  Palette,
+  TabletSmartphone,
   Coffee,
-  Heart,
   MapPin,
   Briefcase,
   Cloud,
@@ -17,6 +16,7 @@ import {
   Trophy,
   Target,
   Rocket,
+  ServerCog,
 } from "lucide-react";
 import { fonts } from "@/lib/constants";
 
@@ -92,11 +92,14 @@ const About = () => {
       text: "Building innovative web experiences",
     },
     {
-      icon: <Palette className="w-5 h-5" />,
-      text: "UI/UX design and user psychology",
+      icon: <TabletSmartphone className="w-5 h-5" />,
+      text: "Cross-platform mobile apps",
+    },
+    {
+      icon: <ServerCog className="w-5 h-5" />,
+      text: "Building scalable backend systems",
     },
     { icon: <Coffee className="w-5 h-5" />, text: "Exploring new tech stacks" },
-    { icon: <Heart className="w-5 h-5" />, text: "Open source contributions" },
   ];
 
   return (
@@ -127,7 +130,7 @@ const About = () => {
                 Hi there! I&apos;m{" "}
                 <span className="text-primary font-semibold">Sudharsan GS</span>
                 , a passionate software engineer with over 5 years of experience
-                crafting digital experiences that matter.
+                building web and mobile applications.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">

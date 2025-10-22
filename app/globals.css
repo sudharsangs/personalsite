@@ -20,15 +20,15 @@ body {
     --secondary-foreground: 220 15% 25%;
     --muted: 220 10% 92%;
     --muted-foreground: 220 10% 50%;
-    --accent: 345 75% 45%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 42 85% 45%;
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 10% 88%;
     --input: 220 10% 92%;
     --ring: 180 25% 45%;
     --chart-1: 180 25% 45%;
-    --chart-2: 345 75% 45%;
+    --chart-2: 42 85% 45%;
     --chart-3: 200 30% 50%;
     --chart-4: 160 20% 50%;
     --chart-5: 320 60% 50%;

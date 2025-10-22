@@ -15,7 +15,7 @@ export default function EmployeeManagementAppPage() {
   const projectData = {
     title: "Employee Management Mobile App",
     description: "A mobile app for managing employees and their details.",
-    client: "BuildTek Construction",
+    client: "BuildTek Polymers Pvt Ltd",
     type: "independent",
     date: "2023",
     liveUrl: null,

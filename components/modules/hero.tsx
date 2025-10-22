@@ -145,8 +145,7 @@ const Hero: React.FC = () => {
             className="md:text-xl text-lg text-muted-foreground max-w-2xl leading-relaxed mb-2"
             variants={itemVariants}
           >
-            Crafting digital experiences that merge beautiful design with robust
-            functionality.
+            Experienced in developing scalable, performant web applications with great user experience.
           </motion.p>
 
           <motion.p

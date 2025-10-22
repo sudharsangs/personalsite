@@ -16,23 +16,23 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Sudharsan GS | Fullstack Developer",
-  description: "Fullstack Developer crafting digital experiences that merge beautiful design with robust functionality. Specialized in React, TypeScript, and Next.js.",
-  keywords: "fullstack developer, web designer, react developer, typescript, nextjs, ui/ux design, frontend developer, bengaluru, portfolio",
+  title: "Sudharsan GS | Software Engineer & Fullstack Developer",
+  description: "Software Engineer with 5+ years experience building scalable, high-performance web applications. Specialized in React, TypeScript, and Next.js with proven expertise at companies like Fubo.",
+  keywords: "software engineer, fullstack developer, react developer, typescript, nextjs, web applications, scalable systems, bengaluru, portfolio",
   authors: [{ name: "Sudharsan GS" }],
   creator: "Sudharsan GS",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sudharsangs.dev",
-    title: "Sudharsan GS | Fullstack Developer",
-    description: "Crafting digital experiences that merge beautiful design with robust functionality",
+    url: "https://sudharsangs.in",
+    title: "Sudharsan GS | Software Engineer & Fullstack Developer",
+    description: "Software Engineer building scalable, high-performance web applications with proven expertise in modern technologies",
     siteName: "Sudharsan GS - Developer Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sudharsan GS | Fullstack Developer",
-    description: "Crafting digital experiences that merge beautiful design with robust functionality",
+    title: "Sudharsan GS | Software Engineer & Fullstack Developer",
+    description: "Software Engineer building scalable, high-performance web applications with proven expertise in modern technologies",
     creator: "@sudharsangs",
   },
 };

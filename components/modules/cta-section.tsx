@@ -64,9 +64,7 @@ const CTASection: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Let&apos;s collaborate on your next project. I bring technical
-            expertise, creative problem-solving, and a passion for delivering
-            outstanding results.
+            Let&apos;s collaborate to build scalable web applications with clean code and optimized performance.
           </motion.p>
 
           <motion.div
@@ -140,9 +138,9 @@ const CTASection: React.FC = () => {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-foreground mb-2">
-                100%
+                Performance
               </div>
-              <div className="text-muted-foreground">Client Satisfaction</div>
+              <div className="text-muted-foreground">Focused</div>
             </div>
           </motion.div>
         </motion.div>

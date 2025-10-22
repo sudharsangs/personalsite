@@ -15,7 +15,7 @@ export default function NoPaperExamsPage() {
     description: "A comprehensive examination platform that enables educational institutions to conduct secure, paperless assessments with advanced analytics and anti-cheating measures.",
     type: "independent",
     date: "2023",
-    client: "Regional Education Board",
+    client: "Early stage EduTech Startup",
     technologies: [
       { name: 'NextJS', icon: '/skills/nextjs.svg' },
       { name: 'TypeScript', icon: '/skills/typescript.svg' },
