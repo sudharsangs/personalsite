@@ -143,7 +143,7 @@ export default function ProjectCardHorizontal({
               >
                 {path && <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Link href={path} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-                    <Button variant="outline" className="px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover:bg-gray-500 hover:text-white">
+                    <Button className="h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/60">
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
@@ -153,7 +153,7 @@ export default function ProjectCardHorizontal({
                 {liveUrl && (
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
-                      <Button variant="outline" className="px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-primary/40 text-primary hover:bg-primary hover:text-white hover:border-primary">
+                      <Button className="h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/60">
                         <span>Visit Site</span>
                         <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </Button>
@@ -164,7 +164,7 @@ export default function ProjectCardHorizontal({
                 {github && (
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Link href={github} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="border-2 border-primary/30 bg-white/80 hover:bg-primary hover:text-white text-primary hover:border-primary shadow-md hover:shadow-lg transition-all duration-300 px-8 py-3 rounded-xl font-semibold">
+                      <Button variant="outline" className="h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 bg-white/80 text-foreground hover:bg-white hover:text-foreground border border-border hover:border-primary/40">
                         <Github className="w-4 h-4 mr-2" />
                         View Code
                       </Button>

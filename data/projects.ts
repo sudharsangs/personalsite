@@ -3,7 +3,7 @@ import { Projects } from "@/types/projects";
 export const projects: Projects = [
     {
         title: "Unlocker - Sports Experts Marketplace",
-        description: "How we built a subscription-based sports experts marketplace with verified performance tracking, expert monetization, and transparent analytics.",
+        description: "Built the MVP of a subscription-based sports experts marketplace using Next.js + TypeScript with an Express.js + PostgreSQL backend. Implemented subscriptions, expert monetization, and verified performance analytics.",
         image: 'https://factostack.com/projects/unlocker-club/og-image.png',
         technologies: [
             {

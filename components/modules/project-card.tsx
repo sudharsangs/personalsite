@@ -45,10 +45,10 @@ export default function ProjectCard({
       transition={{ duration: 0.5, delay: index * 0.2 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="h-full transition-all duration-500 overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-2xl group flex flex-col">
+      <Card className="h-full transition-all duration-500 overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 hover:ring-1 hover:ring-primary/20 rounded-3xl group flex flex-col">
         <div className='relative overflow-hidden group h-56'>
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent z-10 pointer-events-none"
             whileHover={{ opacity: 0.6 }}
             transition={{ duration: 0.3 }}
           />
@@ -113,13 +113,13 @@ export default function ProjectCard({
         <CardContent className="px-4 py-6 flex flex-col flex-1">
           <div className="flex flex-col gap-5 flex-1">
             <motion.p
-            className="text-sm lg:text-base text-foreground/80 mb-5 line-clamp-3 leading-relaxed"
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
-          >
-            {description}
-          </motion.p>
+              className="text-sm lg:text-base text-foreground/80 mb-5 line-clamp-3 leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
+            >
+              {description}
+            </motion.p>
 
             <motion.div
               className="flex flex-wrap gap-2.5 mb-6"
@@ -158,22 +158,24 @@ export default function ProjectCard({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
           >
-            {path && <Link href={path} className="flex-1" target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-              <Button variant="outline" className="w-full bg-white/80 border-2 border-primary/40 text-primary hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center gap-2 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl py-3 text-sm lg:text-base">
-                <span>View Details</span>
-                <ExternalLink className="w-4 h-4" />
-              </Button>
-            </Link>}
+            {path && (
+              <Link href={path} className="flex-1" target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
+                <Button className="w-full h-11 bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/60 flex items-center justify-center gap-2 font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-xl text-sm lg:text-base">
+                  <span>View Project</span>
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </Link>
+            )}
             {liveUrl && (
               <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
-                <Button variant="outline" className="border-border bg-white/70 hover:bg-white text-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl px-4" aria-label="Visit Live">
+                <Button className="h-11 w-11 p-0 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/60" aria-label="Visit Site">
                   <Eye className="w-4 h-4" />
                 </Button>
               </Link>
             )}
             {github && (
               <Link href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-border bg-white/70 hover:bg-white text-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl px-4">
+                <Button variant="outline" className="h-11 w-11 p-0 border border-border bg-white/80 hover:bg-white text-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl" aria-label="View Code">
                   <Github className="w-4 h-4" />
                 </Button>
               </Link>
