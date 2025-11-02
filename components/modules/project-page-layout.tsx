@@ -42,7 +42,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
     independent: {
       icon: LoaderPinwheel,
       badgeBg: "bg-secondary/10",
-      badgeText: "text-secondary",
+      badgeText: "text-primary",
       badgeBorder: "border",
       headingGradient: "from-secondary to-primary"
     },
@@ -62,7 +62,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
       <div className="container mx-auto px-4 sm:px-4 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
-          <Link href="/projects" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/projects" className="inline-flex items-center text-foreground/80 hover:text-primary transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
             <span>Back to Projects</span>
           </Link>
@@ -79,7 +79,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             </Badge>
 
             {date && (
-              <div className="flex items-center text-muted-foreground text-sm">
+              <div className="flex items-center text-foreground/70 text-sm">
                 <Calendar className="h-4 w-4 mr-1" />
                 {date}
               </div>
@@ -88,7 +88,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             {client && (
               <Badge 
                 variant="outline" 
-                className="text-muted-foreground border-border px-3 py-1"
+                className="text-foreground border-border px-3 py-1"
               >
                 Client: {client}
               </Badge>
@@ -96,7 +96,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             
             {company && (
               <div className="flex items-center gap-2">
-                <span className="text-muted-foreground text-sm">Company:</span>
+                <span className="text-foreground/70 text-sm">Company:</span>
                 <Link href={company.url} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 ${badgeText} hover:opacity-80`}>
                   <Image 
                     src={company.logo} 
@@ -118,7 +118,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             {title}
           </h1>
           
-          <p className="text-xl text-muted-foreground max-w-3xl">
+          <p className="text-xl text-foreground/80 max-w-3xl">
             {description}
           </p>
         </div>
@@ -154,7 +154,7 @@ export const ProjectSection: React.FC<{
   title, 
   icon, 
   iconBg = "bg-secondary/10", 
-  iconColor = "text-secondary", 
+  iconColor = "text-foreground", 
   iconBorder = "border",
   className = "mb-12", 
   children 
@@ -189,7 +189,7 @@ export const FeatureList: React.FC<{
         <span className={`inline-flex items-center justify-center h-6 w-6 rounded-full ${iconBg} ${iconColor} mr-3 mt-0.5`}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </span>
-        <span className="text-muted-foreground">{item}</span>
+        <span className="text-foreground/90">{item}</span>
       </li>
     ))}
   </ul>

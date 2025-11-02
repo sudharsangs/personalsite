@@ -19,7 +19,8 @@ body {
     --secondary: 220 10% 88%;
     --secondary-foreground: 220 15% 25%;
     --muted: 220 10% 92%;
-    --muted-foreground: 220 10% 50%;
+    /* Darken muted text for better contrast in light theme */
+    --muted-foreground: 220 10% 38%;
     --accent: 42 85% 45%;
     --accent-foreground: 0 0% 95%;
     --destructive: 0 70% 50%;

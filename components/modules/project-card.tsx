@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Github, Briefcase, User, LoaderPinwheel, ExternalLink } from 'lucide-react';
+import { Github, Briefcase, User, LoaderPinwheel, ExternalLink, Eye } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,7 @@ export default function ProjectCard({
   type,
   github,
   path,
+  liveUrl,
   index
 }: Props) {
   const typeIcons = {
@@ -33,6 +34,9 @@ export default function ProjectCard({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const isExternal = typeof path === 'string' && /^https?:\/\//.test(path);
+  const isLiveExternal = typeof liveUrl === 'string' && /^https?:\/\//.test(liveUrl);
+
   return (
     <motion.div
       ref={ref}
@@ -41,15 +45,15 @@ export default function ProjectCard({
       transition={{ duration: 0.5, delay: index * 0.2 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="h-full transition-all duration-500 overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-2xl group">
+      <Card className="h-full transition-all duration-500 overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-2xl group flex flex-col">
         <div className='relative overflow-hidden group h-56'>
-          <motion.div 
+          <motion.div
             className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"
             whileHover={{ opacity: 0.6 }}
             transition={{ duration: 0.3 }}
           />
-          
-          <motion.div 
+
+          <motion.div
             className="absolute inset-0 z-0"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
@@ -67,8 +71,8 @@ export default function ProjectCard({
               </div>
             )}
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="absolute bottom-4 left-4 z-20"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -79,24 +83,24 @@ export default function ProjectCard({
             </h3>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="absolute top-4 right-4 z-20"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
           >
-            <Badge className="flex items-center gap-1" 
+            <Badge className="flex items-center gap-1"
               variant={type === "personal" ? "default" : type === "independent" ? "destructive" : "secondary"}
-              style={{ 
-                backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" : 
-                               type === "independent" ? "hsl(var(--accent) / 0.15)" : 
-                               "hsl(180 40% 60% / 0.15)",
-                color: type === "personal" ? "hsl(var(--primary))" : 
-                      type === "independent" ? "hsl(var(--accent))" : 
-                      "hsl(180 40% 40%)",
-                borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" : 
-                            type === "independent" ? "hsl(var(--accent) / 0.3)" : 
-                            "hsl(180 40% 60% / 0.3)",
+              style={{
+                backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" :
+                  type === "independent" ? "hsl(var(--accent) / 0.15)" :
+                    "hsl(180 40% 60% / 0.15)",
+                color: type === "personal" ? "hsl(var(--primary))" :
+                  type === "independent" ? "hsl(var(--accent))" :
+                    "hsl(180 40% 40%)",
+                borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" :
+                  type === "independent" ? "hsl(var(--accent) / 0.3)" :
+                    "hsl(180 40% 60% / 0.3)",
                 backdropFilter: "blur(4px)"
               }}
             >
@@ -106,9 +110,10 @@ export default function ProjectCard({
           </motion.div>
         </div>
 
-        <CardContent className="px-4 py-6">
-          <motion.p
-            className="text-sm lg:text-base text-muted-foreground mb-5 line-clamp-3 leading-relaxed"
+        <CardContent className="px-4 py-6 flex flex-col flex-1">
+          <div className="flex flex-col gap-5 flex-1">
+            <motion.p
+            className="text-sm lg:text-base text-foreground/80 mb-5 line-clamp-3 leading-relaxed"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
@@ -116,36 +121,36 @@ export default function ProjectCard({
             {description}
           </motion.p>
 
-          <motion.div
-            className="flex flex-wrap gap-2.5 mb-6"
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-          >
-            {technologies.slice(0, 3).map((tech, i) => {
-              // Elegant tech colors matching the new color scheme
-              const techColors = [
-                "bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40",
-                "bg-accent/10 border-accent/30 text-accent hover:bg-accent/15 hover:border-accent/40",
-                "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
-              ];
-              return (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -2, scale: 1.05 }}
-                  className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-3 py-1.5 text-xs lg:text-sm border shadow-sm transition-all duration-300`}
-                >
-                  <Image src={tech.icon} alt={tech.name} width={14} height={14} className="mr-1.5" />
-                  <span className="font-medium">{tech.name}</span>
-                </motion.div>
-              );
-            })}
-            {technologies.length > 3 && (
-              <Badge variant="outline" className="text-xs lg:text-sm bg-muted/60 text-muted-foreground border-border hover:bg-muted shadow-sm px-3 py-1.5">
-                +{technologies.length - 3} more
-              </Badge>
-            )}
-          </motion.div>
+            <motion.div
+              className="flex flex-wrap gap-2.5 mb-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+            >
+              {technologies.slice(0, 3).map((tech, i) => {
+                const techColors = [
+                  "bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40",
+                  "bg-accent/10 border-accent/30 text-accent hover:bg-accent/15 hover:border-accent/40",
+                  "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
+                ];
+                return (
+                  <motion.div
+                    key={i}
+                    whileHover={{ y: -2, scale: 1.05 }}
+                    className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-3 py-1.5 text-xs lg:text-sm border shadow-sm transition-all duration-300`}
+                  >
+                    <Image src={tech.icon} alt={tech.name} width={14} height={14} className="mr-1.5" />
+                    <span className="font-medium">{tech.name}</span>
+                  </motion.div>
+                );
+              })}
+              {technologies.length > 3 && (
+                <Badge variant="outline" className="text-xs lg:text-sm bg-muted/60 text-muted-foreground border-border hover:bg-muted shadow-sm px-3 py-1.5">
+                  +{technologies.length - 3} more
+                </Badge>
+              )}
+            </motion.div>
+          </div>
 
           <motion.div
             className="flex gap-3"
@@ -153,15 +158,22 @@ export default function ProjectCard({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
           >
-            <Link href={path} className="flex-1">
+            {path && <Link href={path} className="flex-1" target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
               <Button variant="outline" className="w-full bg-white/80 border-2 border-primary/40 text-primary hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center gap-2 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl py-3 text-sm lg:text-base">
                 <span>View Details</span>
                 <ExternalLink className="w-4 h-4" />
               </Button>
-            </Link>
+            </Link>}
+            {liveUrl && (
+              <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
+                <Button variant="outline" className="border-border bg-white/70 hover:bg-white text-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl px-4" aria-label="Visit Live">
+                  <Eye className="w-4 h-4" />
+                </Button>
+              </Link>
+            )}
             {github && (
               <Link href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-border bg-white/70 hover:bg-white text-muted-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl px-4">
+                <Button variant="outline" className="border-border bg-white/70 hover:bg-white text-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl px-4">
                   <Github className="w-4 h-4" />
                 </Button>
               </Link>

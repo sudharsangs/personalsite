@@ -2,6 +2,104 @@ import { Projects } from "@/types/projects";
 
 export const projects: Projects = [
     {
+        title: "Unlocker - Sports Experts Marketplace",
+        description: "How we built a subscription-based sports experts marketplace with verified performance tracking, expert monetization, and transparent analytics.",
+        image: 'https://factostack.com/projects/unlocker-club/og-image.png',
+        technologies: [
+            {
+                name: 'NextJS',
+                icon: '/skills/nextjs.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            },
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: "Express",
+                icon: '/skills/express.svg'
+            },
+            {
+                name: "NodeJS",
+                icon: '/skills/nodejs.svg'
+            },
+            {
+                name: "PostgreSQL",
+                icon: '/skills/postgres.svg'
+            }
+        ],
+        liveUrl: "https://unlocker.club",
+        path: "https://factostack.com/case-studies/unlocker",
+        slug: "unlocker",
+        type: "independent"
+    },
+    {
+        title: "Next.js Multitenant SaaS Boilerplate",
+        description: "Production-ready Next.js boilerplate for building multi-tenant SaaS apps with a scalable foundation.",
+        technologies: [
+            { name: 'NextJS', icon: '/skills/nextjs.svg' },
+            { name: 'TypeScript', icon: '/skills/typescript.svg' },
+            { name: 'TailwindCSS', icon: '/skills/tailwind.svg' },
+            { name: 'PostgreSQL', icon: '/skills/postgres.svg' }
+        ],
+        path: "https://factostack.com/boilerplates",
+        github: "https://github.com/factostack/nextjs-multitenant-saas-boilerplate",
+        slug: "nextjs-multitenant-saas-boilerplate",
+        type: "personal",
+        image: '/projects/personal/multi-tenant-saas.png'
+    },
+    {
+        title: "Form to Sheets",
+        description: "A project that gets google form and embeds it into a website.",
+        image: '/projects/personal/form-to-sheets.png',
+        technologies: [
+            {
+                name: 'React',
+                icon: '/skills/react.svg'
+            },
+            {
+                name: 'TypeScript',
+                icon: '/skills/typescript.svg'
+            },
+            {
+                name: 'NextJS',
+                icon: '/skills/nextjs.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: '/skills/tailwind.svg'
+            }
+        ],
+        path: "/projects/personal/form-to-sheets",
+        slug: "form-to-sheets",
+        type: "personal",
+        date: "2023",
+        liveUrl: "https://formtosheets.vercel.app",
+        github: "https://github.com/sudharsangs/formtosheets",
+        features: [
+            "Seamless integration of Google Forms into any website",
+            "Support for multiple frameworks, including React, Vue, HTML, and Svelte",
+            "Effortless code generation for easy embedding",
+            "Developer-friendly and user-centric design",
+            "Real-time data integration for efficient data management",
+            "Secure and robust infrastructure for data protection"
+        ],
+        additionalImages: [
+            {
+                url: '/projects/personal/form-to-sheets.png',
+                alt: 'Form to Sheets interface',
+                caption: 'User-friendly interface for embedding Google Forms'
+            }
+        ]
+    },
+    {
         title: "Plumbing E-Commerce Platform",
         description: "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
         image: '/projects/plumbing/cover.png',
@@ -88,51 +186,6 @@ export const projects: Projects = [
             }
         ]
     },
-        {
-        title: "Form to Sheets",
-        description: "A project that gets google form and embeds it into a website.",
-        image: '/projects/personal/form-to-sheets.png',
-        technologies: [
-            {
-                name: 'React',
-                icon: '/skills/react.svg'
-            },
-            {
-                name: 'TypeScript',
-                icon: '/skills/typescript.svg'
-            },
-            {
-                name: 'NextJS',
-                icon: '/skills/nextjs.svg'
-            },
-            {
-                name: 'TailwindCSS',
-                icon: '/skills/tailwind.svg'
-            }
-        ],
-        path: "/projects/personal/form-to-sheets",
-        slug: "form-to-sheets",
-        type: "personal",
-        date: "2023",
-        liveUrl: "https://formtosheets.vercel.app",
-        githubUrl: "https://github.com/sudharsangs/formtosheets",
-        features: [
-            "Seamless integration of Google Forms into any website",
-            "Support for multiple frameworks, including React, Vue, HTML, and Svelte",
-            "Effortless code generation for easy embedding",
-            "Developer-friendly and user-centric design",
-            "Real-time data integration for efficient data management",
-            "Secure and robust infrastructure for data protection"
-        ],
-        additionalImages: [
-            {
-                url: '/projects/personal/form-to-sheets.png',
-                alt: 'Form to Sheets interface',
-                caption: 'User-friendly interface for embedding Google Forms'
-            }
-        ]
-    },
-
     {
         title: 'Employee Management Mobile App',
         description: 'A mobile app for managing employees and their details.',
@@ -516,8 +569,7 @@ export const projects: Projects = [
         slug: "tapx",
         type: "personal",
         date: "2023",
-        liveUrl: undefined,
-        githubUrl: "https://github.com/sudharsangs/tapx",
+        github: "https://github.com/sudharsangs/tapx",
         features: [
             "Effortless searching: Select text on any webpage, right-click, and choose the \"Search on Amazon\" option",
             "Top results: Instantly access the top Amazon.in search results",

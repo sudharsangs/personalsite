@@ -20,7 +20,7 @@ export interface Project {
     description: string
     image?: string
     technologies: Technologies[]
-    path: string
+    path?: string
     slug: string
     github?: string
     type: 'personal' | 'independent' | 'work'

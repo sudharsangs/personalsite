@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'www.factostack.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'factostack.com',
+        pathname: '**',
+      },
     ],
   },
 };

@@ -22,6 +22,7 @@ export default function ProjectCardHorizontal({
   type,
   github,
   path,
+  liveUrl,
   index,
   reverse = false
 }: Props) {
@@ -35,6 +36,9 @@ export default function ProjectCardHorizontal({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const isExternal = typeof path === 'string' && /^https?:\/\//.test(path);
+  const isLiveExternal = typeof liveUrl === 'string' && /^https?:\/\//.test(liveUrl);
+
   return (
     <motion.div
       ref={ref}
@@ -46,10 +50,10 @@ export default function ProjectCardHorizontal({
       <Card className="overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-3xl transition-all duration-500 group">
         <CardContent className="p-0 h-full">
           <div className={`grid lg:grid-cols-2 gap-0 items-stretch min-h-[400px] h-full ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
-            
+
             {/* Content Section */}
             <div className={`p-4 lg:p-8 flex flex-col justify-center space-y-6 ${reverse ? 'lg:col-start-2' : ''}`}>
-              
+
               {/* Type Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -57,18 +61,18 @@ export default function ProjectCardHorizontal({
                 transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
                 className="flex justify-start"
               >
-                <Badge className="flex items-center gap-2 w-fit" 
+                <Badge className="flex items-center gap-2 w-fit"
                   variant={type === "personal" ? "default" : type === "independent" ? "destructive" : "secondary"}
-                  style={{ 
-                    backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" : 
-                                   type === "independent" ? "hsl(var(--accent) / 0.15)" : 
-                                   "hsl(180 40% 60% / 0.15)",
-                    color: type === "personal" ? "hsl(var(--primary))" : 
-                          type === "independent" ? "hsl(var(--accent))" : 
-                          "hsl(180 40% 40%)",
-                    borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" : 
-                                type === "independent" ? "hsl(var(--accent) / 0.3)" : 
-                                "hsl(180 40% 60% / 0.3)",
+                  style={{
+                    backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" :
+                      type === "independent" ? "hsl(var(--accent) / 0.15)" :
+                        "hsl(180 40% 60% / 0.15)",
+                    color: type === "personal" ? "hsl(var(--primary))" :
+                      type === "independent" ? "hsl(var(--accent))" :
+                        "hsl(180 40% 40%)",
+                    borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" :
+                      type === "independent" ? "hsl(var(--accent) / 0.3)" :
+                        "hsl(180 40% 60% / 0.3)",
                     backdropFilter: "blur(4px)"
                   }}
                 >
@@ -90,7 +94,7 @@ export default function ProjectCardHorizontal({
 
               {/* Description */}
               <motion.p
-                className="text-lg text-muted-foreground leading-relaxed"
+                className="text-lg text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
@@ -137,15 +141,26 @@ export default function ProjectCardHorizontal({
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
               >
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Link href={path}>
+                {path && <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Link href={path} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
                     <Button variant="outline" className="px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover:bg-gray-500 hover:text-white">
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
-                </motion.div>
-                
+                </motion.div>}
+
+                {liveUrl && (
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
+                      <Button variant="outline" className="px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-primary/40 text-primary hover:bg-primary hover:text-white hover:border-primary">
+                        <span>Visit Site</span>
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </Link>
+                  </motion.div>
+                )}
+
                 {github && (
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Link href={github} target="_blank" rel="noopener noreferrer">
@@ -185,7 +200,7 @@ export default function ProjectCardHorizontal({
                     </div>
                   )}
                 </div>
-                
+
                 {/* Decorative elements around the card */}
                 <motion.div
                   className="absolute -top-2 -right-2 w-4 h-4 bg-primary/20 rounded-full"

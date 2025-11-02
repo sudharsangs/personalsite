@@ -71,6 +71,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                             path={project.path}
                             slug={project.slug}
                             type={project.type}
+                            liveUrl={project.liveUrl}
                             index={index}
                             reverse={index % 2 === 1}
                         />
