@@ -100,6 +100,33 @@ export const projects: Projects = [
         ]
     },
     {
+        title: "Table to CSV",
+        description: "A tiny utility to convert HTML table elements into CSV text right from the browser.",
+        technologies: [
+            {
+                name: "HTML",
+                icon: "/skills/html.svg"
+            },
+            {
+                name: "CSS",
+                icon: "/skills/css.svg"
+            },
+            {
+                name: "TypeScript",
+                icon: "/skills/typescript.svg"
+            },
+            {
+                name: "JavaScript",
+                icon: "/skills/javascript.svg"
+            },
+        ],
+        image: '/projects/personal/table-to-csv.gif',
+        path: "/projects/personal/table-to-csv",
+        slug: "table-to-csv",
+        type: "personal",
+        github: "https://github.com/sudharsangs/table-to-csv"
+    },
+    {
         title: "Plumbing E-Commerce Platform",
         description: "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
         image: '/projects/plumbing/cover.png',

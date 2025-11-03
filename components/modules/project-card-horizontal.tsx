@@ -136,14 +136,14 @@ export default function ProjectCardHorizontal({
 
               {/* Action Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="grid grid-cols-2 gap-3 pt-4 sm:flex sm:flex-row sm:flex-wrap sm:gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
               >
-                {path && <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                {path && <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                   <Link href={path} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-                    <Button className="h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/60">
+                    <Button className="w-full justify-center h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/60">
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
@@ -151,9 +151,9 @@ export default function ProjectCardHorizontal({
                 </motion.div>}
 
                 {liveUrl && (
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                     <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
-                      <Button className="h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/60">
+                      <Button className="w-full justify-center h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/60">
                         <span>Visit Site</span>
                         <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </Button>
@@ -162,9 +162,9 @@ export default function ProjectCardHorizontal({
                 )}
 
                 {github && (
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                     <Link href={github} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 bg-white/80 text-foreground hover:bg-white hover:text-foreground border border-border hover:border-primary/40">
+                      <Button variant="outline" className="w-full justify-center h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 bg-white/80 text-foreground hover:bg-white hover:text-foreground border border-border hover:border-primary/40">
                         <Github className="w-4 h-4 mr-2" />
                         View Code
                       </Button>

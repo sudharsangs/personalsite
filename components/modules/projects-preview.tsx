@@ -20,7 +20,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
 
     return (
         <section id="projects-preview" className="py-20 lg:py-28 relative" ref={ref}>
-            <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="container mx-auto sm:px-4 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -86,7 +86,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                 >
                     <Link href="/projects">
-                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 group">
+                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 h-11 group">
                             View All Projects
                             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>

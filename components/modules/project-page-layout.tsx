@@ -180,7 +180,7 @@ export const FeatureList: React.FC<{
   iconColor?: string;
 }> = ({ 
   items, 
-  iconBg = "bg-secondary/10", 
+  iconBg = "bg-primary", 
   iconColor = "text-secondary" 
 }) => (
   <ul className="space-y-3">

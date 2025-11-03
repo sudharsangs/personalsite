@@ -79,7 +79,7 @@ const CTASection: React.FC = () => {
               className="w-full sm:w-auto"
             >
               <a href="https://cal.com/sudharsangs/30min" target="_blank">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 group w-full">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 group w-full h-11">
                   <Calendar className="w-5 h-5 mr-2" />
                   Schedule a Call
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -94,7 +94,7 @@ const CTASection: React.FC = () => {
             >
               <Button
                 variant="outline"
-                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-gray-500 hover:text-white hover:border-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full"
+                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-gray-500 hover:text-white hover:border-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full h-11"
                 onClick={() =>
                   (window.location.href = "mailto:sudharsangs.99@gmail.com")
                 }
@@ -111,8 +111,7 @@ const CTASection: React.FC = () => {
             >
               <Link href="/projects">
                 <Button
-                  variant="ghost"
-                  className="text-muted-foreground hover:bg-transparent border-2 border-transparent hover:border-2 hover:border-gray-500 hover:text-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-base w-full"
+                  className="bg-white text-muted-foreground hover:bg-transparent border-2 hover:border-2 hover:border-gray-500 hover:text-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-base w-full h-11"
                 >
                   View My Work
                   <ArrowRight className="w-4 h-4 ml-2" />
