@@ -4,7 +4,7 @@ export const projects: Projects = [
     {
         title: "Unlocker - Sports Experts Marketplace",
         description: "Built the MVP of a subscription-based sports experts marketplace using Next.js + TypeScript with an Express.js + PostgreSQL backend. Implemented subscriptions, expert monetization, and verified performance analytics.",
-        image: 'https://factostack.com/projects/unlocker-club/og-image.png',
+        image: '/projects/independent/unlocker/og-image.png',
         technologies: [
             {
                 name: 'NextJS',
@@ -36,7 +36,7 @@ export const projects: Projects = [
             }
         ],
         liveUrl: "https://unlocker.club",
-        path: "https://factostack.com/case-studies/unlocker",
+        path: "/projects/independent/unlocker",
         slug: "unlocker",
         type: "independent"
     },
@@ -49,8 +49,8 @@ export const projects: Projects = [
             { name: 'TailwindCSS', icon: '/skills/tailwind.svg' },
             { name: 'PostgreSQL', icon: '/skills/postgres.svg' }
         ],
-        path: "https://factostack.com/boilerplates",
-        github: "https://github.com/factostack/nextjs-multitenant-saas-boilerplate",
+        path: "/projects/personal/nextjs-multitenant-saas-boilerplate",
+        github: "https://github.com/sudharsangs/nextjs-multitenant-saas-boilerplate",
         slug: "nextjs-multitenant-saas-boilerplate",
         type: "personal",
         image: '/projects/personal/multi-tenant-saas.png'
@@ -152,7 +152,7 @@ export const projects: Projects = [
                 icon: '/skills/nodejs.svg'
             }
         ],
-        path: "https://factostack.com/case-studies/plumbing-company-ecommerce",
+        path: "/projects/independent/plumbing-ecommerce",
         slug: "plumbing-e-commerce",
         type: "independent",
         date: "2023",
@@ -239,7 +239,7 @@ export const projects: Projects = [
                 icon: '/skills/mongodb.svg'
             }
         ],
-        path: "https://factostack.com/case-studies/employee-mgmt-mobile-app",
+        path: "/projects/independent/employee-management",
         slug: "employee-management-app",
         type: "independent",
         date: "2023",

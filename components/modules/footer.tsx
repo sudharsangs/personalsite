@@ -48,12 +48,6 @@ const Footer = () => {
   const mainLinks: MainLink[] = [
     { href: "/projects", label: "Projects" },
     { href: "/about", label: "Experience" },
-    {
-      href: "https://factostack.com",
-      label: "FactoStack",
-      external: true,
-      highlight: true,
-    },
   ];
 
   return (
@@ -149,16 +143,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-border text-center flex flex-col sm:flex-row items-center justify-center sm:justify-between text-muted-foreground text-sm gap-3">
           <p>
-            © {currentYear} Sudharsan GS. All rights reserved. I provide{" "}
-            <a
-              href="https://factostack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 font-semibold transition-colors"
-            >
-              MVP building solutions for startups and businesses
-            </a>{" "}
-            at FactoStack
+            © {currentYear} Sudharsan GS. All rights reserved.
           </p>
           <div className="flex items-center gap-1">
             <span>Built with</span>
