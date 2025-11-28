@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Calendar, Briefcase, User, LoaderPinwheel } from 'lucide-react';
+import { ArrowLeft, Calendar, Briefcase, User, LoaderPinwheel, Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,8 @@ interface ProjectPageLayoutProps {
     logo: string;
   };
   client?: string;
+  githubUrl?: string;
+  liveUrl?: string;
   children: React.ReactNode;
 }
 
@@ -28,6 +30,8 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
   date,
   company,
   client,
+  githubUrl,
+  liveUrl,
   children
 }) => {
   // Configure type-specific colors and icons
@@ -62,9 +66,11 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
       <div className="container mx-auto px-4 sm:px-4 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
-          <Link href="/projects" className="inline-flex items-center text-foreground/80 hover:text-primary transition-colors">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            <span>Back to Projects</span>
+          <Link href="/projects">
+            <Button variant="ghost" className="pl-0 hover:bg-transparent hover:text-black"> 
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Projects
+            </Button>
           </Link>
         </div>
 
@@ -111,25 +117,47 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             )}
           </div>
           
-          <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground" 
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground"
             style={{ fontFamily: fonts.PlayfairDisplay }}
           >
             {title}
           </h1>
-          
-          <p className="text-xl text-foreground/80 max-w-3xl">
+
+          <p className="text-xl text-foreground/80 max-w-3xl mb-6">
             {description}
           </p>
+
+          {/* Action Buttons */}
+          {(githubUrl || liveUrl) && (
+            <div className="flex flex-wrap gap-3 mt-6">
+              {githubUrl && (
+                <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline">
+                    <Github className="mr-2 h-4 w-4" />
+                    View on GitHub
+                  </Button>
+                </Link>
+              )}
+              {liveUrl && (
+                <Link href={liveUrl} target="_blank" rel="noopener noreferrer">
+                  <Button>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </Button>
+                </Link>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Project Content */}
         {children}
 
         {/* Navigate Back */}
-        <div className="text-center pb-8 mt-16">
+        <div className="flex justify-center pb-8 mt-16">
           <Link href="/projects">
-            <Button variant="outline" className="border-border hover:bg-gray-100 hover:text-gray-800">
+            <Button variant="outline" size="lg">
               <ArrowLeft className="mr-2 h-4 w-4" />
               View All Projects
             </Button>

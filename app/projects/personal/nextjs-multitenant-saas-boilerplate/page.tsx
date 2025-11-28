@@ -14,7 +14,7 @@ export default function NextJSMultitenantSaaSPage() {
     title: "Next.js Multitenant SaaS Boilerplate",
     description: "A production-ready, full-stack multi-tenant SaaS boilerplate built with modern web technologies. Enables rapid development of B2B SaaS applications with complete tenant isolation, subscription management, and role-based access control.",
     type: "personal",
-    date: "2024",
+    date: "2025",
     githubUrl: "https://github.com/sudharsangs/nextjs-multitenant-saas-boilerplate",
     technologies: [
       { name: 'NextJS', icon: '/skills/nextjs.svg' },
@@ -87,6 +87,7 @@ export default function NextJSMultitenantSaaSPage() {
       description={projectData.description}
       type={projectData.type as 'personal' | 'independent' | 'work'}
       date={projectData.date}
+      githubUrl={projectData.githubUrl}
     >
       {/* Hero Image */}
       <div className="relative w-full h-[300px] md:h-[400px] mb-12">

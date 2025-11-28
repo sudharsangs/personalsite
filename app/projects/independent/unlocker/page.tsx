@@ -14,7 +14,7 @@ export default function UnlockerPage() {
     title: "Unlocker",
     description: "A subscription-based SaaS marketplace connecting 100+ verified sports betting experts with subscribers through transparent performance tracking and flexible monetization.",
     type: "independent",
-    date: "2024",
+    date: "September, October 2025",
     client: "Sports Analytics Startup",
     liveUrl: "https://unlocker.club",
     technologies: [
@@ -71,6 +71,7 @@ export default function UnlockerPage() {
       type={projectData.type as 'personal' | 'independent' | 'work'}
       date={projectData.date}
       client={projectData.client}
+      liveUrl={projectData.liveUrl}
     >
       {/* Hero Image */}
       <div className="relative w-full h-[300px] md:h-[400px] mb-12">
