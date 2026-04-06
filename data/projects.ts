@@ -24,8 +24,24 @@ export const projects: Projects = [
         icon: "/skills/postgres.svg",
       },
       {
+        name: "Amazon Lightsail Instance",
+        icon: "/skills/lightsail.svg",
+      },
+      {
+        name: "Amazon Lightsail DB",
+        icon: "/skills/lightsail.svg",
+      },
+      {
+        name: "Amazon Lightsail Storage",
+        icon: "/skills/lightsail.svg",
+      },
+      {
         name: "Docker",
         icon: "/skills/docker.svg",
+      },
+      {
+        name: "AWS ECR",
+        icon: "/skills/ecr.svg",
       },
     ],
     liveUrl: "https://app.factostack.com",
