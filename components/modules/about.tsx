@@ -17,8 +17,11 @@ import {
   Target,
   Rocket,
   ServerCog,
+  Calendar,
+  Mail,
 } from "lucide-react";
 import { fonts } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   const containerVariants = {
@@ -60,11 +63,21 @@ const About = () => {
     { iconPath: "/skills/react.svg", name: "React Native", category: "Mobile" },
     { iconPath: "/skills/nextjs.svg", name: "NextJS", category: "Frontend" },
     {
+      iconPath: "/skills/tanstack.png",
+      name: "TanStack Router",
+      category: "Routing",
+    },
+    {
       iconPath: "/skills/svelte.png",
       name: "Svelte",
       category: "Frontend",
     },
     { iconPath: "/skills/nodejs.svg", name: "NodeJS", category: "Backend" },
+    {
+      iconPath: "/skills/nest-js.svg",
+      name: "NestJS",
+      category: "Backend",
+    },
     {
       iconPath: "/skills/express.svg",
       name: "ExpressJS",
@@ -84,6 +97,19 @@ const About = () => {
     },
     { iconPath: "/skills/python.svg", name: "Python", category: "Language" },
     { iconPath: "/skills/go.svg", name: "Go", category: "Language" },
+  ];
+
+  const aiTools = [
+    {
+      iconPath: "/skills/claude.svg",
+      name: "Claude Code",
+      category: "AI Tooling",
+    },
+    {
+      iconPath: "/skills/codex.png",
+      name: "Codex",
+      category: "AI Tooling",
+    },
   ];
 
   const interests = [
@@ -126,6 +152,7 @@ const About = () => {
           {/* About Text */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">Background</p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 Hi there! I&apos;m{" "}
                 <span className="text-primary font-semibold">Sudharsan GS</span>
@@ -138,7 +165,7 @@ const About = () => {
                 <span className="text-primary font-semibold">
                   Software Engineer at Fubo
                 </span>
-                , where I work on on improving technical SEO for the{" "}
+                , where I work on improving technical SEO for the{" "}
                 <a
                   href="https://molotov.tv"
                   target="_blank"
@@ -150,7 +177,7 @@ const About = () => {
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                I use to work at the VideoAI team at Fubo, where I specialized
+                I used to work at the VideoAI team at Fubo, where I specialized
                 in building AI-driven features for sports content, creating
                 real-time highlight systems, and optimizing video playback
                 performance.
@@ -167,16 +194,30 @@ const About = () => {
                 I&apos;m driven by the challenge of solving complex problems and
                 creating seamless user experiences.
               </p>
+
+              <div className="border-t border-primary/10 my-6" />
+
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">How I Work</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I use AI-assisted engineering tools like{" "}
+                <span className="text-primary font-semibold">Claude Code</span>{" "}
+                and{" "}
+                <span className="text-primary font-semibold">Codex</span> to
+                speed up implementation, iteration, and debugging, while I stay
+                responsible for architecture, product judgment, and final code
+                quality.
+              </p>
             </div>
             <motion.div>
               <div className="relative aspect-video w-full rounded-2xl border border-primary/10 overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
                 <Image
                   src="/desktop.jpg"
-                  alt="desktop"
+                  alt="My development setup"
                   fill
                   className="object-cover"
                 />
               </div>
+              <p className="text-xs text-muted-foreground text-center mt-2">My development setup</p>
             </motion.div>
           </motion.div>
 
@@ -199,33 +240,44 @@ const About = () => {
             </div>
 
             {/* Core Skills */}
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50 shadow-lg">
-              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                <Code className="w-5 h-5 text-primary" />
-                Technical Expertise
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="rounded-[28px] bg-[#fcfcf7] p-6 border border-slate-200 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.35)]">
+              <div className="mb-6 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm">
+                      <Code className="w-5 h-5 text-primary" />
+                    </span>
+                    Technical Expertise
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Core languages, frameworks, and backend systems I use in production work.
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary px-4 py-3 rounded-lg text-sm font-medium border border-primary/20 flex items-center gap-3 hover:shadow-md transition-all duration-200"
+                    className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-4 py-4 text-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 + index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="text-primary/80 flex-shrink-0">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50">
                       <Image
                         src={skill.iconPath}
                         alt={`${skill.name} icon`}
-                        width={20}
-                        height={20}
-                        className="w-5 h-5"
+                        width={22}
+                        height={22}
+                        className="h-[22px] w-[22px] object-contain"
                       />
                     </div>
-                    <div className="flex-1">
-                      <div className="font-semibold">{skill.name}</div>
-                      <div className="text-xs text-primary/70 font-normal">
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-slate-900">
+                        {skill.name}
+                      </div>
+                      <div className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
                         {skill.category}
                       </div>
                     </div>
@@ -234,10 +286,37 @@ const About = () => {
               </div>
             </div>
 
+            {/* AI Tools */}
+            <div className="rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 p-5 border border-primary/10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">AI-Assisted Tooling</p>
+              <div className="flex gap-4">
+                {aiTools.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm"
+                  >
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50">
+                      <Image
+                        src={tool.iconPath}
+                        alt={`${tool.name} icon`}
+                        width={20}
+                        height={20}
+                        className="h-[20px] w-[20px] object-contain"
+                      />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-slate-900">{tool.name}</div>
+                      <div className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">{tool.category}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Interests */}
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50 shadow-lg">
               <h3 className="text-xl font-bold text-foreground mb-4">
-                What I Love
+                Interests &amp; Focus Areas
               </h3>
               <div className="space-y-3">
                 {interests.map((interest, index) => (
@@ -347,19 +426,19 @@ const About = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">5000+</div>
-              <div className="text-sm text-muted-foreground">Users Served</div>
+              <div className="text-3xl font-bold text-primary">6-Module</div>
+              <div className="text-sm text-muted-foreground">ERP Built for MSMEs</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-accent">5+</div>
+              <div className="text-3xl font-bold text-accent">5000+</div>
               <div className="text-sm text-muted-foreground">
-                Years Experience
+                Learners Served
               </div>
             </div>
             <div className="text-center space-y-2">
               <div className="text-3xl font-bold text-primary">20+</div>
               <div className="text-sm text-muted-foreground">
-                Projects Delivered
+                Client Projects Shipped
               </div>
             </div>
           </div>
@@ -375,6 +454,20 @@ const About = () => {
             with passionate teams. Feel free to reach out if you&apos;d like to
             discuss opportunities or just chat about tech!
           </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
+            <a href="https://cal.com/sudharsangs/30min" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl font-semibold flex items-center gap-2 h-11">
+                <Calendar className="w-4 h-4" />
+                Schedule a Call
+              </Button>
+            </a>
+            <a href="mailto:sudharsangs.99@gmail.com">
+              <Button variant="outline" className="border-2 border-primary/30 text-primary hover:bg-primary hover:text-white hover:border-primary px-6 py-3 rounded-xl font-semibold flex items-center gap-2 h-11 transition-all duration-200">
+                <Mail className="w-4 h-4" />
+                Send Email
+              </Button>
+            </a>
+          </div>
         </motion.div>
       </motion.div>
     </section>

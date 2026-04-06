@@ -46,6 +46,7 @@ const Footer = () => {
   ];
 
   const mainLinks: MainLink[] = [
+    { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
     { href: "/about", label: "Experience" },
   ];
@@ -130,6 +131,14 @@ const Footer = () => {
               className="text-muted-foreground hover:text-primary transition-colors block mb-2"
             >
               sudharsangs.99@gmail.com
+            </a>
+            <a
+              href="https://cal.com/sudharsangs/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors block mb-3 text-sm"
+            >
+              Schedule a 30-min call
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Open to opportunities and collaborations.

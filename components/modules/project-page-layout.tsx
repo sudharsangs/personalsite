@@ -67,7 +67,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
         {/* Back Navigation */}
         <div className="mb-8">
           <Link href="/projects">
-            <Button variant="ghost" className="pl-0 hover:bg-transparent hover:text-black"> 
+            <Button variant="outline" className="border-2 border-border hover:border-primary hover:text-primary hover:bg-transparent font-semibold transition-all duration-200">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Projects
             </Button>
@@ -156,11 +156,9 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
 
         {/* Navigate Back */}
         <div className="flex justify-center pb-8 mt-16">
-          <Link href="/projects">
-            <Button variant="outline" size="lg">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              View All Projects
-            </Button>
+          <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-sm">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Projects
           </Link>
         </div>
       </div>

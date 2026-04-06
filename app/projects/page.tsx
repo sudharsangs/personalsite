@@ -67,28 +67,6 @@ const ProjectsPage: React.FC = () => {
           </section>
         )}
 
-        {/* Independent Projects Section */}
-        {independentProjects.length > 0 && (
-          <section id="independent-projects" className="mb-16 scroll-mt-20">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-foreground relative group" style={{ fontFamily: fonts.PlayfairDisplay }}>
-                <span className="relative z-10">Independent Projects</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-accent to-primary group-hover:w-full transition-all duration-300"></span>
-              </h2>
-              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
-              <Badge className="bg-accent/10 text-accent border border-accent/30 shadow-sm">
-                {independentProjects.length} Projects
-              </Badge>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
-              {independentProjects.map((project, index) => (
-                <ProjectCard key={index} {...project} index={index} />
-              ))}
-            </div>
-          </section>
-        )}
-
-
         {/* Work Projects Section */}
         {workProjects.length > 0 && (
           <section id="work-projects" className="mb-16 scroll-mt-20">
@@ -104,6 +82,27 @@ const ProjectsPage: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
               {workProjects.map((project, index) => (
+                <ProjectCard key={index} {...project} index={index} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Independent Projects Section */}
+        {independentProjects.length > 0 && (
+          <section id="independent-projects" className="mb-16 scroll-mt-20">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-foreground relative group" style={{ fontFamily: fonts.PlayfairDisplay }}>
+                <span className="relative z-10">Independent Projects</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-accent to-primary group-hover:w-full transition-all duration-300"></span>
+              </h2>
+              <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+              <Badge className="bg-accent/10 text-accent border border-accent/30 shadow-sm">
+                {independentProjects.length} Projects
+              </Badge>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
+              {independentProjects.map((project, index) => (
                 <ProjectCard key={index} {...project} index={index} />
               ))}
             </div>

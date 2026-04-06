@@ -94,7 +94,7 @@ const CTASection: React.FC = () => {
             >
               <Button
                 variant="outline"
-                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-gray-500 hover:text-white hover:border-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full h-11"
+                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full h-11"
                 onClick={() =>
                   (window.location.href = "mailto:sudharsangs.99@gmail.com")
                 }
@@ -137,9 +137,9 @@ const CTASection: React.FC = () => {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-foreground mb-2">
-                Performance
+                5000+
               </div>
-              <div className="text-muted-foreground">Focused</div>
+              <div className="text-muted-foreground">Users Served</div>
             </div>
           </motion.div>
         </motion.div>

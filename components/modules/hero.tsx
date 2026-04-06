@@ -145,7 +145,7 @@ const Hero: React.FC = () => {
             className="md:text-xl text-lg text-muted-foreground max-w-2xl leading-relaxed mb-2"
             variants={itemVariants}
           >
-            Experienced in developing scalable, performant web applications with great user experience.
+            I build production-grade web products — from streamed sports content at Fubo to full-stack SaaS platforms for Indian manufacturers.
           </motion.p>
 
           <motion.p
