@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Layers, BarChart, ShoppingCart, Database, Zap } from 'lucide-react';
 import Image from 'next/image';
-import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
+import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
   title: 'Winuall Online Store | Sudharsan GS',
@@ -43,6 +43,11 @@ export default function WinuallOnlineStorePage() {
       "Automated fulfillment and access provisioning",
       "Sales analytics and customer insights dashboard"
     ],
+    architecture: [
+      { title: "Frontend", body: "React-based storefront with dynamic theming, responsive design, and optimized for conversion. Used Redux for state management and React Router for navigation." },
+      { title: "Backend", body: "Golang API server with MongoDB database, handling product management, user accounts, orders, and payment processing through secure microservices." },
+      { title: "Integration", body: "Custom API gateways connecting the store with the learning platform, payment processors, and analytics services for a seamless ecosystem." },
+    ],
     challenges: [
       "Creating a unified product management system for diverse educational content types",
       "Implementing secure, compliant payment processing across different regions",
@@ -66,7 +71,7 @@ export default function WinuallOnlineStorePage() {
         alt: 'Course Viewer Interface',
         caption: 'Detailed course viewer with interactive content and purchase options'
       },
-       {
+      {
         url: '/projects/winuall/winuall-store-3.png',
         alt: 'Detailed Course Information',
         caption: 'Detailed view of a course with pricing and enrollment options'
@@ -83,7 +88,7 @@ export default function WinuallOnlineStorePage() {
       company={projectData.company}
     >
       {/* Tech Stack */}
-      <ProjectSection 
+      <ProjectSection
         title="Tech Stack"
         icon={<Layers className="w-5 h-5" />}
       >
@@ -104,91 +109,56 @@ export default function WinuallOnlineStorePage() {
       <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Key Highlights */}
-      <ProjectSection 
+      <ProjectSection
         title="Key Highlights"
         icon={<Zap className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700" 
-        iconBorder="border-blue-200"
       >
-        <FeatureList 
-          items={projectData.keyHighlights} 
-          iconBg="bg-blue-100"
-          iconColor="text-blue-700"
-        />
+        <FeatureList items={projectData.keyHighlights} />
       </ProjectSection>
 
       {/* Store Architecture */}
-      <ProjectSection 
+      <ProjectSection
         title="Store Architecture"
         icon={<Database className="w-5 h-5" />}
-        iconBg="bg-primary/15"
-        iconColor="text-primary" 
-        iconBorder="border-primary/30"
-        className="mb-12"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-2 text-primary">Frontend</h3>
-            <p className="text-muted-foreground">React-based storefront with dynamic theming, responsive design, and optimized for conversion. Used Redux for state management and React Router for navigation.</p>
-          </div>
-          <div className="bg-accent/5 border border-accent/20 rounded-xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-2 text-accent">Backend</h3>
-            <p className="text-muted-foreground">Golang API server with MongoDB database, handling product management, user accounts, orders, and payment processing through secure microservices.</p>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Integration</h3>
-            <p className="text-muted-foreground">Custom API gateways connecting the store with the learning platform, payment processors, and analytics services for a seamless ecosystem.</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {projectData.architecture.map((item) => (
+            <InfoCard key={item.title} title={item.title}>
+              {item.body}
+            </InfoCard>
+          ))}
         </div>
       </ProjectSection>
 
       {/* Features */}
-      <ProjectSection 
+      <ProjectSection
         title="Store Features"
         icon={<ShoppingCart className="w-5 h-5" />}
-        iconBg="bg-amber-100"
-        iconColor="text-amber-700"
-        iconBorder="border-amber-200"
       >
-        <FeatureList 
-          items={projectData.features}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-        />
+        <FeatureList items={projectData.features} />
       </ProjectSection>
 
       {/* Challenges */}
-      <ProjectSection 
+      <ProjectSection
         title="Technical Challenges"
         icon={<Zap className="w-5 h-5" />}
-        iconBg="bg-red-100"
-        iconColor="text-red-700" 
-        iconBorder="border-red-200"
-        className="mb-12"
+        iconBg="bg-destructive/10"
+        iconColor="text-destructive"
+        iconBorder="border-destructive/20"
       >
-        <FeatureList 
+        <FeatureList
           items={projectData.challenges}
-          iconBg="bg-red-100"
-          iconColor="text-red-700"
+          iconBg="bg-destructive/10"
+          iconColor="text-destructive"
         />
       </ProjectSection>
 
       {/* Outcomes */}
-      <ProjectSection 
+      <ProjectSection
         title="Outcomes & Impact"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700" 
-        iconBorder="border-emerald-200"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {projectData.outcomes.map((outcome, index) => (
-            <div key={index} className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-              <p className="text-muted-foreground">{outcome}</p>
-            </div>
-          ))}
-        </div>
+        <OutcomeList items={projectData.outcomes} />
       </ProjectSection>
     </ProjectPageLayout>
   );

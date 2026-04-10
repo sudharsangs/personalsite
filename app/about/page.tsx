@@ -7,7 +7,7 @@ import { Home, ArrowRight } from "lucide-react";
 export default function AboutPage() {
   return (
     <div className="overflow-x-hidden min-h-screen pt-16 pb-24">
-      <div className="container mx-auto px-4 sm:px-4 lg:px-8">
+      <div>
         {/* Home Navigation */}
         <div className="mb-6 flex items-center gap-3">
           <Link

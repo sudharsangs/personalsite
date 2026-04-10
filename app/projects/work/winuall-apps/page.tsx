@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Layers, BarChart, Code, Target, Grid } from 'lucide-react';
 import Image from 'next/image';
-import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
+import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
   title: 'Winuall Apps - Micro Frontend Architecture | Sudharsan GS',
@@ -31,6 +31,12 @@ export default function WinuallAppsPage() {
       "Created essential plugins like Google Analytics, Facebook Pixel, Google Drive integration for simplified integrations",
       "Built a plugin management system allowing dynamic loading of functionality",
       "Established clear module boundaries for improved team collaboration"
+    ],
+    architecture: [
+      { title: "Container App", body: "Developed the main shell application that loads and manages micro frontends with shared routing and state." },
+      { title: "Module Federation", body: "Implemented Webpack Module Federation to share components and logic between applications while maintaining independence." },
+      { title: "Plugin System", body: "Created a flexible plugin architecture allowing dynamic integration of third-party features into the platform." },
+      { title: "Design System", body: "Built a shared component library with Styled Components ensuring visual consistency across all micro frontends." },
     ],
     challenges: [
       "Maintaining consistent UI/UX across independently developed micro frontends",
@@ -68,7 +74,7 @@ export default function WinuallAppsPage() {
       company={projectData.company}
     >
       {/* Tech Stack */}
-      <ProjectSection 
+      <ProjectSection
         title="Tech Stack"
         icon={<Layers className="w-5 h-5" />}
       >
@@ -89,97 +95,59 @@ export default function WinuallAppsPage() {
       <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Key Highlights */}
-      <ProjectSection 
+      <ProjectSection
         title="Key Highlights"
         icon={<Target className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700" 
-        iconBorder="border-blue-200"
       >
-        <FeatureList 
-          items={projectData.keyHighlights} 
-          iconBg="bg-blue-100"
-          iconColor="text-blue-700"
-        />
+        <FeatureList items={projectData.keyHighlights} />
       </ProjectSection>
 
       {/* Architecture Components */}
-      <ProjectSection 
+      <ProjectSection
         title="Architecture Components"
         icon={<Code className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700" 
-        iconBorder="border-purple-200"
-        className="mb-12"
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Container App</h3>
-            <p className="text-muted-foreground">Developed the main shell application that loads and manages micro frontends with shared routing and state.</p>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Module Federation</h3>
-            <p className="text-muted-foreground">Implemented Webpack Module Federation to share components and logic between applications while maintaining independence.</p>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Plugin System</h3>
-            <p className="text-muted-foreground">Created a flexible plugin architecture allowing dynamic integration of third-party features into the platform.</p>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Design System</h3>
-            <p className="text-muted-foreground">Built a shared component library with Styled Components ensuring visual consistency across all micro frontends.</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {projectData.architecture.map((item) => (
+            <InfoCard key={item.title} title={item.title}>
+              {item.body}
+            </InfoCard>
+          ))}
         </div>
       </ProjectSection>
 
       {/* Challenges & Solutions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <ProjectSection 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <ProjectSection
           title="Challenges"
           icon={<Code className="w-5 h-5" />}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-          iconBorder="border-amber-200"
-          className="mb-6 md:mb-0"
+          iconBg="bg-destructive/10"
+          iconColor="text-destructive"
+          iconBorder="border-destructive/20"
+          className="mb-0"
         >
-          <FeatureList 
-            items={projectData.challenges} 
-            iconBg="bg-amber-100"
-            iconColor="text-amber-700"
+          <FeatureList
+            items={projectData.challenges}
+            iconBg="bg-destructive/10"
+            iconColor="text-destructive"
           />
         </ProjectSection>
 
-        <ProjectSection 
+        <ProjectSection
           title="Solutions"
           icon={<Grid className="w-5 h-5" />}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700" 
-          iconBorder="border-emerald-200"
           className="mb-0"
         >
-          <FeatureList 
-            items={projectData.solutions}
-            iconBg="bg-emerald-100"
-            iconColor="text-emerald-700"
-          />
+          <FeatureList items={projectData.solutions} />
         </ProjectSection>
       </div>
 
       {/* Outcomes */}
-      <ProjectSection 
+      <ProjectSection
         title="Outcomes & Results"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700" 
-        iconBorder="border-blue-200"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {projectData.outcomes.map((outcome, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-muted-foreground">{outcome}</p>
-            </div>
-          ))}
-        </div>
+        <OutcomeList items={projectData.outcomes} />
       </ProjectSection>
     </ProjectPageLayout>
   );

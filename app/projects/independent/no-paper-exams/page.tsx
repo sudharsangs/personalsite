@@ -74,9 +74,9 @@ export default function NoPaperExamsPage() {
         <ProjectSection 
           title="The Problem"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-          iconBorder="border-amber-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-6 md:mb-0"
         >
           <p className="text-muted-foreground">{projectData.problemStatement}</p>
@@ -85,9 +85,9 @@ export default function NoPaperExamsPage() {
         <ProjectSection 
           title="The Solution"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700" 
-          iconBorder="border-emerald-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary" 
+          iconBorder="border-primary/20"
           className="mb-0"
         >
           <p className="text-muted-foreground">{projectData.solution}</p>
@@ -98,26 +98,26 @@ export default function NoPaperExamsPage() {
       <ProjectSection 
         title="System Modules"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700" 
-        iconBorder="border-purple-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary" 
+        iconBorder="border-primary/20"
         className="mb-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-700">Exam Creator</h3>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-primary">Exam Creator</h3>
             <p className="text-muted-foreground">Powerful tool for educators to design examinations with various question types, timing controls, and section organization.</p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-700">Secure Test Environment</h3>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-primary">Secure Test Environment</h3>
             <p className="text-muted-foreground">Browser lockdown system with AI-powered proctoring to ensure examination integrity and prevent unauthorized assistance.</p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-700">Grading System</h3>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-primary">Grading System</h3>
             <p className="text-muted-foreground">Automated assessment for objective questions and intuitive interfaces for manual grading of subjective responses.</p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-amber-700">Analytics Dashboard</h3>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-2 text-primary">Analytics Dashboard</h3>
             <p className="text-muted-foreground">Comprehensive reporting tools that provide insights into individual and group performance across different metrics.</p>
           </div>
         </div>
@@ -130,8 +130,8 @@ export default function NoPaperExamsPage() {
       >
         <FeatureList 
           items={projectData.features}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
@@ -139,13 +139,13 @@ export default function NoPaperExamsPage() {
       <ProjectSection 
         title="Results & Impact"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700" 
-        iconBorder="border-emerald-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary" 
+        iconBorder="border-primary/20"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {projectData.results.map((result, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div key={index} className="bg-primary/5 border border-primary/20 rounded-lg p-4">
               <p className="text-muted-foreground">{result}</p>
             </div>
           ))}

@@ -4,17 +4,10 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import {
   Code,
-  TabletSmartphone,
   Coffee,
   MapPin,
   Briefcase,
-  Cloud,
-  Zap,
-  Brain,
-  Monitor,
   Users,
-  Trophy,
-  Target,
   Rocket,
   ServerCog,
   Calendar,
@@ -114,91 +107,85 @@ const About = () => {
 
   const interests = [
     {
-      icon: <Code className="w-5 h-5" />,
-      text: "Building innovative web experiences",
+      icon: <Rocket className="w-5 h-5" />,
+      text: "Taking products from 0 to 1, solo",
     },
     {
-      icon: <TabletSmartphone className="w-5 h-5" />,
-      text: "Cross-platform mobile apps",
+      icon: <Code className="w-5 h-5" />,
+      text: "Full stack engineering across web and mobile",
     },
     {
       icon: <ServerCog className="w-5 h-5" />,
-      text: "Building scalable backend systems",
+      text: "Scalable backend systems and cloud infra",
     },
-    { icon: <Coffee className="w-5 h-5" />, text: "Exploring new tech stacks" },
+    { icon: <Coffee className="w-5 h-5" />, text: "Developer tooling and AI-assisted workflows" },
   ];
 
   return (
-    <section className="py-20 px-4 lg:px-8 max-w-6xl mx-auto">
+    <section className="py-12 md:py-20 w-full">
       <motion.div
-        className="space-y-16"
+        className="space-y-10 md:space-y-16 w-full min-w-0 overflow-hidden"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Header */}
         <motion.div className="text-center space-y-4" variants={itemVariants}>
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-2">
+            <span className="text-primary text-sm font-semibold tracking-wider">WHO I AM</span>
+          </div>
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold"
             style={{ fontFamily: fonts.PlayfairDisplay }}
           >
-            About Me
+            <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
+              About Me
+            </span>
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+          <div className="w-32 h-1.5 bg-gradient-to-r from-primary via-accent to-primary/40 mx-auto rounded-full" />
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start min-w-0">
           {/* About Text */}
-          <motion.div className="space-y-6" variants={itemVariants}>
-            <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
+          <motion.div className="space-y-6 min-w-0" variants={itemVariants}>
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-4 md:p-8 border border-primary/10 overflow-hidden">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">Background</p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Hi there! I&apos;m{" "}
+              <p className="text-base text-muted-foreground leading-relaxed mb-4 break-words">
+                I&apos;m{" "}
                 <span className="text-primary font-semibold">Sudharsan GS</span>
-                , a passionate software engineer with over 5 years of experience
-                building web and mobile applications.
+                , a full stack engineer who tends to build things end-to-end rather than hand them off. Five years of that across startups, scale, and a lot of solo shipping.
               </p>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Currently, I&apos;m a{" "}
+              <p className="text-base text-muted-foreground leading-relaxed mb-4 break-words">
+                Currently I&apos;m a{" "}
                 <span className="text-primary font-semibold">
                   Software Engineer at Fubo
                 </span>
-                , where I work on improving technical SEO for the{" "}
+                , working on technical SEO and front-end performance for{" "}
                 <a
                   href="https://molotov.tv"
                   target="_blank"
                   className="text-accent underline"
                 >
                   molotov.tv
-                </a>{" "}
-                site.
+                </a>
+                . Before this, I was on the VideoAI team building AI-driven sports features and real-time highlight systems at scale.
               </p>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                I used to work at the VideoAI team at Fubo, where I specialized
-                in building AI-driven features for sports content, creating
-                real-time highlight systems, and optimizing video playback
-                performance.
+              <p className="text-base text-muted-foreground leading-relaxed mb-4 break-words">
+                Outside of work, I built{" "}
+                <span className="text-primary font-semibold">FactoStack</span>, an ERP built from scratch for Indian MSME manufacturers because nothing out there quite fit their needs. It covers production, procurement, inventory, GST and finance in a single platform.
               </p>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                My journey began in the EdTech space at Winuall, where I led
-                frontend development for multiple projects serving thousands of
-                tutors and learners. This experience taught me the importance of
-                user-centered design and scalable architecture.
-              </p>
-
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I&apos;m driven by the challenge of solving complex problems and
-                creating seamless user experiences.
+              <p className="text-base text-muted-foreground leading-relaxed break-words">
+                Before that, I led frontend development at Winuall across several products serving thousands of tutors and learners. That&apos;s where I got comfortable shipping fast and seeing things through.
               </p>
 
               <div className="border-t border-primary/10 my-6" />
 
               <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">How I Work</p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed break-words">
                 I use AI-assisted engineering tools like{" "}
                 <span className="text-primary font-semibold">Claude Code</span>{" "}
                 and{" "}
@@ -222,9 +209,9 @@ const About = () => {
           </motion.div>
 
           {/* Skills & Info */}
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div className="space-y-8 min-w-0" variants={itemVariants}>
             {/* Location & Role */}
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50 shadow-lg">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-border/50 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
                 <span className="text-lg font-semibold text-foreground">
@@ -240,7 +227,7 @@ const About = () => {
             </div>
 
             {/* Core Skills */}
-            <div className="rounded-[28px] bg-[#fcfcf7] p-6 border border-slate-200 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.35)]">
+            <div className="rounded-[28px] bg-[#fcfcf7] p-4 md:p-6 border border-slate-200 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.35)]">
               <div className="mb-6 flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
@@ -254,30 +241,27 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {skills.map((skill, index) => (
+              <div className="grid grid-cols-2 gap-3">
+                {skills.map((skill) => (
                   <motion.div
                     key={skill.name}
-                    className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-4 py-4 text-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
+                    className="group flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2 py-2 text-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md min-w-0"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50">
                       <Image
                         src={skill.iconPath}
                         alt={`${skill.name} icon`}
-                        width={22}
-                        height={22}
-                        className="h-[22px] w-[22px] object-contain"
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] object-contain"
                       />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-slate-900">
+                    <div className="min-w-0 flex-1 overflow-hidden">
+                      <div className="font-semibold text-slate-900 text-xs truncate">
                         {skill.name}
                       </div>
-                      <div className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
+                      <div className="text-[10px] font-medium uppercase tracking-wide text-slate-500 truncate">
                         {skill.category}
                       </div>
                     </div>
@@ -287,27 +271,24 @@ const About = () => {
             </div>
 
             {/* AI Tools */}
-            <div className="rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 p-5 border border-primary/10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-4">AI-Assisted Tooling</p>
-              <div className="flex gap-4">
+            <div className="rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 p-4 border border-primary/10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary/60 mb-3">AI-Assisted Tooling</p>
+              <div className="flex gap-3">
                 {aiTools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm"
+                    className="flex flex-1 items-center gap-3 rounded-xl border border-primary/15 bg-white/80 px-3 py-3"
                   >
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/8 border border-primary/15">
                       <Image
                         src={tool.iconPath}
                         alt={`${tool.name} icon`}
-                        width={20}
-                        height={20}
-                        className="h-[20px] w-[20px] object-contain"
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] object-contain"
                       />
                     </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">{tool.name}</div>
-                      <div className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">{tool.category}</div>
-                    </div>
+                    <span className="font-semibold text-sm text-slate-800">{tool.name}</span>
                   </div>
                 ))}
               </div>
@@ -338,108 +319,131 @@ const About = () => {
 
         {/* Value Propositions */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-3 gap-4"
           variants={itemVariants}
         >
           {/* For Recruiters */}
-          <div className="bg-gradient-to-br from-primary/5 via-primary/3 to-transparent rounded-2xl p-8 border border-primary/20">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-primary/10 rounded-xl">
-                <Users className="w-6 h-6 text-primary" />
+          <div className="group relative bg-white rounded-2xl p-5 border border-primary/20 shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-300 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/30 rounded-t-2xl" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Users className="w-4 h-4 text-primary flex-shrink-0" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">For Recruiters</h3>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-foreground">
-                  For Recruiters
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Full-time Opportunities
-                </p>
-              </div>
+              <p className="text-xs text-muted-foreground mb-4 pl-10">Full-time Opportunities</p>
+              <ul className="space-y-2.5">
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  5+ years as a full stack engineer at Fubo and Winuall
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  Full stack across React, TypeScript, Node and cloud infra
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  Shipped products used by millions, solo and in teams
+                </li>
+              </ul>
             </div>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <Trophy className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  5+ years of proven experience in scalable web applications
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Target className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Strong track record at growing companies (Fubo, Winuall)
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Brain className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Expert in modern frameworks and best practices
-                </span>
-              </li>
-            </ul>
           </div>
 
           {/* For Founders */}
-          <div className="bg-gradient-to-br from-accent/5 via-accent/3 to-transparent rounded-2xl p-8 border border-accent/20">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-accent/10 rounded-xl">
-                <Rocket className="w-6 h-6 text-accent" />
+          <div className="group relative bg-white rounded-2xl p-5 border border-accent/25 shadow-sm hover:shadow-lg hover:border-accent/50 transition-all duration-300 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/30 rounded-t-2xl" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-8 h-8 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Rocket className="w-4 h-4 text-accent flex-shrink-0" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">For Founders & Ideas</h3>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-foreground">
-                  For Founders
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Freelance & Consulting
-                </p>
-              </div>
+              <p className="text-xs text-muted-foreground mb-4 pl-10">Freelance & Consulting</p>
+              <ul className="space-y-2.5">
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                  From rough idea to deployed product, fast
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                  Full-stack execution without needing a team
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                  <span>AI-assisted development for faster delivery and lower cost</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                  Hourly, project-based, or retainer engagements
+                </li>
+              </ul>
             </div>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Rapid MVP development and technical validation
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Cloud className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Full-stack solutions from concept to deployment
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Monitor className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Flexible engagement: hourly, project-based, or retainer
-                </span>
-              </li>
-            </ul>
+          </div>
+
+          {/* For MSME Owners */}
+          <div className="group relative bg-white rounded-2xl p-5 border border-emerald-500/25 shadow-sm hover:shadow-lg hover:border-emerald-500/50 transition-all duration-300 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-emerald-500/30 rounded-t-2xl" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-8 h-8 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                  <div className="relative w-4 h-4 flex-shrink-0">
+                    <Image src="/factostack.svg" alt="FactoStack" fill className="object-contain" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold text-foreground">For MSMEs</h3>
+              </div>
+              <p className="text-xs text-muted-foreground mb-4 pl-10">Owners, Traders & Manufacturers</p>
+              <ul className="space-y-2.5">
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
+                  <span>Replace Excel & WhatsApp with <a href="https://factostack.com" target="_blank" className="text-emerald-600 underline font-medium hover:text-emerald-700">FactoStack</a></span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
+                  WIP tracking, procurement, GST compliance in one platform
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
+                  Purpose-built for Indian factories, not a generic ERP
+                </li>
+              </ul>
+            </div>
           </div>
         </motion.div>
 
         {/* Achievement Highlights */}
         <motion.div
-          className="bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 rounded-2xl p-8 border border-primary/10"
+          className="relative overflow-hidden bg-gradient-to-br from-primary/8 via-background to-accent/8 rounded-2xl p-5 md:p-8 border border-primary/15 shadow-lg"
           variants={itemVariants}
         >
-          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+          {/* Background grid */}
+          <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle, hsl(220 70% 50%) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-[60px] pointer-events-none" />
+          <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-accent/10 rounded-full blur-[50px] pointer-events-none" />
+
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center relative z-10" style={{ fontFamily: 'var(--font-playfair-display)' }}>
             Key Achievements
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">6-Module</div>
-              <div className="text-sm text-muted-foreground">ERP Built for MSMEs</div>
+          <div className="grid md:grid-cols-3 gap-4 relative z-10">
+            <div className="text-center space-y-2 bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-primary/15 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200">
+              <div className="text-4xl font-bold bg-gradient-to-br from-primary to-primary/60 bg-clip-text text-transparent">6-Module</div>
+              <div className="text-sm font-medium text-foreground">ERP Platform</div>
+              <div className="text-xs text-muted-foreground">Built for Indian MSMEs</div>
             </div>
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-accent">5000+</div>
-              <div className="text-sm text-muted-foreground">
-                Learners Served
-              </div>
+            <div className="text-center space-y-2 bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-accent/20 shadow-sm hover:shadow-md hover:border-accent/35 transition-all duration-200">
+              <div className="text-4xl font-bold bg-gradient-to-br from-accent to-accent/60 bg-clip-text text-transparent">5000+</div>
+              <div className="text-sm font-medium text-foreground">Learners Served</div>
+              <div className="text-xs text-muted-foreground">Across EdTech platforms</div>
             </div>
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">20+</div>
-              <div className="text-sm text-muted-foreground">
-                Client Projects Shipped
-              </div>
+            <div className="text-center space-y-2 bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-primary/15 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200">
+              <div className="text-4xl font-bold bg-gradient-to-br from-primary to-primary/60 bg-clip-text text-transparent">20+</div>
+              <div className="text-sm font-medium text-foreground">Projects Shipped</div>
+              <div className="text-xs text-muted-foreground">Client & personal work</div>
             </div>
           </div>
         </motion.div>
@@ -447,12 +451,10 @@ const About = () => {
         {/* Call to Action */}
         <motion.div className="text-center space-y-6" variants={itemVariants}>
           <h3 className="text-2xl font-semibold text-foreground">
-            Let&apos;s Build Something Amazing Together
+            Have an idea? Let&apos;s build it.
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I&apos;m always excited to work on new challenges and collaborate
-            with passionate teams. Feel free to reach out if you&apos;d like to
-            discuss opportunities or just chat about tech!
+            I like working on hard problems and talking to people who are building things. If you&apos;re a founder, a business owner, or just have something interesting going on, get in touch.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
             <a href="https://cal.com/sudharsangs/30min" target="_blank" rel="noopener noreferrer">

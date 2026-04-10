@@ -74,12 +74,12 @@ export default function UnlockerPage() {
       liveUrl={projectData.liveUrl}
     >
       {/* Hero Image */}
-      <div className="relative w-full h-[300px] md:h-[400px] mb-12">
+      <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20 shadow-lg">
         <Image
-          src="/projects/independent/unlocker/og-image.png"
-          alt="Unlocker Platform Overview"
+          src="/projects/independent/unlocker/unlocker-marketplace.png"
+          alt="Unlocker marketplace — all experts listing"
           fill
-          className="object-contain"
+          className="object-cover object-top"
         />
       </div>
 
@@ -106,9 +106,9 @@ export default function UnlockerPage() {
         <ProjectSection
           title="The Problem"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-          iconBorder="border-amber-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-6 md:mb-0"
         >
           <p className="text-muted-foreground">{projectData.problemStatement}</p>
@@ -117,38 +117,38 @@ export default function UnlockerPage() {
         <ProjectSection
           title="The Solution"
           icon={<Target className="w-5 h-5" />}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700"
-          iconBorder="border-emerald-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-0"
         >
           <p className="text-muted-foreground">{projectData.solution}</p>
         </ProjectSection>
       </div>
 
-      {/* Screenshot */}
-      <div className="relative w-full h-[300px] md:h-[400px] mb-12">
-        <Image
-          src="/projects/independent/unlocker/experts.png"
-          alt="Expert Discovery Page"
-          fill
-          className="object-contain"
-        />
+      {/* Expert profile screenshots */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+          <Image src="/projects/independent/unlocker/expert1.png" alt="Expert profile page with subscription tiers" fill className="object-cover object-top" />
+        </div>
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+          <Image src="/projects/independent/unlocker/expert2.png" alt="Expert profile with performance stats" fill className="object-cover object-top" />
+        </div>
       </div>
 
       {/* Key Challenges */}
       <ProjectSection
         title="Key Challenges & Solutions"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700"
-        iconBorder="border-purple-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
         className="mb-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectData.challenges.map((challenge, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-amber-700">{challenge.title}</h3>
+            <div key={index} className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-primary">{challenge.title}</h3>
               <p className="text-muted-foreground">{challenge.description}</p>
             </div>
           ))}
@@ -162,28 +162,21 @@ export default function UnlockerPage() {
       >
         <FeatureList
           items={projectData.features}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
       {/* More Screenshots */}
-      <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="relative w-full h-[300px] rounded-lg overflow-hidden border border-primary/20 shadow-sm bg-gray-50">
-          <Image
-            src="/projects/independent/unlocker/account-1.png"
-            alt="Account Dashboard"
-            fill
-            className="object-contain"
-          />
+      <div className="mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-[#655cf0]">
+          <Image src="/projects/independent/unlocker/bio.png" alt="Creator bio page with membership plans" fill className="object-cover object-top" />
         </div>
-        <div className="relative w-full h-[300px] rounded-lg overflow-hidden border border-primary/20 shadow-sm bg-gray-50">
-          <Image
-            src="/projects/independent/unlocker/expert-mobile.png"
-            alt="Mobile Experience"
-            fill
-            className="object-contain"
-          />
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+          <Image src="/projects/independent/unlocker/account-1.png" alt="Account dashboard" fill className="object-cover object-top" />
+        </div>
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+          <Image src="/projects/independent/unlocker/expert-mobile.png" alt="Mobile expert experience" fill className="object-cover object-top" />
         </div>
       </div>
 
@@ -191,13 +184,13 @@ export default function UnlockerPage() {
       <ProjectSection
         title="Results & Impact"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700"
-        iconBorder="border-emerald-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {projectData.results.map((result, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div key={index} className="bg-primary/5 border border-primary/20 rounded-lg p-4">
               <p className="text-muted-foreground">{result}</p>
             </div>
           ))}

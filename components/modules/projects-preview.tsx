@@ -15,8 +15,11 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     
-    // Get only the first 2 featured projects
-    const featuredProjects = projects.slice(0, 2);
+    // Feature: FactoStack platform, Molotov program list, QuickPicks
+    const featuredSlugs = ['factostack-platform', 'molotov-program-list-pages', 'quickpicks'];
+    const featuredProjects = featuredSlugs
+      .map(slug => projects.find(p => p.slug === slug))
+      .filter(Boolean) as typeof projects;
 
     return (
         <section id="projects-preview" className="py-20 lg:py-28 relative" ref={ref}>
@@ -48,13 +51,13 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         Latest Projects
                     </motion.h2>
                     
-                    <motion.p 
+                    <motion.p
                         className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        A glimpse into my recent work - from full-stack applications to innovative digital solutions
+                        Some of what I&apos;ve built over the years, from ERP platforms and streaming infrastructure to marketplaces, mostly as the only engineer on it.
                     </motion.p>
                 </motion.div>
                 
@@ -72,6 +75,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                             slug={project.slug}
                             type={project.type}
                             liveUrl={project.liveUrl}
+                            company={project.company}
                             index={index}
                             reverse={index % 2 === 1}
                         />

@@ -49,12 +49,17 @@ export const projects: Projects = [
     slug: "factostack-platform",
     type: "personal",
     date: "2025-2026",
+    company: {
+      name: "FactoStack",
+      url: "https://app.factostack.com",
+      logo: "/factostack.svg",
+    },
   },
   {
     title: "QuickPicks by Unlocker",
     description:
       "Built a mobile-first sports picks product for creating, selling, and delivering paid picks in seconds with instant checkout, creator bio pages, and analytics.",
-    image: "/projects/independent/quickpicks/cover.png",
+    image: "/projects/independent/unlocker/unlocker-quickpicks.png",
     technologies: [
       {
         name: "NextJS",
@@ -116,7 +121,7 @@ export const projects: Projects = [
     title: "Unlocker - Sports Experts Marketplace",
     description:
       "Built the MVP of a subscription-based sports experts marketplace using Next.js + TypeScript with an Express.js + PostgreSQL backend. Implemented subscriptions, expert monetization, and verified performance analytics.",
-    image: "/projects/independent/unlocker/og-image.png",
+    image: "/projects/independent/unlocker/unlocker-marketplace.png",
     technologies: [
       {
         name: "NextJS",
@@ -215,9 +220,38 @@ export const projects: Projects = [
     ],
   },
   {
+    title: "Reddit Job Notify",
+    description:
+      "A Go service that monitors Reddit subreddits for freelance job opportunities and delivers real-time Telegram notifications, with smart keyword filtering, priority categorization, and optional Google Sheets logging.",
+    image: "/projects/personal/reddit-job-notify.png",
+    technologies: [
+      {
+        name: "Go",
+        icon: "/skills/go.svg",
+      },
+      {
+        name: "Docker",
+        icon: "/skills/docker.svg",
+      },
+    ],
+    path: "/projects/personal/reddit-job-notify",
+    slug: "reddit-job-notify",
+    type: "personal",
+    date: "2024",
+    github: "https://github.com/sudharsangs/reddit-job-notify-telegram-bot",
+    features: [
+      "Multi-subreddit monitoring with configurable scan intervals",
+      "Smart post filtering using hiring language detection and tech keyword matching",
+      "Priority-based Telegram notifications for high-signal opportunities",
+      "Optional Google Sheets logging for tracking opportunities over time",
+      "Duplicate prevention through persistent post tracking",
+      "Categorization by job type for targeted alerts",
+    ],
+  },
+  {
     title: "Table to CSV",
     description:
-      "A lightweight browser extension and utility for extracting HTML tables as CSV files — useful for developers and data analysts working in the browser.",
+      "A lightweight browser extension and utility for extracting HTML tables as CSV files, useful for developers and data analysts working in the browser.",
     technologies: [
       {
         name: "HTML",
@@ -437,6 +471,114 @@ export const projects: Projects = [
         alt: "Document Repository",
         caption: "Secure document storage and management system",
       },
+    ],
+  },
+  {
+    title: "Program Pages",
+    description:
+      "Designed and built canonical program pages for Molotov TV, consolidating dozens of fragmented legacy URLs per title into a single authoritative page, wired up with schema.org microdata, deeplinks into the streaming app, and LCP optimizations targeting French streaming audiences.",
+    image: "/projects/molotov/evergreen.gif",
+    technologies: [
+      { name: "React", icon: "/skills/react.svg" },
+      { name: "TypeScript", icon: "/skills/typescript.svg" },
+      { name: "Node.js", icon: "/skills/nodejs.svg" },
+      { name: "CSS Modules", icon: "/skills/css.svg" },
+      { name: "Webpack", icon: "/skills/javascript.svg" },
+    ],
+    path: "/projects/work/molotov-evergreen-program-pages",
+    slug: "molotov-evergreen-program-pages",
+    type: "work",
+    date: "2025-2026",
+    company: {
+      name: "Molotov by Fubo",
+      url: "https://www.molotov.tv",
+      logo: "/molotov.png",
+    },
+    keyHighlights: [
+      "Multi-channel tabbed scheduling showing upcoming airings across all channels",
+      "One-click Watch/Record deeplinks into the Molotov streaming app",
+      "301 redirects collapsing fragmented legacy URLs into a single canonical URL per title",
+      "Movie/TVSeries schema.org microdata enabling Google Rich Results eligibility",
+      "BreadcrumbList schema for structured navigation context in SERPs",
+      "Hero image LCP optimization using fetchpriority='high' for improved Core Web Vitals",
+    ],
+    outcomes: [
+      "Consolidated fragmented URLs into single canonical program pages",
+      "Google Rich Results eligibility via Movie/TVSeries microdata",
+      "Improved LCP scores through image priority optimizations",
+    ],
+  },
+  {
+    title: "Program List Pages",
+    description:
+      "Rebuilt Molotov's category and genre listing pages from the ground up: server-rendered filter links for full crawlability, dual pagination, structured data for Carousel Rich Results, and editorial content headers. The work covered every listing page across the platform.",
+    image: "/projects/molotov/program-list.gif",
+    technologies: [
+      { name: "React", icon: "/skills/react.svg" },
+      { name: "TypeScript", icon: "/skills/typescript.svg" },
+      { name: "Node.js", icon: "/skills/nodejs.svg" },
+      { name: "CSS Modules", icon: "/skills/css.svg" },
+      { name: "Webpack", icon: "/skills/javascript.svg" },
+    ],
+    path: "/projects/work/molotov-program-list-pages",
+    slug: "molotov-program-list-pages",
+    type: "work",
+    date: "2026",
+    liveUrl: "https://www.molotov.tv/fr_fr/cat/1/movies",
+    company: {
+      name: "Molotov by Fubo",
+      url: "https://www.molotov.tv",
+      logo: "/molotov.png",
+    },
+    keyHighlights: [
+      "Server-rendered category filter links replacing JS-only filters for full Googlebot crawlability",
+      "Editorial content headers with keyword-rich introductory copy on each listing page",
+      "Dual pagination: numbered page links and infinite scroll side by side",
+      "Distinct title tags per page with rel='next'/rel='prev' pagination signals",
+      "FAQ accordions sourced from API: dynamic content crawlable by search engines",
+      "ItemList + Movie/TVSeries schema making listing pages eligible for Google Carousel Rich Results",
+      "WebP image conversion across all thumbnails and 301 redirects from legacy listing URLs",
+    ],
+    outcomes: [
+      "Complete SEO infrastructure on all listing pages",
+      "Carousel Rich Result eligibility via ItemList schema",
+      "Reduced HTML payload through image format optimization",
+      "Improved crawlability with SSR filter links",
+    ],
+  },
+  {
+    title: "Navigation Bar Redesign",
+    description:
+      "Rebuilt Molotov's navigation bar from scratch: separate mobile and desktop architectures, API-driven content, ARIA accessibility, and post-launch bug fixes that eliminated 50,000+ 404 errors across Google Search Console.",
+    image: "/projects/molotov/menu.gif",
+    technologies: [
+      { name: "React", icon: "/skills/react.svg" },
+      { name: "TypeScript", icon: "/skills/typescript.svg" },
+      { name: "Node.js", icon: "/skills/nodejs.svg" },
+      { name: "CSS Modules", icon: "/skills/css.svg" },
+    ],
+    path: "/projects/work/molotov-navbar-redesign",
+    slug: "molotov-navbar-redesign",
+    type: "work",
+    date: "2025",
+    company: {
+      name: "Molotov by Fubo",
+      url: "https://www.molotov.tv",
+      logo: "/molotov.png",
+    },
+    keyHighlights: [
+      "Separate mobile and desktop navbar architectures optimized for each breakpoint's interaction patterns",
+      "Link obfuscation for anti-scraping compliance while keeping all links crawlable as static anchor tags",
+      "Custom scrollbar for desktop megamenu handling deep category hierarchies gracefully",
+      "Signed-in and signed-out account states with seamless transitions based on session",
+      "CMS-driven navigation content via API integration: no deployment needed for menu updates",
+      "Full ARIA roles, labels, and keyboard navigation for WCAG accessibility compliance",
+    ],
+    outcomes: [
+      "Crawlable <a> links replaced JS-dependent navigation",
+      "Eliminated 50,000+ 404 URLs by fixing subscription button URL",
+      "Ligue 1 logo 97% file size reduction",
+      "Improved accessibility scores with ARIA roles",
     ],
   },
   {
@@ -823,7 +965,7 @@ export const projects: Projects = [
   {
     title: "No Paper Exams",
     description:
-      "Built the full-stack digital exam platform for an early-stage EdTech startup — covering exam creation, secure proctoring, auto-grading, and analytics.",
+      "Built the full-stack digital exam platform for an early-stage EdTech startup, covering exam creation, secure proctoring, auto-grading, and analytics.",
     image: "",
     technologies: [
       {

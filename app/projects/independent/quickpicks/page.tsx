@@ -58,9 +58,9 @@ const results = [
 
 const screenshots = [
   {
-    url: '/projects/independent/quickpicks/cover.png',
-    alt: 'QuickPicks brand cover',
-    caption: 'Branded entry point for the QuickPicks experience.',
+    url: '/projects/independent/unlocker/unlocker-quickpicks.png',
+    alt: 'QuickPicks pick creation flow',
+    caption: 'Create a pick in 30 seconds — structured form with event, pricing, and instant publish.',
   },
   {
     url: '/projects/independent/quickpicks/pick-flow.png',
@@ -70,7 +70,7 @@ const screenshots = [
   {
     url: '/projects/independent/quickpicks/mobile-gateway.png',
     alt: 'QuickPicks mobile gateway view',
-    caption: 'A compact purchase gateway designed for rapid pick consumption on mobile.',
+    caption: 'Compact purchase gateway designed for rapid pick consumption on mobile.',
   },
 ];
 
@@ -83,12 +83,12 @@ export default function QuickPicksPage() {
       date="2026"
       liveUrl="https://quickpicks.unlocker.club"
     >
-      <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20 bg-[#655cf0]">
+      <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20 shadow-lg">
         <Image
-          src="/projects/independent/quickpicks/cover.png"
-          alt="QuickPicks cover"
+          src="/projects/independent/unlocker/unlocker-quickpicks.png"
+          alt="QuickPicks — create a pick in 30 seconds"
           fill
-          className="object-contain"
+          className="object-cover object-top"
         />
       </div>
 
@@ -110,9 +110,9 @@ export default function QuickPicksPage() {
         <ProjectSection
           title="The Problem"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-          iconBorder="border-amber-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-6 md:mb-0"
         >
           <p className="text-muted-foreground">
@@ -123,9 +123,9 @@ export default function QuickPicksPage() {
         <ProjectSection
           title="The Solution"
           icon={<Target className="w-5 h-5" />}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700"
-          iconBorder="border-emerald-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-0"
         >
           <p className="text-muted-foreground">
@@ -140,22 +140,22 @@ export default function QuickPicksPage() {
       >
         <FeatureList
           items={features}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
       <ProjectSection
         title="Key Product Challenges"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700"
-        iconBorder="border-purple-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {challenges.map((challenge) => (
-            <div key={challenge.title} className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-amber-700">{challenge.title}</h3>
+            <div key={challenge.title} className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-primary">{challenge.title}</h3>
               <p className="text-muted-foreground">{challenge.description}</p>
             </div>
           ))}
@@ -169,13 +169,13 @@ export default function QuickPicksPage() {
       <ProjectSection
         title="Results & Impact"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700"
-        iconBorder="border-emerald-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {results.map((result) => (
-            <div key={result} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div key={result} className="bg-primary/5 border border-primary/20 rounded-lg p-4">
               <p className="text-muted-foreground">{result}</p>
             </div>
           ))}

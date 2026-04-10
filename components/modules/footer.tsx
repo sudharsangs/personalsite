@@ -71,10 +71,10 @@ const Footer = () => {
               {socialLinks.map((link, index) => {
                 // Light theme social icon colors
                 const iconColors = [
-                  "hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50",
-                  "hover:text-gray-800 hover:border-gray-400 hover:bg-gray-100",
-                  "hover:text-red-600 hover:border-red-300 hover:bg-red-50",
-                  "hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50",
+                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
+                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
+                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
+                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
                 ];
                 return (
                   <a

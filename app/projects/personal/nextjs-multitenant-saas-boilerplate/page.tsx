@@ -117,20 +117,20 @@ export default function NextJSMultitenantSaaSPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-sm mb-2 text-amber-700">Frontend</h4>
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+            <h4 className="font-semibold text-sm mb-2 text-primary">Frontend</h4>
             <p className="text-sm text-muted-foreground">{projectData.techStackDetails.frontend}</p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-sm mb-2 text-amber-700">Backend</h4>
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+            <h4 className="font-semibold text-sm mb-2 text-primary">Backend</h4>
             <p className="text-sm text-muted-foreground">{projectData.techStackDetails.backend}</p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-sm mb-2 text-amber-700">Database</h4>
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+            <h4 className="font-semibold text-sm mb-2 text-primary">Database</h4>
             <p className="text-sm text-muted-foreground">{projectData.techStackDetails.database}</p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-sm mb-2 text-amber-700">Authentication</h4>
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+            <h4 className="font-semibold text-sm mb-2 text-primary">Authentication</h4>
             <p className="text-sm text-muted-foreground">{projectData.techStackDetails.authentication}</p>
           </div>
         </div>
@@ -141,9 +141,9 @@ export default function NextJSMultitenantSaaSPage() {
         <ProjectSection
           title="What is it?"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-          iconBorder="border-amber-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-6 md:mb-0"
         >
           <p className="text-muted-foreground">
@@ -156,14 +156,14 @@ export default function NextJSMultitenantSaaSPage() {
         <ProjectSection
           title="Why use it?"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700"
-          iconBorder="border-emerald-200"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
+          iconBorder="border-primary/20"
           className="mb-0"
         >
           <p className="text-muted-foreground">
             Building a SaaS application from scratch takes months of development time. This boilerplate
-            provides all the foundational features—authentication, multi-tenancy, subscriptions, and more—
+            provides all the foundational features: authentication, multi-tenancy, subscriptions, and more,
             so you can focus on building your unique product features instead of reinventing the wheel.
           </p>
         </ProjectSection>
@@ -173,15 +173,15 @@ export default function NextJSMultitenantSaaSPage() {
       <ProjectSection
         title="Architecture Highlights"
         icon={<Database className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700"
-        iconBorder="border-purple-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
         className="mb-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectData.architectureHighlights.map((highlight, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-amber-700">{highlight.title}</h3>
+            <div key={index} className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-primary">{highlight.title}</h3>
               <p className="text-muted-foreground">{highlight.description}</p>
             </div>
           ))}
@@ -192,15 +192,15 @@ export default function NextJSMultitenantSaaSPage() {
       <ProjectSection
         title="Core Features"
         icon={<Shield className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700"
-        iconBorder="border-blue-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
         className="mb-12"
       >
         <FeatureList
           items={projectData.coreFeatures}
-          iconBg="bg-blue-100"
-          iconColor="text-blue-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
@@ -208,15 +208,15 @@ export default function NextJSMultitenantSaaSPage() {
       <ProjectSection
         title="Business Features"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700"
-        iconBorder="border-emerald-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
         className="mb-12"
       >
         <FeatureList
           items={projectData.businessFeatures}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
@@ -224,13 +224,13 @@ export default function NextJSMultitenantSaaSPage() {
       <ProjectSection
         title="Perfect For"
         icon={<LinkIcon className="w-5 h-5" />}
-        iconBg="bg-amber-100"
-        iconColor="text-amber-700"
-        iconBorder="border-amber-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projectData.useCases.map((useCase, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div key={index} className="bg-primary/5 border border-primary/20 rounded-lg p-4">
               <p className="text-muted-foreground">{useCase}</p>
             </div>
           ))}
@@ -241,9 +241,9 @@ export default function NextJSMultitenantSaaSPage() {
       <ProjectSection
         title="Getting Started"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700"
-        iconBorder="border-purple-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
         <div className="bg-gray-900 rounded-lg p-6 text-gray-100 font-mono text-sm overflow-x-auto">
           <div className="mb-4">

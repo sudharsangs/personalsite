@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import ProjectPageLayout, {
   FeatureList,
+  InfoCard,
+  OutcomeList,
   ProjectImageGallery,
   ProjectSection,
 } from "@/components/modules/project-page-layout";
@@ -109,7 +111,7 @@ export default function FactoStackPlatformPage() {
       date="2025-2026"
       liveUrl="https://app.factostack.com"
     >
-      <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20 bg-slate-50">
+      <div className="relative w-full h-[280px] md:h-[380px] mb-16 rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-slate-50">
         <Image
           src="/projects/personal/factostack-platform/executive-dashboard.png"
           alt="FactoStack executive dashboard"
@@ -123,7 +125,7 @@ export default function FactoStackPlatformPage() {
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-white shadow-sm rounded-full px-4 py-2 text-sm border border-border/60"
             >
               <Image
                 src={tech.icon}
@@ -136,25 +138,21 @@ export default function FactoStackPlatformPage() {
             </div>
           ))}
         </div>
-        <p className="text-muted-foreground mt-4">
-          Under the hood, the platform combines a React + TypeScript client with
-          TanStack Router and React Query, plus a NestJS + TypeORM backend for
-          data-heavy operational and compliance workflows. It is deployed on
-          Amazon Lightsail with separate instance, database, and storage
-          services, while Docker images are shipped through AWS ECR.
+        <p className="text-muted-foreground mt-4 text-sm leading-relaxed">
+          React + TypeScript client with TanStack Router and React Query, NestJS + TypeORM backend for operational and compliance workflows, deployed on Amazon Lightsail with Docker images shipped through AWS ECR.
         </p>
       </ProjectSection>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         <ProjectSection
           title="The Problem"
           icon={<Lightbulb className="w-5 h-5" />}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-          iconBorder="border-amber-200"
-          className="mb-6 md:mb-0"
+          iconBg="bg-accent/10"
+          iconColor="text-accent"
+          iconBorder="border-accent/20"
+          className="mb-0"
         >
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground leading-relaxed">
             Indian MSMEs often run core factory work across Excel sheets,
             WhatsApp messages, paper slips, and separate accounting tools. In
             the platform repo, that pain shows up in the workflows I chose to
@@ -167,12 +165,9 @@ export default function FactoStackPlatformPage() {
         <ProjectSection
           title="The Solution"
           icon={<Target className="w-5 h-5" />}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700"
-          iconBorder="border-emerald-200"
           className="mb-0"
         >
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground leading-relaxed">
             I turned those operational gaps into a tenant-aware product.
             FactoStack brings together quotes, orders, stock, procurement,
             production, invoicing, finance, and compliance dashboards so owners
@@ -186,31 +181,18 @@ export default function FactoStackPlatformPage() {
         title="Core Modules"
         icon={<LinkIcon className="w-5 h-5" />}
       >
-        <FeatureList
-          items={features}
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
-        />
+        <FeatureList items={features} />
       </ProjectSection>
 
       <ProjectSection
         title="Implementation Highlights"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700"
-        iconBorder="border-purple-200"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {highlights.map((highlight) => (
-            <div
-              key={highlight.title}
-              className="bg-blue-50 border border-blue-200 rounded-xl p-6"
-            >
-              <h3 className="text-lg font-semibold mb-2 text-amber-700">
-                {highlight.title}
-              </h3>
-              <p className="text-muted-foreground">{highlight.description}</p>
-            </div>
+            <InfoCard key={highlight.title} title={highlight.title}>
+              {highlight.description}
+            </InfoCard>
           ))}
         </div>
       </ProjectSection>
@@ -218,15 +200,15 @@ export default function FactoStackPlatformPage() {
       <ProjectSection
         title="AI-Assisted Engineering"
         icon={<FileText className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700"
-        iconBorder="border-blue-200"
+        iconBg="bg-secondary"
+        iconColor="text-foreground/70"
+        iconBorder="border-border/60"
       >
         <div className="flex flex-wrap gap-3 mb-4">
           {aiTools.map((tool) => (
             <div
               key={tool.name}
-              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-white shadow-sm rounded-full px-4 py-2 text-sm border border-border/60"
             >
               <Image
                 src={tool.icon}
@@ -239,7 +221,7 @@ export default function FactoStackPlatformPage() {
             </div>
           ))}
         </div>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground leading-relaxed">
           I used Claude Code and Codex as AI-assisted engineering tools while
           building the platform. They helped me move faster on repetitive
           implementation work, route scaffolding, refactors, and edge-case
@@ -258,20 +240,8 @@ export default function FactoStackPlatformPage() {
       <ProjectSection
         title="Results & Impact"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700"
-        iconBorder="border-emerald-200"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {results.map((result) => (
-            <div
-              key={result}
-              className="bg-blue-50 border border-blue-200 rounded-lg p-4"
-            >
-              <p className="text-muted-foreground">{result}</p>
-            </div>
-          ))}
-        </div>
+        <OutcomeList items={results} />
       </ProjectSection>
     </ProjectPageLayout>
   );

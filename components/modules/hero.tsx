@@ -60,11 +60,11 @@ const Hero: React.FC = () => {
     <section className="flex flex-col items-center justify-center pt-24 pb-20 min-h-[95vh] relative overflow-hidden">
       {/* Background decorative elements */}
       <motion.div
-        className="absolute top-1/4 right-10 w-96 h-96 bg-gradient-to-br from-primary/8 to-accent/5 rounded-full blur-3xl"
+        className="absolute top-1/4 right-10 w-[500px] h-[500px] bg-gradient-to-br from-primary/18 to-accent/10 rounded-full blur-[80px]"
         animate={{
           x: [0, -30, 0],
           y: [0, 20, 0],
-          opacity: [0.3, 0.6, 0.3],
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
           duration: 15,
@@ -73,11 +73,11 @@ const Hero: React.FC = () => {
         }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-10 w-80 h-80 bg-gradient-to-tr from-accent/8 to-primary/5 rounded-full blur-3xl"
+        className="absolute bottom-1/4 left-10 w-96 h-96 bg-gradient-to-tr from-accent/15 to-primary/10 rounded-full blur-[70px]"
         animate={{
           x: [0, 25, 0],
           y: [0, -15, 0],
-          opacity: [0.4, 0.7, 0.4],
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
           duration: 18,
@@ -85,6 +85,8 @@ const Hero: React.FC = () => {
           repeatType: "reverse",
         }}
       />
+      {/* Subtle grid */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(220 70% 40%) 1.5px, transparent 1.5px)', backgroundSize: '36px 36px' }} />
 
       <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-16 lg:gap-20 items-center relative z-10">
         <motion.div
@@ -100,7 +102,7 @@ const Hero: React.FC = () => {
             className="inline-block bg-gradient-to-r from-primary/10 via-accent/8 to-primary/5 rounded-full px-5 py-2.5 text-primary mb-6 border border-primary/20 shadow-sm backdrop-blur-sm"
           >
             <span className="text-sm font-semibold tracking-wider">
-              FULLSTACK DEVELOPER
+              FULL STACK ENGINEER · PRODUCT BUILDER
             </span>
           </motion.div>
 
@@ -145,26 +147,26 @@ const Hero: React.FC = () => {
             className="md:text-xl text-lg text-muted-foreground max-w-2xl leading-relaxed mb-2"
             variants={itemVariants}
           >
-            I build production-grade web products — from streamed sports content at Fubo to full-stack SaaS platforms for Indian manufacturers.
+            From streaming infrastructure at Fubo to a manufacturing ERP built solo for Indian factories, I work across the full stack and see things through to production.
           </motion.p>
 
           <motion.p
             className="md:text-lg text-base text-muted-foreground max-w-xl leading-relaxed"
             variants={itemVariants}
           >
-            Specialized in{" "}
+            5+ years across{" "}
             <span className="text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-md">
               React
             </span>
             ,{" "}
-            <span className="text-accent font-semibold bg-accent/10 px-2 py-0.5 rounded-md">
+            <span className="text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-md">
               TypeScript
             </span>
-            , and{" "}
+            ,{" "}
             <span className="text-foreground font-semibold bg-muted px-2 py-0.5 rounded-md">
-              Next.js
-            </span>{" "}
-            with 5+ years of experience delivering scalable solutions.
+              Node.js
+            </span>
+            , and cloud infra. Five years of shipping things that actually go live.
           </motion.p>
 
           <motion.div
@@ -173,19 +175,16 @@ const Hero: React.FC = () => {
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link href="/about">
-                <Button className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-primary-foreground shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl px-6 py-4 flex items-center gap-2 h-12 font-semibold text-sm border border-primary/20 w-full sm:w-auto">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-6 h-11 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 w-full sm:w-auto gap-2">
                   About Me
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </Button>
               </Link>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link href="/projects">
-                <Button
-                  variant="outline"
-                  className="bg-white/90 backdrop-blur-sm border-2 border-accent/40 text-accent hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 rounded-xl px-6 py-4 h-12 font-semibold shadow-lg hover:shadow-xl text-sm w-full sm:w-auto"
-                >
+                <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-6 h-11 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 w-full sm:w-auto">
                   View Projects
                 </Button>
               </Link>
@@ -193,7 +192,7 @@ const Hero: React.FC = () => {
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <a href="https://cal.com/sudharsangs/30min" target="_blank">
-                <Button className="bg-white/90 backdrop-blur-sm border-2 border-muted-foreground/40 text-muted-foreground hover:bg-muted-foreground hover:text-white hover:border-muted-foreground transition-all duration-300 rounded-xl px-6 py-4 h-12 font-semibold shadow-lg hover:shadow-xl text-sm w-full sm:w-auto">
+                <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-6 h-11 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 w-full sm:w-auto">
                   Schedule Call
                 </Button>
               </a>
@@ -206,8 +205,8 @@ const Hero: React.FC = () => {
           >
             {socialLinks.map((link, index) => {
               const hoverColors = [
-                "hover:bg-blue-50 hover:border-blue-400 hover:text-blue-600 hover:shadow-lg hover:shadow-blue-200/50",
-                "hover:bg-gray-100 hover:border-gray-500 hover:text-gray-800 hover:shadow-lg hover:shadow-gray-200/50",
+                "hover:bg-primary/10 hover:border-primary hover:text-primary hover:shadow-lg hover:shadow-primary/20",
+                "hover:bg-primary/10 hover:border-primary hover:text-primary hover:shadow-lg hover:shadow-primary/20",
                 "hover:bg-primary/10 hover:border-primary hover:text-primary hover:shadow-lg hover:shadow-primary/20",
               ];
               return (
@@ -238,9 +237,13 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          {/* Outer glow */}
+          <div className="absolute w-[340px] h-[340px] lg:w-[400px] lg:h-[400px] rounded-3xl bg-gradient-to-br from-primary/15 to-accent/10 blur-2xl" />
+
+          {/* Photo card */}
           <motion.div
-            className="w-80 h-80 lg:w-96 lg:h-96 bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl"
-            whileHover={{ scale: 1.02, rotate: 1 }}
+            className="w-72 h-72 lg:w-[340px] lg:h-[340px] rounded-3xl overflow-hidden border border-primary/20 relative z-10 shadow-2xl shadow-primary/15"
+            whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <Image
@@ -251,26 +254,8 @@ const Hero: React.FC = () => {
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 via-transparent to-transparent" />
           </motion.div>
-
-          {/* Enhanced decorative elements */}
-          <motion.div
-            className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-primary/30 to-accent/20 rounded-full"
-            animate={{ scale: [1, 1.3, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-tr from-accent/30 to-primary/20 rounded-full"
-            animate={{ scale: [1, 1.2, 1], rotate: [0, -180, -360] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute top-1/4 -left-4 w-6 h-6 bg-primary/40 rounded-full"
-            animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          />
         </motion.div>
       </div>
 

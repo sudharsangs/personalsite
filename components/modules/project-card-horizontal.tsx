@@ -23,6 +23,7 @@ export default function ProjectCardHorizontal({
   github,
   path,
   liveUrl,
+  company,
   index,
   reverse = false
 }: Props) {
@@ -61,25 +62,42 @@ export default function ProjectCardHorizontal({
                 transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
                 className="flex justify-start"
               >
-                <Badge className="flex items-center gap-2 w-fit"
-                  variant={type === "personal" ? "default" : type === "independent" ? "destructive" : "secondary"}
+                <Badge className="flex items-center gap-2 w-fit border"
                   style={{
-                    backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" :
-                      type === "independent" ? "hsl(var(--accent) / 0.15)" :
-                        "hsl(180 40% 60% / 0.15)",
-                    color: type === "personal" ? "hsl(var(--primary))" :
-                      type === "independent" ? "hsl(var(--accent))" :
-                        "hsl(180 40% 40%)",
-                    borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" :
-                      type === "independent" ? "hsl(var(--accent) / 0.3)" :
-                        "hsl(180 40% 60% / 0.3)",
-                    backdropFilter: "blur(4px)"
+                    backgroundColor: type === "personal"
+                      ? "hsl(220 70% 92%)"
+                      : type === "independent"
+                        ? "hsl(270 60% 92%)"
+                        : "hsl(220 70% 92%)",
+                    color: type === "personal"
+                      ? "hsl(220 70% 28%)"
+                      : type === "independent"
+                        ? "hsl(270 55% 35%)"
+                        : "hsl(220 70% 28%)",
+                    borderColor: type === "personal"
+                      ? "hsl(220 70% 75%)"
+                      : type === "independent"
+                        ? "hsl(270 55% 70%)"
+                        : "hsl(220 70% 75%)",
                   }}
                 >
                   <TypeIcon className="w-4 h-4" />
                   <span className="capitalize font-medium">{type}</span>
                 </Badge>
               </motion.div>
+
+              {/* Company Logo */}
+              {company && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 + 0.15 }}
+                  className="flex items-center gap-2"
+                >
+                  <Image src={company.logo} alt={company.name} width={28} height={28} className="rounded-md" />
+                  <span className="text-sm text-muted-foreground font-medium">{company.name}</span>
+                </motion.div>
+              )}
 
               {/* Title */}
               <motion.h3
@@ -109,24 +127,16 @@ export default function ProjectCardHorizontal({
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
               >
-                {technologies.slice(0, 4).map((tech, i) => {
-                  const techColors = [
-                    "bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40",
-                    "bg-accent/10 border-accent/30 text-accent hover:bg-accent/15 hover:border-accent/40",
-                    "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300",
-                    "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300"
-                  ];
-                  return (
-                    <motion.div
-                      key={i}
-                      whileHover={{ y: -2, scale: 1.05 }}
-                      className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-4 py-2 text-sm border shadow-sm transition-all duration-300`}
-                    >
-                      <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
-                      <span className="font-medium">{tech.name}</span>
-                    </motion.div>
-                  );
-                })}
+                {technologies.slice(0, 4).map((tech, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ y: -2, scale: 1.05 }}
+                    className="inline-flex items-center bg-secondary text-secondary-foreground border border-border backdrop-blur-sm rounded-full px-4 py-2 text-sm shadow-sm transition-all duration-300 hover:bg-secondary/80"
+                  >
+                    <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
+                    <span className="font-medium">{tech.name}</span>
+                  </motion.div>
+                ))}
                 {technologies.length > 4 && (
                   <Badge variant="outline" className="text-sm bg-muted/60 text-muted-foreground border-border hover:bg-muted shadow-sm px-4 py-2">
                     +{technologies.length - 4} more
@@ -195,8 +205,14 @@ export default function ProjectCardHorizontal({
                       />
                     </div>
                   ) : (
-                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center">
-                      <h3 className="text-2xl font-bold text-white drop-shadow-lg">{title}</h3>
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/40 flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(circle, hsl(220 70% 50%) 1px, transparent 1px)', backgroundSize: '24px 24px'}} />
+                      <div className="relative z-10 flex flex-col items-center gap-3">
+                        <div className="w-16 h-16 rounded-2xl bg-white/80 border border-primary/20 shadow-lg flex items-center justify-center">
+                          <TypeIcon className="w-8 h-8 text-primary" />
+                        </div>
+                        <span className="text-primary/60 text-xs font-medium uppercase tracking-widest">Project</span>
+                      </div>
                     </div>
                   )}
                 </div>

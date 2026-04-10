@@ -79,7 +79,7 @@ export default function TableToCsvPage() {
       <div className="flex flex-wrap gap-4 mb-12">
         {projectData.firefoxUrl && (
           <Link href={projectData.firefoxUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-border bg-white/80 text-foreground  flex items-center gap-2">
+            <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-5 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2">
               <Image src="/skills/firefox.svg" alt="Firefox" width={16} height={16} />
               Get for Firefox
             </Button>
@@ -88,7 +88,7 @@ export default function TableToCsvPage() {
 
         {projectData.edgeUrl && (
           <Link href={projectData.edgeUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-border bg-white/80 text-foreground  flex items-center gap-2">
+            <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-5 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2">
               <Image src="/skills/edge.svg" alt="Edge" width={16} height={16} />
               Get for Edge
             </Button>
@@ -96,7 +96,7 @@ export default function TableToCsvPage() {
         )}
         {projectData.githubUrl && (
           <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-border bg-white/80 text-foreground  flex items-center gap-2">
+            <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-5 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2">
               <Github className="h-4 w-4" />
               View Source Code
             </Button>

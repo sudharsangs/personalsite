@@ -28,15 +28,15 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
       whileHover={{ y: -5 }}
     >
       <Card className="overflow-hidden border border-border/50 bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 rounded-2xl group">
-        <CardContent className="p-4 lg:p-8">
-          <div className="flex items-start gap-4">
+        <CardContent className="p-4 sm:p-6 lg:p-10">
+          <div className="flex items-start gap-4 min-w-0">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={
                 isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
               }
               transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
-              className="relative w-20 h-20 rounded-xl overflow-hidden border-2 border-border/30 bg-white shadow-lg hover:border-primary/50 transition-all duration-300 hover:shadow-xl group-hover:scale-105"
+              className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-border/30 bg-white shadow-lg hover:border-primary/50 transition-all duration-300 hover:shadow-xl group-hover:scale-105 flex-shrink-0"
               whileHover={{ scale: 1.05 }}
             >
               <Image
@@ -46,11 +46,11 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                 className="object-cover"
               />
             </motion.div>
-            <div className="flex-1">
-              <div className="flex justify-between items-start gap-4">
-                <div className="w-full sm:w-auto">
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap justify-between items-start gap-2">
+                <div className="min-w-0 flex-1">
                   <motion.h3
-                    className="text-2xl font-bold text-foreground mb-1"
+                    className="text-lg sm:text-2xl font-bold text-foreground mb-1 leading-tight"
                     style={{ fontFamily: fonts.PlayfairDisplay }}
                     initial={{ opacity: 0, y: -10 }}
                     animate={
@@ -60,41 +60,18 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                   >
                     {experience.title}
                   </motion.h3>
-                  <div className="flex  w-full justify-between sm:flex-row flex-col sm:items-center items-start">
-                    <motion.a
-                      target="_blank"
-                      href={experience.companyUrl}
-                      className="font-semibold text-primary flex items-center gap-2 hover:text-primary/80 transition-colors text-lg"
-                      initial={{ opacity: 0 }}
-                      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-                      whileHover={{ x: 2 }}
-                    >
-                      {experience.company}
-                      <ExternalLink className="w-4 h-4" />
-                    </motion.a>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={
-                        isInView
-                          ? { opacity: 1, scale: 1 }
-                          : { opacity: 0, scale: 0.8 }
-                      }
-                      transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-                      className="flex sm:hidden"
-                    >
-                      <Badge
-                        variant={
-                          experience.type === "Full Time"
-                            ? "default"
-                            : "secondary"
-                        }
-                        className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-none shadow-md px-3 py-1 text-sm font-medium"
-                      >
-                        {experience.type}
-                      </Badge>
-                    </motion.div>
-                  </div>
+                  <motion.a
+                    target="_blank"
+                    href={experience.companyUrl}
+                    className="font-semibold text-primary flex items-center gap-1.5 hover:text-primary/80 transition-colors text-base sm:text-lg"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+                    whileHover={{ x: 2 }}
+                  >
+                    {experience.company}
+                    <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
+                  </motion.a>
                 </div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -104,13 +81,13 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                       : { opacity: 0, scale: 0.8 }
                   }
                   transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-                  className="sm:flex hidden"
+                  className="flex-shrink-0"
                 >
                   <Badge
                     variant={
                       experience.type === "Full Time" ? "default" : "secondary"
                     }
-                    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border-none"
+                    className="bg-primary hover:bg-primary/90 text-white border-none shadow-sm text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 whitespace-nowrap"
                   >
                     {experience.type}
                   </Badge>
@@ -145,68 +122,37 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
           {/* Description section - added at the top */}
           {experience.description &&
             (experience.id === "fubo" ? (
-              <>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-                  }
-                  transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-                  className="mt-3 flex flex-col sm:flex-row items-start gap-4"
-                >
-                  <motion.a
-                    className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/10 backdrop-blur-sm"
-                    whileHover={{ scale: 1.05 }}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={
-                      isInView
-                        ? { opacity: 1, scale: 1 }
-                        : { opacity: 0, scale: 0.8 }
-                    }
-                    transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
+              <motion.div
+                className="mt-4 space-y-3"
+                initial={{ opacity: 0, y: 10 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+              >
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10">
+                  <a
                     href="https://molotov.tv/"
                     target="_blank"
+                    className="relative w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-black/10 block"
                   >
                     <Image
                       src="/molotov.png"
                       alt="Molotov TV Logo"
                       fill
-                      className="object-contain p-2"
+                      className="object-contain p-1.5"
                     />
-                  </motion.a>
-                  {experience.id === "fubo" ? (
-                    <motion.p className="text-sm text-muted-foreground italic border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg">
-                      Currently working on the{" "}
-                      <a
-                        href="https://www.molotov.tv/"
-                        target="_blank"
-                        className="text-primary hover:text-primary/80 underline font-medium"
-                      >
-                        Molotov
-                      </a>{" "}
-                      team, focusing on enhancing the user experience for live
-                      sports streaming and improving the marketing site for
-                      better SEO.
-                    </motion.p>
-                  ) : (
-                    <motion.p className="text-sm text-muted-foreground italic border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg">
-                      {experience.description}
-                    </motion.p>
-                  )}
-                </motion.div>
-                <motion.p
-                  className="text-sm text-muted-foreground italic border-l-4 border-orange-500/30 pl-4 bg-orange-500/5 py-3 rounded-r-lg mt-3"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-                  }
-                  transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
-                >
-                  Previously, I was part of the VideoAI team, where I
-                  contributed to building AI-driven features for sports video
-                  analysis
-                </motion.p>
-              </>
+                  </a>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Currently on the{" "}
+                    <a href="https://www.molotov.tv/" target="_blank" className="text-primary hover:text-primary/80 underline font-medium">
+                      Molotov
+                    </a>{" "}
+                    team, improving technical SEO and building features for live sports streaming.
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed border-l-4 border-accent/40 pl-4 bg-accent/5 py-3 rounded-r-lg">
+                  Previously on the VideoAI team, building AI-driven real-time highlight systems and video playback features.
+                </p>
+              </motion.div>
             ) : (
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
@@ -214,13 +160,13 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-                className="mt-4 text-sm text-muted-foreground italic border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg"
+                className="mt-4 text-sm text-muted-foreground leading-relaxed border-l-4 border-primary/30 pl-4 bg-primary/5 py-3 rounded-r-lg"
               >
                 {experience.description}
               </motion.p>
             ))}
 
-          <motion.ul className="mt-6 space-y-4">
+          <motion.ul className="mt-6 space-y-2">
             {experience.achievements.map((achievement, i) => (
               <motion.li
                 key={i}
@@ -232,10 +178,10 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                   duration: 0.5,
                   delay: index * 0.2 + i * 0.1 + 0.5,
                 }}
-                className="text-sm text-muted-foreground flex gap-3 items-center p-2 rounded-lg transition-colors duration-200"
+                className="text-sm text-muted-foreground flex gap-3 items-start p-2 rounded-lg transition-colors duration-200"
               >
-                <span className="text-primary text-base font-bold">•</span>
-                <span>{achievement}</span>
+                <span className="text-primary text-base font-bold flex-shrink-0 mt-0.5">•</span>
+                <span className="leading-relaxed">{achievement}</span>
               </motion.li>
             ))}
           </motion.ul>
@@ -276,14 +222,15 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <h4 className="text-lg font-semibold text-foreground">
+              <div className="flex items-center gap-3 mb-4">
+                <h4 className="text-base font-semibold text-foreground uppercase tracking-wide text-muted-foreground">
                   Related Projects
                 </h4>
               </div>
-              <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {experience.projects.map((project, i) => {
                   const projectTech = experience.technologies.slice(0, 3);
+                  const isWorkProject = experience.type === "Full Time" || experience.type === "Internship";
 
                   return (
                     <motion.div
@@ -310,12 +257,8 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                           "Project developed during my time at " +
                             experience.company
                         }
-                        techStack={
-                          Array.isArray(projectTech)
-                            ? projectTech
-                            : experience.technologies.slice(0, 3)
-                        }
-                        link={`/projects/${experience.type === "Full Time" ? "work" : "internship"}/${project.toLowerCase()}`}
+                        techStack={projectTech}
+                        link={isWorkProject ? `/projects/work/${project.toLowerCase()}` : undefined}
                       />
                     </motion.div>
                   );

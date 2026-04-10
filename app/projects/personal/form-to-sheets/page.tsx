@@ -71,7 +71,7 @@ export default function FormToSheetsPage() {
       <div className="flex flex-wrap gap-4 mb-12">
         {projectData.liveUrl && (
           <Link href={projectData.liveUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-2 border-primary/40 bg-white/80 text-primary hover:bg-primary hover:text-white hover:border-primary flex items-center gap-2">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 h-10 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 gap-2">
               <ExternalLink className="h-4 w-4" />
               View Live Site
             </Button>
@@ -80,7 +80,7 @@ export default function FormToSheetsPage() {
         
         {projectData.githubUrl && (
           <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-border bg-white/80 text-foreground hover:bg-white hover:border-primary/40 flex items-center gap-2">
+            <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-5 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2">
               <Github className="h-4 w-4" />
               View Source Code
             </Button>

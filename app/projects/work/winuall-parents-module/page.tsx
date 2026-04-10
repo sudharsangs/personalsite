@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Layers, BarChart, Users, LineChart, Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
+import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, ProjectImageGallery } from '@/components/modules/project-page-layout';
 
 export const metadata: Metadata = {
   title: 'Winuall Parents Module | Sudharsan GS',
@@ -42,6 +42,11 @@ export default function WinuallParentsModulePage() {
       "Fee payment history and upcoming payment reminders",
       "Student engagement metrics to identify learning patterns"
     ],
+    uxFocus: [
+      { title: "Accessibility", body: "Designed with accessibility in mind, ensuring parents of all technical abilities could easily navigate and understand their child's performance data." },
+      { title: "Simplicity", body: "Created intuitive interfaces with clear data visualizations that transform complex educational metrics into easily understandable insights." },
+      { title: "Engagement", body: "Implemented features that encourage regular engagement, such as progress milestones, alerts for important events, and actionable insights." },
+    ],
     outcomes: [
       "Increased parent engagement by 65% through transparent progress tracking",
       "Reduced administrative communication load by 40% through self-service features",
@@ -71,7 +76,7 @@ export default function WinuallParentsModulePage() {
       company={projectData.company}
     >
       {/* Tech Stack */}
-      <ProjectSection 
+      <ProjectSection
         title="Tech Stack"
         icon={<Layers className="w-5 h-5" />}
       >
@@ -92,75 +97,41 @@ export default function WinuallParentsModulePage() {
       <ProjectImageGallery images={projectData.images} columns={2} />
 
       {/* Key Highlights */}
-      <ProjectSection 
+      <ProjectSection
         title="Key Highlights"
         icon={<Sparkles className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700" 
-        iconBorder="border-blue-200"
       >
-        <FeatureList 
-          items={projectData.keyHighlights} 
-          iconBg="bg-blue-100"
-          iconColor="text-blue-700"
-        />
+        <FeatureList items={projectData.keyHighlights} />
       </ProjectSection>
 
-      {/* User Experience */}
-      <ProjectSection 
+      {/* User Experience Focus */}
+      <ProjectSection
         title="User Experience Focus"
         icon={<Users className="w-5 h-5" />}
-        iconBg="bg-purple-100"
-        iconColor="text-purple-700" 
-        iconBorder="border-purple-200"
-        className="mb-12"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Accessibility</h3>
-            <p className="text-muted-foreground">Designed with accessibility in mind, ensuring parents of all technical abilities could easily navigate and understand their child&apos;s performance data.</p>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Simplicity</h3>
-            <p className="text-muted-foreground">Created intuitive interfaces with clear data visualizations that transform complex educational metrics into easily understandable insights.</p>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-2 text-blue-700">Engagement</h3>
-            <p className="text-muted-foreground">Implemented features that encourage regular engagement, such as progress milestones, alerts for important events, and actionable insights.</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {projectData.uxFocus.map((item) => (
+            <InfoCard key={item.title} title={item.title}>
+              {item.body}
+            </InfoCard>
+          ))}
         </div>
       </ProjectSection>
 
       {/* Features */}
-      <ProjectSection 
+      <ProjectSection
         title="Module Features"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700" 
-        iconBorder="border-emerald-200"
       >
-        <FeatureList 
-          items={projectData.features}
-          iconBg="bg-emerald-100"
-          iconColor="text-emerald-700"
-        />
+        <FeatureList items={projectData.features} />
       </ProjectSection>
 
       {/* Outcomes */}
-      <ProjectSection 
+      <ProjectSection
         title="Outcomes & Impact"
         icon={<BarChart className="w-5 h-5" />}
-        iconBg="bg-amber-100"
-        iconColor="text-amber-700" 
-        iconBorder="border-amber-200"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {projectData.outcomes.map((outcome, index) => (
-            <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-muted-foreground">{outcome}</p>
-            </div>
-          ))}
-        </div>
+        <OutcomeList items={projectData.outcomes} />
       </ProjectSection>
     </ProjectPageLayout>
   );

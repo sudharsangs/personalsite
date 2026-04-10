@@ -22,7 +22,12 @@ export const experiences: Experience[] = [
       "Developed multiple POCs for VideoAI features using methodologies such as Server Driven UI and Micro Frontend Architecture."
     ],
     technologies: ["React", "TypeScript", "VideoJS", "Shaka Player", "GCP", "Docker", "Circle CI"],
-    projects: []
+    projects: ["molotov-navbar-redesign", "molotov-program-list-pages", "molotov-evergreen-program-pages"],
+    projectDescriptions: {
+      "molotov-navbar-redesign": "Rebuilt the navigation bar from scratch with separate mobile and desktop architectures, API-driven menus, ARIA accessibility, and fixes that wiped out 50,000+ 404 errors.",
+      "molotov-program-list-pages": "Rebuilt category and genre listing pages with server-rendered filters, dual pagination, structured data for Carousel Rich Results, and editorial content headers.",
+      "molotov-evergreen-program-pages": "Built canonical program pages consolidating fragmented legacy URLs into single authoritative pages with schema.org microdata and LCP optimizations."
+    }
   },
   {
     id: "winuall",

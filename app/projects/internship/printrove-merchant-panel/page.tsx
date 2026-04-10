@@ -91,14 +91,14 @@ export default function PrintroveMerchantPanelPage() {
       <ProjectSection 
         title="Key Highlights"
         icon={<Zap className="w-5 h-5" />}
-        iconBg="bg-amber-100"
-        iconColor="text-amber-700"
-        iconBorder="border-amber-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
         <FeatureList 
           items={projectData.keyHighlights} 
-          iconBg="bg-amber-100"
-          iconColor="text-amber-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
@@ -106,67 +106,65 @@ export default function PrintroveMerchantPanelPage() {
       <ProjectSection 
         title="Key Features"
         icon={<ShieldCheck className="w-5 h-5" />}
-        iconBg="bg-blue-100"
-        iconColor="text-blue-700" 
-        iconBorder="border-blue-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary" 
+        iconBorder="border-primary/20"
       >
         <FeatureList 
           items={projectData.features}
-          iconBg="bg-blue-100"
-          iconColor="text-blue-700"
+          iconBg="bg-primary/10"
+          iconColor="text-primary"
         />
       </ProjectSection>
 
       {/* Implementation Details */}
-      <ProjectSection 
-        title="Implementation Details" 
+      <ProjectSection
+        title="Implementation Details"
         icon={<LineChart className="h-5 w-5" />}
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
-        <p className="text-muted-foreground">
-          The merchant panel was implemented as a React application with Redux for state management. 
-          I worked on building several key components:
-        </p>
-        
-        <ul className="list-disc pl-5 mt-4 space-y-2 text-muted-foreground">
-          <li>
-            <span className="font-medium text-primary">Product Design Studio:</span> An intuitive interface for 
-            merchants to upload designs and apply them to various products, with real-time preview functionality.
-          </li>
-          <li>
-            <span className="font-medium text-primary">Order Management System:</span> A comprehensive system for 
-            tracking orders from placement to fulfillment, with status updates and customer communication tools.
-          </li>
-          <li>
-            <span className="font-medium text-primary">Analytics Dashboard:</span> Visual representation of 
-            sales data, product performance, and customer demographics to help merchants optimize their business.
-          </li>
-          <li>
-            <span className="font-medium text-primary">Storefront Customization:</span> Tools for merchants to 
-            customize their online store&apos;s appearance, categories, and featured products.
-          </li>
-        </ul>
-        
-        <p className="text-muted-foreground mt-4">
-          The project involved close collaboration with the backend team to ensure seamless integration with 
-          Printrove&apos;s order processing system, and with the design team to create an intuitive user interface 
-          that merchants of all technical levels could easily navigate.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-base font-semibold mb-2 text-primary">Product Design Studio</h3>
+            <p className="text-muted-foreground text-sm">An intuitive interface for merchants to upload designs and apply them to various products, with real-time preview functionality.</p>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-base font-semibold mb-2 text-primary">Order Management System</h3>
+            <p className="text-muted-foreground text-sm">A comprehensive system for tracking orders from placement to fulfillment, with status updates and customer communication tools.</p>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-base font-semibold mb-2 text-primary">Analytics Dashboard</h3>
+            <p className="text-muted-foreground text-sm">Visual representation of sales data, product performance, and customer demographics to help merchants optimize their business.</p>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+            <h3 className="text-base font-semibold mb-2 text-primary">Storefront Customization</h3>
+            <p className="text-muted-foreground text-sm">Tools for merchants to customize their online store&apos;s appearance, categories, and featured products.</p>
+          </div>
+        </div>
       </ProjectSection>
 
       {/* Outcomes */}
-      <ProjectSection 
+      <ProjectSection
         title="Outcomes"
         icon={<LineChart className="w-5 h-5" />}
-        iconBg="bg-emerald-100"
-        iconColor="text-emerald-700"
-        iconBorder="border-emerald-200"
+        iconBg="bg-primary/10"
+        iconColor="text-primary"
+        iconBorder="border-primary/20"
       >
-        <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-          <li>Successfully onboarded 100+ merchants to the platform within the first month of launch</li>
-          <li>Reduced product listing time by 60% through an intuitive design interface</li>
-          <li>Improved order fulfillment efficiency with real-time tracking and notification system</li>
-          <li>Enhanced merchant decision-making with comprehensive analytics and reporting tools</li>
-        </ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            'Successfully onboarded 100+ merchants to the platform within the first month of launch',
+            'Reduced product listing time by 60% through an intuitive design interface',
+            'Improved order fulfillment efficiency with real-time tracking and notification system',
+            'Enhanced merchant decision-making with comprehensive analytics and reporting tools',
+          ].map((outcome, index) => (
+            <div key={index} className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+              <p className="text-muted-foreground">{outcome}</p>
+            </div>
+          ))}
+        </div>
       </ProjectSection>
     </ProjectPageLayout>
   );

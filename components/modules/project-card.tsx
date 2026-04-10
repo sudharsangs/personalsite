@@ -5,13 +5,33 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Project } from '@/types/projects';
-import { Card, CardContent } from '@/components/ui/card';
 import { motion, useInView } from 'motion/react';
 import { fonts } from '@/lib/constants';
 
 interface Props extends Project {
   index: number
 }
+
+const typeConfig = {
+  personal: {
+    Icon: User,
+    label: 'Personal',
+    stripe: 'from-primary to-primary/50',
+    badge: { bg: 'hsl(220 70% 92% / 0.95)', text: 'hsl(220 70% 28%)', border: 'hsl(220 70% 75%)' },
+  },
+  independent: {
+    Icon: LoaderPinwheel,
+    label: 'Independent',
+    stripe: 'from-violet-500 to-violet-300',
+    badge: { bg: 'hsl(270 60% 92% / 0.95)', text: 'hsl(270 55% 35%)', border: 'hsl(270 55% 70%)' },
+  },
+  work: {
+    Icon: Briefcase,
+    label: 'Work',
+    stripe: 'from-primary via-accent/60 to-primary/30',
+    badge: { bg: 'hsl(220 70% 92% / 0.95)', text: 'hsl(220 70% 28%)', border: 'hsl(220 70% 75%)' },
+  },
+};
 
 export default function ProjectCard({
   title,
@@ -22,17 +42,13 @@ export default function ProjectCard({
   github,
   path,
   liveUrl,
-  index
+  company,
+  date,
+  index,
 }: Props) {
-  const typeIcons = {
-    personal: User,
-    independent: LoaderPinwheel,
-    work: Briefcase
-  };
-
-  const TypeIcon = typeIcons[type];
+  const { Icon: TypeIcon, label, stripe, badge } = typeConfig[type];
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const isExternal = typeof path === 'string' && /^https?:\/\//.test(path);
   const isLiveExternal = typeof liveUrl === 'string' && /^https?:\/\//.test(liveUrl);
@@ -40,149 +56,152 @@ export default function ProjectCard({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+      whileHover={{ y: -4 }}
+      className="h-full"
     >
-      <Card className="h-full transition-all duration-500 overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 hover:ring-1 hover:ring-primary/20 rounded-3xl group flex flex-col">
-        <div className='relative overflow-hidden group h-56'>
-          <motion.div 
-            className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent z-10 pointer-events-none"
-            whileHover={{ opacity: 0.6 }}
-            transition={{ duration: 0.3 }}
-          />
+      <div className="h-full flex flex-col bg-white/95 backdrop-blur-sm border border-border/70 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/8 rounded-2xl overflow-hidden transition-all duration-400 group">
 
-          <motion.div
-            className="absolute inset-0 z-0"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5 }}
-          >
-            {image ? (
-              <Image
-                src={image}
-                alt={`${title} project screenshot`}
-                fill
-                className="object-cover"
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-                <h3 className="text-2xl font-bold">{title}</h3>
+        {/* Colored top stripe */}
+        <div className={`h-1 w-full bg-gradient-to-r ${stripe} flex-shrink-0`} />
+
+        {/* Image / Placeholder */}
+        <div className="relative overflow-hidden h-48 flex-shrink-0 bg-slate-50">
+          {image ? (
+            <>
+              <motion.div
+                className="absolute inset-0"
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image
+                  src={image}
+                  alt={`${title} screenshot`}
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent z-10" />
+              {/* Title on image */}
+              <div className="absolute bottom-3 left-4 z-20">
+                <h3 className="font-bold text-lg text-white drop-shadow-lg leading-tight" style={{ fontFamily: fonts.PlayfairDisplay }}>
+                  {title}
+                </h3>
+                {company && (
+                  <div className="flex items-center gap-1.5 mt-1">
+                    <Image src={company.logo} alt={company.name} width={14} height={14} className="rounded-sm opacity-90" />
+                    <span className="text-white/75 text-xs font-medium">{company.name}</span>
+                  </div>
+                )}
               </div>
-            )}
-          </motion.div>
+            </>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-primary/12 via-primary/6 to-accent/8 flex flex-col items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, hsl(220 70% 50%) 1.5px, transparent 1.5px)', backgroundSize: '22px 22px' }} />
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                <div className="w-14 h-14 rounded-2xl bg-white/80 border border-primary/20 shadow-md flex items-center justify-center">
+                  <TypeIcon className="w-7 h-7 text-primary" />
+                </div>
+                <span className="text-primary/50 text-xs font-semibold uppercase tracking-widest">{label}</span>
+              </div>
+            </div>
+          )}
 
-          <motion.div
-            className="absolute bottom-4 left-4 z-20"
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.5, delay: index * 0.3 }}
-          >
-            <h3 className="font-bold text-xl lg:text-2xl text-white drop-shadow-2xl" style={{ fontFamily: fonts.PlayfairDisplay }}>
-              {title}
-            </h3>
-          </motion.div>
-
-          <motion.div
-            className="absolute top-4 right-4 z-20"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
-          >
-            <Badge className="flex items-center gap-1"
-              variant={type === "personal" ? "default" : type === "independent" ? "destructive" : "secondary"}
+          {/* Type badge — top-right */}
+          <div className="absolute top-3 right-3 z-20">
+            <Badge
+              className="flex items-center gap-1 font-semibold text-xs px-2.5 py-1 border shadow-sm"
               style={{
-                backgroundColor: type === "personal" ? "hsl(var(--primary) / 0.15)" :
-                  type === "independent" ? "hsl(var(--accent) / 0.15)" :
-                    "hsl(180 40% 60% / 0.15)",
-                color: type === "personal" ? "hsl(var(--primary))" :
-                  type === "independent" ? "hsl(var(--accent))" :
-                    "hsl(180 40% 40%)",
-                borderColor: type === "personal" ? "hsl(var(--primary) / 0.3)" :
-                  type === "independent" ? "hsl(var(--accent) / 0.3)" :
-                    "hsl(180 40% 60% / 0.3)",
-                backdropFilter: "blur(4px)"
+                backgroundColor: badge.bg,
+                color: badge.text,
+                borderColor: badge.border,
+                backdropFilter: 'blur(8px)',
               }}
             >
               <TypeIcon className="w-3 h-3" />
-              <span className="capitalize">{type}</span>
+              <span className="capitalize">{label}</span>
             </Badge>
-          </motion.div>
+          </div>
         </div>
 
-        <CardContent className="px-4 py-6 flex flex-col flex-1">
-          <div className="flex flex-col gap-5 flex-1">
-            <motion.p
-              className="text-sm lg:text-base text-foreground/80 mb-5 line-clamp-3 leading-relaxed"
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
-            >
-              {description}
-            </motion.p>
+        {/* Card body */}
+        <div className="flex flex-col flex-1 px-5 py-5">
+          {/* Title (only when no image) */}
+          {!image && (
+            <h3 className="font-bold text-xl text-foreground leading-tight mb-2" style={{ fontFamily: fonts.PlayfairDisplay }}>
+              {title}
+            </h3>
+          )}
 
-            <motion.div
-              className="flex flex-wrap gap-2.5 mb-6"
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-            >
-              {technologies.slice(0, 3).map((tech, i) => {
-                const techColors = [
-                  "bg-primary/10 border-primary/30 text-primary hover:bg-primary/15 hover:border-primary/40",
-                  "bg-accent/10 border-accent/30 text-accent hover:bg-accent/15 hover:border-accent/40",
-                  "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
-                ];
-                return (
-                  <motion.div
-                    key={i}
-                    whileHover={{ y: -2, scale: 1.05 }}
-                    className={`inline-flex items-center ${techColors[i % techColors.length]} backdrop-blur-sm rounded-full px-3 py-1.5 text-xs lg:text-sm border shadow-sm transition-all duration-300`}
-                  >
-                    <Image src={tech.icon} alt={tech.name} width={14} height={14} className="mr-1.5" />
-                    <span className="font-medium">{tech.name}</span>
-                  </motion.div>
-                );
-              })}
-              {technologies.length > 3 && (
-                <Badge variant="outline" className="text-xs lg:text-sm bg-muted/60 text-muted-foreground border-border hover:bg-muted shadow-sm px-3 py-1.5">
-                  +{technologies.length - 3} more
-                </Badge>
+          {/* Date + company (no image path) */}
+          {!image && (company || date) && (
+            <div className="flex items-center gap-2 mb-3 flex-wrap">
+              {company && (
+                <div className="flex items-center gap-1.5">
+                  <Image src={company.logo} alt={company.name} width={14} height={14} className="rounded-sm" />
+                  <span className="text-xs text-muted-foreground font-medium">{company.name}</span>
+                </div>
               )}
-            </motion.div>
+              {date && <span className="text-xs text-muted-foreground/60">{date}</span>}
+            </div>
+          )}
+
+          {image && date && (
+            <span className="text-xs text-muted-foreground/60 mb-2 block">{date}</span>
+          )}
+
+          <p className="text-sm text-foreground/70 line-clamp-3 leading-relaxed mb-4 flex-1">
+            {description}
+          </p>
+
+          {/* Tech pills */}
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {technologies.slice(0, 3).map((tech, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center bg-secondary/80 border border-border/60 rounded-full px-2.5 py-1 text-xs font-medium text-foreground/70 hover:bg-secondary transition-colors duration-150"
+              >
+                <Image src={tech.icon} alt={tech.name} width={12} height={12} className="mr-1.5 flex-shrink-0" />
+                {tech.name}
+              </div>
+            ))}
+            {technologies.length > 3 && (
+              <div className="inline-flex items-center bg-muted/60 border border-border/40 rounded-full px-2.5 py-1 text-xs text-muted-foreground">
+                +{technologies.length - 3}
+              </div>
+            )}
           </div>
 
-          <motion.div
-            className="flex gap-3"
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
-          >
+          {/* Actions */}
+          <div className="flex gap-2 mt-auto">
             {path && (
               <Link href={path} className="flex-1" target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-                <Button className="w-full h-11 bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/60 flex items-center justify-center gap-2 font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-xl text-sm lg:text-base">
-                  <span>View Project</span>
-                  <ExternalLink className="w-4 h-4" />
+                <Button className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center justify-center gap-1.5 font-semibold text-sm rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+                  View Project
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </Button>
               </Link>
             )}
             {liveUrl && (
               <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
-                <Button className="h-11 w-11 p-0 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/60" aria-label="Visit Site">
+                <Button className="h-10 w-10 p-0 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm hover:shadow-md transition-all duration-200" aria-label="Visit Site">
                   <Eye className="w-4 h-4" />
                 </Button>
               </Link>
             )}
             {github && (
               <Link href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="h-11 w-11 p-0 border border-border bg-white/80 hover:bg-white text-foreground hover:text-foreground hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl" aria-label="View Code">
+                <Button variant="outline" className="h-10 w-10 p-0 border border-border/70 bg-white/80 hover:bg-white hover:border-primary/40 rounded-xl shadow-sm hover:shadow-md transition-all duration-200" aria-label="View Code">
                   <Github className="w-4 h-4" />
                 </Button>
               </Link>
             )}
-          </motion.div>
-        </CardContent>
-      </Card>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }

@@ -50,7 +50,30 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${playfairDisplay.variable} antialiased h-full`}
       >
-        <div className="min-h-screen w-full bg-gradient-to-br from-background via-slate-50 to-blue-50/30">
+        <div className="min-h-screen w-full bg-background relative overflow-x-hidden">
+          {/* Static background mesh */}
+          <div className="fixed inset-0 pointer-events-none -z-10">
+            {/* Base gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/60" />
+            {/* Top-left primary blob */}
+            <div className="absolute -top-32 -left-32 w-[700px] h-[700px] rounded-full bg-primary/15 blur-[90px]" />
+            {/* Bottom-right accent blob */}
+            <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/12 blur-[100px]" />
+            {/* Center subtle tint */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full bg-primary/8 blur-[120px]" />
+            {/* Top-right secondary blob */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/8 blur-[80px]" />
+            {/* Bottom-left accent blob */}
+            <div className="absolute bottom-1/3 -left-20 w-[350px] h-[350px] rounded-full bg-primary/10 blur-[80px]" />
+            {/* Dot grid overlay */}
+            <div
+              className="absolute inset-0 opacity-[0.06]"
+              style={{
+                backgroundImage: 'radial-gradient(circle, hsl(220 70% 40%) 1px, transparent 1px)',
+                backgroundSize: '28px 28px',
+              }}
+            />
+          </div>
           <div className="max-w-6xl mx-auto px-4 sm:px-4">
             <div className="relative z-20">
               {children}
