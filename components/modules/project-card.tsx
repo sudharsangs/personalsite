@@ -21,7 +21,7 @@ const typeConfig = {
   },
   independent: {
     Icon: LoaderPinwheel,
-    label: 'Independent',
+    label: 'Freelance',
     stripe: 'from-violet-500 to-violet-300',
     badge: { bg: 'hsl(270 60% 92% / 0.95)', text: 'hsl(270 55% 35%)', border: 'hsl(270 55% 70%)' },
   },

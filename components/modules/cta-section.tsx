@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import Link from "next/link";
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { ArrowRight, Mail, Linkedin } from "lucide-react";
 import { fonts } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
@@ -54,8 +54,8 @@ const CTASection: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Ready to Build Something
-            <span className="text-primary"> Exceptional</span>?
+            Looking for an engineer who can ship and
+            <span className="text-primary"> think in product terms</span>?
           </motion.h2>
 
           <motion.p
@@ -64,7 +64,9 @@ const CTASection: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Let&apos;s collaborate to build scalable web applications with clean code and optimized performance.
+            I&apos;m most useful on products with messy constraints: growth
+            surfaces, operational workflows, and web apps that need both
+            execution speed and judgment.
           </motion.p>
 
           <motion.div
@@ -78,10 +80,10 @@ const CTASection: React.FC = () => {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto"
             >
-              <a href="https://cal.com/sudharsangs/30min" target="_blank">
+              <a href="mailto:sudharsangs.99@gmail.com">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 group w-full h-11">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Schedule a Call
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email Me
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </a>
@@ -96,11 +98,11 @@ const CTASection: React.FC = () => {
                 variant="outline"
                 className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full h-11"
                 onClick={() =>
-                  (window.location.href = "mailto:sudharsangs.99@gmail.com")
+                  window.open("https://linkedin.com/in/sudharsangs", "_blank")
                 }
               >
-                <Mail className="w-5 h-5 mr-2" />
-                Send Email
+                <Linkedin className="w-5 h-5 mr-2" />
+                LinkedIn
               </Button>
             </motion.div>
 
@@ -109,38 +111,15 @@ const CTASection: React.FC = () => {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto"
             >
-              <Link href="/projects">
+              <Link href="/about">
                 <Button
                   className="bg-white text-muted-foreground hover:bg-transparent border-2 hover:border-2 hover:border-gray-500 hover:text-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-base w-full h-11"
                 >
-                  View My Work
+                  About Me
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </motion.div>
-          </motion.div>
-
-          {/* Stats or testimonial placeholder */}
-          <motion.div
-            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
-              <div className="text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">20+</div>
-              <div className="text-muted-foreground">Projects Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-foreground mb-2">
-                5000+
-              </div>
-              <div className="text-muted-foreground">Users Served</div>
-            </div>
           </motion.div>
         </motion.div>
       </div>

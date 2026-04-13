@@ -82,7 +82,9 @@ export default function ProjectCardHorizontal({
                   }}
                 >
                   <TypeIcon className="w-4 h-4" />
-                  <span className="capitalize font-medium">{type}</span>
+                  <span className="capitalize font-medium">
+                    {type === "independent" ? "freelance" : type}
+                  </span>
                 </Badge>
               </motion.div>
 

@@ -6,7 +6,6 @@ import {
   ExternalLink,
   HeartPulse,
   Code,
-  Globe,
   Send,
 } from "lucide-react";
 import Link from "next/link";
@@ -48,7 +47,7 @@ const Footer = () => {
   const mainLinks: MainLink[] = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
-    { href: "/about", label: "Experience" },
+    { href: "/about", label: "About" },
   ];
 
   return (
@@ -63,9 +62,9 @@ const Footer = () => {
               Sudharsan GS
             </h3>
             <p className="text-muted-foreground text-sm max-w-md leading-relaxed">
-              Fullstack Developer crafting digital experiences that merge
-              beautiful design with robust functionality. Ready to bring your
-              ideas to life.
+              Product engineer focused on technical SEO, frontend systems, and
+              end-to-end product builds. Currently at Fubo, also building
+              FactoStack for Indian manufacturers.
             </p>
             <div className="flex space-x-4 pt-2">
               {socialLinks.map((link, index) => {
@@ -106,15 +105,11 @@ const Footer = () => {
                       : {})}
                     className={`text-muted-foreground ${
                       link.highlight
-                        ? "hover:text-primary font-semibold text-primary/90"
-                        : "hover:text-primary"
+                      ? "hover:text-primary font-semibold text-primary/90"
+                      : "hover:text-primary"
                     } transition-colors duration-300 flex items-center gap-2 group`}
                   >
-                    {link.highlight ? (
-                      <Globe className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform" />
-                    ) : (
-                      <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    )}
+                    <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     <span>{link.label}</span>
                   </Link>
                 </li>
@@ -132,20 +127,8 @@ const Footer = () => {
             >
               sudharsangs.99@gmail.com
             </a>
-            <a
-              href="https://cal.com/sudharsangs/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors block mb-3 text-sm"
-            >
-              Schedule a 30-min call
-            </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Open to opportunities and collaborations.
-              <br />
-              <span className="text-primary font-medium">
-                Let&apos;s build something amazing together!
-              </span>
+              Open to software consulting, MVP builds, and solving real problems for MSMEs.
             </p>
           </div>
         </div>

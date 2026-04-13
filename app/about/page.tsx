@@ -1,6 +1,4 @@
 import About from "@/components/modules/about";
-import Experience from "@/components/modules/experience";
-import { experiences } from "@/data/experience";
 import Link from "next/link";
 import { Home, ArrowRight } from "lucide-react";
 
@@ -27,7 +25,6 @@ export default function AboutPage() {
         </div>
 
         <About />
-        <Experience experiences={experiences} />
       </div>
     </div>
   );

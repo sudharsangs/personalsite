@@ -36,7 +36,7 @@ const ProjectNavButtons: React.FC = () => {
         onClick={() => scrollToSection('independent-projects')}
       >
         <LoaderPinwheel className="w-4 h-4" />
-        Independent
+        Freelance
       </Button>
     </div>
   );

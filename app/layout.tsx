@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import Script from 'next/script';
 import Footer from "@/components/modules/footer";
+import SiteHeader from "@/components/modules/site-header";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -16,23 +17,27 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Sudharsan GS | Software Engineer & Fullstack Developer",
-  description: "Software Engineer with 5+ years experience building scalable, high-performance web applications. Specialized in React, TypeScript, and Next.js with proven expertise at companies like Fubo.",
-  keywords: "software engineer, fullstack developer, react developer, typescript, nextjs, web applications, scalable systems, bengaluru, portfolio",
+  title: "Sudharsan GS | Product Engineer",
+  description:
+    "Product engineer working across streaming, technical SEO, and full-stack product builds. Currently at Fubo, also building FactoStack for Indian manufacturers.",
+  keywords:
+    "product engineer, software engineer, frontend engineer, react developer, typescript, nextjs, technical seo, bengaluru, portfolio",
   authors: [{ name: "Sudharsan GS" }],
   creator: "Sudharsan GS",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://sudharsangs.in",
-    title: "Sudharsan GS | Software Engineer & Fullstack Developer",
-    description: "Software Engineer building scalable, high-performance web applications with proven expertise in modern technologies",
-    siteName: "Sudharsan GS - Developer Portfolio",
+    title: "Sudharsan GS | Product Engineer",
+    description:
+      "I build production products across streaming, technical SEO, and operations software.",
+    siteName: "Sudharsan GS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sudharsan GS | Software Engineer & Fullstack Developer",
-    description: "Software Engineer building scalable, high-performance web applications with proven expertise in modern technologies",
+    title: "Sudharsan GS | Product Engineer",
+    description:
+      "I build production products across streaming, technical SEO, and operations software.",
     creator: "@sudharsangs",
   },
 };
@@ -74,8 +79,9 @@ export default function RootLayout({
               }}
             />
           </div>
-          <div className="max-w-6xl mx-auto px-4 sm:px-4">
-            <div className="relative z-20">
+          <div className="relative z-20">
+            <SiteHeader />
+            <div className="max-w-6xl mx-auto px-4 sm:px-4">
               {children}
               <Footer />
             </div>

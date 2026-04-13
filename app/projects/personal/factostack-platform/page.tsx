@@ -69,10 +69,10 @@ const highlights = [
 ];
 
 const results = [
-  "Turned recurring MSME pain points into product workflows instead of disconnected spreadsheets, calls, and WhatsApp follow-ups.",
-  "Shipped one platform surface that spans sales, planning, production, inventory, procurement, finance, and compliance reporting.",
-  "Built product depth that shows up in the repo as real routes and dashboards, not just landing-page promises.",
-  "Created a tenant-aware foundation that can support different plans, modules, and factory operating models inside the same product.",
+  "The product is still early-stage, so I describe it as a platform in validation rather than claiming scaled business impact that does not exist yet.",
+  "Mapped six factory workflow domains into one product without copying generic ERP patterns. The scope came from real constraints: GST exports, MSME payment deadlines, ITC tracking, receivables aging.",
+  "Built a tenant-aware architecture so different factory configurations can onboard without rebuilding core flows.",
+  "Validated that Indian MSME compliance requirements need product-level design decisions, not just UI implementation.",
 ];
 
 const screenshots = [
@@ -238,7 +238,7 @@ export default function FactoStackPlatformPage() {
       </ProjectSection>
 
       <ProjectSection
-        title="Results & Impact"
+        title="Current Product Status"
         icon={<LineChart className="w-5 h-5" />}
       >
         <OutcomeList items={results} />

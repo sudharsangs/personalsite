@@ -44,7 +44,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
     },
     independent: {
       icon: LoaderPinwheel,
-      label: 'Independent',
+      label: 'Freelance',
       badgeBg: 'bg-violet-100',
       badgeText: 'text-violet-700',
       badgeBorder: 'border-violet-300',

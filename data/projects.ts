@@ -237,7 +237,6 @@ export const projects: Projects = [
     path: "/projects/personal/reddit-job-notify",
     slug: "reddit-job-notify",
     type: "personal",
-    date: "2024",
     github: "https://github.com/sudharsangs/reddit-job-notify-telegram-bot",
     features: [
       "Multi-subreddit monitoring with configurable scan intervals",
@@ -368,7 +367,8 @@ export const projects: Projects = [
   },
   {
     title: "Employee Management Mobile App",
-    description: "A mobile app for managing employees and their details.",
+    description:
+      "Built a field workforce management app for BuildTek Polymers. Geolocation-based attendance, task assignment, document storage, and a supervisor dashboard replacing paper-based tracking for an on-site factory team.",
     image: "/projects/buildtek/cover.png",
     technologies: [
       {
@@ -584,7 +584,7 @@ export const projects: Projects = [
   {
     title: "Learner's Module",
     description:
-      "Single-handedly implemented a learner's module where students can learn the courses purchased by them",
+      "Built Winuall's learner experience from scratch: course playback, live class access, quizzes, and progress tracking. Sole implementation across the full frontend surface.",
     image: "/projects/winuall/winuall-learners-module-1.png",
     technologies: [
       {

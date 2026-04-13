@@ -41,14 +41,14 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         <span className="text-primary font-semibold tracking-wide">FEATURED WORK</span>
                     </motion.div>
                     
-                    <motion.h2 
+                    <motion.h2
                         className="text-4xl lg:text-5xl font-bold text-foreground mb-4"
                         style={{ fontFamily: fonts.PlayfairDisplay }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        Latest Projects
+                        Selected Projects
                     </motion.h2>
                     
                     <motion.p
@@ -57,7 +57,9 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        Some of what I&apos;ve built over the years, from ERP platforms and streaming infrastructure to marketplaces, mostly as the only engineer on it.
+                        A smaller set of projects that best show how I work:
+                        product framing, frontend depth, technical SEO, and
+                        full-stack execution.
                     </motion.p>
                 </motion.div>
                 

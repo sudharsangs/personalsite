@@ -4,9 +4,8 @@ import {
   Github,
   Linkedin,
   Mail,
-  ArrowDown,
-  ExternalLink,
   MapPin,
+  Briefcase,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,6 +55,35 @@ const Hero: React.FC = () => {
     },
   };
 
+  const proofPoints = [
+    {
+      icon: (
+        <div className="relative h-5 w-14">
+          <Image src="/fubo.svg" alt="Fubo" fill className="object-contain" />
+        </div>
+      ),
+      title: "Fubo",
+      description: "SEO infrastructure and frontend systems for a streaming platform with millions of users.",
+      className: "border-primary/15 bg-white/90",
+    },
+    {
+      icon: (
+        <div className="relative h-4 w-4">
+          <Image src="/factostack.svg" alt="FactoStack" fill className="object-contain" />
+        </div>
+      ),
+      title: "FactoStack",
+      description: "Building a manufacturing platform for Indian MSMEs.",
+      className: "border-emerald-500/20 bg-emerald-50/80",
+    },
+    {
+      icon: <Briefcase className="h-4 w-4" />,
+      title: "Consulting & side projects",
+      description: "MVP builds, client software, and tools I build for fun.",
+      className: "border-accent/20 bg-amber-50/70",
+    },
+  ];
+
   return (
     <section className="flex flex-col items-center justify-center pt-24 pb-20 min-h-[95vh] relative overflow-hidden">
       {/* Background decorative elements */}
@@ -88,21 +116,27 @@ const Hero: React.FC = () => {
       {/* Subtle grid */}
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(220 70% 40%) 1.5px, transparent 1.5px)', backgroundSize: '36px 36px' }} />
 
-      <div className="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-16 lg:gap-20 items-center relative z-10">
-        <motion.div
-          className="space-y-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="grid items-center gap-16 md:grid-cols-2 lg:gap-20">
+          <motion.div
+            className="space-y-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-block bg-gradient-to-r from-primary/10 via-accent/8 to-primary/5 rounded-full px-5 py-2.5 text-primary mb-6 border border-primary/20 shadow-sm backdrop-blur-sm"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 via-accent/8 to-primary/5 rounded-full px-5 py-2.5 text-primary mb-6 border border-primary/20 shadow-sm backdrop-blur-sm"
           >
             <span className="text-sm font-semibold tracking-wider">
-              FULL STACK ENGINEER · PRODUCT BUILDER
+              PRODUCT ENGINEER
+            </span>
+            <span className="hidden h-1 w-1 rounded-full bg-primary/40 sm:block" />
+            <span className="hidden text-sm text-muted-foreground sm:flex sm:items-center sm:gap-1">
+              <MapPin className="h-3.5 w-3.5 text-primary" />
+              Bengaluru, India
             </span>
           </motion.div>
 
@@ -116,45 +150,32 @@ const Hero: React.FC = () => {
             </span>
           </motion.h1>
 
-          <motion.h2
-            className="md:text-2xl text-xl text-muted-foreground mb-2 flex items-center font-medium"
+          <motion.div
+            className="md:text-xl text-lg text-muted-foreground mb-2 flex items-center gap-3 font-medium"
             variants={itemVariants}
           >
-            Software Engineer at{" "}
-            <span className="ml-2 flex items-center">
-              <Image
-                src="/fubo.svg"
-                alt="fubo"
-                width={24}
-                height={24}
-                className="ml-1"
-              />
-            </span>
-          </motion.h2>
-
-          <motion.h3
-            className="md:text-lg text-base text-muted-foreground mb-6 flex items-center gap-2"
-            variants={itemVariants}
-          >
-            <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4 text-primary" />
-              Based in{" "}
-              <span className="text-primary font-medium">Bengaluru, India</span>
-            </span>
-          </motion.h3>
+            <span>Software Engineer at</span>
+            <a href="https://fubo.tv" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:opacity-75 transition-opacity">
+              <Image src="/fubo.svg" alt="Fubo" width={28} height={14} className="object-contain" />
+            </a>
+          </motion.div>
 
           <motion.p
             className="md:text-xl text-lg text-muted-foreground max-w-2xl leading-relaxed mb-2"
             variants={itemVariants}
           >
-            From streaming infrastructure at Fubo to a manufacturing ERP built solo for Indian factories, I work across the full stack and see things through to production.
+            I work on technical SEO and frontend systems at{" "}
+            <a href="https://fubo.tv" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-primary transition-colors">Fubo</a>
+            , and outside work I&apos;m building{" "}
+            <a href="https://factostack.com" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-primary transition-colors">FactoStack</a>
+            , a manufacturing platform for Indian MSMEs.
           </motion.p>
 
           <motion.p
             className="md:text-lg text-base text-muted-foreground max-w-xl leading-relaxed"
             variants={itemVariants}
           >
-            5+ years across{" "}
+            Five years across{" "}
             <span className="text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-md">
               React
             </span>
@@ -166,7 +187,7 @@ const Hero: React.FC = () => {
             <span className="text-foreground font-semibold bg-muted px-2 py-0.5 rounded-md">
               Node.js
             </span>
-            , and cloud infra. Five years of shipping things that actually go live.
+            , and cloud infra. Mostly frontend-heavy full-stack work.
           </motion.p>
 
           <motion.div
@@ -174,26 +195,25 @@ const Hero: React.FC = () => {
             variants={containerVariants}
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/about">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-6 h-11 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 w-full sm:w-auto gap-2">
-                  About Me
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </Button>
-              </Link>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link href="/projects">
-                <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-6 h-11 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 w-full sm:w-auto">
-                  View Projects
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-6 h-11 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 w-full sm:w-auto gap-2">
+                  View My Work
                 </Button>
               </Link>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <a href="https://cal.com/sudharsangs/30min" target="_blank">
+              <Link href="/about">
                 <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-6 h-11 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 w-full sm:w-auto">
-                  Schedule Call
+                  About Me
+                </Button>
+              </Link>
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <a href="mailto:sudharsangs.99@gmail.com">
+                <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-6 h-11 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 w-full sm:w-auto">
+                  Email Me
                 </Button>
               </a>
             </motion.div>
@@ -229,54 +249,61 @@ const Hero: React.FC = () => {
               );
             })}
           </motion.div>
-        </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="flex md:justify-end justify-center items-center relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {/* Outer glow */}
+            <div className="absolute w-[340px] h-[340px] lg:w-[400px] lg:h-[400px] rounded-3xl bg-gradient-to-br from-primary/15 to-accent/10 blur-2xl" />
+
+            {/* Photo card */}
+            <motion.div
+              className="w-72 h-72 lg:w-[340px] lg:h-[340px] rounded-3xl overflow-hidden border border-primary/20 relative z-10 shadow-2xl shadow-primary/15"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Image
+                src="/sudharsan.webp"
+                alt="Sudharsan"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 via-transparent to-transparent" />
+            </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div
-          className="flex md:justify-end justify-center items-center relative"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-10 grid gap-4 md:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          {/* Outer glow */}
-          <div className="absolute w-[340px] h-[340px] lg:w-[400px] lg:h-[400px] rounded-3xl bg-gradient-to-br from-primary/15 to-accent/10 blur-2xl" />
-
-          {/* Photo card */}
-          <motion.div
-            className="w-72 h-72 lg:w-[340px] lg:h-[340px] rounded-3xl overflow-hidden border border-primary/20 relative z-10 shadow-2xl shadow-primary/15"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Image
-              src="/sudharsan.webp"
-              alt="Sudharsan"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 via-transparent to-transparent" />
-          </motion.div>
+          {proofPoints.map((point) => (
+            <motion.div
+              key={point.title}
+              variants={itemVariants}
+              className={`rounded-3xl border p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${point.className}`}
+            >
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 text-primary shadow-sm">
+                {point.icon}
+              </div>
+              <h3 className="mb-2 text-lg font-semibold leading-tight text-foreground">
+                {point.title}
+              </h3>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                {point.description}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute hidden bottom-8 left-1/2 transform -translate-x-1/2 sm:flex flex-col items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      >
-        <motion.p className="text-muted-foreground text-sm mb-2 font-medium">
-          Scroll to explore
-        </motion.p>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="text-primary bg-white/60 backdrop-blur-sm rounded-full p-2 shadow-md"
-        >
-          <ArrowDown className="w-4 h-4" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
