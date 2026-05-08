@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="mb-6 flex items-center gap-3">
           <Link
             href="/"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/60 border border-border hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group shadow-sm hover:shadow-md"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card/60 border border-border hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group shadow-sm hover:shadow-md"
             aria-label="Back to Home"
           >
             <Home className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />

@@ -92,7 +92,7 @@ export default function UnlockerPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>
@@ -128,10 +128,10 @@ export default function UnlockerPage() {
 
       {/* Expert profile screenshots */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-muted">
           <Image src="/projects/independent/unlocker/expert1.png" alt="Expert profile page with subscription tiers" fill className="object-cover object-top" />
         </div>
-        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-muted">
           <Image src="/projects/independent/unlocker/expert2.png" alt="Expert profile with performance stats" fill className="object-cover object-top" />
         </div>
       </div>
@@ -172,10 +172,10 @@ export default function UnlockerPage() {
         <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-[#655cf0]">
           <Image src="/projects/independent/unlocker/bio.png" alt="Creator bio page with membership plans" fill className="object-cover object-top" />
         </div>
-        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-muted">
           <Image src="/projects/independent/unlocker/account-1.png" alt="Account dashboard" fill className="object-cover object-top" />
         </div>
-        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-gray-50">
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-primary/20 shadow-md bg-muted">
           <Image src="/projects/independent/unlocker/expert-mobile.png" alt="Mobile expert experience" fill className="object-cover object-top" />
         </div>
       </div>

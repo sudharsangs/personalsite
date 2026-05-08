@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Github, Briefcase, User, LoaderPinwheel, ExternalLink, Eye } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, Briefcase, User, Handshake, Globe2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
@@ -17,19 +17,19 @@ const typeConfig = {
     Icon: User,
     label: 'Personal',
     stripe: 'from-primary to-primary/50',
-    badge: { bg: 'hsl(220 70% 92% / 0.95)', text: 'hsl(220 70% 28%)', border: 'hsl(220 70% 75%)' },
+    badgeClass: 'bg-primary/10 text-primary border-primary/30',
   },
   independent: {
-    Icon: LoaderPinwheel,
+    Icon: Handshake,
     label: 'Freelance',
     stripe: 'from-violet-500 to-violet-300',
-    badge: { bg: 'hsl(270 60% 92% / 0.95)', text: 'hsl(270 55% 35%)', border: 'hsl(270 55% 70%)' },
+    badgeClass: 'bg-violet-500/10 text-violet-400 border-violet-500/30',
   },
   work: {
     Icon: Briefcase,
     label: 'Work',
     stripe: 'from-primary via-accent/60 to-primary/30',
-    badge: { bg: 'hsl(220 70% 92% / 0.95)', text: 'hsl(220 70% 28%)', border: 'hsl(220 70% 75%)' },
+    badgeClass: 'bg-primary/10 text-primary border-primary/30',
   },
 };
 
@@ -46,12 +46,13 @@ export default function ProjectCard({
   date,
   index,
 }: Props) {
-  const { Icon: TypeIcon, label, stripe, badge } = typeConfig[type];
+  const { Icon: TypeIcon, label, stripe, badgeClass } = typeConfig[type];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const isExternal = typeof path === 'string' && /^https?:\/\//.test(path);
   const isLiveExternal = typeof liveUrl === 'string' && /^https?:\/\//.test(liveUrl);
+  const ProjectActionIcon = isExternal ? ArrowUpRight : ArrowRight;
 
   return (
     <motion.div
@@ -62,13 +63,13 @@ export default function ProjectCard({
       whileHover={{ y: -4 }}
       className="h-full"
     >
-      <div className="h-full flex flex-col bg-white/95 backdrop-blur-sm border border-border/70 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/8 rounded-2xl overflow-hidden transition-all duration-400 group">
+      <div className="h-full flex flex-col bg-card/95 backdrop-blur-sm border border-border/70 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/8 rounded-2xl overflow-hidden transition-all duration-400 group">
 
         {/* Colored top stripe */}
         <div className={`h-1 w-full bg-gradient-to-r ${stripe} flex-shrink-0`} />
 
         {/* Image / Placeholder */}
-        <div className="relative overflow-hidden h-48 flex-shrink-0 bg-slate-50">
+        <div className="relative overflow-hidden h-48 flex-shrink-0 bg-muted">
           {image ? (
             <>
               <motion.div
@@ -102,7 +103,7 @@ export default function ProjectCard({
             <div className="w-full h-full bg-gradient-to-br from-primary/12 via-primary/6 to-accent/8 flex flex-col items-center justify-center relative overflow-hidden">
               <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, hsl(220 70% 50%) 1.5px, transparent 1.5px)', backgroundSize: '22px 22px' }} />
               <div className="relative z-10 flex flex-col items-center gap-2">
-                <div className="w-14 h-14 rounded-2xl bg-white/80 border border-primary/20 shadow-md flex items-center justify-center">
+                <div className="w-14 h-14 rounded-2xl bg-card/80 border border-primary/20 shadow-md flex items-center justify-center">
                   <TypeIcon className="w-7 h-7 text-primary" />
                 </div>
                 <span className="text-primary/50 text-xs font-semibold uppercase tracking-widest">{label}</span>
@@ -113,13 +114,7 @@ export default function ProjectCard({
           {/* Type badge — top-right */}
           <div className="absolute top-3 right-3 z-20">
             <Badge
-              className="flex items-center gap-1 font-semibold text-xs px-2.5 py-1 border shadow-sm"
-              style={{
-                backgroundColor: badge.bg,
-                color: badge.text,
-                borderColor: badge.border,
-                backdropFilter: 'blur(8px)',
-              }}
+              className={`flex items-center gap-1 font-semibold text-xs px-2.5 py-1 border shadow-sm backdrop-blur-sm ${badgeClass}`}
             >
               <TypeIcon className="w-3 h-3" />
               <span className="capitalize">{label}</span>
@@ -179,22 +174,22 @@ export default function ProjectCard({
           <div className="flex gap-2 mt-auto">
             {path && (
               <Link href={path} className="flex-1" target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-                <Button className="w-full h-10 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center justify-center gap-1.5 font-semibold text-sm rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+                <Button className="w-full h-9 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center justify-center gap-1.5 font-semibold text-sm rounded-lg shadow-sm transition-all duration-200 border border-primary/40">
                   View Project
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ProjectActionIcon className="w-3.5 h-3.5" />
                 </Button>
               </Link>
             )}
             {liveUrl && (
               <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
-                <Button className="h-10 w-10 p-0 rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm hover:shadow-md transition-all duration-200" aria-label="Visit Site">
-                  <Eye className="w-4 h-4" />
+                <Button className="h-9 w-9 p-0 rounded-lg bg-accent/12 text-accent hover:bg-accent/18 shadow-sm transition-all duration-200 border border-accent/30" aria-label="Visit Site">
+                  <Globe2 className="w-4 h-4" />
                 </Button>
               </Link>
             )}
             {github && (
               <Link href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="h-10 w-10 p-0 border border-border/70 bg-white/80 hover:bg-white hover:border-primary/40 rounded-xl shadow-sm hover:shadow-md transition-all duration-200" aria-label="View Code">
+                <Button variant="outline" className="h-9 w-9 p-0 border border-border/70 bg-card/70 hover:bg-secondary/70 hover:border-primary/35 rounded-lg shadow-sm transition-all duration-200" aria-label="View Code">
                   <Github className="w-4 h-4" />
                 </Button>
               </Link>

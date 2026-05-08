@@ -111,7 +111,7 @@ export default function FactoStackPlatformPage() {
       date="2025-2026"
       liveUrl="https://app.factostack.com"
     >
-      <div className="relative w-full h-[280px] md:h-[380px] mb-16 rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-slate-50">
+      <div className="relative w-full h-[280px] md:h-[380px] mb-16 rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-muted">
         <Image
           src="/projects/personal/factostack-platform/executive-dashboard.png"
           alt="FactoStack executive dashboard"
@@ -125,7 +125,7 @@ export default function FactoStackPlatformPage() {
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="inline-flex items-center bg-white shadow-sm rounded-full px-4 py-2 text-sm border border-border/60"
+              className="inline-flex items-center bg-card shadow-sm rounded-full px-4 py-2 text-sm border border-border/60"
             >
               <Image
                 src={tech.icon}
@@ -208,7 +208,7 @@ export default function FactoStackPlatformPage() {
           {aiTools.map((tool) => (
             <div
               key={tool.name}
-              className="inline-flex items-center bg-white shadow-sm rounded-full px-4 py-2 text-sm border border-border/60"
+              className="inline-flex items-center bg-card shadow-sm rounded-full px-4 py-2 text-sm border border-border/60"
             >
               <Image
                 src={tool.icon}

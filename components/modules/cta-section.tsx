@@ -10,45 +10,42 @@ const CTASection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section
-      className="py-20 lg:py-32 relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5"
-      ref={ref}
-    >
-      {/* Background decorative elements */}
+    <section className="relative overflow-hidden py-20 lg:py-28" ref={ref}>
+      <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-border/60 to-transparent" />
       <motion.div
-        className="absolute top-1/4 right-10 w-80 h-80 bg-gradient-to-br from-primary/8 to-accent/6 rounded-full blur-3xl"
+        className="absolute left-1/2 top-1/2 h-72 w-[min(760px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[90px]"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.6, 0.3],
+          scale: [1, 1.05, 1],
+          opacity: [0.35, 0.55, 0.35],
         }}
         transition={{
-          duration: 8,
+          duration: 9,
           repeat: Infinity,
           repeatType: "reverse",
         }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-10 w-96 h-96 bg-gradient-to-tr from-accent/8 to-primary/6 rounded-full blur-3xl"
+        className="absolute left-1/2 top-1/2 h-56 w-[min(560px,80vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[80px]"
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.4, 0.7, 0.4],
+          scale: [1.05, 1, 1.05],
+          opacity: [0.25, 0.45, 0.25],
         }}
         transition={{
-          duration: 10,
+          duration: 11,
           repeat: Infinity,
           repeatType: "reverse",
         }}
       />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+      <div className="container relative z-10 mx-auto px-4 text-center lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto"
+          className="mx-auto max-w-4xl"
         >
           <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-foreground mb-6"
+            className="mx-auto mb-6 max-w-3xl text-4xl font-bold leading-tight text-foreground lg:text-5xl"
             style={{ fontFamily: fonts.PlayfairDisplay }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -59,18 +56,18 @@ const CTASection: React.FC = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-muted-foreground mb-10 leading-relaxed"
+            className="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             I&apos;m most useful on products with messy constraints: growth
-            surfaces, operational workflows, and web apps that need both
-            execution speed and judgment.
+            surfaces, operational workflows, and web and mobile apps that need
+            both execution speed and judgment.
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col items-center justify-center gap-3 sm:flex-row"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -81,10 +78,10 @@ const CTASection: React.FC = () => {
               className="w-full sm:w-auto"
             >
               <a href="mailto:sudharsangs.99@gmail.com">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 group w-full h-11">
-                  <Mail className="w-5 h-5 mr-2" />
+                <Button className="h-10 w-full rounded-lg border border-primary/40 bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 sm:w-auto">
+                  <Mail className="w-4 h-4 mr-1" />
                   Email Me
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </a>
             </motion.div>
@@ -96,12 +93,12 @@ const CTASection: React.FC = () => {
             >
               <Button
                 variant="outline"
-                className="bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl text-base w-full h-11"
+                className="h-10 w-full rounded-lg border border-border/70 bg-background/30 px-5 text-sm font-semibold text-foreground shadow-none backdrop-blur-sm transition-all duration-200 hover:border-primary/35 hover:bg-secondary/60 hover:text-foreground sm:w-auto"
                 onClick={() =>
                   window.open("https://linkedin.com/in/sudharsangs", "_blank")
                 }
               >
-                <Linkedin className="w-5 h-5 mr-2" />
+                <Linkedin className="w-4 h-4 mr-1" />
                 LinkedIn
               </Button>
             </motion.div>
@@ -113,10 +110,11 @@ const CTASection: React.FC = () => {
             >
               <Link href="/about">
                 <Button
-                  className="bg-white text-muted-foreground hover:bg-transparent border-2 hover:border-2 hover:border-gray-500 hover:text-gray-500 transition-all duration-300 px-8 py-4 rounded-xl font-semibold text-base w-full h-11"
+                  variant="outline"
+                  className="h-10 w-full rounded-lg border border-border/70 bg-background/30 px-5 text-sm font-semibold text-foreground shadow-none backdrop-blur-sm transition-all duration-200 hover:border-primary/35 hover:bg-secondary/60 hover:text-foreground sm:w-auto"
                 >
                   About Me
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
             </motion.div>

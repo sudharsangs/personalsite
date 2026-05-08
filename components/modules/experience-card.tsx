@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Experience } from "@/types/experience";
-import { CalendarDays, MapPin, ExternalLink } from "lucide-react";
+import { ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
 import { fonts } from "@/lib/constants";
 import ExperienceProjectCard from "./experience-project-card";
 
@@ -27,7 +27,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
       transition={{ duration: 0.5, delay: index * 0.2 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="overflow-hidden border border-border/50 bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 rounded-2xl group">
+      <Card className="overflow-hidden border border-border/50 bg-card/95 backdrop-blur-sm hover:bg-card transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 rounded-2xl group">
         <CardContent className="p-4 sm:p-6 lg:p-10">
           <div className="flex items-start gap-4 min-w-0">
             <motion.div
@@ -36,7 +36,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                 isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
               }
               transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
-              className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-border/30 bg-white shadow-lg hover:border-primary/50 transition-all duration-300 hover:shadow-xl group-hover:scale-105 flex-shrink-0"
+              className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-border/30 bg-card shadow-lg hover:border-primary/50 transition-all duration-300 hover:shadow-xl group-hover:scale-105 flex-shrink-0"
               whileHover={{ scale: 1.05 }}
             >
               <Image
@@ -70,7 +70,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
                     whileHover={{ x: 2 }}
                   >
                     {experience.company}
-                    <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
+                    <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" />
                   </motion.a>
                 </div>
                 <motion.div
@@ -206,7 +206,7 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
               >
                 <Badge
                   variant="outline"
-                  className="text-xs bg-white/80 hover:bg-primary/5 text-muted-foreground hover:text-primary backdrop-blur-sm border-border/50 hover:border-primary/30 shadow-sm px-3 py-1 transition-all duration-200"
+                  className="text-xs bg-card/80 hover:bg-primary/5 text-muted-foreground hover:text-primary backdrop-blur-sm border-border/50 hover:border-primary/30 shadow-sm px-3 py-1 transition-all duration-200"
                 >
                   {tech}
                 </Badge>

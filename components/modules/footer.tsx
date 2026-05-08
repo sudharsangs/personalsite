@@ -3,7 +3,7 @@ import {
   Github,
   Linkedin,
   Mail,
-  ExternalLink,
+  ArrowRight,
   HeartPulse,
   Code,
   Send,
@@ -82,7 +82,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.label}
-                    className={`text-muted-foreground ${iconColors[index]} transition-all duration-300 p-2 bg-white/60 backdrop-blur-sm rounded-full border border-border hover:shadow-md`}
+                    className={`text-muted-foreground ${iconColors[index]} transition-all duration-300 p-2 bg-card/60 backdrop-blur-sm rounded-full border border-border hover:shadow-md`}
                   >
                     {link.icon}
                   </a>
@@ -109,8 +109,8 @@ const Footer = () => {
                       : "hover:text-primary"
                     } transition-colors duration-300 flex items-center gap-2 group`}
                   >
-                    <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     <span>{link.label}</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </li>
               ))}

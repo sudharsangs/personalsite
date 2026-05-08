@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { projects } from '@/data/projects';
 import { Project } from '@/types/projects';
-import { Home, Briefcase, User, LoaderPinwheel, ChevronDown, ChevronUp, Archive } from 'lucide-react';
+import { Home, Briefcase, User, Handshake, ChevronDown, ChevronUp, Archive } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
 import { fonts } from '@/lib/constants';
@@ -24,7 +24,7 @@ const SectionHeader = ({
   const colors = {
     primary: { badge: 'bg-primary/10 text-primary border-primary/30', bar: 'from-primary to-primary/30', icon: 'bg-primary/10 border-primary/20 text-primary' },
     accent:  { badge: 'bg-accent/10 text-accent border-accent/30',   bar: 'from-accent to-accent/30',   icon: 'bg-accent/10 border-accent/20 text-accent' },
-    violet:  { badge: 'bg-violet-100 text-violet-700 border-violet-200', bar: 'from-violet-500 to-violet-200', icon: 'bg-violet-100 border-violet-200 text-violet-600' },
+    violet:  { badge: 'bg-violet-500/10 text-violet-400 border-violet-500/30', bar: 'from-violet-500 to-violet-300', icon: 'bg-violet-500/10 border-violet-500/30 text-violet-400' },
   }[accent];
 
   return (
@@ -106,7 +106,7 @@ const ProjectsPage: React.FC = () => {
         <div className="mb-6">
           <Link
             href="/"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/60 border border-border hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group shadow-sm hover:shadow-md"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card/60 border border-border hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group shadow-sm hover:shadow-md"
             aria-label="Back to Home"
           >
             <Home className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -208,7 +208,7 @@ const ProjectsPage: React.FC = () => {
             <SectionHeader
               title="Freelance Projects"
               count={independentProjects.length}
-              icon={<LoaderPinwheel className="w-5 h-5" />}
+              icon={<Handshake className="w-5 h-5" />}
               accent="violet"
             />
 
@@ -253,7 +253,7 @@ const ProjectsPage: React.FC = () => {
             </div>
             <button
               onClick={() => setArchiveExpanded((v) => !v)}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-white/80 px-4 py-2 text-sm font-semibold text-muted-foreground shadow-sm hover:bg-primary/5 hover:border-primary/30 hover:text-primary transition-all duration-200 flex-shrink-0 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/60 bg-card/70 px-4 py-2 text-sm font-semibold text-muted-foreground shadow-sm hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground transition-all duration-200 flex-shrink-0 w-full sm:w-auto"
             >
               {archiveExpanded ? (
                 <>Hide <ChevronUp className="w-4 h-4" /></>

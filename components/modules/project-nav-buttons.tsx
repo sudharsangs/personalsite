@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Briefcase, User, LoaderPinwheel } from 'lucide-react';
+import { Briefcase, User, Handshake } from 'lucide-react';
 
 const ProjectNavButtons: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -35,7 +35,7 @@ const ProjectNavButtons: React.FC = () => {
         className="flex items-center gap-2 border bg-card/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent/40"
         onClick={() => scrollToSection('independent-projects')}
       >
-        <LoaderPinwheel className="w-4 h-4" />
+        <Handshake className="w-4 h-4" />
         Freelance
       </Button>
     </div>

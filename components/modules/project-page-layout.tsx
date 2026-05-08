@@ -4,9 +4,10 @@ import {
   Calendar,
   Briefcase,
   User,
-  LoaderPinwheel,
+  Handshake,
   Github,
-  ExternalLink,
+  ArrowUpRight,
+  Globe2,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,11 +52,11 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
       accentBar: "from-primary to-primary/40",
     },
     independent: {
-      icon: LoaderPinwheel,
+      icon: Handshake,
       label: "Freelance",
-      badgeBg: "bg-violet-100",
-      badgeText: "text-violet-700",
-      badgeBorder: "border-violet-300",
+      badgeBg: "bg-violet-500/10",
+      badgeText: "text-violet-400",
+      badgeBorder: "border-violet-500/30",
       accentBar: "from-violet-500 to-violet-300",
     },
     work: {
@@ -80,24 +81,26 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
   return (
     <div className="min-h-screen">
       {/* Hero Header */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/8 border-b border-border/50">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-b border-border/45 bg-gradient-to-br from-primary/4 via-background to-accent/5">
         {/* Background decoration */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-primary/12 blur-[80px]" />
-          <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-accent/15 blur-[60px]" />
-          <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-primary/8 blur-[80px]" />
+          <div className="absolute -top-32 right-[8%] w-[520px] h-[520px] rounded-full bg-primary/8 blur-[100px]" />
+          <div className="absolute -bottom-28 left-[8%] w-96 h-96 rounded-full bg-accent/8 blur-[90px]" />
+          <div className="absolute top-1/2 left-1/3 w-72 h-72 rounded-full bg-primary/5 blur-[90px]" />
           {/* Grid pattern */}
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.028]"
             style={{
               backgroundImage:
                 "linear-gradient(hsl(220 70% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(220 70% 50%) 1px, transparent 1px)",
               backgroundSize: "48px 48px",
+              maskImage:
+                "linear-gradient(to right, transparent, black 14%, black 86%, transparent)",
             }}
           />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           {/* Back Nav */}
           <div className="mb-10">
             <Link href="/projects">
@@ -150,7 +153,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
                 <span className="text-sm text-foreground/80">
                   {company.name}
                 </span>
-                <ExternalLink className="w-3 h-3 text-muted-foreground" />
+                <ArrowUpRight className="w-3 h-3 text-muted-foreground" />
               </Link>
             )}
           </div>
@@ -188,7 +191,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
                 >
                   <Button
                     variant="outline"
-                    className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-5 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2"
+                    className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2"
                   >
                     <Github className="h-4 w-4" />
                     View on GitHub
@@ -197,9 +200,10 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
               )}
               {liveUrl && (
                 <Link href={liveUrl} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 h-10 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 gap-2">
-                    <ExternalLink className="h-4 w-4" />
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2 border border-primary/40">
+                    <Globe2 className="h-4 w-4" />
                     Use Product
+                    <ArrowUpRight className="h-4 w-4" />
                   </Button>
                 </Link>
               )}
@@ -283,7 +287,7 @@ export const FeatureList: React.FC<{
     {items.map((item, index) => (
       <li
         key={index}
-        className="flex items-start gap-3 group bg-white/60 hover:bg-white/90 border border-border/50 hover:border-primary/25 rounded-xl px-4 py-3 transition-all duration-200 shadow-sm hover:shadow-md"
+        className="flex items-start gap-3 group bg-card/60 hover:bg-card/90 border border-border/50 hover:border-primary/25 rounded-xl px-4 py-3 transition-all duration-200 shadow-sm hover:shadow-md"
       >
         <span
           className={`flex-shrink-0 inline-flex items-center justify-center h-6 w-6 rounded-full ${iconBg} ${iconColor} mt-0.5 shadow-sm`}
@@ -337,7 +341,7 @@ export const StatCard: React.FC<{
   label: string;
   description?: string;
 }> = ({ number, label, description }) => (
-  <div className="bg-white rounded-2xl border border-border/60 shadow-md hover:shadow-lg hover:border-primary/30 p-6 text-center transition-all duration-200 relative overflow-hidden group">
+  <div className="bg-card rounded-2xl border border-border/60 shadow-md hover:shadow-lg hover:border-primary/30 p-6 text-center transition-all duration-200 relative overflow-hidden group">
     <div className="absolute inset-0 bg-gradient-to-br from-primary/3 to-accent/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     <div className="relative z-10">
       <div className="text-3xl font-bold bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-transparent mb-1">

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Github, Briefcase, User, LoaderPinwheel, ExternalLink } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, Briefcase, User, Handshake, Globe2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,7 @@ export default function ProjectCardHorizontal({
 }: Props) {
   const typeIcons = {
     personal: User,
-    independent: LoaderPinwheel,
+    independent: Handshake,
     work: Briefcase
   };
 
@@ -39,6 +39,7 @@ export default function ProjectCardHorizontal({
 
   const isExternal = typeof path === 'string' && /^https?:\/\//.test(path);
   const isLiveExternal = typeof liveUrl === 'string' && /^https?:\/\//.test(liveUrl);
+  const ProjectActionIcon = isExternal ? ArrowUpRight : ArrowRight;
 
   return (
     <motion.div
@@ -48,7 +49,7 @@ export default function ProjectCardHorizontal({
       transition={{ duration: 0.7, delay: index * 0.2 }}
       className="w-full"
     >
-      <Card className="overflow-hidden bg-white/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-3xl transition-all duration-500 group">
+      <Card className="overflow-hidden bg-card/95 backdrop-blur-sm border border-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 rounded-3xl transition-all duration-500 group">
         <CardContent className="p-0 h-full">
           <div className={`grid lg:grid-cols-2 gap-0 items-stretch min-h-[400px] h-full ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
 
@@ -62,24 +63,12 @@ export default function ProjectCardHorizontal({
                 transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
                 className="flex justify-start"
               >
-                <Badge className="flex items-center gap-2 w-fit border"
-                  style={{
-                    backgroundColor: type === "personal"
-                      ? "hsl(220 70% 92%)"
-                      : type === "independent"
-                        ? "hsl(270 60% 92%)"
-                        : "hsl(220 70% 92%)",
-                    color: type === "personal"
-                      ? "hsl(220 70% 28%)"
-                      : type === "independent"
-                        ? "hsl(270 55% 35%)"
-                        : "hsl(220 70% 28%)",
-                    borderColor: type === "personal"
-                      ? "hsl(220 70% 75%)"
-                      : type === "independent"
-                        ? "hsl(270 55% 70%)"
-                        : "hsl(220 70% 75%)",
-                  }}
+                <Badge
+                  className={`flex items-center gap-2 w-fit border ${
+                    type === "independent"
+                      ? "bg-violet-500/10 text-violet-400 border-violet-500/30"
+                      : "bg-primary/10 text-primary border-primary/30"
+                  }`}
                 >
                   <TypeIcon className="w-4 h-4" />
                   <span className="capitalize font-medium">
@@ -155,9 +144,9 @@ export default function ProjectCardHorizontal({
               >
                 {path && <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                   <Link href={path} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
-                    <Button className="w-full justify-center h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/60">
+                    <Button className="w-full justify-center h-10 px-4 rounded-lg font-semibold shadow-sm transition-all duration-200 group bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/40">
                       <span>View Project</span>
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ProjectActionIcon className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </Button>
                   </Link>
                 </motion.div>}
@@ -165,9 +154,10 @@ export default function ProjectCardHorizontal({
                 {liveUrl && (
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                     <Link href={liveUrl} target={isLiveExternal ? "_blank" : undefined} rel={isLiveExternal ? "noopener noreferrer" : undefined}>
-                      <Button className="w-full justify-center h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 group bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/60">
+                      <Button className="w-full justify-center h-10 px-4 rounded-lg font-semibold shadow-sm transition-all duration-200 group bg-accent/12 text-accent hover:bg-accent/18 border border-accent/30">
+                        <Globe2 className="w-4 h-4 mr-1" />
                         <span>Visit Site</span>
-                        <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <ArrowUpRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                       </Button>
                     </Link>
                   </motion.div>
@@ -176,7 +166,7 @@ export default function ProjectCardHorizontal({
                 {github && (
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className='w-full sm:w-auto'>
                     <Link href={github} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="w-full justify-center h-11 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 bg-white/80 text-foreground hover:bg-white hover:text-foreground border border-border hover:border-primary/40">
+                      <Button variant="outline" className="w-full justify-center h-10 px-4 rounded-lg font-semibold shadow-sm transition-all duration-200 bg-card/70 text-muted-foreground hover:bg-secondary/70 hover:text-foreground border border-border/70 hover:border-primary/35">
                         <Github className="w-4 h-4 mr-2" />
                         View Code
                       </Button>
@@ -195,9 +185,9 @@ export default function ProjectCardHorizontal({
                 transition={{ duration: 0.8, delay: index * 0.2 + 0.2 }}
                 whileHover={{ scale: 1.05, y: -8 }}
               >
-                <div className="bg-white rounded-2xl shadow-2xl shadow-primary/10 border border-border/50 overflow-hidden group-hover:shadow-3xl group-hover:shadow-primary/20 transition-all duration-500">
+                <div className="bg-card rounded-2xl shadow-2xl shadow-primary/10 border border-border/50 overflow-hidden group-hover:shadow-3xl group-hover:shadow-primary/20 transition-all duration-500">
                   {image ? (
-                    <div className="relative w-full aspect-[4/3] bg-slate-50">
+                    <div className="relative w-full aspect-[4/3] bg-muted">
                       <Image
                         src={image}
                         alt={`${title} project screenshot`}
@@ -210,7 +200,7 @@ export default function ProjectCardHorizontal({
                     <div className="w-full aspect-[4/3] bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/40 flex items-center justify-center relative overflow-hidden">
                       <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(circle, hsl(220 70% 50%) 1px, transparent 1px)', backgroundSize: '24px 24px'}} />
                       <div className="relative z-10 flex flex-col items-center gap-3">
-                        <div className="w-16 h-16 rounded-2xl bg-white/80 border border-primary/20 shadow-lg flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-2xl bg-card/80 border border-primary/20 shadow-lg flex items-center justify-center">
                           <TypeIcon className="w-8 h-8 text-primary" />
                         </div>
                         <span className="text-primary/60 text-xs font-medium uppercase tracking-widest">Project</span>

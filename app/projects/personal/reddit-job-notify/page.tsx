@@ -79,7 +79,7 @@ export default function RedditJobNotifyPage() {
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-5 py-2.5 text-sm border border-primary/20 hover:border-primary/40 hover:shadow-md transition-all duration-200"
+              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-5 py-2.5 text-sm border border-primary/20 hover:border-primary/40 hover:shadow-md transition-all duration-200"
             >
               <Image src={tech.icon} alt={tech.name} width={18} height={18} className="mr-2.5" />
               <span className="text-foreground/80 font-medium">{tech.name}</span>
@@ -115,7 +115,7 @@ export default function RedditJobNotifyPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white/70 hover:bg-white border border-border/50 hover:border-primary/25 rounded-2xl p-5 transition-all duration-200 shadow-sm hover:shadow-md group"
+              className="bg-card/70 hover:bg-card border border-border/50 hover:border-primary/25 rounded-2xl p-5 transition-all duration-200 shadow-sm hover:shadow-md group"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center text-primary mb-4 group-hover:bg-primary/15 transition-colors duration-200">
                 {feature.icon}
@@ -130,7 +130,7 @@ export default function RedditJobNotifyPage() {
       {/* GitHub CTA */}
       <div className="flex justify-center">
         <Link href="https://github.com/sudharsangs/reddit-job-notify-telegram-bot" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-6 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2">
+          <Button variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
             <Github className="h-5 w-5" />
             View Source Code on GitHub
           </Button>

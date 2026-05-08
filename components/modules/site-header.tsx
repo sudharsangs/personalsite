@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
+import ThemeToggle from "@/components/modules/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -49,6 +50,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           {socialLinks.map((link) => (
             <a
               key={link.label}
@@ -60,7 +62,7 @@ export default function SiteHeader() {
                   : "noopener noreferrer"
               }
               aria-label={link.label}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white/70 text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/70 text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
             >
               {link.icon}
             </a>

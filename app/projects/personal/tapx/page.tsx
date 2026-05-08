@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { ExternalLink, Github, Layers, Link as LinkIcon, Lightbulb, Smartphone } from 'lucide-react';
+import { ArrowUpRight, Github, Globe2, Layers, Link as LinkIcon, Lightbulb, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
@@ -57,7 +57,7 @@ export default function TapXPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>
@@ -70,16 +70,17 @@ export default function TapXPage() {
       <div className="flex flex-wrap gap-4 mb-12">
         {projectData.liveUrl && (
           <Link href={projectData.liveUrl} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 h-10 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 gap-2">
-              <ExternalLink className="h-4 w-4" />
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2 border border-primary/40">
+              <Globe2 className="h-4 w-4" />
               View Live Site
+              <ArrowUpRight className="h-4 w-4" />
             </Button>
           </Link>
         )}
         
         {projectData.githubUrl && (
           <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="bg-white/80 border border-border/70 text-foreground hover:bg-white hover:border-primary/40 hover:text-primary rounded-xl px-5 h-10 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 gap-2">
+            <Button variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
               <Github className="h-4 w-4" />
               View Source Code
             </Button>

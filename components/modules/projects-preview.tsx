@@ -38,7 +38,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         className="inline-flex items-center gap-3 bg-primary/10 px-4 py-3 rounded-2xl border border-primary/20 shadow-sm mb-6"
                     >
                         <Briefcase className="w-5 h-5 text-primary" />
-                        <span className="text-primary font-semibold tracking-wide">FEATURED WORK</span>
+                        <span className="text-primary font-semibold tracking-wide">PORTFOLIO</span>
                     </motion.div>
                     
                     <motion.h2
@@ -48,7 +48,7 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        Selected Projects
+                        Featured Projects
                     </motion.h2>
                     
                     <motion.p
@@ -57,9 +57,9 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        A smaller set of projects that best show how I work:
-                        product framing, frontend depth, technical SEO, and
-                        full-stack execution.
+                        A focused collection of projects showing how I turn
+                        ambiguous product problems into polished, scalable web
+                        experiences.
                     </motion.p>
                 </motion.div>
                 
@@ -92,9 +92,9 @@ const ProjectsPreview: React.FC<Props> = ({ projects }) => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                 >
                     <Link href="/projects">
-                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 h-11 group">
+                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 rounded-lg font-semibold text-sm shadow-sm transition-all duration-200 h-10 group border border-primary/40">
                             View All Projects
-                            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
                     </Link>
                 </motion.div>

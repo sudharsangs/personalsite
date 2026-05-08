@@ -52,7 +52,8 @@ export default function About() {
             I build products that work in the real world.
           </h1>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Product engineering across streaming infrastructure, EdTech, and manufacturing software. Five years shipping things that go live.
+            Product engineering across streaming infrastructure, EdTech, and
+            manufacturing software. Five years shipping things that go live.
           </p>
         </div>
 
@@ -65,16 +66,24 @@ export default function About() {
               <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
                   I&apos;m Sudharsan GS, a product engineer based in Bengaluru.
-                  I currently work on the <span className="font-semibold text-foreground">Molotov</span> team,
-                  where the work sits at the intersection of
-                  frontend systems, technical SEO, and streaming product
-                  surfaces.
+                  I currently work on the{" "}
+                  <span className="font-semibold text-foreground">Molotov</span>{" "}
+                  team, where the work sits at the intersection of frontend
+                  systems, technical SEO, and streaming product surfaces.
                 </p>
                 <p>
-                  Before that I spent two years at Winuall building EdTech products: onboarding flows, an online store, a learner experience, and some platform architecture work. Good place to learn how to ship fast.
+                  Before that I spent two years at Winuall building EdTech
+                  products: onboarding flows, an online store, a learner
+                  experience, and some platform architecture work. Good place to
+                  learn how to ship fast.
                 </p>
                 <p>
-                  Outside work, I&apos;m building <span className="font-semibold text-foreground">FactoStack</span>, a manufacturing platform for Indian MSMEs. The problem is genuinely messy and the software needs to reflect that.
+                  Outside work, I&apos;m building{" "}
+                  <span className="font-semibold text-foreground">
+                    FactoStack
+                  </span>
+                  , a SaaS platform for Indian MSMEs. The problem is genuinely
+                  messy and the software needs to reflect that.
                 </p>
               </div>
             </div>
@@ -84,7 +93,9 @@ export default function About() {
                 How I Work
               </p>
               <p className="text-base leading-relaxed text-muted-foreground">
-                I use Claude Code and Codex to move faster on implementation and exploration. Architecture decisions, product tradeoffs, and final quality are mine.
+                I use Claude Code and Codex to move faster on implementation and
+                exploration. Architecture decisions, product tradeoffs, and
+                final quality are mine.
               </p>
             </div>
           </div>
@@ -99,14 +110,16 @@ export default function About() {
               />
             </div>
 
-            <div className="rounded-[2rem] border border-border/60 bg-white/90 p-6 shadow-sm">
+            <div className="rounded-[2rem] border border-border/60 bg-card/90 p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-2 text-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span className="font-semibold">Bengaluru, India</span>
               </div>
               <div className="mb-6 flex items-center gap-2 text-foreground">
                 <Briefcase className="h-4 w-4 text-primary" />
-                <span className="font-semibold">Software Engineer at Molotov</span>
+                <span className="font-semibold">
+                  Software Engineer at Molotov
+                </span>
               </div>
 
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
@@ -137,7 +150,7 @@ export default function About() {
             {careerHighlights.map((item) => (
               <div
                 key={item.company}
-                className="rounded-[1.75rem] border border-border/60 bg-white/95 p-6 shadow-sm"
+                className="rounded-[1.75rem] border border-border/60 bg-card/95 p-6 shadow-sm"
               >
                 <p className="mb-2 text-sm font-semibold text-primary">
                   {item.period}
@@ -162,7 +175,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-border/60 bg-white/90 p-6 text-center shadow-sm md:p-8">
+        <div className="rounded-[2rem] border border-border/60 bg-card/90 p-6 text-center shadow-sm md:p-8">
           <h2
             className="text-3xl font-bold text-foreground"
             style={{ fontFamily: fonts.PlayfairDisplay }}
@@ -170,17 +183,22 @@ export default function About() {
             Open to new work.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Interested in solving real business problems for MSMEs, software consulting, and MVP builds. If you have something worth building, reach out.
+            Interested in solving real business problems for MSMEs, software
+            consulting, and MVP builds. If you have something worth building,
+            reach out.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="mailto:sudharsangs.99@gmail.com">
-              <Button className="h-11 rounded-xl px-6 font-semibold">
+              <Button className="h-10 rounded-lg px-5 font-semibold shadow-sm">
                 <Mail className="mr-2 h-4 w-4" />
                 Email Me
               </Button>
             </a>
             <Link href="/projects">
-              <Button variant="outline" className="h-11 rounded-xl px-6 font-semibold">
+              <Button
+                variant="outline"
+                className="h-10 rounded-lg px-5 font-semibold shadow-sm"
+              >
                 View Projects
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

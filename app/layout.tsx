@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-import Script from 'next/script';
+import Script from "next/script";
 import Footer from "@/components/modules/footer";
 import SiteHeader from "@/components/modules/site-header";
 import "./globals.css";
@@ -47,10 +47,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeInitScript = `
+    (function() {
+      try {
+        var theme = localStorage.getItem('theme');
+        var root = document.documentElement;
+        if (theme === 'light') {
+          root.classList.remove('dark');
+          root.style.colorScheme = 'light';
+        } else {
+          root.classList.add('dark');
+          root.style.colorScheme = 'dark';
+        }
+      } catch (_) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      }
+    })();
+  `;
+
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
         className={`${montserrat.variable} ${playfairDisplay.variable} antialiased h-full`}
@@ -59,17 +79,17 @@ export default function RootLayout({
           {/* Static background mesh */}
           <div className="fixed inset-0 pointer-events-none -z-10">
             {/* Base gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/60" />
+            <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/60 dark:to-secondary/30" />
             {/* Top-left primary blob */}
-            <div className="absolute -top-32 -left-32 w-[700px] h-[700px] rounded-full bg-primary/15 blur-[90px]" />
+            <div className="absolute -top-32 -left-32 w-[700px] h-[700px] rounded-full bg-primary/15 blur-[90px] dark:bg-primary/10" />
             {/* Bottom-right accent blob */}
-            <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/12 blur-[100px]" />
+            <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/12 blur-[100px] dark:bg-accent/8" />
             {/* Center subtle tint */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full bg-primary/8 blur-[120px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full bg-primary/8 blur-[120px] dark:bg-primary/6" />
             {/* Top-right secondary blob */}
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/8 blur-[80px]" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/8 blur-[80px] dark:bg-accent/5" />
             {/* Bottom-left accent blob */}
-            <div className="absolute bottom-1/3 -left-20 w-[350px] h-[350px] rounded-full bg-primary/10 blur-[80px]" />
+            <div className="absolute bottom-1/3 -left-20 w-[350px] h-[350px] rounded-full bg-primary/10 blur-[80px] dark:bg-primary/6" />
             {/* Dot grid overlay */}
             <div
               className="absolute inset-0 opacity-[0.06]"

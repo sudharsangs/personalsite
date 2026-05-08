@@ -83,7 +83,7 @@ export default function EmployeeManagementPage() {
             src="/projects/independent/employee-management/login.png"
             alt="Login Screen"
             fill
-            className="object-contain bg-gray-50"
+            className="object-contain bg-muted"
           />
         </div>
         <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20 shadow-lg">
@@ -91,7 +91,7 @@ export default function EmployeeManagementPage() {
             src="/projects/independent/employee-management/dayplan1.png"
             alt="Daily Plan"
             fill
-            className="object-contain bg-gray-50"
+            className="object-contain bg-muted"
           />
         </div>
         <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20 shadow-lg">
@@ -99,7 +99,7 @@ export default function EmployeeManagementPage() {
             src="/projects/independent/employee-management/notifications.png"
             alt="Notifications"
             fill
-            className="object-contain bg-gray-50"
+            className="object-contain bg-muted"
           />
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function EmployeeManagementPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-white/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>
@@ -185,7 +185,7 @@ export default function EmployeeManagementPage() {
             src="/projects/independent/employee-management/chat.png"
             alt="Team Chat"
             fill
-            className="object-contain bg-gray-50"
+            className="object-contain bg-muted"
           />
         </div>
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-primary/20 shadow-sm">
@@ -193,7 +193,7 @@ export default function EmployeeManagementPage() {
             src="/projects/independent/employee-management/approvals.png"
             alt="Approvals"
             fill
-            className="object-contain bg-gray-50"
+            className="object-contain bg-muted"
           />
         </div>
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-primary/20 shadow-sm">
@@ -201,7 +201,7 @@ export default function EmployeeManagementPage() {
             src="/projects/independent/employee-management/lead1.png"
             alt="Lead Management"
             fill
-            className="object-contain bg-gray-50"
+            className="object-contain bg-muted"
           />
         </div>
       </div>
