@@ -128,7 +128,8 @@ const Footer = () => {
               sudharsangs.99@gmail.com
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Open to software consulting, MVP builds, and solving real problems for MSMEs.
+              Open to MVPs, AI agents, and web or mobile apps for growing
+              businesses.
             </p>
           </div>
         </div>

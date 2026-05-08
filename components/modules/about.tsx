@@ -117,9 +117,7 @@ export default function About() {
               </div>
               <div className="mb-6 flex items-center gap-2 text-foreground">
                 <Briefcase className="h-4 w-4 text-primary" />
-                <span className="font-semibold">
-                  Software Engineer at Molotov
-                </span>
+                <span className="font-semibold">Software Engineer at Fubo</span>
               </div>
 
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
@@ -183,9 +181,9 @@ export default function About() {
             Open to new work.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Interested in solving real business problems for MSMEs, software
-            consulting, and MVP builds. If you have something worth building,
-            reach out.
+            Interested in building MVPs from early ideas, AI agents for growing
+            businesses, and web or mobile apps that are ready to ship. If you
+            have something worth building, reach out.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="mailto:sudharsangs.99@gmail.com">

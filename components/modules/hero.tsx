@@ -81,7 +81,8 @@ const Hero: React.FC = () => {
     {
       icon: <Code2 className="h-4 w-4" />,
       title: "Products & experiments",
-      description: "Client MVPs, internal tools, and small products shipped from idea to launch.",
+      description:
+        "MVPs from rough ideas, AI agents for businesses, and polished web or mobile apps.",
       className: "border-sky-500/20 bg-sky-500/10",
       iconClassName: "bg-card/90 text-sky-500",
     },
