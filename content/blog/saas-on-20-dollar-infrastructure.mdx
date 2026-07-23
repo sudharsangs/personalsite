@@ -1,0 +1,78 @@
+---
+title: "Running a SaaS on Roughly $20 of Infrastructure"
+description: "The deliberately boring architecture behind FactoStack, and why current-stage constraints matter more than startup infrastructure theatre."
+publishedAt: "2026-07-01"
+tags:
+  - FactoStack
+  - Architecture
+  - SaaS
+draft: false
+---
+
+I’m building [FactoStack](https://factostack.com/), a manufacturing ERP for Indian MSMEs. It has paying customers and production data, but the infrastructure is still deliberately lean.
+
+As of July 2026, it costs roughly $20 per month. That figure reflects the product’s current stage, traffic, and cloud pricing; it is not a promise about infinite capacity.
+
+## The stack
+
+- **Backend:** NestJS and TypeScript, organised into domains such as inventory, production, compliance, and payroll
+- **Application frontend:** React, TanStack Router, and TanStack Query, built statically and served through Nginx
+- **Database:** managed PostgreSQL on Amazon Lightsail, separate from the application instance and backed up automatically
+- **API hosting:** a small Lightsail instance running NestJS behind Nginx
+- **Admin and marketing sites:** static deployments on Cloudflare Pages
+- **Payments:** Razorpay for Indian billing, UPI, and GST workflows
+- **Authentication:** JWT-based, tenant-aware access with feature flags
+- **Product analytics:** PostHog’s free tier
+- **Operational alerts:** a Telegram bot for important product events
+
+Most of the paid spend is the application instance and managed database.
+
+## Why a small Lightsail setup
+
+Predictable pricing matters while the product is early. Managed PostgreSQL also removes a category of operational work I do not want to own yet.
+
+The application fits comfortably on the current instance under today’s load. I will add capacity when usage, reliability requirements, or revenue justify it—not because a generic architecture diagram expects it.
+
+## Why static frontends are separate
+
+The admin interface and marketing website do not need to live beside the API. Serving static builds through a CDN keeps the application host focused and isolates deployments. A marketing copy change should not affect production API uptime.
+
+## One shared database
+
+FactoStack currently uses a shared PostgreSQL database. Core tables carry a `tenant_id`, and tenant context is established at the request layer and enforced throughout application access.
+
+This choice gives me:
+
+- one migration path;
+- straightforward debugging;
+- low fixed infrastructure cost; and
+- less operational surface area while shipping quickly.
+
+It also creates responsibility. Tenant-scoping must be consistent and thoroughly tested, and a noisy customer can affect shared resources. This is the right trade-off now, not necessarily the forever architecture.
+
+## Feature flags as product infrastructure
+
+Major modules are enabled per tenant. A customer might need production tracking and raw-material traceability, while another needs a smaller compliance surface. Feature flags let the same product serve those workflows without customer-specific deployments.
+
+## What the architecture optimises for
+
+The system optimises for shipping speed, low fixed cost, and operational simplicity.
+
+That leads to deliberate choices:
+
+- one well-understood server before a distributed system;
+- managed backups before bespoke database operations;
+- measured complexity after repeated demand; and
+- enough monitoring to catch real problems without building an observability platform.
+
+## What constraints taught me
+
+I used to overthink infrastructure before launch. Containers, orchestration, and multi-region systems were not the bottleneck. The actual question was whether a customer could complete their work and trust the product the next morning.
+
+A small instance also exposes waste quickly. Inefficient queries and dependency bloat are harder to ignore. Constraints can improve the codebase when they are paired with monitoring and a clear upgrade path.
+
+## The point
+
+A real B2B SaaS does not need a fashionable collection of services. It needs infrastructure the team understands, can afford, can observe, and can recover.
+
+For FactoStack’s current stage, that means NestJS, React, a small Lightsail instance, managed PostgreSQL, and static frontends. The cost will change as the product grows. The principle should not: spend complexity where customers can feel it.

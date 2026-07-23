@@ -78,7 +78,7 @@ export default function EmployeeManagementPage() {
     >
       {/* Hero Images */}
       <div className="mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20 shadow-lg">
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20">
           <Image
             src="/projects/independent/employee-management/login.png"
             alt="Login Screen"
@@ -86,7 +86,7 @@ export default function EmployeeManagementPage() {
             className="object-contain bg-muted"
           />
         </div>
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20 shadow-lg">
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20">
           <Image
             src="/projects/independent/employee-management/dayplan1.png"
             alt="Daily Plan"
@@ -94,7 +94,7 @@ export default function EmployeeManagementPage() {
             className="object-contain bg-muted"
           />
         </div>
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20 shadow-lg">
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20">
           <Image
             src="/projects/independent/employee-management/notifications.png"
             alt="Notifications"
@@ -113,7 +113,7 @@ export default function EmployeeManagementPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

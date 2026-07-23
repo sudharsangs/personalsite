@@ -113,7 +113,7 @@ export default function WinuallMarketingSitePage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>
@@ -124,7 +124,7 @@ export default function WinuallMarketingSitePage() {
 
       {/* First Image */}
       <div className="mb-5">
-        <div className="rounded-2xl overflow-hidden border border-border/50 shadow-md">
+        <div className="rounded-2xl overflow-hidden border border-border/50">
           <Image
             src={projectData.images[0].url}
             alt={projectData.images[0].alt}
