@@ -56,11 +56,11 @@ const roleFits = [
 export default function Capabilities() {
   return (
     <section className="section-block" aria-labelledby="capabilities-heading">
-      <div className="max-w-4xl">
+      <div>
         <p className="eyebrow">What I do</p>
         <h2
           id="capabilities-heading"
-          className="mt-3 max-w-3xl font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+          className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
         >
           I can own the whole product, or go deep on one part.
         </h2>
@@ -73,15 +73,15 @@ export default function Capabilities() {
         {capabilities.map((item, index) => (
           <article
             key={item.label}
-            className="flex flex-col rounded-2xl border border-border/60 bg-secondary/25 p-6 sm:p-7"
+            className="flex flex-col rounded-2xl border border-border/60 bg-secondary/25 p-7 sm:p-8"
           >
             <div className="flex items-center justify-between gap-4">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{item.label}</p>
               <span className="font-serif text-sm text-muted-foreground/60">0{index + 1}</span>
             </div>
-            <h3 className="mt-8 max-w-sm font-serif text-2xl font-semibold leading-tight">{item.title}</h3>
-            <p className="mt-4 text-sm leading-6 text-muted-foreground">{item.description}</p>
-            <div className="mt-auto border-t border-border/60 pt-5">
+            <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight">{item.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
+            <div className="mt-auto pt-6 border-t border-border/60">
               <div className="flex flex-wrap gap-2">
                 {item.techIcons.map((tech) => (
                   <div
@@ -98,8 +98,8 @@ export default function Capabilities() {
         ))}
       </div>
 
-      <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/[0.06] p-6 sm:p-8">
-        <div className="grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:gap-12">
+      <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/[0.06] p-7 sm:p-10">
+        <div className="grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Work</p>
             <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight sm:text-3xl">

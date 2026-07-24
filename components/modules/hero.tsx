@@ -24,42 +24,68 @@ const techStack = [
 export default function Hero() {
   return (
     <>
-      <section className="py-14 sm:py-20 lg:py-24">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold uppercase tracking-[0.15em]">
-          <span className="text-primary">Product engineer</span>
-          <span className="inline-flex items-center gap-1.5 text-muted-foreground">
-            <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Bengaluru, India
-          </span>
-        </div>
-        <h1 className="mt-6 max-w-4xl font-serif text-5xl font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4.5rem]">
-          Five years building products people actually use.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-          I work across streaming, ERP, SaaS, and ed-tech — backend, frontend, infra, compliance — and I stay involved until something is live and working.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg">
-            <Link href="/projects">View my work <ArrowRight aria-hidden="true" /></Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" /> Email me</a>
-          </Button>
-        </div>
+      <section className="py-10 sm:py-12 lg:py-14">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
+          {/* Left column */}
+          <div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold uppercase tracking-[0.15em]">
+              <span className="text-primary">Product engineer</span>
+              <span className="inline-flex items-center gap-1.5 text-muted-foreground">
+                <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Bengaluru, India
+              </span>
+            </div>
+            <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.5rem]">
+              I ship full-stack products, end to end.
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+              Five years across Fubo, Winuall, and FactoStack — shipping streaming interfaces, SaaS platforms, and an ERP I built solo from the first line of code. If you need someone who can own a real scope, not just a ticket queue, I&apos;m worth talking to.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg">
+                <Link href="/projects">View my work <ArrowRight aria-hidden="true" /></Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" /> Email me</a>
+              </Button>
+            </div>
+            <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="h-2 w-2 rounded-full bg-green-500" aria-hidden="true" />
+              Available for consulting and freelance. Response within 24h.
+            </p>
+          </div>
 
-        <div className="mt-12 border-t border-border/50 pt-8">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-            Technologies I work with
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {techStack.map((tech) => (
-              <div
-                key={tech.name}
-                className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-foreground/80"
-              >
-                <Image src={tech.icon} alt="" width={14} height={14} className="h-3.5 w-3.5 shrink-0 object-contain" />
-                {tech.name}
+          {/* Right column — stats + tech, top-aligned to match h1 */}
+          <div className="mt-12 lg:mt-[4.5rem] space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { number: "5+", label: "years shipping" },
+                { number: "6", label: "modules built solo" },
+                { number: "3,000+", label: "users onboarded" },
+                { number: "4", label: "companies shipped for" },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-border/60 bg-card px-5 py-5 flex flex-col justify-between min-h-[100px]">
+                  <div className="font-serif text-3xl font-semibold text-foreground">{stat.number}</div>
+                  <div className="mt-2 text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                Technologies I work with
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {techStack.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-secondary/40 px-3 py-1.5 text-xs font-medium text-foreground/80"
+                  >
+                    <Image src={tech.icon} alt="" width={14} height={14} className="h-3.5 w-3.5 shrink-0 object-contain" />
+                    {tech.name}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

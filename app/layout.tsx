@@ -17,22 +17,22 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sudharsangs.in"),
-  title: "Sudharsan GS | Product Engineer",
-  description: "Product engineer in Bengaluru. I take ambiguous, operations-heavy problems to production end to end, across ERP, SaaS, streaming, and technical SEO.",
+  title: "Sudharsan GS — Full-Stack Engineer | Fubo · FactoStack · Winuall",
+  description: "Full-stack product engineer with 5 years across Fubo, FactoStack, and Winuall. I take operations-heavy problems to production end to end — ERP, SaaS, streaming, and technical SEO.",
   authors: [{ name: "Sudharsan GS" }],
   creator: "Sudharsan GS",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "/",
-    title: "Sudharsan GS | Product Engineer",
-    description: "Product engineer in Bengaluru. I take ambiguous, operations-heavy problems to production end to end, across ERP, SaaS, streaming, and technical SEO.",
+    title: "Sudharsan GS — Full-Stack Engineer | Fubo · FactoStack · Winuall",
+    description: "Full-stack product engineer with 5 years across Fubo, FactoStack, and Winuall. I take operations-heavy problems to production end to end — ERP, SaaS, streaming, and technical SEO.",
     siteName: "Sudharsan GS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sudharsan GS | Product Engineer",
-    description: "Product engineer in Bengaluru. I take ambiguous, operations-heavy problems to production end to end, across ERP, SaaS, streaming, and technical SEO.",
+    title: "Sudharsan GS — Full-Stack Engineer | Fubo · FactoStack · Winuall",
+    description: "Full-stack product engineer with 5 years across Fubo, FactoStack, and Winuall. I take operations-heavy problems to production end to end — ERP, SaaS, streaming, and technical SEO.",
     creator: "@sudharsangs",
   },
 };

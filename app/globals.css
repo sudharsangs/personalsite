@@ -98,7 +98,7 @@
   .page-intro h1 { @apply mt-3 font-serif text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl; }
   .page-intro > p:last-child { @apply mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8; }
   .eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em] text-primary; }
-  .section-block { @apply py-14 sm:py-16 lg:py-20; }
+  .section-block { @apply py-10 sm:py-12 lg:py-14; }
   .section-heading { @apply flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between; }
   .section-heading h2 { @apply mt-2 font-serif text-3xl font-semibold tracking-tight sm:text-4xl; }
   .text-link { @apply inline-flex min-h-11 items-center gap-2 font-semibold text-primary underline-offset-4 hover:underline; }
