@@ -1,0 +1,66 @@
+---
+title: "Setting up CDN for Frontend projects"
+description: "Why frontend projects benefit from a CDN, with GitHub Actions examples for deploying static assets to Azure Blob Storage and Cloudflare."
+publishedAt: "2022-09-15"
+tags:
+  - "CDN"
+  - "Frontend Development"
+  - "deployment"
+  - "Continuous Integration"
+draft: false
+---
+![Setting up CDN for Frontend projects](/blog/setting-up-cdn-for-frontend-projects/cover.jpeg)
+
+## What is a CDN?
+CDN stands for Content Delivery Network, it is a group of servers spread over many locations in the world, they help in providing fast delivery of content present on the web page. To make data requests more timely, servers store duplicate copies of data near end-users so that they may fulfill requests based on their location.
+
+## Why CDN? 
+CDN helps improve website load times by serving content closer to visitors using a nearby CDN server. A CDN can handle more traffic than many origin servers which helps in increasing content availability. It is already configured with proper cache settings on CDNs, it saves you the trouble of configuring static assets on your own server when you use a CDN.
+
+CSS styles and JavaScript files (static assets) in libraries like Bootstrap, jQuery, etc. are often delivered via CDNs.
+
+The most commonly used CDN providers are: 
+- Cloudfront
+- Stackpath
+- Amazon Cloudfront
+- Fast CDN
+- Key CDN
+- Google Cloud CDN
+- Azure Frontdoor
+
+Now that we know the reason for using CDNs, let's see how we can deploy our code to a CDN. 
+
+The easiest way would be to set up a step in your CI/CD pipeline to push the files to your favorite CDN provider after the build process.
+
+I have written a detailed blog on setting up CI/CD through GitHub Actions and Azure Cloud, you can have a look at it [here](/blog/github-actions-to-deploy-your-react-application).
+
+For cloud providers like Amazon Cloudfront and Azure Frontdoor, you can push the files to their object storage solutions (Amazon S3, Azure Blob Storage) and enable CDN for the whole bucket/container.
+
+### Azure Blob Storage
+
+```
+- name: Push to Azure Blob Storage
+        uses: bacongobbler/azure-blob-storage-upload@main
+        with:
+          source_dir: 'subFolderName'
+          container_name: asset-name
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
+          overwrite: 'true'
+``` 
+
+### Cloudflare CDN
+
+```
+- name: Push to Cloudflare CDN
+      uses: cloudflare/wrangler-action@2.0.0
+      with:
+        apiToken: ${{ secrets.CF_API_TOKEN }}
+        workingDirectory: 'subfoldername'
+``` 
+
+
+Adding either of the above steps to your pipeline can help you in serving your Frontend Project through CDN and make your site fast for the users.
+
+Happy Learning!
+
+[sudharsangs.in](https://www.sudharsangs.in)

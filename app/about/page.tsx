@@ -115,7 +115,7 @@ export default function AboutPage() {
       <header className="page-intro">
         <p className="eyebrow">About</p>
         <h1 className="max-w-5xl">I build things end-to-end — and I&apos;ve been doing it for five years.</h1>
-        <p className="max-w-2xl">Right now I&apos;m a software engineer at Fubo, and I&apos;m also building FactoStack on the side. The two are pretty different, and I think that&apos;s made me a better engineer.</p>
+        <p className="max-w-2xl">Right now I&apos;m a Software Engineer 2 at Fubo, and I&apos;m also building FactoStack on the side. The two are pretty different, and I think that&apos;s made me a better engineer.</p>
       </header>
 
       {/* Proof points */}
@@ -204,12 +204,41 @@ export default function AboutPage() {
                     <div className="flex flex-wrap items-start justify-between gap-2">
                       <div>
                         <h3 className="font-serif text-xl font-semibold">{experience.company}</h3>
-                        <p className="mt-0.5 text-sm font-medium text-muted-foreground">{experience.title}</p>
+                        {!experience.roles && (
+                          <p className="mt-0.5 text-sm font-medium text-muted-foreground">{experience.title}</p>
+                        )}
                       </div>
                       <span className="shrink-0 rounded-full bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground">
                         {experience.period.start} — {experience.period.end}
                       </span>
                     </div>
+                    {experience.roles && (
+                      <ol className="relative mt-4 space-y-3 border-l border-border pl-5">
+                        {experience.roles.map((role, index) => (
+                          <li key={`${role.title}-${role.start}`} className="relative">
+                            <span
+                              className={`absolute -left-[1.47rem] top-1.5 h-2 w-2 rounded-full ring-4 ring-card ${
+                                index === 0 ? "bg-primary" : "bg-muted-foreground/45"
+                              }`}
+                              aria-hidden="true"
+                            />
+                            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
+                              <p className={`text-sm ${index === 0 ? "font-semibold text-foreground" : "font-medium text-foreground/75"}`}>
+                                {role.title}
+                                {index === 0 && (
+                                  <span className="ml-2 rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
+                                    Promoted
+                                  </span>
+                                )}
+                              </p>
+                              <p className="text-xs text-muted-foreground">
+                                {role.start} — {role.end}
+                              </p>
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
+                    )}
                   </div>
                 </div>
                 <p className="mt-4 text-sm leading-6 text-muted-foreground">{detail.summary}</p>

@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </ol>
       </nav>
 
-      <article className="mx-auto max-w-3xl">
+      <article>
         <header className="pb-6">
           <p className="eyebrow">Essay</p>
           <h1 className="font-serif text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">{post.title}</h1>
@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </article>
 
       {related.length > 0 && (
-        <aside aria-labelledby="related-heading" className="mx-auto mt-20 max-w-3xl">
+        <aside aria-labelledby="related-heading" className="mt-20">
           <h2 id="related-heading" className="font-serif text-3xl font-semibold">Related writing</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {related.map((item) => <BlogCard key={item.slug} post={item} headingLevel="h3" />)}

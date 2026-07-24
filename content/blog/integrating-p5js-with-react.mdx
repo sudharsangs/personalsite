@@ -1,0 +1,229 @@
+---
+title: "Integrating p5.js with React"
+description: "In this post we are going to learn about how to do the fancy art and design qualities of p5 in a React Web Application."
+publishedAt: "2020-05-05"
+tags:
+  - "React"
+  - "JavaScript"
+draft: false
+---
+![Integrating p5.js with React](/blog/integrating-p5js-with-react/cover.jpeg)
+
+In this post we are going to learn about how to do the fancy art and design qualities of p5 in a React Web Application.
+
+## Pre-requisites  
+You need to have a basic understanding of React. You should have **NodeJS** and **NPM** or **yarn** installed in your system.
+
+## End Goal  
+Build a moving ball animation.
+
+## Step 1: Create a basic React Application.
+Install create-react-app package 
+```bash 
+sudo npm i -g create-react-app 
+```
+Now create a react web app using it  
+```bash 
+npx create-react-app moving-ball
+```
+This will create a new folder called **moving-ball** and install the react dependencies. Navigate into the new folder. It should look like this.
+
+![Folder Structure Image](/blog/integrating-p5js-with-react/image-01.png)
+
+Then run 
+```bash 
+npm start
+```
+
+After executing the command your browser window should look like this.
+
+![React App](/blog/integrating-p5js-with-react/image-02.png)
+
+Now install the react-p5 NPM package 
+```bash 
+npm i react-p5
+```
+
+You can checkout the package [here](https://www.npmjs.com/package/react-p5)
+
+Now that you have installed the package. What next? We'll start using it... 
+
+![GIF](/blog/integrating-p5js-with-react/image-03.gif)
+
+Now go to the **App.js** file in the **src/** directory. 
+Remove the boiler plate code and import react-p5.
+
+```javascript
+import React from 'react';
+import Sketch from "react-p5";
+
+function App() {
+  return (
+    <div className="App">
+     
+    </div>
+  );
+}
+
+export default App;
+```
+
+Now that you have imported the package. Let's create the canvas. 
+
+
+![GIF](/blog/integrating-p5js-with-react/image-04.gif)
+
+To create we need two important functions **setup** and **draw**, setup is used to mention about the size of the canvas and where exactly the canvas should be placed on the window object. Whereas draw tells about the objects placed on the canvas.
+
+```javascript
+import React from "react";
+import Sketch from "react-p5";
+
+function App() {
+  let a = 300;
+  let b = 300;
+  let setup = (p5, canvasParentRef) => {
+    //Canvas of size 1000x800 
+    let xyz = p5.createCanvas(1000, 800).parent(canvasParentRef);
+  };
+  let draw = (p5) => {
+    p5.background("rgb(100%,0%,10%)");
+  };
+  return (
+    <div className="App">
+      <Sketch setup={setup} draw={draw} className="App" />
+    </div>
+  );
+}
+```
+Now that we have the canvas ready. Our app would look something like this.
+
+![Alt Text](/blog/integrating-p5js-with-react/image-05.png)
+
+We can see that the canvas is not centered. To do that let's do some math. 
+![Gif](/blog/integrating-p5js-with-react/image-06.gif)
+
+We should add the following code to the **setup** function to center the canvas.
+
+```javascript
+let x = (p5.windowWidth - p5.width) / 2;
+let y = (p5.windowHeight - p5.height) / 2;
+xyz.position(x, y);
+```
+
+**Updated Code**
+
+```javascript
+import React from "react";
+import Sketch from "react-p5";
+
+function App() {
+  let a = 300;
+  let b = 300;
+  let setup = (p5, canvasParentRef) => {
+    let xyz = p5.createCanvas(1000, 800).parent(canvasParentRef);
+    //Calculation to center the canvas 
+    let x = (p5.windowWidth - p5.width) / 2;
+    let y = (p5.windowHeight - p5.height) / 2;
+    xyz.position(x, y);
+  };
+  let draw = (p5) => {
+    p5.background("rgb(100%,0%,10%)");
+  };
+  return (
+    <div className="App">
+      <Sketch setup={setup} draw={draw} className="App" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Now our canvas is centered
+
+![Center Image](/blog/integrating-p5js-with-react/image-07.png)
+
+Let's add the ball to the canvas. As previously said we should use the **draw** function for this purpose.
+
+```javascript
+let draw = (p5) => {
+    p5.background("rgb(100%,0%,10%)");
+    //Color of the ball
+    p5.stroke(255);
+    p5.strokeWeight(4);
+    //Mentioning that the ball or the circle won't have filled color
+    p5.noFill();
+    //The first 2 parameters are for positioning and the next two are 
+    //for size
+    p5.ellipse(a, b, 100, 100);
+}
+```
+![Ball](/blog/integrating-p5js-with-react/image-08.png)
+
+The ball is ready on the canvas. We have to animate it now. For that we have to add some conditional statements in the **draw** function. To animate the ball we need a variable called *speed*. Which changes the value of the position variable *a* to move the ball.
+
+```javascript
+let draw = (p5) => {
+    p5.background("rgb(100%,0%,10%)");
+    p5.stroke(255);
+    p5.strokeWeight(4);
+    p5.noFill();
+    p5.ellipse(a, b, 100, 100);
+    //If the ball goes to the end of the canvas it should return back
+    if (a >= p5.width) {
+      speed = -3;
+    }
+    if (a === 90) {
+      speed = 3;
+    }
+    a = a + speed;
+  };
+```
+
+![Moving GIF](/blog/integrating-p5js-with-react/image-09.gif)
+
+The ball is moving. Yay!
+
+**Final Code** of *App.js*
+```javascript
+import React from "react";
+import Sketch from "react-p5";
+
+function App() {
+  let a = 300;
+  let b = 300;
+  let speed = 3;
+  let setup = (p5, canvasParentRef) => {
+    let xyz = p5.createCanvas(1000, 800).parent(canvasParentRef);
+    let x = (p5.windowWidth - p5.width) / 2;
+    let y = (p5.windowHeight - p5.height) / 2;
+    xyz.position(x, y);
+  };
+  let draw = (p5) => {
+    p5.background("rgb(100%,0%,10%)");
+    p5.stroke(255);
+    p5.strokeWeight(4);
+    p5.noFill();
+    p5.ellipse(a, b, 100, 100);
+    if (a >= p5.width) {
+      speed = -3;
+    }
+    if (a === 90) {
+      speed = 3;
+    }
+    a = a + speed;
+  };
+  return (
+    <div className="App">
+      <Sketch setup={setup} draw={draw} className="App" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Checkout the official documentation of p5.js [here](https://p5js.org/reference/) to learn more about it.
+
+Happy Learning! :smile:

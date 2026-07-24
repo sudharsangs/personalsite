@@ -3,7 +3,19 @@ import { Experience } from '@/types/experience'
 export const experiences: Experience[] = [
   {
     id: "fubo",
-    title: "Software Engineer - Web",
+    title: "Software Engineer 2 - Web",
+    roles: [
+      {
+        title: "Software Engineer 2 - Web",
+        start: "Apr 2026",
+        end: "Present"
+      },
+      {
+        title: "Software Engineer - Web",
+        start: "Oct 2022",
+        end: "Apr 2026"
+      }
+    ],
     company: "Fubo",
     companyLogo: "/fubo.svg",
     companyUrl: "https://www.fubo.tv/",
