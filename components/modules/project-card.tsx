@@ -22,7 +22,14 @@ export default function ProjectCard({ title, description, image, technologies, t
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary">{typeLabels[type]}</p>
         <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight">{title}</h3>
         <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">{description}</p>
-        <p className="mt-4 text-xs text-muted-foreground">{technologies.slice(0, 3).map((tech) => tech.name).join(" · ")}</p>
+        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies">
+          {technologies.slice(0, 3).map((tech) => (
+            <li key={tech.name} className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-secondary/60 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+              {tech.icon && <Image src={tech.icon} alt="" width={11} height={11} className="h-2.5 w-2.5 shrink-0 object-contain" />}
+              {tech.name}
+            </li>
+          ))}
+        </ul>
         {path && <Link href={path} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="text-link mt-5 self-start">{external ? "Visit project" : "Read case study"} {external ? <ArrowUpRight aria-hidden="true" /> : <ArrowRight aria-hidden="true" />}{external && <span className="sr-only">(opens in a new tab)</span>}</Link>}
       </div>
     </article>

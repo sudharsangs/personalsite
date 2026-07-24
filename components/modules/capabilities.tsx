@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -6,22 +7,34 @@ const capabilities = [
     label: "End-to-end product ownership",
     title: "I own the whole thing.",
     description:
-      "At FactoStack, I built six modules — sales, inventory, procurement, production, quality, and finance — along with the backend, infra, deployments, and compliance logic. There’s no one else to hand off to, so I handle all of it.",
-    proof: "NestJS · PostgreSQL · Docker · AWS",
+      "At FactoStack, I built six modules — sales, inventory, procurement, production, quality, and finance — along with the backend, infra, deployments, and compliance logic. There's no one else to hand off to, so I handle all of it.",
+    techIcons: [
+      { name: "NestJS", icon: "/skills/nest-js.svg" },
+      { name: "PostgreSQL", icon: "/skills/postgres.svg" },
+      { name: "Docker", icon: "/skills/docker.svg" },
+    ],
   },
   {
     label: "Frontend",
     title: "React and Next.js, done properly.",
     description:
-      "I’ve shipped streaming interfaces at Fubo, SaaS product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. I care about performance, accessibility, and server rendering — not just making it work.",
-    proof: "React · Next.js · TypeScript",
+      "I've shipped streaming interfaces at Fubo, SaaS product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. I care about performance, accessibility, and server rendering — not just making it work.",
+    techIcons: [
+      { name: "React", icon: "/skills/react.svg" },
+      { name: "Next.js", icon: "/skills/nextjs.svg" },
+      { name: "TypeScript", icon: "/skills/typescript.svg" },
+    ],
   },
   {
     label: "Growth and distribution",
     title: "Getting people to actually use it.",
     description:
-      "Technical SEO at Molotov, onboarding flows at Winuall, acquisition tooling at FactoStack. I’ve seen how much shipping without thinking about distribution costs, and I try not to repeat that.",
-    proof: "Technical SEO · analytics · onboarding",
+      "Technical SEO at Molotov, onboarding flows at Winuall, acquisition tooling at FactoStack. I've seen how much shipping without thinking about distribution costs, and I try not to repeat that.",
+    techIcons: [
+      { name: "Next.js", icon: "/skills/nextjs.svg" },
+      { name: "PostgreSQL", icon: "/skills/postgres.svg" },
+      { name: "JavaScript", icon: "/skills/javascript.svg" },
+    ],
   },
 ];
 
@@ -36,7 +49,7 @@ const roleFits = [
     type: "Collaboration",
     roles: "Co-founder or technical partner",
     description:
-      "Open to conversations with founders who want a technical co-builder, or with businesses looking at FactoStack for their operations. If the problem is interesting, I’m happy to talk.",
+      "Open to conversations with founders who want a technical co-builder, or with businesses looking at FactoStack for their operations. If the problem is interesting, I'm happy to talk.",
   },
 ];
 
@@ -52,7 +65,7 @@ export default function Capabilities() {
           I can own the whole product, or go deep on one part.
         </h2>
         <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-          The problems I like best are messy and operations-heavy — the kind where the requirements are unclear and someone has to figure it out. I've been doing that for five years, usually without a large team behind me.
+          The problems I like best are messy and operations-heavy — the kind where the requirements are unclear and someone has to figure it out. I&apos;ve been doing that for five years, usually without a large team behind me.
         </p>
       </div>
 
@@ -68,9 +81,19 @@ export default function Capabilities() {
             </div>
             <h3 className="mt-8 max-w-sm font-serif text-2xl font-semibold leading-tight">{item.title}</h3>
             <p className="mt-4 text-sm leading-6 text-muted-foreground">{item.description}</p>
-            <p className="mt-auto border-t border-border/60 pt-5 text-xs font-semibold tracking-wide text-foreground/70">
-              {item.proof}
-            </p>
+            <div className="mt-auto border-t border-border/60 pt-5">
+              <div className="flex flex-wrap gap-2">
+                {item.techIcons.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/70 px-2.5 py-1 text-xs font-medium text-foreground/75"
+                  >
+                    <Image src={tech.icon} alt="" width={12} height={12} className="h-3 w-3 shrink-0 object-contain" />
+                    {tech.name}
+                  </div>
+                ))}
+              </div>
+            </div>
           </article>
         ))}
       </div>
@@ -80,7 +103,7 @@ export default function Capabilities() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Work</p>
             <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight sm:text-3xl">
-              What I'm available for.
+              What I&apos;m available for.
             </h3>
           </div>
           <div className="grid gap-7 sm:grid-cols-2 sm:gap-8">

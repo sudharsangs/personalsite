@@ -114,7 +114,7 @@ export function ProjectSection({ title, icon, className = "mb-16", children }: {
 export function FeatureList({ items }: { items: string[]; iconBg?: string; iconColor?: string }) {
   return (
     <ul className="grid gap-3 sm:grid-cols-2">
-      {items.map((item) => <li key={item} className="surface flex items-start gap-3 p-4 text-sm leading-6"><span className="mt-1 text-primary" aria-hidden="true">✓</span><span>{item}</span></li>)}
+      {items.map((item) => <li key={item} className="surface flex items-start gap-3 p-4 text-sm leading-6"><span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" aria-hidden="true" /><span>{item}</span></li>)}
     </ul>
   );
 }

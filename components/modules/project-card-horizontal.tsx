@@ -34,7 +34,17 @@ export default function ProjectCardHorizontal({ title, description, image, techn
           <h3 className="mt-4 font-serif text-3xl font-semibold leading-tight">{title}</h3>
           <p className="mt-4 leading-7 text-muted-foreground">{description}</p>
           <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
-            {technologies.slice(0, 4).map((tech) => <li key={tech.name} className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground">{tech.name}</li>)}
+            {technologies.slice(0, 5).map((tech) => (
+              <li
+                key={tech.name}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground"
+              >
+                {tech.icon && (
+                  <Image src={tech.icon} alt="" width={12} height={12} className="h-3 w-3 shrink-0 object-contain" />
+                )}
+                {tech.name}
+              </li>
+            ))}
           </ul>
           {path && (
             <Link href={path} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="text-link mt-6 self-start">
