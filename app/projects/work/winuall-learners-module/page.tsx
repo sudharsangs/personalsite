@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, OutcomeList, ProjectSection } from '@/c
 
 export const metadata: Metadata = {
   title: 'Learner\'s Module | Sudharsan GS',
-  description: 'Implementation of a learner\'s module where students can learn the courses purchased by them',
+  description: 'The core learner experience for accessing courses, video lessons, assessments, progress, and purchased content at Winuall.',
 };
 
 export default function LearnersModulePage() {
   const projectData = {
     title: "Learner's Module",
-    description: "Single-handedly implemented a learner's module where students can learn the courses purchased by them",
+    description: "Owned the frontend implementation of Winuall's learner module, bringing purchased courses, video lessons, assessments, and progress tracking into one student experience.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",
@@ -81,7 +81,7 @@ export default function LearnersModulePage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>
@@ -97,7 +97,7 @@ export default function LearnersModulePage() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
           <div>
-            <div className="rounded-2xl overflow-hidden border border-border/50 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
+            <div className="rounded-2xl overflow-hidden border border-border/50 transition-shadow duration-300 h-full">
               <Image
                 src={projectData.images[0].url}
                 alt={projectData.images[0].alt}
@@ -111,7 +111,7 @@ export default function LearnersModulePage() {
           <div className="flex flex-col gap-5">
             {projectData.images.slice(1, 3).map((image, index) => (
               <div key={index}>
-                <div className="rounded-2xl overflow-hidden border border-border/50 shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="rounded-2xl overflow-hidden border border-border/50 transition-shadow duration-300">
                   <Image
                     src={image.url}
                     alt={image.alt}

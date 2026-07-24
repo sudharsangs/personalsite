@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, 
 
 export const metadata: Metadata = {
   title: 'Winuall Parents Module | Sudharsan GS',
-  description: 'Development of a comprehensive parents module for tracking student progress and engagement',
+  description: 'A parent-facing product for understanding student progress, attendance, performance, and important learning activity.',
 };
 
 export default function WinuallParentsModulePage() {
   const projectData = {
     title: "Parents Module",
-    description: "Designed and implemented a dedicated module for parents to track their children's educational progress, attendance, and performance on the Winuall platform.",
+    description: "Designed and built a dedicated Winuall experience that translated student progress, attendance, and performance data into clear information parents could act on.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",
@@ -84,7 +84,7 @@ export default function WinuallParentsModulePage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NextJSMultitenantSaaSPage() {
   const projectData = {
     title: "Next.js Multitenant SaaS Boilerplate",
-    description: "A production-ready, full-stack multi-tenant SaaS boilerplate built with modern web technologies. Enables rapid development of B2B SaaS applications with complete tenant isolation, subscription management, and role-based access control.",
+    description: "Built a reusable Next.js foundation for B2B SaaS products, with tenant isolation, authentication, subscriptions, role-based access, audit logs, and deployment concerns handled upfront.",
     type: "personal",
     date: "2025",
     githubUrl: "https://github.com/sudharsangs/nextjs-multitenant-saas-boilerplate",
@@ -108,7 +108,7 @@ export default function NextJSMultitenantSaaSPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

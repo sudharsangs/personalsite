@@ -66,7 +66,7 @@ export default function TableToCsvPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-foreground/80">{tech.name}</span>
@@ -78,29 +78,29 @@ export default function TableToCsvPage() {
       {/* Project Links */}
       <div className="flex flex-wrap gap-4 mb-12">
         {projectData.firefoxUrl && (
+            <Button asChild variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
           <Link href={projectData.firefoxUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
               <Image src="/skills/firefox.svg" alt="Firefox" width={16} height={16} />
               Get for Firefox
-            </Button>
           </Link>
+            </Button>
         )}
 
         {projectData.edgeUrl && (
+            <Button asChild variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
           <Link href={projectData.edgeUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
               <Image src="/skills/edge.svg" alt="Edge" width={16} height={16} />
               Get for Edge
-            </Button>
           </Link>
+            </Button>
         )}
         {projectData.githubUrl && (
+            <Button asChild variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
           <Link href={projectData.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="bg-card/70 border border-border/70 text-foreground hover:bg-secondary/70 hover:border-primary/35 hover:text-foreground rounded-lg px-4 h-10 font-semibold text-sm shadow-sm transition-all duration-200 gap-2">
               <Github className="h-4 w-4" />
               View Source Code
-            </Button>
           </Link>
+            </Button>
         )}
       </div>
 

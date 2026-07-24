@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, 
 
 export const metadata: Metadata = {
   title: 'Winuall Online Store | Sudharsan GS',
-  description: 'Development of Winuall\'s e-commerce platform for educational content',
+  description: 'A multi-tenant storefront that enabled tutors to sell courses, materials, assessments, and physical products online.',
 };
 
 export default function WinuallOnlineStorePage() {
   const projectData = {
     title: "Winuall Online Store",
-    description: "Developed Winuall's e-commerce platform enabling coaching centers to sell courses, study materials, and assessments online.",
+    description: "Built Winuall's multi-tenant commerce product, enabling tutors and coaching centers to launch branded storefronts and sell courses, study materials, assessments, and physical products.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",
@@ -96,7 +96,7 @@ export default function WinuallOnlineStorePage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

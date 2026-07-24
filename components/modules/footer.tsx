@@ -1,153 +1,29 @@
-import React from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  ArrowRight,
-  HeartPulse,
-  Code,
-  Send,
-} from "lucide-react";
 import Link from "next/link";
-import { fonts } from "@/lib/constants";
+import { Github, Linkedin, Mail } from "lucide-react";
 
-interface MainLink {
-  href: string;
-  label: string;
-  external?: boolean;
-  highlight?: boolean;
-}
+const links = [
+  { href: "/projects", label: "Work" },
+  { href: "/blog", label: "Writing" },
+  { href: "/about", label: "About" },
+];
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/sudharsangs",
-      label: "LinkedIn",
-    },
-    {
-      icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/sudharsangs",
-      label: "GitHub",
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      href: "mailto:sudharsangs.99@gmail.com",
-      label: "Email",
-    },
-    {
-      icon: <Send className="w-5 h-5" />,
-      href: "https://t.me/sudharsangs",
-      label: "Telegram",
-    },
-  ];
-
-  const mainLinks: MainLink[] = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/about", label: "About" },
-  ];
-
+export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-border py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-6 space-y-4">
-            <h3
-              className="text-2xl font-semibold text-foreground"
-              style={{ fontFamily: fonts.PlayfairDisplay }}
-            >
-              Sudharsan GS
-            </h3>
-            <p className="text-muted-foreground text-sm max-w-md leading-relaxed">
-              Product engineer focused on technical SEO, frontend systems, and
-              end-to-end product builds. Currently at Fubo, also building
-              FactoStack for Indian manufacturers.
-            </p>
-            <div className="flex space-x-4 pt-2">
-              {socialLinks.map((link, index) => {
-                // Light theme social icon colors
-                const iconColors = [
-                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
-                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
-                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
-                  "hover:text-primary hover:border-primary/50 hover:bg-primary/10",
-                ];
-                return (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={link.label}
-                    className={`text-muted-foreground ${iconColors[index]} transition-all duration-300 p-2 bg-card/60 backdrop-blur-sm rounded-full border border-border hover:shadow-md`}
-                  >
-                    {link.icon}
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="md:col-span-3">
-            <h4 className="text-lg font-medium text-foreground mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {mainLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
-                    {...(link.external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                    className={`text-muted-foreground ${
-                      link.highlight
-                      ? "hover:text-primary font-semibold text-primary/90"
-                      : "hover:text-primary"
-                    } transition-colors duration-300 flex items-center gap-2 group`}
-                  >
-                    <span>{link.label}</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="md:col-span-3">
-            <h4 className="text-lg font-medium text-foreground mb-4">
-              Contact
-            </h4>
-            <a
-              href="mailto:sudharsangs.99@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors block mb-2"
-            >
-              sudharsangs.99@gmail.com
-            </a>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Open to MVPs, AI agents, and web or mobile apps for growing
-              businesses.
-            </p>
-          </div>
+    <footer className="border-t border-border">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
+        <div>
+          <p className="font-serif text-xl font-semibold">Sudharsan GS</p>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Product engineer in Bengaluru. Currently working at Fubo and building FactoStack.</p>
+          <nav aria-label="Footer navigation" className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+            {links.map((link) => <Link key={link.href} href={link.href} className="inline-flex min-h-11 items-center text-sm font-medium hover:text-primary">{link.label}</Link>)}
+          </nav>
         </div>
-
-        <div className="mt-12 pt-6 border-t border-border text-center flex flex-col sm:flex-row items-center justify-center sm:justify-between text-muted-foreground text-sm gap-3">
-          <p>
-            © {currentYear} Sudharsan GS. All rights reserved.
-          </p>
-          <div className="flex items-center gap-1">
-            <span>Built with</span>
-            <HeartPulse className="w-4 h-4 text-red-500" />
-            <span>&</span>
-            <Code className="w-4 h-4 text-primary" />
-          </div>
+        <div className="flex gap-2">
+          <a className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-secondary hover:text-primary" href="https://github.com/sudharsangs" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><Github className="h-5 w-5" aria-hidden="true" /></a>
+          <a className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-secondary hover:text-primary" href="https://linkedin.com/in/sudharsangs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><Linkedin className="h-5 w-5" aria-hidden="true" /></a>
+          <a className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-secondary hover:text-primary" href="mailto:sudharsangs.99@gmail.com" aria-label="Email Sudharsan"><Mail className="h-5 w-5" aria-hidden="true" /></a>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

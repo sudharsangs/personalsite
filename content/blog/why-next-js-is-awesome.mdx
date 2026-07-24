@@ -1,0 +1,48 @@
+---
+title: "Why Next JS is awesome?"
+description: "1. Seamless typescript setup It's so easy to integrate typescript into an existing Next JS with just two simple commands"
+publishedAt: "2021-07-09"
+tags:
+  - "React"
+  - "Next.js"
+  - "JavaScript"
+  - "Javascript library"
+  - "javascript framework"
+draft: false
+---
+![Why Next JS is awesome?](/blog/why-next-js-is-awesome/cover.jpeg)
+
+## 1. Seamless typescript setup  
+It's so easy to integrate typescript into an existing Next JS with just two simple commands
+
+```bash
+touch tsconfig.json
+```
+
+```bash
+yarn dev
+```
+
+The `yarn dev` command will guide you through the installation process.
+
+## 2. Routing
+The files created in the `pages` folder are considered as each and every route. 
+
+`/` - `pages/index.js`  
+`/contact` - `pages/contact/index.js`  
+`/store/store-slug` - `pages/store/[slug].js`     
+
+The `Link` exported from `next/link` and the `useRouter()` hook from `next/router` are easy to use and implement.  
+
+## 3. Deployment
+Here comes the most important part. One default solution is using [Vercel](https://vercel.com/). It just works out of the box for Next JS projects. The next one is using a Node JS server if you have server-rendered components. If you don't have any server-rendered components you can use `next build && next export`. This command generates a static HTML file with styles in the `out` directory. This can be deployed easily using [Netlify](https://www.netlify.com/)drag and drop for manual deploys or even you can serve it from your own server. There are few drawbacks to the static HTML export feature, you cannot use `next/image` or `getServerSideProps`. For more caveats check the [documentation](https://nextjs.org/docs/advanced-features/static-html-export#caveats) If you are using these features in your app you can go with Vercel or even running your own Node server in an EC2 instance.
+
+## 4. Styling support
+Next JS supports every kind of styling from plain CSS, SASS, SCSS, LESS and CSS-in-JS libraries like `emotion` and `styled-components`.
+
+## 5. Documentation
+The [documentation](https://nextjs.org/docs/getting-started) of Next JS is a very well-written doc. It has answers for most of the queries you would get while working on a Next JS project. 
+
+On a closing note, these are few things which I felt Next JS is a good framework to build react projects. There are many other features that make Next JS really awesome. Feel free to drop them in the comments.
+
+Happy Learning!

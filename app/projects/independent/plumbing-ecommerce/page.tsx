@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PlumbingEcommercePage() {
   const projectData = {
     title: "Plumbing E-commerce Platform",
-    description: "A comprehensive e-commerce platform that transformed a 15-year-old physical plumbing supply store into a thriving online business with 24/7 sales availability and advanced inventory management.",
+    description: "Took a 15-year-old plumbing supplier online with a custom storefront, product and inventory management, order workflows, and service booking built around the realities of the business.",
     type: "independent",
     date: "2023",
     client: "Plumbing & Hardware Supply Store",
@@ -78,7 +78,7 @@ export default function PlumbingEcommercePage() {
     >
       {/* Hero Image */}
       <div className="mb-12">
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20 shadow-lg">
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-primary/20">
           <Image
             src="/projects/independent/plumbing-ecommerce/DYGUS-15.png"
             alt="Plumbing E-commerce Homepage"
@@ -97,7 +97,7 @@ export default function PlumbingEcommercePage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

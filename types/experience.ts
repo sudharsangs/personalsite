@@ -1,6 +1,11 @@
 export interface Experience {
     id: string
     title: string
+    roles?: {
+      title: string
+      start: string
+      end: string
+    }[]
     company: string
     companyLogo: string
     companyUrl: string

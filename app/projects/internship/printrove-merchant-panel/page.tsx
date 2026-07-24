@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, ProjectSection } from '@/components/mod
 
 export const metadata: Metadata = {
   title: 'Printrove Merchant Panel | Sudharsan GS',
-  description: 'Development of a merchant dashboard for Printrove\'s print-on-demand platform',
+  description: 'A merchant product for managing designs, products, orders, storefronts, and sales on Printrove.',
 };
 
 export default function PrintroveMerchantPanelPage() {
   const projectData = {
     title: "Printrove Merchant Panel",
-    description: "Developed a comprehensive merchant dashboard for Printrove's print-on-demand platform, enabling sellers to efficiently manage their products, orders, and business operations.",
+    description: "Built the working surface merchants used to create products, manage orders, customize storefronts, and understand sales on Printrove's print-on-demand platform.",
     company: {
       name: "Printrove",
       url: "https://printrove.com",
@@ -60,7 +60,7 @@ export default function PrintroveMerchantPanelPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

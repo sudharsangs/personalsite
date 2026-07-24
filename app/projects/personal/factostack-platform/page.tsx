@@ -111,7 +111,7 @@ export default function FactoStackPlatformPage() {
       date="2025-2026"
       liveUrl="https://app.factostack.com"
     >
-      <div className="relative w-full h-[280px] md:h-[380px] mb-16 rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-muted">
+      <div className="relative w-full h-[280px] md:h-[380px] mb-16 rounded-2xl overflow-hidden border border-primary/20 bg-muted">
         <Image
           src="/projects/personal/factostack-platform/executive-dashboard.png"
           alt="FactoStack executive dashboard"

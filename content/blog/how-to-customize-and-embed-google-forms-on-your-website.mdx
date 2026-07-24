@@ -1,0 +1,58 @@
+---
+title: "How to customize and embed Google Forms on your website?"
+description: "How to customize and embed a Google Form on your website while continuing to store every response in Google Sheets."
+publishedAt: "2023-11-06"
+tags:
+  - "googleforms"
+  - "google forms"
+  - "google sheets"
+  - "HTML5"
+  - "React"
+draft: false
+---
+![How to customize and embed Google Forms on your website?](/blog/how-to-customize-and-embed-google-forms-on-your-website/cover.jpeg)
+
+Landing pages are crucial for any business. They're your first impression, your lead generator, and your user engagement driver. But as crucial as they are, there's one component that can be surprisingly cumbersome to implement effectively - the **contact form**.
+
+I am sure you would have come across people setting up dedicated servers to handle form submissions. This is an overkill and definitely could be optimized. There are existing products like [Google Forms](https://www.google.com/forms/about/) that store form responses in [Google Sheets](https://www.google.com/sheets/about/), but you can't customize the styles and match them with your site's existing design.  
+  
+That's why I built [form2Sheets](https://formtosheets.vercel.app/) using NextJS, TailwindCSS, and Typescript, this tool allows you to use your Google form on your website. This blog explains how to use [form2Sheets](https://formtosheets.vercel.app/) step by step.
+
+1. Create a Google form by visiting [forms.google.com](https://docs.google.com/forms/u/0/)
+    
+    ![How to customize and embed Google Forms on your website? illustration 1](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-01.png)
+    
+2. Click on send and copy the URL
+    
+    ![How to customize and embed Google Forms on your website? illustration 2](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-02.png)
+    
+3. Visit [formtosheets.vercel.app](https://formtosheets.vercel.app/)
+    
+    ![How to customize and embed Google Forms on your website? illustration 3](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-03.png)
+    
+4. Paste the copied URL and click on the generate button
+    
+    ![How to customize and embed Google Forms on your website? illustration 4](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-04.png)
+    
+5. Now you can see that the code for multiple frameworks is generated
+    
+    ![How to customize and embed Google Forms on your website? illustration 5](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-05.png)
+    
+6. If you paste the HTML you'll see the output like this
+    
+    ![How to customize and embed Google Forms on your website? illustration 6](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-06.png)
+    
+7. After entering the details and clicking on submit you'll be redirected to Google Forms' submitted page, you can write Javascript to prevent this redirect, for now, I consider this to be out of the scope of this blog
+    
+    ![How to customize and embed Google Forms on your website? illustration 7](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-07.png)
+    
+8. In the responses tab, you can check that your response is recorded
+    
+    ![How to customize and embed Google Forms on your website? illustration 8](/blog/how-to-customize-and-embed-google-forms-on-your-website/image-08.png)
+    
+      
+    Hope [form2Sheets](https://formtosheets.vercel.app/) makes your work easier when you build forms on your websites. If you're curious about how I have built this tool you can have a look at the [GitHub repository](https://github.com/sudharsangs/formtosheets)  
+      
+    Happy Learning!
+    
+    [**sudharsangs.in**](http://sudharsangs.in)

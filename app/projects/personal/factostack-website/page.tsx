@@ -62,11 +62,6 @@ const results = [
 
 const screenshots = [
   {
-    url: '/projects/personal/factostack-website/cover.png',
-    alt: 'FactoStack website cover',
-    caption: 'Homepage hero positioning FactoStack as manufacturing operations software.',
-  },
-  {
     url: '/projects/personal/factostack-website/executive-dashboard.png',
     alt: 'FactoStack product preview on the website',
     caption: 'Embedded dashboard previews that make the product tangible inside the marketing site.',
@@ -87,12 +82,14 @@ export default function FactoStackWebsitePage() {
       date="2025-2026"
       liveUrl="https://factostack.com"
     >
-      <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20 bg-[#08192f]">
+      <div className="mb-12 overflow-hidden rounded-2xl border border-primary/20">
         <Image
           src="/projects/personal/factostack-website/cover.png"
           alt="FactoStack website cover"
-          fill
-          className="object-cover"
+          width={1200}
+          height={675}
+          className="w-full h-auto"
+          priority
         />
       </div>
 
@@ -101,7 +98,7 @@ export default function FactoStackWebsitePage() {
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>
@@ -177,7 +174,7 @@ export default function FactoStackWebsitePage() {
           {aiTools.map((tool) => (
             <div
               key={tool.name}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tool.icon} alt={tool.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tool.name}</span>

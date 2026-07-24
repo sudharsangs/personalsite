@@ -4,30 +4,23 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    setIsDark(document.documentElement.classList.contains("dark"));
-  }, []);
-
-  const toggleTheme = () => {
-    const nextIsDark = !document.documentElement.classList.contains("dark");
-
-    document.documentElement.classList.toggle("dark", nextIsDark);
-    document.documentElement.style.colorScheme = nextIsDark ? "dark" : "light";
-    localStorage.setItem("theme", nextIsDark ? "dark" : "light");
-    setIsDark(nextIsDark);
-  };
-
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => setIsDark(document.documentElement.classList.contains("dark")), []);
+  function toggleTheme() {
+    const next = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", next);
+    document.documentElement.style.colorScheme = next ? "dark" : "light";
+    localStorage.setItem("theme", next ? "dark" : "light");
+    setIsDark(next);
+  }
   return (
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/70 text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border/80 bg-secondary text-foreground hover:border-primary/50 hover:text-primary"
     >
-      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      {isDark ? <Sun className="h-5 w-5" aria-hidden="true" /> : <Moon className="h-5 w-5" aria-hidden="true" />}
     </button>
   );
 }

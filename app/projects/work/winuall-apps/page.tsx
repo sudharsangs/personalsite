@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, 
 
 export const metadata: Metadata = {
   title: 'Winuall Apps - Micro Frontend Architecture | Sudharsan GS',
-  description: 'Implementation of Micro Frontend Architecture for Winuall\'s platform, enabling seamless integration of SPAs',
+  description: 'A micro-frontend foundation that let Winuall integrate and evolve multiple product modules without coupling every release.',
 };
 
 export default function WinuallAppsPage() {
   const projectData = {
     title: "Winuall Apps - Micro Frontend Architecture",
-    description: "Introduced Micro Frontend Architecture to Winuall's platform, making it highly pluggable and extensible to integrate various Single Page Applications seamlessly.",
+    description: "Introduced a micro-frontend architecture at Winuall so independently developed product modules could share navigation, state, and design foundations without becoming one tightly coupled application.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",
@@ -82,7 +82,7 @@ export default function WinuallAppsPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

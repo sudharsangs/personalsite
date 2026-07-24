@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, ProjectSection } from '@/components/mod
 
 export const metadata: Metadata = {
   title: 'Printrove Admin Panel | Sudharsan GS',
-  description: 'Development of an administration panel for Printrove\'s print-on-demand platform',
+  description: 'An operations dashboard for managing merchants, orders, production workflows, and reporting across Printrove\'s print-on-demand platform.',
 };
 
 export default function PrintroveAdminPanelPage() {
   const projectData = {
     title: "Printrove Admin Panel",
-    description: "Developed a comprehensive administration dashboard for Printrove's print-on-demand platform, enabling efficient management of merchants, orders, and platform operations.",
+    description: "Built an internal operations dashboard for Printrove, giving the team one place to manage merchants, orders, production workflows, permissions, and platform reporting.",
     company: {
       name: "Printrove",
       url: "https://printrove.com",
@@ -61,7 +61,7 @@ export default function PrintroveAdminPanelPage() {
           {projectData.technologies.map((tech, index) => (
             <div
               key={index}
-              className="inline-flex items-center bg-card/80 shadow-sm backdrop-blur-sm rounded-full px-4 py-2 text-sm border border-primary/20"
+              className="inline-flex items-center bg-card/80 shadow-sm rounded-full px-4 py-2 text-sm border border-primary/20"
             >
               <Image src={tech.icon} alt={tech.name} width={16} height={16} className="mr-2" />
               <span className="text-muted-foreground">{tech.name}</span>

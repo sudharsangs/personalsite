@@ -1,0 +1,79 @@
+---
+title: "Why I Chose a Single Postgres Database for Multitenancy"
+description: "The cost, migration, isolation, and operational trade-offs behind FactoStack’s shared-database architecture."
+publishedAt: "2026-07-24"
+tags:
+  - FactoStack
+  - PostgreSQL
+  - Multitenancy
+  - Architecture
+draft: false
+---
+
+When you build a multi-tenant SaaS, one early architecture question is whether customers should share a database.
+
+For [FactoStack](https://factostack.com/), I chose a shared PostgreSQL database with tenant-scoped tables. Here is why, what that decision costs, and what would make me revisit it.
+
+## The models
+
+At the database layer, the common options are:
+
+1. **Database per tenant:** strong infrastructure-level isolation, with independent backup, restore, and residency choices.
+2. **Schema per tenant:** logical separation inside one database, with growing migration and operational complexity.
+3. **Shared tables:** one schema where tenant-owned rows carry a `tenant_id`, enforced by the application, database policies, or both.
+
+There is no universally correct model. The choice depends on scale, customer requirements, operational maturity, and risk tolerance.
+
+## Why shared tables fit the current stage
+
+### Fixed cost stays low
+
+A managed database per customer would make infrastructure cost grow before usage does. A shared instance gives the early product room to learn without tying every new tenant to another fixed database bill.
+
+### Migrations run once
+
+Per-tenant databases require migration orchestration across many targets: ordering, partial failure handling, observability, and rollback. These are solvable problems, but they are still problems. With a shared schema, a migration has one target.
+
+### Support is simpler
+
+When a customer reports an incorrect production total, I can inspect one system and filter by tenant. For a small team doing its own support, this shortens the path from report to diagnosis.
+
+## What I give up
+
+Shared tables do not provide the same isolation boundary as a separate database. A missing tenant predicate in application code can become a cross-tenant data incident.
+
+FactoStack mitigates that risk by establishing tenant context from authenticated requests, centralising scoped access patterns, and testing them. Those safeguards reduce risk; they do not make it disappear.
+
+Shared infrastructure also creates noisy-neighbour risk. An expensive report or batch job can compete with other tenants. At the current scale that is manageable, but query limits, workload isolation, or dedicated infrastructure may become necessary.
+
+Finally, tenant-specific deletion, restoration, and data residency are more involved in a shared database. They require careful tooling rather than a simple database-level operation.
+
+## Row-Level Security and connection pooling
+
+PostgreSQL Row-Level Security (RLS) can enforce tenant policies inside the database. It is valuable defense-in-depth, especially when multiple code paths or services access the same tables.
+
+Connection pooling does **not** make RLS inherently unreliable. The important detail is how tenant context is scoped. Session-level settings can leak across reused connections if they are not reset. Transaction-local settings such as `SET LOCAL`, combined with a transaction and a policy that reads the setting, can work safely. Some poolers and ORM modes make this easier than others.
+
+I did not initially adopt RLS because FactoStack’s existing application-layer access path was centralised and tested, while introducing transaction-scoped context across the ORM would have added meaningful implementation work. That is a stage-specific decision, not an argument that RLS and pooling are incompatible.
+
+As the system grows, RLS remains a serious option for an additional database-enforced boundary.
+
+## When I would change the model
+
+I would reconsider shared infrastructure when:
+
+- a customer contract requires dedicated isolation;
+- a tenant creates disproportionate database load;
+- region-specific data residency becomes necessary;
+- independent backup and restore becomes a core product requirement; or
+- revenue supports the added operational cost.
+
+A hybrid model is also possible: most tenants can share infrastructure while large or regulated customers use dedicated databases.
+
+## The principle
+
+Multitenancy is not a purity contest. It is a risk and stage decision.
+
+Early on, a shared database can provide low fixed cost, simple migrations, and fast support. Those benefits are only real when tenant enforcement is treated as critical security code.
+
+Later, dedicated isolation may justify its cost. The architecture should change when customer requirements and observed constraints make the trade worthwhile—not merely because one pattern sounds more enterprise-ready.
