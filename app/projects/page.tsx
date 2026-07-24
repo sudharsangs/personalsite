@@ -6,6 +6,7 @@ import { projects } from "@/data/projects";
 import type { Project } from "@/types/projects";
 import ProjectCard from "@/components/modules/project-card";
 import ProjectCardHorizontal from "@/components/modules/project-card-horizontal";
+import CTASection from "@/components/modules/cta-section";
 
 const pick = (slugs: string[]): Project[] =>
   slugs.map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is Project => Boolean(project));
@@ -13,23 +14,26 @@ const pick = (slugs: string[]): Project[] =>
 const groups = [
   {
     id: "work-projects",
-    eyebrow: "Professional",
-    title: "Work projects",
-    description: "Product and platform work shipped with teams at Fubo, Molotov, and Winuall.",
+    eyebrow: "Full-time work",
+    navLabel: "Fubo and Winuall",
+    title: "Work at Fubo, Molotov, and Winuall",
+    description: "Frontend and product work across streaming, video, education, e-commerce, onboarding, and technical SEO.",
     projects: pick(["molotov-program-list-pages", "molotov-navbar-redesign", "molotov-evergreen-program-pages", "winuall-apps"]),
   },
   {
     id: "personal-projects",
-    eyebrow: "Founder and maker",
-    title: "Personal products",
-    description: "Products I built to solve operational problems and test durable ideas.",
+    eyebrow: "Personal work",
+    navLabel: "My products",
+    title: "Products I’ve built myself",
+    description: "These include FactoStack, a manufacturing platform with paying customers, and smaller tools built to solve problems I ran into.",
     projects: pick(["factostack-platform", "factostack-website", "form-to-sheets"]),
   },
   {
     id: "independent-projects",
     eyebrow: "Client work",
-    title: "Freelance projects",
-    description: "Focused engagements where I owned product design and engineering.",
+    navLabel: "Freelance",
+    title: "Freelance and client work",
+    description: "Projects where I handled most or all of the product design and engineering.",
     projects: pick(["quickpicks", "unlocker", "employee-management-app"]),
   },
 ];
@@ -46,12 +50,12 @@ export default function ProjectsPage() {
     <main id="main-content" className="page-shell">
       <header className="page-intro">
         <p className="eyebrow">Projects</p>
-        <h1>Projects I’ve built and shipped.</h1>
-        <p>Work across streaming, education, manufacturing software, and client products.</p>
+        <h1>Frontend, full-stack, and product work.</h1>
+        <p>A selection of things I’ve built at work, for clients, and on my own.</p>
       </header>
 
       <nav aria-label="Project categories" className="mb-14 flex flex-wrap gap-2">
-        {groups.map((group) => <a key={group.id} href={`#${group.id}`} className="inline-flex min-h-11 items-center rounded-md bg-secondary px-4 text-sm font-semibold hover:text-primary">{group.title}</a>)}
+        {groups.map((group) => <a key={group.id} href={`#${group.id}`} className="inline-flex min-h-11 items-center rounded-md bg-secondary px-4 text-sm font-semibold hover:text-primary">{group.navLabel}</a>)}
       </nav>
 
       {groups.map((group) => (
@@ -70,7 +74,7 @@ export default function ProjectsPage() {
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow">Archive</p>
-            <h2 id="archive-heading" className="mt-2 flex items-center gap-3 font-serif text-3xl font-semibold sm:text-4xl"><Archive className="h-7 w-7 text-primary" aria-hidden="true" />Earlier work</h2>
+            <h2 id="archive-heading" className="mt-2 flex items-center gap-3 font-serif text-3xl font-semibold sm:text-4xl"><Archive className="h-7 w-7 text-primary" aria-hidden="true" />More projects</h2>
           </div>
           <button
             type="button"
@@ -86,6 +90,7 @@ export default function ProjectsPage() {
           {archive.map((project, index) => <ProjectCard key={project.slug} {...project} index={index} />)}
         </div>
       </section>
+      <CTASection />
     </main>
   );
 }

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function TapXPage() {
   const projectData = {
     title: "TapX",
-    description: "A simple yet powerful browser extension designed to enhance your online shopping experience on Amazon.in, allowing you to search for products directly from any webpage.",
+    description: "Built a focused browser extension that lets shoppers search Amazon.in from any webpage without breaking their current browsing flow.",
     type: "personal",
     date: "2023",
     liveUrl: null,

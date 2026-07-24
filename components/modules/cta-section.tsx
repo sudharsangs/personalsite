@@ -6,16 +6,16 @@ export default function CTASection() {
   return (
     <section className="section-block" aria-labelledby="contact-heading">
       <div className="surface p-7 sm:p-10">
-        <p className="eyebrow">Start a conversation</p>
+        <p className="eyebrow">Contact</p>
         <h2 id="contact-heading" className="mt-3 max-w-3xl font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-          Need a product engineer who can own the path from ambiguity to production?
+          Want to work together?
         </h2>
         <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-          I’m open to thoughtful conversations about product engineering roles, focused consulting, and practical software builds.
+          I take on selected consulting and freelance work: full-stack builds, ERP and SaaS implementation, technical SEO, and operations-heavy products. Open to conversations about FactoStack partnerships or forward-deployed engineering work.
         </p>
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <Button asChild><a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" /> Email me</a></Button>
-          <Button asChild variant="outline"><Link href="/about">More about me <ArrowRight aria-hidden="true" /></Link></Button>
+          <Button asChild variant="outline"><Link href="/about">About me <ArrowRight aria-hidden="true" /></Link></Button>
         </div>
       </div>
     </section>

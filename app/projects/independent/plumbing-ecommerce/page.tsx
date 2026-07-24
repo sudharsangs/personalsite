@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PlumbingEcommercePage() {
   const projectData = {
     title: "Plumbing E-commerce Platform",
-    description: "A comprehensive e-commerce platform that transformed a 15-year-old physical plumbing supply store into a thriving online business with 24/7 sales availability and advanced inventory management.",
+    description: "Took a 15-year-old plumbing supplier online with a custom storefront, product and inventory management, order workflows, and service booking built around the realities of the business.",
     type: "independent",
     date: "2023",
     client: "Plumbing & Hardware Supply Store",

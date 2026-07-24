@@ -8,6 +8,12 @@ interface Props extends Project {
   reverse?: boolean;
 }
 
+const typeLabels = {
+  work: "Work project",
+  personal: "Personal project",
+  independent: "Freelance project",
+};
+
 export default function ProjectCardHorizontal({ title, description, image, technologies, type, path, company, reverse = false }: Props) {
   const external = Boolean(path && /^https?:\/\//.test(path));
   return (
@@ -22,7 +28,7 @@ export default function ProjectCardHorizontal({ title, description, image, techn
         </div>
         <div className="flex flex-col justify-center p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-[0.12em] text-primary">
-            <span>{type === "independent" ? "Freelance" : type}</span>
+            <span>{typeLabels[type]}</span>
             {company && <span className="text-muted-foreground">{company.name}</span>}
           </div>
           <h3 className="mt-4 font-serif text-3xl font-semibold leading-tight">{title}</h3>
@@ -32,7 +38,7 @@ export default function ProjectCardHorizontal({ title, description, image, techn
           </ul>
           {path && (
             <Link href={path} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="text-link mt-6 self-start">
-              View project {external ? <ArrowUpRight aria-hidden="true" /> : <ArrowRight aria-hidden="true" />}
+              {external ? "Visit project" : "Read case study"} {external ? <ArrowUpRight aria-hidden="true" /> : <ArrowRight aria-hidden="true" />}
               {external && <span className="sr-only">(opens in a new tab)</span>}
             </Link>
           )}

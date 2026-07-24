@@ -278,7 +278,7 @@ export const projects: Projects = [
   {
     title: "Plumbing E-Commerce Platform",
     description:
-      "A specialized e-commerce solution developed for a plumbing supply business, providing both product sales and service bookings in one platform.",
+      "Took a 15-year-old plumbing supplier online with a custom storefront, inventory and order workflows, and service booking built around the realities of the business.",
     image: "/projects/plumbing/cover.png",
     technologies: [
       {
@@ -650,7 +650,7 @@ export const projects: Projects = [
   {
     title: "Winuall Apps - Micro Frontend Architecture",
     description:
-      "Introduced Micro Frontend Architecture to Winuall's platform, making it highly pluggable and extensible to integrate various Single Page Applications seamlessly.",
+      "Introduced a micro-frontend foundation so Winuall could integrate and evolve multiple product modules without coupling every team and release.",
     image: "/projects/winuall/winuall-apps.png",
     technologies: [
       {
@@ -698,7 +698,7 @@ export const projects: Projects = [
   {
     title: "Winuall Online Store",
     description:
-      "Developed Winuall's e-commerce platform enabling coaching centers to sell courses, study materials, and assessments online.",
+      "Built a multi-tenant commerce product that let tutors launch branded storefronts and sell courses, assessments, materials, and physical products.",
     image: "/projects/winuall/winuall-store-1.png",
     technologies: [
       {
@@ -765,7 +765,7 @@ export const projects: Projects = [
   {
     title: "Winuall Registration System",
     description:
-      "Revamped the user onboarding and registration process for Winuall's platform, improving conversion rates and user experience.",
+      "Rebuilt Winuall's registration and onboarding flow, guiding 3,000+ paying users from account creation through plan selection and product setup.",
     image: "/projects/winuall/winuall-reg-1.png",
     technologies: [
       {
@@ -846,7 +846,7 @@ export const projects: Projects = [
   {
     title: "TapX",
     description:
-      "A simple yet powerful browser extension designed to enhance your online shopping experience on Amazon.in, allowing you to search for products directly from any webpage.",
+      "A focused browser extension that lets shoppers search Amazon.in from any webpage without breaking their current browsing flow.",
     image: "/projects/personal/tapx.png",
     technologies: [
       {
@@ -888,7 +888,7 @@ export const projects: Projects = [
   {
     title: "Regcheck",
     description:
-      "A revolutionary project that offers a comprehensive view of real estate regulations in metropolitan cities across India.",
+      "A Gatsby and Ghost publishing product that made real-estate regulations across Indian cities easier to maintain, search, and navigate.",
     image: "/projects/internship/regcheck-1.png",
     technologies: [
       {
@@ -1013,7 +1013,7 @@ export const projects: Projects = [
   {
     title: "Printrove Admin Panel",
     description:
-      "A comprehensive admin dashboard for managing Printrove's print-on-demand platform, providing oversight of merchants, orders, and platform operations.",
+      "An internal operations dashboard for managing merchants, orders, production workflows, permissions, and reporting across Printrove.",
     image: "",
     technologies: [
       {
@@ -1067,7 +1067,7 @@ export const projects: Projects = [
   {
     title: "Printrove Merchant Panel",
     description:
-      "A specialized dashboard for Printrove merchants to manage their print-on-demand business, including product design, order management, and analytics.",
+      "The working surface Printrove merchants used to create products, manage orders, customize storefronts, and understand sales.",
     image: "",
     technologies: [
       {

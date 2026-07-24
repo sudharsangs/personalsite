@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, 
 
 export const metadata: Metadata = {
   title: 'Winuall Online Store | Sudharsan GS',
-  description: 'Development of Winuall\'s e-commerce platform for educational content',
+  description: 'A multi-tenant storefront that enabled tutors to sell courses, materials, assessments, and physical products online.',
 };
 
 export default function WinuallOnlineStorePage() {
   const projectData = {
     title: "Winuall Online Store",
-    description: "Developed Winuall's e-commerce platform enabling coaching centers to sell courses, study materials, and assessments online.",
+    description: "Built Winuall's multi-tenant commerce product, enabling tutors and coaching centers to launch branded storefronts and sell courses, study materials, assessments, and physical products.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",

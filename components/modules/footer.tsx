@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const links = [
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Work" },
+  { href: "/blog", label: "Writing" },
   { href: "/about", label: "About" },
 ];
 
@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
         <div>
           <p className="font-serif text-xl font-semibold">Sudharsan GS</p>
-          <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Product engineer helping teams shape, build, improve, and grow useful software.</p>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Product engineer in Bengaluru. Currently working at Fubo and building FactoStack.</p>
           <nav aria-label="Footer navigation" className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
             {links.map((link) => <Link key={link.href} href={link.href} className="inline-flex min-h-11 items-center text-sm font-medium hover:text-primary">{link.label}</Link>)}
           </nav>

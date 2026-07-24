@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, InfoCard, OutcomeList, ProjectSection, 
 
 export const metadata: Metadata = {
   title: 'Winuall Marketing Site | Sudharsan GS',
-  description: 'Development and optimization of the Winuall marketing website to drive user acquisition',
+  description: 'Winuall\'s acquisition website, rebuilt around server rendering, performance, technical SEO, and conversion.',
 };
 
 export default function WinuallMarketingSitePage() {
   const projectData = {
     title: "Winuall Marketing Website",
-    description: "Developed and maintained the marketing website for Winuall, optimizing for lead generation and user acquisition.",
+    description: "Built and improved Winuall's acquisition website across server rendering, performance, technical SEO, content systems, analytics, and conversion paths.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",

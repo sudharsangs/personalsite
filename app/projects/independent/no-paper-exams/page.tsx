@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NoPaperExamsPage() {
   const projectData = {
     title: "No Paper Exams",
-    description: "A comprehensive examination platform that enables educational institutions to conduct secure, paperless assessments with advanced analytics and anti-cheating measures.",
+    description: "Designed and built a paperless assessment platform for educational institutions, covering exam creation, secure delivery, evaluation, analytics, and anti-cheating workflows.",
     type: "independent",
     date: "2023",
     client: "Early stage EduTech Startup",

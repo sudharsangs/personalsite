@@ -4,54 +4,75 @@ import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 import { experiences } from "@/data/experience";
 import { Button } from "@/components/ui/button";
+import CTASection from "@/components/modules/cta-section";
 
 export const metadata: Metadata = {
-  title: "About | Sudharsan GS",
-  description: "Product engineer in Bengaluru working across product development, growth systems, and software delivery.",
+  title: "About Sudharsan GS | Product Engineer",
+  description: "Five years of product engineering across ERP, SaaS, streaming, mobile, and technical SEO. I take ambiguous, operations-heavy problems to production end to end.",
   alternates: { canonical: "/about" },
 };
 
 const strengths = [
-  ["Product judgment", "I reduce broad ideas into the smallest useful product and make the trade-offs visible."],
-  ["Engineering ownership", "I can move across interface, backend, data, infrastructure, and the unglamorous production details."],
-  ["Market awareness", "I treat discoverability, onboarding, analytics, and customer feedback as part of the product system."],
+  ["Full-stack engineering", "I can set up the backend, design the database, build the API, and ship the frontend. I've also handled infra, deployments, and compliance logic — whatever the project needs."],
+  ["Frontend that feels right", "Most of my frontend work is in React and Next.js. I care about performance, accessibility, and getting the details right, not just making it work."],
+  ["Product thinking without a PM", "At FactoStack I talk to customers, figure out what to build, and make the call on trade-offs. No PM, no product team. Just me, users, and a backlog."],
+  ["Getting it in front of people", "I've worked on onboarding flows, technical SEO, analytics, and acquisition tooling. Shipping something that nobody uses isn't really shipping."],
 ];
 
 const experienceSummaries: Record<string, string> = {
-  fubo: "Streaming product systems, technical SEO, and frontend architecture for Fubo and Molotov.",
-  winuall: "Product engineering for tutor storefronts, learning experiences, onboarding, and platform growth.",
-  teal: "Consumer product development, headless content systems, and end-to-end testing.",
-  printrove: "Internal operations and merchant tools for a print-on-demand platform.",
+  fubo: "Working on frontend features, playback, and technical SEO for Fubo and Molotov. One navigation refactor cleared over 50,000 broken URLs from Google Search Console.",
+  winuall: "Built storefronts, learning products, onboarding flows, and shared frontend components across a platform used by over 2,000 tutors.",
+  teal: "Worked on a consumer product, built a Gatsby and Ghost publishing site, and wrote end-to-end tests.",
+  printrove: "Built internal order management tools and merchant-facing features for a print-on-demand platform.",
 };
+
+const proofPoints = [
+  ["5+ years", "Shipping production software"],
+  ["6 modules", "Built solo in FactoStack: sales, inventory, procurement, production, quality, finance"],
+  ["3,000+", "Paying users onboarded"],
+  ["2,000+", "Tutors served on Winuall"],
+];
 
 export default function AboutPage() {
   return (
     <main id="main-content" className="page-shell">
       <header className="page-intro">
         <p className="eyebrow">About</p>
-        <h1>I work where product, engineering, and growth meet.</h1>
-        <p>That usually means turning an uncertain brief into software that is useful, shippable, and easier to grow.</p>
+        <h1 className="max-w-5xl">I build things end-to-end — and I've been doing it for five years.</h1>
+        <p className="max-w-2xl">Right now I'm a software engineer at Fubo, and I'm also building FactoStack on the side. The two are pretty different, and I think that's made me a better engineer.</p>
       </header>
 
-      <section className="grid gap-10 pb-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20" aria-labelledby="approach-heading">
+      <section className="grid gap-3 pb-16 sm:grid-cols-2 lg:grid-cols-4" aria-label="Selected career impact">
+        {proofPoints.map(([value, label]) => (
+          <div key={label} className="rounded-xl border border-border/60 bg-secondary/25 p-5">
+            <p className="font-serif text-3xl font-semibold text-primary">{value}</p>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{label}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="grid gap-10 pb-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20" aria-labelledby="approach-heading">
         <div>
-          <p className="eyebrow">My approach</p>
+          <p className="eyebrow">My work</p>
           <h2 id="approach-heading" className="mt-2 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-            Think broadly. Build deliberately.
+            Two very different jobs at the same time.
           </h2>
           <p className="mt-5 leading-7 text-muted-foreground">
-            I’m a product engineer in Bengaluru. At Fubo, I work on large streaming products. With FactoStack, I own the full journey from customer discovery and architecture to deployment and acquisition.
+            At Fubo, I'm one engineer on a large team working on streaming products at scale. Performance, accessibility, and SEO reliability are real constraints, not optional. A single navigation refactor I shipped cleared over 50,000 broken URLs from Google Search Console.
+          </p>
+          <p className="mt-4 leading-7 text-muted-foreground">
+            FactoStack is the opposite. I talk to customers, decide what to build, write the code, handle GST compliance logic, manage deployments, and figure out how to get more people to use it. No team, no PM. Doing both at the same time has been a good way to stay honest about what engineering in a team actually looks like versus doing everything yourself.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-            <Button asChild><a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" />Start a conversation</a></Button>
-            <Button asChild variant="outline"><Link href="/projects">View projects<ArrowRight aria-hidden="true" /></Link></Button>
+            <Button asChild><a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" />Email me</a></Button>
+            <Button asChild variant="outline"><Link href="/projects">View my work<ArrowRight aria-hidden="true" /></Link></Button>
           </div>
         </div>
-        <dl className="grid gap-3">
+        <dl className="grid gap-3 sm:grid-cols-2">
           {strengths.map(([term, description]) => (
-            <div key={term} className="grid gap-2 rounded-xl bg-secondary/35 p-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+            <div key={term} className="rounded-xl bg-secondary/35 p-5">
               <dt className="font-semibold">{term}</dt>
-              <dd className="text-sm leading-6 text-muted-foreground">{description}</dd>
+              <dd className="mt-2 text-sm leading-6 text-muted-foreground">{description}</dd>
             </div>
           ))}
         </dl>
@@ -60,7 +81,8 @@ export default function AboutPage() {
       <section className="section-block" aria-labelledby="experience-heading">
         <div className="max-w-2xl">
           <p className="eyebrow">Experience</p>
-          <h2 id="experience-heading" className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">Products shipped across four teams.</h2>
+          <h2 id="experience-heading" className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">Where I’ve worked.</h2>
+          <p className="mt-4 leading-7 text-muted-foreground">Five years across streaming, education, consumer products, and internal operations.</p>
         </div>
         <div className="mt-9 grid gap-5 md:grid-cols-2">
           {experiences.map((experience) => (
@@ -86,6 +108,7 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      <CTASection />
     </main>
   );
 }

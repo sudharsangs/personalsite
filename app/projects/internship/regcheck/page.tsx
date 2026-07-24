@@ -6,7 +6,7 @@ import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } f
 
 export const metadata: Metadata = {
   title: 'Regcheck | Sudharsan GS',
-  description: 'A comprehensive view of real estate regulations in metropolitan cities across India',
+  description: 'A searchable publishing product that made real-estate regulations across Indian cities easier to maintain and navigate.',
 };
 
 const technologies = [
@@ -55,7 +55,7 @@ export default function RegcheckPage() {
   return (
     <ProjectPageLayout
       title="Regcheck"
-      description="A revolutionary project that offers a comprehensive view of real estate regulations in metropolitan cities across India, making it easier for stakeholders to navigate the regulatory landscape."
+      description="Built a Gatsby and Ghost publishing product that organized real-estate regulations across Indian cities into a faster, searchable, and maintainable experience."
       type="work"
       date="2020"
       company={{

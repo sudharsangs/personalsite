@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Briefcase, Calendar, Github, Globe2, Handshake, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Briefcase, Calendar, Github, Globe2, Handshake, Mail, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { ImageDetail } from "@/types/projects";
 
@@ -18,9 +18,9 @@ interface ProjectPageLayoutProps {
 }
 
 const typeConfig = {
-  personal: { icon: User, label: "Personal" },
-  independent: { icon: Handshake, label: "Freelance" },
-  work: { icon: Briefcase, label: "Work" },
+  personal: { icon: User, label: "Personal project", role: "Design and engineering" },
+  independent: { icon: Handshake, label: "Freelance project", role: "Product design and engineering" },
+  work: { icon: Briefcase, label: "Work project", role: "Frontend engineering" },
 };
 
 export default function ProjectPageLayout({ title, description, type, date, company, client, githubUrl, liveUrl, children }: ProjectPageLayoutProps) {
@@ -42,6 +42,10 @@ export default function ProjectPageLayout({ title, description, type, date, comp
             </div>
 
             <div className="mt-7 flex flex-col justify-end gap-4 lg:mt-0">
+              <div className="rounded-xl border border-border/60 bg-background px-4 py-3">
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted-foreground">Role</p>
+                <p className="mt-1.5 text-sm font-semibold leading-5">{typeConfig[type].role}</p>
+              </div>
               {company && (
                 <a href={company.url} target="_blank" rel="noopener noreferrer" className="flex min-h-14 items-center gap-3 rounded-xl bg-background px-4 py-3 hover:text-primary">
                   <Image src={company.logo} alt="" width={28} height={28} className="rounded-md" />
@@ -62,7 +66,24 @@ export default function ProjectPageLayout({ title, description, type, date, comp
       </header>
       <div className="mx-auto max-w-6xl px-4 pb-14 pt-4 sm:px-6 sm:pb-20 sm:pt-6 lg:px-8">
         {children}
-        <div className="mt-12 pt-4">
+        <section className="mt-16 rounded-2xl border border-primary/20 bg-primary/[0.06] p-7 sm:p-9" aria-labelledby="case-study-contact">
+          <p className="eyebrow">Contact</p>
+          <h2 id="case-study-contact" className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight">
+            Interested in working together?
+          </h2>
+          <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
+            I take on selected consulting and freelance work: full-stack builds, ERP and SaaS implementation, technical SEO, and operations-heavy products. I’m also open to conversations about FactoStack or forward-deployed engineering work.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Button asChild>
+              <a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" /> Email me</a>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/about">About me <ArrowRight aria-hidden="true" /></Link>
+            </Button>
+          </div>
+        </section>
+        <div className="mt-8 pt-4">
           <Link href="/projects" className="text-link"><ArrowLeft aria-hidden="true" /> Back to all projects</Link>
         </div>
       </div>

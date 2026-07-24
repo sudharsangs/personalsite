@@ -10,7 +10,10 @@ export default function WritingPreview() {
       <div className="section-heading">
         <div className="max-w-2xl">
           <p className="eyebrow">Writing</p>
-          <h2 id="writing-heading">Notes from building and shipping.</h2>
+          <h2 id="writing-heading">Notes on engineering and building products.</h2>
+          <p className="mt-4 leading-7 text-muted-foreground">
+            Mostly things I’ve learned while building and running FactoStack.
+          </p>
         </div>
         <Link href="/blog" className="text-link">View all writing <ArrowRight aria-hidden="true" /></Link>
       </div>

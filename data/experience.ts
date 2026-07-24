@@ -53,7 +53,7 @@ export const experiences: Experience[] = [
     projects: ["winuall-apps", "winuall-learners-module", "winuall-online-store", "winuall-marketing-site", "winuall-parents-module"],
     projectDescriptions: {
       "winuall-apps": "Developed a central hub for Winuall's web applications, allowing users to access different modules and features from a unified interface.",
-      "winuall-learners-module": "Built a comprehensive learning platform for students with features like video courses, quizzes, and progress tracking.",
+      "winuall-learners-module": "Built the learner experience for video courses, quizzes, purchased content, and progress tracking.",
       "winuall-online-store": "Created an e-commerce platform enabling tutors to sell digital and physical products to their students.",
       "winuall-marketing-site": "Developed the company's main marketing website with SSR for improved SEO and performance.",
       "winuall-parents-module": "Built a dashboard for parents to track their children's learning progress and communicate with tutors."
@@ -109,4 +109,3 @@ export const experiences: Experience[] = [
     }
   }
 ]
-

@@ -8,13 +8,13 @@ import ProjectPageLayout, { FeatureList, ProjectSection, ProjectImageGallery } f
 
 export const metadata: Metadata = {
   title: 'Form to Sheets | Sudharsan GS',
-  description: 'Seamlessly integrate Google Forms into websites with code snippets for multiple frameworks',
+  description: 'A developer tool that turns Google Forms into reusable embed code for React, Vue, Svelte, and plain HTML.',
 };
 
 export default function FormToSheetsPage() {
   const projectData = {
     title: "Form to Sheets",
-    description: "A tool to seamlessly integrate Google Forms into websites with code snippets for multiple frameworks.",
+    description: "Built a developer tool that converts Google Forms into clean embed code for React, Vue, Svelte, and plain HTML websites.",
     type: "personal",
     date: "2023",
     liveUrl: "https://formtosheets.vercel.app/",

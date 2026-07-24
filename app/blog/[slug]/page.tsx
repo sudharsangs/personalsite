@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/components/modules/mdx-components";
 import BlogCard, { formatPostDate } from "@/components/modules/blog-card";
+import CTASection from "@/components/modules/cta-section";
 import { getBlogStaticParams, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 
 export const dynamicParams = false;
@@ -78,6 +79,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </aside>
       )}
+      <CTASection />
     </main>
   );
 }

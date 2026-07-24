@@ -6,8 +6,8 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/modules/theme-toggle";
 
 const navLinks = [
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Work" },
+  { href: "/blog", label: "Writing" },
   { href: "/about", label: "About" },
 ];
 
@@ -25,6 +25,12 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="mailto:sudharsangs.99@gmail.com"
+            className="inline-flex min-h-10 items-center rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+          >
+            Email me
+          </a>
           <ThemeToggle />
         </nav>
         <div className="flex items-center gap-2 md:hidden">
@@ -48,6 +54,13 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="mailto:sudharsangs.99@gmail.com"
+            className="mt-2 flex min-h-11 items-center justify-center rounded-md bg-primary px-4 font-semibold text-primary-foreground"
+            onClick={() => setOpen(false)}
+          >
+            Email me
+          </a>
         </div>
       </nav>
     </header>

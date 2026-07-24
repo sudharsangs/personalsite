@@ -6,13 +6,13 @@ import ProjectPageLayout, { FeatureList, OutcomeList, ProjectSection } from '@/c
 
 export const metadata: Metadata = {
   title: 'Learner\'s Module | Sudharsan GS',
-  description: 'Implementation of a learner\'s module where students can learn the courses purchased by them',
+  description: 'The core learner experience for accessing courses, video lessons, assessments, progress, and purchased content at Winuall.',
 };
 
 export default function LearnersModulePage() {
   const projectData = {
     title: "Learner's Module",
-    description: "Single-handedly implemented a learner's module where students can learn the courses purchased by them",
+    description: "Owned the frontend implementation of Winuall's learner module, bringing purchased courses, video lessons, assessments, and progress tracking into one student experience.",
     company: {
       name: "Winuall",
       url: "https://winuall.com",

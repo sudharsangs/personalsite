@@ -18,7 +18,7 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sudharsangs.in"),
   title: "Sudharsan GS | Product Engineer",
-  description: "Product engineer building software across streaming, technical SEO, and manufacturing operations.",
+  description: "Product engineer in Bengaluru. I take ambiguous, operations-heavy problems to production end to end, across ERP, SaaS, streaming, and technical SEO.",
   authors: [{ name: "Sudharsan GS" }],
   creator: "Sudharsan GS",
   openGraph: {
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "/",
     title: "Sudharsan GS | Product Engineer",
-    description: "I build production products across streaming, technical SEO, and operations software.",
+    description: "Product engineer in Bengaluru. I take ambiguous, operations-heavy problems to production end to end, across ERP, SaaS, streaming, and technical SEO.",
     siteName: "Sudharsan GS",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sudharsan GS | Product Engineer",
-    description: "I build production products across streaming, technical SEO, and operations software.",
+    description: "Product engineer in Bengaluru. I take ambiguous, operations-heavy problems to production end to end, across ERP, SaaS, streaming, and technical SEO.",
     creator: "@sudharsangs",
   },
 };

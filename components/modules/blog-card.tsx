@@ -33,7 +33,7 @@ export default function BlogCard({ post, headingLevel = "h2" }: { post: BlogPost
           ))}
         </ul>
         <Link href={`/blog/${post.slug}`} className="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-semibold text-primary">
-          Read <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          Read article <ArrowRight className="h-4 w-4" aria-hidden="true" />
           <span className="sr-only">{post.title}</span>
         </Link>
       </div>
