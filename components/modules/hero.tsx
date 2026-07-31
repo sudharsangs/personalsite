@@ -38,7 +38,7 @@ export default function Hero() {
               I ship full-stack products, end to end.
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Five years across Fubo, Winuall, and FactoStack — shipping streaming interfaces, SaaS platforms, and an ERP I built solo from the first line of code. If you need someone who can own a real scope, not just a ticket queue, I&apos;m worth talking to.
+              Five years across Fubo, Winuall, and FactoStack. At Fubo that&apos;s meant streaming interfaces for a large product; at FactoStack it&apos;s meant building the whole ERP myself, from the first line of code. I&apos;d rather own a project end to end than work a ticket queue, so if that&apos;s what you need, I&apos;m worth a conversation.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
@@ -61,7 +61,7 @@ export default function Hero() {
                 { number: "5+", label: "years shipping" },
                 { number: "6", label: "modules built solo" },
                 { number: "3,000+", label: "users onboarded" },
-                { number: "4", label: "companies shipped for" },
+                { number: "3", label: "companies shipped for" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-xl border border-border/60 bg-card px-5 py-5 flex flex-col justify-between min-h-[100px]">
                   <div className="font-serif text-3xl font-semibold text-foreground">{stat.number}</div>

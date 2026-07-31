@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function MolotovNavbarRedesignPage() {
   const projectData = {
     title: "Navigation Bar Redesign",
-    description: "Rebuilt Molotov's navigation bar from scratch: separate mobile and desktop architectures, API-driven content, ARIA accessibility, and post-launch fixes that wiped out 50,000+ 404 errors from Google Search Console.",
+    description: "Rebuilt Molotov's navigation bar from scratch, with separate architectures for mobile and desktop, content driven entirely by API, and full ARIA accessibility. A post-launch fix wiped out more than 50,000 404 errors in Google Search Console.",
     company: {
       name: "Molotov by Fubo",
       url: "https://www.molotov.tv",

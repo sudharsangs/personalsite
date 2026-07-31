@@ -4,7 +4,7 @@ export const projects: Projects = [
   {
     title: "FactoStack Manufacturing Platform",
     description:
-      "Built the core operations platform for Indian MSMEs at FactoStack, turning Excel, WhatsApp, WIP, procurement, GST, and compliance-heavy factory workflows into one multi-module product.",
+      "Built FactoStack's core operations platform for Indian MSMEs, replacing the Excel sheets and WhatsApp groups factories were running production and compliance through with one connected product.",
     image: "/projects/personal/factostack-platform/executive-dashboard.png",
     technologies: [
       {
@@ -58,7 +58,7 @@ export const projects: Projects = [
   {
     title: "QuickPicks by Unlocker",
     description:
-      "Built a mobile-first sports picks product for creating, selling, and delivering paid picks in seconds with instant checkout, creator bio pages, and analytics.",
+      "Built a mobile-first product that lets sports creators sell paid picks in seconds. Checkout is instant, and each creator gets a shareable bio page with performance analytics attached.",
     image: "/projects/independent/unlocker/unlocker-quickpicks.png",
     technologies: [
       {
@@ -91,7 +91,7 @@ export const projects: Projects = [
   {
     title: "FactoStack Marketing Website",
     description:
-      "Built FactoStack's marketing and SEO engine with solution pages, comparison pages, free tools, structured metadata, blog content, and conversion paths into trial, demo, and WhatsApp flows.",
+      "Built the marketing and SEO engine behind FactoStack, from comparison and solution pages down to the free tools that pull in search traffic. Every page pushes toward a trial signup, a demo, or a WhatsApp chat.",
     image: "/projects/personal/factostack-website/cover.png",
     technologies: [
       {
@@ -120,7 +120,7 @@ export const projects: Projects = [
   {
     title: "Unlocker - Sports Experts Marketplace",
     description:
-      "Built the MVP of a subscription-based sports experts marketplace using Next.js + TypeScript with an Express.js + PostgreSQL backend. Implemented subscriptions, expert monetization, and verified performance analytics.",
+      "Built the MVP of a subscription marketplace for sports experts, with Next.js and TypeScript on the frontend and an Express/PostgreSQL backend. Experts monetize through subscriptions, and every pick they publish is tracked against their public track record.",
     image: "/projects/independent/unlocker/unlocker-marketplace.png",
     technologies: [
       {
@@ -204,12 +204,10 @@ export const projects: Projects = [
     liveUrl: "https://formtosheets.vercel.app",
     github: "https://github.com/sudharsangs/formtosheets",
     features: [
-      "Seamless integration of Google Forms into any website",
-      "Support for multiple frameworks, including React, Vue, HTML, and Svelte",
-      "Effortless code generation for easy embedding",
-      "Developer-friendly and user-centric design",
-      "Real-time data integration for efficient data management",
-      "Secure and robust infrastructure for data protection",
+      "Embed a Google Form on any website without an iframe",
+      "Generates ready-to-use code for React, Vue, Svelte, and plain HTML",
+      "Copy-paste embedding, no backend setup required",
+      "Form responses still flow straight into your Google Sheet",
     ],
     additionalImages: [
       {
@@ -368,7 +366,7 @@ export const projects: Projects = [
   {
     title: "Employee Management Mobile App",
     description:
-      "Built a field workforce management app for BuildTek Polymers. Geolocation-based attendance, task assignment, document storage, and a supervisor dashboard replacing paper-based tracking for an on-site factory team.",
+      "Built a field workforce management app for BuildTek Polymers, replacing paper-based tracking for an on-site factory team. It handles geolocation attendance, task assignment, and document storage, with a supervisor dashboard tying it together.",
     image: "/projects/buildtek/cover.png",
     technologies: [
       {
@@ -476,7 +474,7 @@ export const projects: Projects = [
   {
     title: "Program Pages",
     description:
-      "Designed and built canonical program pages for Molotov TV, consolidating dozens of fragmented legacy URLs per title into a single authoritative page, wired up with schema.org microdata, deeplinks into the streaming app, and LCP optimizations targeting French streaming audiences.",
+      "Designed and built canonical program pages for Molotov TV, consolidating dozens of fragmented legacy URLs per title into one authoritative page. Each page carries schema.org microdata, deep links into the streaming app, and LCP tuning aimed at French streaming audiences.",
     image: "/projects/molotov/evergreen.gif",
     technologies: [
       { name: "React", icon: "/skills/react.svg" },
@@ -511,7 +509,7 @@ export const projects: Projects = [
   {
     title: "Program List Pages",
     description:
-      "Rebuilt Molotov's category and genre listing pages from the ground up: server-rendered filter links for full crawlability, dual pagination, structured data for Carousel Rich Results, and editorial content headers. The work covered every listing page across the platform.",
+      "Rebuilt Molotov's category and genre listing pages from the ground up, covering every listing page on the platform. The filters are now server-rendered for full crawlability, pagination runs both as numbered pages and infinite scroll, and each page carries structured data for Carousel Rich Results plus an editorial content header.",
     image: "/projects/molotov/program-list.gif",
     technologies: [
       { name: "React", icon: "/skills/react.svg" },
@@ -549,7 +547,7 @@ export const projects: Projects = [
   {
     title: "Navigation Bar Redesign",
     description:
-      "Rebuilt Molotov's navigation bar from scratch: separate mobile and desktop architectures, API-driven content, ARIA accessibility, and post-launch bug fixes that eliminated 50,000+ 404 errors across Google Search Console.",
+      "Rebuilt Molotov's navigation bar from scratch, with separate architectures for mobile and desktop, content driven by API, and full ARIA accessibility support. A post-launch fix to the subscription button URL wiped out more than 50,000 404 errors in Google Search Console.",
     image: "/projects/molotov/menu.gif",
     technologies: [
       { name: "React", icon: "/skills/react.svg" },
@@ -584,7 +582,7 @@ export const projects: Projects = [
   {
     title: "Learner's Module",
     description:
-      "Built Winuall's learner experience from scratch: course playback, live class access, quizzes, and progress tracking. Sole implementation across the full frontend surface.",
+      "Built Winuall's learner experience from scratch, covering course playback, live class access, quizzes, and progress tracking. I owned the entire frontend implementation myself.",
     image: "/projects/winuall/winuall-learners-module-1.png",
     technologies: [
       {

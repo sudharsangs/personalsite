@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function MolotovEvergreenProgramPagesPage() {
   const projectData = {
     title: "Program Pages",
-    description: "Designed and built canonical program pages for Molotov TV, consolidating dozens of fragmented legacy URLs per title into a single authoritative page, wired up with schema.org microdata, deeplinks into the streaming app, and LCP optimizations targeting French streaming audiences.",
+    description: "Designed and built canonical program pages for Molotov TV, consolidating dozens of fragmented legacy URLs per title into one authoritative page. Each page carries schema.org microdata, deep links into the streaming app, and LCP tuning aimed at French streaming audiences.",
     company: {
       name: "Molotov by Fubo",
       url: "https://www.molotov.tv",

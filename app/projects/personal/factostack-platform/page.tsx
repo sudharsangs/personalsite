@@ -54,7 +54,7 @@ const highlights = [
   {
     title: "Built around real MSME constraints",
     description:
-      "The product engineering work goes beyond generic ERP screens. The implemented routes cover Indian factory issues such as MSME payment deadlines, ITC risk, GST exports, receivables aging, and lender-style credit scoring.",
+      "This isn't generic ERP screens with a new coat of paint. I built the routes around real Indian factory issues: MSME payment deadlines, ITC risk, GST exports, receivables aging, and lender-style credit scoring.",
   },
   {
     title: "Operator and owner workflows in one app",
@@ -69,7 +69,7 @@ const highlights = [
 ];
 
 const results = [
-  "The product is still early-stage, so I describe it as a platform in validation rather than claiming scaled business impact that does not exist yet.",
+  "The product is still early. I'd rather call it a platform in validation than inflate numbers that aren't there yet.",
   "Mapped six factory workflow domains into one product without copying generic ERP patterns. The scope came from real constraints: GST exports, MSME payment deadlines, ITC tracking, receivables aging.",
   "Built a tenant-aware architecture so different factory configurations can onboard without rebuilding core flows.",
   "Validated that Indian MSME compliance requirements need product-level design decisions, not just UI implementation.",
@@ -106,7 +106,7 @@ export default function FactoStackPlatformPage() {
   return (
     <ProjectPageLayout
       title="FactoStack Manufacturing Platform"
-      description="The core product behind FactoStack: a product engineering effort focused on Indian MSME manufacturers who need production, inventory, procurement, GST, and owner visibility in one operating system."
+      description="FactoStack's core product, built for Indian MSME manufacturers who need production, inventory, procurement, GST, and owner-level visibility in one system instead of five different tools."
       type="personal"
       date="2025-2026"
       liveUrl="https://app.factostack.com"
@@ -154,11 +154,11 @@ export default function FactoStackPlatformPage() {
         >
           <p className="text-muted-foreground leading-relaxed">
             Indian MSMEs often run core factory work across Excel sheets,
-            WhatsApp messages, paper slips, and separate accounting tools. In
-            the platform repo, that pain shows up in the workflows I chose to
-            build: WIP tracking, QR job cards, material variance, MSME payment
-            compliance, ITC verification, receivables aging, GST exports, and
-            owner dashboards.
+            WhatsApp messages, paper slips, and separate accounting tools.
+            FactoStack replaces that patchwork with WIP tracking, QR job
+            cards, material variance tracking, MSME payment compliance, ITC
+            verification, receivables aging, GST exports, and a dashboard the
+            owner can check without calling the shop floor.
           </p>
         </ProjectSection>
 

@@ -35,8 +35,8 @@ export default function UnlockerPage() {
       "Stripe Connect integration for marketplace payments with direct payouts to experts",
       "JWT authentication with role-based access control for users, experts, and admins"
     ],
-    problemStatement: "The sports betting advisory industry suffers from fake claims, cherry-picked results, and zero accountability. Bettors lack verification methods for expert claims, while legitimate experts struggle to build sustainable businesses with difficulty proving legitimacy and no professional monetization platform.",
-    solution: "A transparent marketplace where every pick, result, and performance metric is publicly tracked and verified. Experts build reputations through provable consistent results, enabling trust-driven conversions and sustainable recurring revenue.",
+    problemStatement: "The sports betting advisory industry runs on fake claims, cherry-picked results, and zero accountability. Bettors have no way to verify an expert's track record, and the legitimate experts have no real platform to build a business on.",
+    solution: "A marketplace where every pick, result, and performance metric is public and verified. Experts build a track record they can actually point to, which is what gets someone to subscribe and keep subscribing.",
     challenges: [
       {
         title: "Stripe Connect Integration",
@@ -77,7 +77,7 @@ export default function UnlockerPage() {
       <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20">
         <Image
           src="/projects/independent/unlocker/unlocker-marketplace.png"
-          alt="Unlocker marketplace — all experts listing"
+          alt="Unlocker marketplace, all experts listing"
           fill
           className="object-cover object-top"
         />

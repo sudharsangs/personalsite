@@ -77,7 +77,7 @@ export default function FactoStackWebsitePage() {
   return (
     <ProjectPageLayout
       title="FactoStack Marketing Website"
-      description="The acquisition site for FactoStack, built as the marketing and SEO engine for a complex manufacturing product with search, tools, content, and conversion paths working together."
+      description="This is the acquisition site for FactoStack, a marketing and SEO engine built for a complex manufacturing product. It covers search-driven content, free tools, and the paths that turn a visitor into a trial signup."
       type="personal"
       date="2025-2026"
       liveUrl="https://factostack.com"

@@ -68,7 +68,7 @@ const screenshots = [
     url: "/projects/independent/unlocker/unlocker-quickpicks.png",
     alt: "QuickPicks pick creation flow",
     caption:
-      "Create a pick in 30 seconds — structured form with event, pricing, and instant publish.",
+      "Create a pick in 30 seconds: a structured form for event details, pricing, and instant publish.",
   },
   {
     url: "/projects/independent/quickpicks/pick-flow.png",
@@ -95,7 +95,7 @@ export default function QuickPicksPage() {
       <div className="relative w-full h-[280px] md:h-[380px] mb-12 rounded-2xl overflow-hidden border border-primary/20">
         <Image
           src="/projects/independent/unlocker/unlocker-quickpicks.png"
-          alt="QuickPicks — create a pick in 30 seconds"
+          alt="QuickPicks, create a pick in 30 seconds"
           fill
           className="object-cover object-top"
         />
