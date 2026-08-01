@@ -20,7 +20,7 @@ const strengths = [
   },
   {
     title: "Frontend that feels right",
-    description: "Most of my frontend work is in React and Next.js. Getting a feature working is the easy part. I spend the rest of the time on performance and accessibility, the stuff users feel even when they can't name it.",
+    description: "Most of my frontend work is in React and Next.js. Getting a feature working is the easy part. Once it works, most of my time goes into performance and accessibility.",
     icon: "🎨",
   },
   {
@@ -137,10 +137,10 @@ export default function AboutPage() {
             Engineering at scale, and from scratch.
           </h2>
           <p className="mt-5 leading-7 text-muted-foreground">
-            At Fubo I work on a large team, which comes with real constraints: tight performance budgets, accessibility standards to hit, and SEO that has to hold up at scale. One navigation refactor I shipped cleared over 50,000 broken URLs from Google Search Console. It&apos;s not glamorous work, but it&apos;s what production-grade engineering looks like at that size.
+            At Fubo I work on a large team with real constraints: performance budgets, accessibility bars to clear, SEO that has to hold up at scale. One navigation refactor I shipped cleared over 50,000 broken URLs from Google Search Console. That&apos;s most of what the job actually looks like.
           </p>
           <p className="mt-4 leading-7 text-muted-foreground">
-            FactoStack is the opposite. There&apos;s no handoff and no product manager, so product decisions, architecture, compliance logic, deployments, and talking to customers are all on me. Doing both at once has sharpened my instincts in ways that either job alone wouldn&apos;t have.
+            FactoStack is the opposite. There&apos;s no product manager and nobody to hand things off to, so product decisions, architecture, and customer conversations are all mine. Doing both jobs at once has sharpened my instincts more than either one alone would have.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
             <Button asChild><a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" />Email me</a></Button>
@@ -163,7 +163,7 @@ export default function AboutPage() {
         <div className="max-w-2xl">
           <p className="eyebrow">Tech stack</p>
           <h2 id="tech-heading" className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">What I build with.</h2>
-          <p className="mt-4 leading-7 text-muted-foreground">These are the tools I reach for day to day, not a résumé keyword list but the stack behind the software I&apos;ve shipped.</p>
+          <p className="mt-4 leading-7 text-muted-foreground">These are the tools I actually reach for day to day, not a résumé keyword list.</p>
         </div>
         <div className="mt-9 grid gap-6 sm:grid-cols-3">
           {techCategories.map(({ category, items }) => (

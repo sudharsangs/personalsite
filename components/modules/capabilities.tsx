@@ -7,7 +7,7 @@ const capabilities = [
     label: "End-to-end product ownership",
     title: "I own the whole thing.",
     description:
-      "At FactoStack I built six modules on my own, covering everything from sales and inventory to production and finance. I also own the backend, the infrastructure, and the deployments, because there's nobody else to hand it off to.",
+      "At FactoStack I built six modules myself: sales, inventory, procurement, production, quality, and finance. I own the backend, the infrastructure, and the deployments too, since there's nobody else to hand it to.",
     techIcons: [
       { name: "NestJS", icon: "/skills/nest-js.svg" },
       { name: "PostgreSQL", icon: "/skills/postgres.svg" },
@@ -18,7 +18,7 @@ const capabilities = [
     label: "Frontend",
     title: "React and Next.js, done properly.",
     description:
-      "I've shipped streaming interfaces at Fubo, product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. I care about performance and accessibility as much as I care about a feature just working, and I reach for server rendering by default.",
+      "I've shipped streaming interfaces at Fubo, product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. Performance and accessibility matter to me as much as the feature working at all, and I default to server rendering.",
     techIcons: [
       { name: "React", icon: "/skills/react.svg" },
       { name: "Next.js", icon: "/skills/nextjs.svg" },
@@ -29,7 +29,7 @@ const capabilities = [
     label: "Growth and distribution",
     title: "Shipping isn't the finish line.",
     description:
-      "I've done technical SEO at Molotov, built onboarding flows at Winuall, and built acquisition tooling at FactoStack. Early on I shipped things nobody found, and it taught me that distribution isn't someone else's job to think about later.",
+      "I've done technical SEO at Molotov, onboarding flows at Winuall, and acquisition tooling at FactoStack. Early in my career I shipped things nobody found, and that taught me distribution isn't someone else's problem to solve later.",
     techIcons: [
       { name: "Next.js", icon: "/skills/nextjs.svg" },
       { name: "PostgreSQL", icon: "/skills/postgres.svg" },

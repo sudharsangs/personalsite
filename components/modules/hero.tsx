@@ -38,7 +38,7 @@ export default function Hero() {
               I ship full-stack products, end to end.
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Five years across Fubo, Winuall, and FactoStack. At Fubo that&apos;s meant streaming interfaces for a large product; at FactoStack it&apos;s meant building the whole ERP myself, from the first line of code. I&apos;d rather own a project end to end than work a ticket queue, so if that&apos;s what you need, I&apos;m worth a conversation.
+              Five years across Fubo, Winuall, and FactoStack. At Fubo I build streaming interfaces for a large product. At FactoStack I built the whole ERP myself, starting from nothing. I&apos;d rather own a project end to end than work off a ticket queue. Get in touch if that&apos;s the kind of help you need.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">

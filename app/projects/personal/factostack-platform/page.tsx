@@ -54,7 +54,7 @@ const highlights = [
   {
     title: "Built around real MSME constraints",
     description:
-      "This isn't generic ERP screens with a new coat of paint. I built the routes around real Indian factory issues: MSME payment deadlines, ITC risk, GST exports, receivables aging, and lender-style credit scoring.",
+      "I didn't want generic ERP screens, so the routes are built around actual Indian factory problems: MSME payment deadlines, ITC risk, GST exports, receivables aging, and lender-style credit scoring.",
   },
   {
     title: "Operator and owner workflows in one app",
@@ -106,7 +106,7 @@ export default function FactoStackPlatformPage() {
   return (
     <ProjectPageLayout
       title="FactoStack Manufacturing Platform"
-      description="FactoStack's core product, built for Indian MSME manufacturers who need production, inventory, procurement, GST, and owner-level visibility in one system instead of five different tools."
+      description="FactoStack's core product. It gives Indian MSME manufacturers production, inventory, procurement, GST, and owner-level visibility in one system, so they're not stitching it together from Excel and WhatsApp."
       type="personal"
       date="2025-2026"
       liveUrl="https://app.factostack.com"
@@ -155,10 +155,9 @@ export default function FactoStackPlatformPage() {
           <p className="text-muted-foreground leading-relaxed">
             Indian MSMEs often run core factory work across Excel sheets,
             WhatsApp messages, paper slips, and separate accounting tools.
-            FactoStack replaces that patchwork with WIP tracking, QR job
-            cards, material variance tracking, MSME payment compliance, ITC
-            verification, receivables aging, GST exports, and a dashboard the
-            owner can check without calling the shop floor.
+            FactoStack covers WIP tracking, QR job cards, material variance,
+            MSME payment compliance, ITC verification, receivables aging, and
+            GST exports, with a dashboard the owner can actually check.
           </p>
         </ProjectSection>
 

@@ -4,7 +4,7 @@ export const projects: Projects = [
   {
     title: "FactoStack Manufacturing Platform",
     description:
-      "Built FactoStack's core operations platform for Indian MSMEs, replacing the Excel sheets and WhatsApp groups factories were running production and compliance through with one connected product.",
+      "Built FactoStack's core operations platform for Indian MSMEs, so factories can stop running production and compliance through Excel sheets and WhatsApp groups.",
     image: "/projects/personal/factostack-platform/executive-dashboard.png",
     technologies: [
       {
@@ -58,7 +58,7 @@ export const projects: Projects = [
   {
     title: "QuickPicks by Unlocker",
     description:
-      "Built a mobile-first product that lets sports creators sell paid picks in seconds. Checkout is instant, and each creator gets a shareable bio page with performance analytics attached.",
+      "Built a mobile-first product that lets sports creators sell paid picks in seconds, with instant checkout and a bio page showing each creator's track record.",
     image: "/projects/independent/unlocker/unlocker-quickpicks.png",
     technologies: [
       {
@@ -91,7 +91,7 @@ export const projects: Projects = [
   {
     title: "FactoStack Marketing Website",
     description:
-      "Built the marketing and SEO engine behind FactoStack, from comparison and solution pages down to the free tools that pull in search traffic. Every page pushes toward a trial signup, a demo, or a WhatsApp chat.",
+      "Built the marketing and SEO engine behind FactoStack, including the comparison pages, solution pages, and free tools that pull in search traffic. Every page is meant to push toward a trial, a demo, or a WhatsApp chat.",
     image: "/projects/personal/factostack-website/cover.png",
     technologies: [
       {
