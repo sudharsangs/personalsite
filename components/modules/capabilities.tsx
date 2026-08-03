@@ -7,7 +7,7 @@ const capabilities = [
     label: "End-to-end product ownership",
     title: "I own the whole thing.",
     description:
-      "At FactoStack, I built six modules — sales, inventory, procurement, production, quality, and finance — along with the backend, infra, deployments, and compliance logic. There's no one else to hand off to, so I handle all of it.",
+      "At FactoStack I built six modules myself: sales, inventory, procurement, production, quality, and finance. I own the backend, the infrastructure, and the deployments too, since there's nobody else to hand it to.",
     techIcons: [
       { name: "NestJS", icon: "/skills/nest-js.svg" },
       { name: "PostgreSQL", icon: "/skills/postgres.svg" },
@@ -18,7 +18,7 @@ const capabilities = [
     label: "Frontend",
     title: "React and Next.js, done properly.",
     description:
-      "I've shipped streaming interfaces at Fubo, SaaS product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. I care about performance, accessibility, and server rendering — not just making it work.",
+      "I've shipped streaming interfaces at Fubo, product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. Performance and accessibility matter to me as much as the feature working at all, and I default to server rendering.",
     techIcons: [
       { name: "React", icon: "/skills/react.svg" },
       { name: "Next.js", icon: "/skills/nextjs.svg" },
@@ -27,9 +27,9 @@ const capabilities = [
   },
   {
     label: "Growth and distribution",
-    title: "Getting people to actually use it.",
+    title: "Shipping isn't the finish line.",
     description:
-      "Technical SEO at Molotov, onboarding flows at Winuall, acquisition tooling at FactoStack. I've seen how much shipping without thinking about distribution costs, and I try not to repeat that.",
+      "I've done technical SEO at Molotov, onboarding flows at Winuall, and acquisition tooling at FactoStack. Early in my career I shipped things nobody found, and that taught me distribution isn't someone else's problem to solve later.",
     techIcons: [
       { name: "Next.js", icon: "/skills/nextjs.svg" },
       { name: "PostgreSQL", icon: "/skills/postgres.svg" },
@@ -43,7 +43,7 @@ const roleFits = [
     type: "Consulting and freelance",
     roles: "Full-stack builds, ERP and SaaS implementation, technical SEO",
     description:
-      "I take on a small number of projects where I can own real scope — building something from scratch, extending an existing system, or fixing a technical acquisition problem.",
+      "I take on a small number of projects at a time, usually building something from scratch, extending an existing system, or fixing a specific technical problem around acquisition.",
   },
   {
     type: "Collaboration",
@@ -65,7 +65,7 @@ export default function Capabilities() {
           I can own the whole product, or go deep on one part.
         </h2>
         <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-          The problems I like best are messy and operations-heavy — the kind where the requirements are unclear and someone has to figure it out. I&apos;ve been doing that for five years, usually without a large team behind me.
+          The problems I like best show up without a clear spec. Requirements are half-written, priorities shift mid-project, and someone has to sit down and figure out what to actually build. I&apos;ve been that person for five years, mostly without a big team behind me.
         </p>
       </div>
 

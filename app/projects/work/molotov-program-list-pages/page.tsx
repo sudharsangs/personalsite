@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function MolotovProgramListPagesPage() {
   const projectData = {
     title: "Program List Pages",
-    description: "Rebuilt Molotov's category and genre listing pages from the ground up: server-rendered filter links for full crawlability, dual pagination, structured data for Carousel Rich Results, and editorial content headers across every listing page on the platform.",
+    description: "Rebuilt Molotov's category and genre listing pages from the ground up, across every listing page on the platform. Filters are now server-rendered for full crawlability, pagination runs as both numbered pages and infinite scroll, and each page carries structured data for Carousel Rich Results plus an editorial header.",
     company: {
       name: "Molotov by Fubo",
       url: "https://www.molotov.tv",

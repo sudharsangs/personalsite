@@ -17,7 +17,7 @@ const groups = [
     eyebrow: "Full-time work",
     navLabel: "Fubo and Winuall",
     title: "Work at Fubo, Molotov, and Winuall",
-    description: "Frontend and product work across streaming, video, education, e-commerce, onboarding, and technical SEO.",
+    description: "Frontend and product work at Fubo, Molotov, and Winuall, spanning streaming video, e-commerce, and onboarding.",
     projects: pick(["molotov-program-list-pages", "molotov-navbar-redesign", "molotov-evergreen-program-pages", "winuall-apps"]),
   },
   {
@@ -50,7 +50,7 @@ export default function ProjectsPage() {
     <main id="main-content" className="page-shell">
       <header className="page-intro">
         <p className="eyebrow">Projects</p>
-        <h1>Frontend, full-stack, and product work.</h1>
+        <h1>Full-stack and product work.</h1>
         <p>A selection of things I’ve built at work, for clients, and on my own.</p>
       </header>
 

@@ -26,12 +26,10 @@ export default function FormToSheetsPage() {
       { name: 'TailwindCSS', icon: '/skills/tailwind.svg' }
     ],
     features: [
-      "Seamless integration of Google Forms into any website",
-      "Support for multiple frameworks, including React, Vue, HTML, and Svelte",
-      "Effortless code generation for easy embedding",
-      "Developer-friendly and user-centric design",
-      "Real-time data integration for efficient data management",
-      "Secure and robust infrastructure for data protection"
+      "Embed a Google Form on any website without an iframe",
+      "Generates ready-to-use code for React, Vue, Svelte, and plain HTML",
+      "Copy-paste embedding, no backend setup required",
+      "Form responses still flow straight into your Google Sheet"
     ],
     images: [
       {

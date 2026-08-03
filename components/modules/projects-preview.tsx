@@ -14,7 +14,7 @@ export default function ProjectsPreview({ projects }: { projects: Projects }) {
           <p className="eyebrow">Selected work</p>
           <h2 id="featured-projects">A few projects that show the range.</h2>
           <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-            A manufacturing platform I built from scratch, frontend and SEO work for Molotov, and a client product for sports creators.
+            I built the manufacturing platform below from scratch, did frontend and SEO work for Molotov, and shipped a client product for sports creators.
           </p>
         </div>
         <Link href="/projects" className="text-link">View all projects <ArrowRight aria-hidden="true" /></Link>

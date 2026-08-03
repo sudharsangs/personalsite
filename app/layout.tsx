@@ -17,22 +17,22 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sudharsangs.in"),
-  title: "Sudharsan GS — Full-Stack Engineer | Fubo · FactoStack · Winuall",
-  description: "Full-stack product engineer with 5 years across Fubo, FactoStack, and Winuall. I take operations-heavy problems to production end to end — ERP, SaaS, streaming, and technical SEO.",
+  title: "Sudharsan GS, Product Engineer | Fubo · FactoStack · Winuall",
+  description: "Product engineer with five years across Fubo, FactoStack, and Winuall. I build operations-heavy software end to end, from a manufacturing ERP to streaming interfaces, and handle the technical SEO that gets it found.",
   authors: [{ name: "Sudharsan GS" }],
   creator: "Sudharsan GS",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "/",
-    title: "Sudharsan GS — Full-Stack Engineer | Fubo · FactoStack · Winuall",
-    description: "Full-stack product engineer with 5 years across Fubo, FactoStack, and Winuall. I take operations-heavy problems to production end to end — ERP, SaaS, streaming, and technical SEO.",
+    title: "Sudharsan GS, Product Engineer | Fubo · FactoStack · Winuall",
+    description: "Product engineer with five years across Fubo, FactoStack, and Winuall. I build operations-heavy software end to end, from a manufacturing ERP to streaming interfaces, and handle the technical SEO that gets it found.",
     siteName: "Sudharsan GS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sudharsan GS — Full-Stack Engineer | Fubo · FactoStack · Winuall",
-    description: "Full-stack product engineer with 5 years across Fubo, FactoStack, and Winuall. I take operations-heavy problems to production end to end — ERP, SaaS, streaming, and technical SEO.",
+    title: "Sudharsan GS, Product Engineer | Fubo · FactoStack · Winuall",
+    description: "Product engineer with five years across Fubo, FactoStack, and Winuall. I build operations-heavy software end to end, from a manufacturing ERP to streaming interfaces, and handle the technical SEO that gets it found.",
     creator: "@sudharsangs",
   },
 };

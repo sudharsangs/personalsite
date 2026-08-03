@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 const strengths = [
   {
     title: "Full-stack engineering",
-    description: "I can set up the backend, design the database, build the API, and ship the frontend. I've also handled infra, deployments, and compliance logic — whatever the project needs.",
+    description: "I can set up the backend, design the database, build the API, and ship the frontend myself. I've also handled infra, deployments, and compliance logic when a project needed it.",
     icon: "⚙️",
   },
   {
     title: "Frontend that feels right",
-    description: "Most of my frontend work is in React and Next.js. I care about performance, accessibility, and getting the details right, not just making it work.",
+    description: "Most of my frontend work is in React and Next.js. Getting a feature working is the easy part. Once it works, most of my time goes into performance and accessibility.",
     icon: "🎨",
   },
   {
@@ -30,7 +30,7 @@ const strengths = [
   },
   {
     title: "Getting it in front of people",
-    description: "I've worked on onboarding flows, technical SEO, analytics, and acquisition tooling. Shipping something that nobody uses isn't really shipping.",
+    description: "I've worked on onboarding flows and technical SEO at Fubo and Winuall, plus analytics and acquisition tooling at FactoStack. Shipping something nobody uses isn't really shipping.",
     icon: "📈",
   },
 ];
@@ -74,25 +74,25 @@ const techCategories = [
 
 const experienceSummaries: Record<string, { summary: string; highlights: string[] }> = {
   fubo: {
-    summary: "Working on frontend features, playback, and technical SEO for Fubo and Molotov. One navigation refactor cleared over 50,000 broken URLs from Google Search Console.",
+    summary: "I work on frontend features, video playback, and technical SEO for Fubo and Molotov. One navigation refactor I shipped cleared over 50,000 broken URLs from Google Search Console.",
     highlights: [
-      "Rebuilt Molotov navigation — cleared 50,000+ broken URLs",
+      "Rebuilt Molotov navigation, clearing 50,000+ broken URLs",
       "AI-powered live sports highlights for NBA games",
       "Frame-accurate seeking in VideoJS for HLS/DASH",
       "Structured data & SEO for program listing pages",
     ],
   },
   winuall: {
-    summary: "Built storefronts, learning products, onboarding flows, and shared frontend components across a platform used by over 2,000 tutors.",
+    summary: "I built storefronts, learning products, onboarding flows, and shared frontend components for a platform used by more than 2,000 tutors.",
     highlights: [
       "Online Store enabling 2,000+ tutors to sell products",
       "Onboarding system for 3,000+ paying users",
       "30% performance boost via code splitting",
-      "Migrated legacy app to SSR — 60% SEO improvement",
+      "Migrated legacy app to SSR, improving SEO score by 60%",
     ],
   },
   teal: {
-    summary: "Worked on a consumer product, built a Gatsby and Ghost publishing site, and wrote end-to-end tests.",
+    summary: "I worked on a consumer product, built a Gatsby and Ghost publishing site, and wrote end-to-end tests.",
     highlights: [
       "Built Tealcheck B2C product from scratch",
       "Deployed Regcheck with Ghost CMS and Gatsby",
@@ -100,7 +100,7 @@ const experienceSummaries: Record<string, { summary: string; highlights: string[
     ],
   },
   printrove: {
-    summary: "Built internal order management tools and merchant-facing features for a print-on-demand platform.",
+    summary: "I built internal order management tools and merchant-facing features for a print-on-demand platform.",
     highlights: [
       "100% automation of order processing system",
       "Design simulation suite used by 15,000+ designers",
@@ -114,7 +114,7 @@ export default function AboutPage() {
     <main id="main-content" className="page-shell">
       <header className="page-intro">
         <p className="eyebrow">About</p>
-        <h1 className="max-w-5xl">I build things end-to-end — and I&apos;ve been doing it for five years.</h1>
+        <h1 className="max-w-5xl">I build things end to end, and I&apos;ve been doing it for five years.</h1>
         <p className="max-w-2xl">Right now I&apos;m a Software Engineer 2 at Fubo, and I&apos;m also building FactoStack on the side. The two are pretty different, and I think that&apos;s made me a better engineer.</p>
       </header>
 
@@ -137,10 +137,10 @@ export default function AboutPage() {
             Engineering at scale, and from scratch.
           </h2>
           <p className="mt-5 leading-7 text-muted-foreground">
-            At Fubo I work on a large team with real engineering constraints — performance budgets, accessibility standards, SEO at scale. One navigation refactor I shipped cleared over 50,000 broken URLs from Google Search Console. This is what disciplined, production-grade engineering looks like.
+            At Fubo I work on a large team with real constraints: performance budgets, accessibility bars to clear, SEO that has to hold up at scale. One navigation refactor I shipped cleared over 50,000 broken URLs from Google Search Console. That&apos;s most of what the job actually looks like.
           </p>
           <p className="mt-4 leading-7 text-muted-foreground">
-            FactoStack is where I own everything — product decisions, architecture, compliance logic, deployments, and customer conversations. No handoffs, no product manager. Building both has sharpened my instincts in ways that neither alone could.
+            FactoStack is the opposite. There&apos;s no product manager and nobody to hand things off to, so product decisions, architecture, and customer conversations are all mine. Doing both jobs at once has sharpened my instincts more than either one alone would have.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
             <Button asChild><a href="mailto:sudharsangs.99@gmail.com"><Mail aria-hidden="true" />Email me</a></Button>
@@ -163,7 +163,7 @@ export default function AboutPage() {
         <div className="max-w-2xl">
           <p className="eyebrow">Tech stack</p>
           <h2 id="tech-heading" className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">What I build with.</h2>
-          <p className="mt-4 leading-7 text-muted-foreground">These are the tools I reach for day-to-day — not a résumé keyword list, but the actual stack I&apos;ve shipped production software with.</p>
+          <p className="mt-4 leading-7 text-muted-foreground">These are the tools I actually reach for day to day, not a résumé keyword list.</p>
         </div>
         <div className="mt-9 grid gap-6 sm:grid-cols-3">
           {techCategories.map(({ category, items }) => (
@@ -189,7 +189,7 @@ export default function AboutPage() {
         <div className="max-w-2xl">
           <p className="eyebrow">Experience</p>
           <h2 id="experience-heading" className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">Where I&apos;ve worked.</h2>
-          <p className="mt-4 leading-7 text-muted-foreground">Five years across streaming, education, consumer products, and internal operations.</p>
+          <p className="mt-4 leading-7 text-muted-foreground">Five years split mostly between streaming and education, plus a consumer product and internal tooling early on.</p>
         </div>
         <div className="mt-9 space-y-5">
           {experiences.map((experience) => {
@@ -209,7 +209,7 @@ export default function AboutPage() {
                         )}
                       </div>
                       <span className="shrink-0 rounded-full bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground">
-                        {experience.period.start} — {experience.period.end}
+                        {experience.period.start} – {experience.period.end}
                       </span>
                     </div>
                     {experience.roles && (
@@ -232,7 +232,7 @@ export default function AboutPage() {
                                 )}
                               </p>
                               <p className="text-xs text-muted-foreground">
-                                {role.start} — {role.end}
+                                {role.start} – {role.end}
                               </p>
                             </div>
                           </li>
