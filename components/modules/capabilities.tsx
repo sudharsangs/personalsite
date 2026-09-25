@@ -1,7 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
   DraftingCompass,
   ListChecks,
   UserRoundSearch,
@@ -76,21 +74,6 @@ const capabilities: Capability[] = [
       { name: "PostgreSQL", icon: "/skills/postgres.svg" },
       { name: "MongoDB", icon: "/skills/mongodb.svg" },
     ],
-  },
-];
-
-const roleFits = [
-  {
-    type: "Consulting and freelance",
-    roles: "Full-stack builds, ERP and SaaS implementation, technical SEO",
-    description:
-      "I take on a small number of projects where I can own real scope — building something from scratch, extending an existing system, or fixing a technical acquisition problem.",
-  },
-  {
-    type: "Collaboration",
-    roles: "Co-founder or technical partner",
-    description:
-      "Open to conversations with founders who want a technical co-builder, or with businesses looking at FactoStack for their operations. If the problem is interesting, I'm happy to talk.",
   },
 ];
 
