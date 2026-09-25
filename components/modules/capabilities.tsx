@@ -1,24 +1,63 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  DraftingCompass,
+  ListChecks,
+  UserRoundSearch,
+  type LucideIcon,
+} from "lucide-react";
 
-const capabilities = [
+type CapabilityIcon = {
+  name: string;
+  icon: string | LucideIcon;
+  iconClassName?: string;
+};
+
+type Capability = {
+  label: string;
+  title: string;
+  description: string;
+  techIcons: CapabilityIcon[];
+};
+
+const capabilities: Capability[] = [
   {
-    label: "End-to-end product ownership",
-    title: "I own the whole thing.",
+    label: "Product Engineering",
+    title: "Building what the users want",
     description:
-      "At FactoStack, I built six modules — sales, inventory, procurement, production, quality, and finance — along with the backend, infra, deployments, and compliance logic. There's no one else to hand off to, so I handle all of it.",
+      "I’ve built FactoStack based on the conversations I had with Indian factory owners",
     techIcons: [
-      { name: "NestJS", icon: "/skills/nest-js.svg" },
-      { name: "PostgreSQL", icon: "/skills/postgres.svg" },
-      { name: "Docker", icon: "/skills/docker.svg" },
+      {
+        name: "User Research",
+        icon: UserRoundSearch,
+        iconClassName: "text-sky-500",
+      },
+      {
+        name: "Prototyping",
+        icon: DraftingCompass,
+        iconClassName: "text-violet-500",
+      },
+      {
+        name: "Requirement Gathering",
+        icon: ListChecks,
+        iconClassName: "text-emerald-500",
+      },
+      {
+        name: "Claude Code",
+        icon: "/skills/claude.svg",
+      },
+      {
+        name: "Cursor",
+        icon: "/skills/cursor.svg",
+      },
     ],
   },
   {
     label: "Frontend",
-    title: "React and Next.js, done properly.",
+    title: "React and Next.js",
     description:
-      "I've shipped streaming interfaces at Fubo, SaaS product surfaces for FactoStack and Winuall, and SEO-critical pages at Molotov. I care about performance, accessibility, and server rendering — not just making it work.",
+      "I’ve worked on streaming interfaces and features on top of video players at Fubo, SaaS applications at Winuall. At Molotov, I work on technical SEO, server-rendered pages and web performance for a large streaming website",
     techIcons: [
       { name: "React", icon: "/skills/react.svg" },
       { name: "Next.js", icon: "/skills/nextjs.svg" },
@@ -26,14 +65,16 @@ const capabilities = [
     ],
   },
   {
-    label: "Growth and distribution",
-    title: "Getting people to actually use it.",
+    label: "Backend & Infrastructure",
+    title: "Optimising for scale",
     description:
-      "Technical SEO at Molotov, onboarding flows at Winuall, acquisition tooling at FactoStack. I've seen how much shipping without thinking about distribution costs, and I try not to repeat that.",
+      "I build APIs with Node.js, NestJS and Golang work mostly with PostgreSQL, and run my own products using Docker and AWS",
     techIcons: [
-      { name: "Next.js", icon: "/skills/nextjs.svg" },
+      { name: "Node.js", icon: "/skills/nodejs.svg" },
+      { name: "Next.js", icon: "/skills/nest-js.svg" },
+      { name: "Golang", icon: "/skills/go.svg" },
       { name: "PostgreSQL", icon: "/skills/postgres.svg" },
-      { name: "JavaScript", icon: "/skills/javascript.svg" },
+      { name: "MongoDB", icon: "/skills/mongodb.svg" },
     ],
   },
 ];
@@ -62,10 +103,11 @@ export default function Capabilities() {
           id="capabilities-heading"
           className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
         >
-          I can own the whole product, or go deep on one part.
+          I work across the stack
         </h2>
         <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-          The problems I like best are messy and operations-heavy — the kind where the requirements are unclear and someone has to figure it out. I&apos;ve been doing that for five years, usually without a large team behind me.
+          Most of my work is on web applications. I`&apos;ve worked across
+          frontend,backend, databases and infrastructure.
         </p>
       </div>
 
@@ -76,11 +118,19 @@ export default function Capabilities() {
             className="flex flex-col rounded-2xl border border-border/60 bg-secondary/25 p-7 sm:p-8"
           >
             <div className="flex items-center justify-between gap-4">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{item.label}</p>
-              <span className="font-serif text-sm text-muted-foreground/60">0{index + 1}</span>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+                {item.label}
+              </p>
+              <span className="font-serif text-sm text-muted-foreground/60">
+                0{index + 1}
+              </span>
             </div>
-            <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight">{item.title}</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
+            <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight">
+              {item.title}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              {item.description}
+            </p>
             <div className="mt-auto pt-6 border-t border-border/60">
               <div className="flex flex-wrap gap-2">
                 {item.techIcons.map((tech) => (
@@ -88,7 +138,20 @@ export default function Capabilities() {
                     key={tech.name}
                     className="inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/70 px-2.5 py-1 text-xs font-medium text-foreground/75"
                   >
-                    <Image src={tech.icon} alt="" width={12} height={12} className="h-3 w-3 shrink-0 object-contain" />
+                    {typeof tech.icon === "string" ? (
+                      <Image
+                        src={tech.icon}
+                        alt=""
+                        width={12}
+                        height={12}
+                        className="h-3 w-3 shrink-0 object-contain"
+                      />
+                    ) : (
+                      <tech.icon
+                        className={`h-3 w-3 shrink-0 ${tech.iconClassName ?? ""}`}
+                        aria-hidden="true"
+                      />
+                    )}
                     {tech.name}
                   </div>
                 ))}
@@ -96,37 +159,6 @@ export default function Capabilities() {
             </div>
           </article>
         ))}
-      </div>
-
-      <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/[0.06] p-7 sm:p-10">
-        <div className="grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Work</p>
-            <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight sm:text-3xl">
-              What I&apos;m available for.
-            </h3>
-          </div>
-          <div className="grid gap-7 sm:grid-cols-2 sm:gap-8">
-            {roleFits.map((fit) => (
-              <div key={fit.type}>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{fit.type}</p>
-                <h4 className="mt-2 font-semibold">{fit.roles}</h4>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{fit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-8 flex flex-col gap-2 border-t border-border/70 pt-5 sm:flex-row sm:items-center sm:gap-8">
-          <Link href="/projects" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary hover:underline">
-            See related projects <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-          <a
-            href="mailto:sudharsangs.99@gmail.com"
-            className="inline-flex min-h-11 items-center text-sm font-semibold text-foreground/70 hover:text-foreground hover:underline"
-          >
-            Email me
-          </a>
-        </div>
       </div>
     </section>
   );
